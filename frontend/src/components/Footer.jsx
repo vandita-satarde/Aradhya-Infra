@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import logo from '../assets/icons/Ardhya-logo.jpeg'
 
 import facebook from '../assets/icons/facebook.png'
@@ -12,53 +13,83 @@ import icon03 from '../assets/icons/phone-square.png'
 
 function Footer() {
   return (
-    <>
-    <div className='bg-black font-sans px-30 pt-10'>
-      <div className=' flex mb-25 '>
+    <div className='bg-black font-sans px-4 md:px-8 lg:px-12 xl:px-30 pt-8 md:pt-10'>
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 lg:gap-16 mb-12 md:mb-20 lg:mb-25'>
         
-        <div>
-            <img src={logo} className='h-28 w-28 rounded-[50%] m-3 ' />
-            <p className='text-[18px] text-[#FFFFFFBF] ' >Aplikasi terbaik layanan penginapan<br/><br/> di seluruh apartemen dan hotel di<br/> India.</p>
-            <div className='flex gap-4 items-center mt-6 '>
-                <img src={facebook} />
-                <img src={twitter} />
-                <img src={instagram} />
-                <img src={pin} />
-            </div>
+        {/* Company Info */}
+        <div className='lg:col-span-1'>
+          <img src={logo} className='h-20 w-20 md:h-24 md:w-24 lg:h-28 lg:w-28 rounded-full mb-4 md:mb-6' alt="Aradhya Infra logo" />
+          <p className='text-sm md:text-base lg:text-[18px] text-[#FFFFFFBF] leading-relaxed mb-6'>
+            Aplikasi terbaik layanan penginapan di seluruh apartemen dan hotel di India.
+          </p>
+          <div className='flex gap-3 md:gap-4 items-center'>
+            <img src={facebook} className='w-6 h-6 md:w-8 md:h-8 cursor-pointer hover:opacity-80 transition-opacity' alt="facebook" />
+            <img src={twitter} className='w-6 h-6 md:w-8 md:h-8 cursor-pointer hover:opacity-80 transition-opacity' alt="twitter" />
+            <img src={instagram} className='w-6 h-6 md:w-8 md:h-8 cursor-pointer hover:opacity-80 transition-opacity' alt="instagram" />
+            <img src={pin} className='w-6 h-6 md:w-8 md:h-8 cursor-pointer hover:opacity-80 transition-opacity' alt="pinterest" />
+          </div>
         </div>
 
-        <div className='flex gap-35 text-[18px] text-[#FFFFFFBF] pt-17 pl-28 '>
-          <div >
-            <p className='font-bold font-[abril] text-[#F3ECDC] text-[25px] '>Quick Links</p><br/>
-            <div className='flex flex-col gap-5'>
-              <div className='flex items-center gap-4'><img src={arrow} /> Home</div>
-              <div className='flex items-center gap-4'><img src={arrow} /> About Us</div>
-              <div className='flex items-center gap-4'><img src={arrow} /> Our Story</div>
-              <div className='flex items-center gap-4'><img src={arrow} /> Our Projects</div>
+        {/* Quick Links */}
+        <div className='lg:col-span-1'>
+          <h3 className='font-bold font-[abril] text-[#F3ECDC] text-lg md:text-xl lg:text-[25px] mb-4 md:mb-6'>Quick Links</h3>
+          <div className='flex flex-col gap-3 md:gap-4 lg:gap-5 text-sm md:text-base lg:text-[18px] text-[#FFFFFFBF]'>
+            <Link to="/" className='flex items-center gap-3 md:gap-4 hover:text-white transition-colors duration-200'>
+              <img src={arrow} className='w-3 h-3 md:w-4 md:h-4' alt="arrow" /> Home
+            </Link>
+            <Link to="/about" className='flex items-center gap-3 md:gap-4 hover:text-white transition-colors duration-200'>
+              <img src={arrow} className='w-3 h-3 md:w-4 md:h-4' alt="arrow" /> About Us
+            </Link>
+            <Link to="/story" className='flex items-center gap-3 md:gap-4 hover:text-white transition-colors duration-200'>
+              <img src={arrow} className='w-3 h-3 md:w-4 md:h-4' alt="arrow" /> Our Story
+            </Link>
+            <Link to="/projects" className='flex items-center gap-3 md:gap-4 hover:text-white transition-colors duration-200'>
+              <img src={arrow} className='w-3 h-3 md:w-4 md:h-4' alt="arrow" /> Our Projects
+            </Link>
+          </div>
+        </div>
+
+        {/* Contact Info */}
+        <div className='lg:col-span-1'>
+          <h3 className='font-bold text-[#F3ECDC] font-[abril] text-lg md:text-xl lg:text-[25px] mb-4 md:mb-6'>Location, Contact</h3>
+          <div className='flex flex-col gap-3 md:gap-4 lg:gap-5 text-sm md:text-base lg:text-[18px] text-[#FFFFFFBF]'>
+            <div className='flex items-center gap-3 md:gap-4'>
+              <img src={icon01} className='w-4 h-4 md:w-5 md:h-5 flex-shrink-0' alt="location" /> 
+              <span>Nagpur, India</span>
+            </div>
+            <div className='flex items-center gap-3 md:gap-4'>
+              <img src={icon02} className='w-4 h-4 md:w-5 md:h-5 flex-shrink-0' alt="email" /> 
+              <a href="mailto:Hello@Email.com" className='hover:text-white transition-colors duration-200'>Hello@Email.com</a>
+            </div>
+            <div className='flex items-center gap-3 md:gap-4'>
+              <img src={icon03} className='w-4 h-4 md:w-5 md:h-5 flex-shrink-0' alt="phone" /> 
+              <a href="tel:+91123456789" className='hover:text-white transition-colors duration-200'>( +91 ) 123 456 789</a>
             </div>
           </div>
-          <div>
-            <p className='font-bold text-[#F3ECDC] font-[abril] text-[25px] '>Location, Contact</p><br/>
-            <div className='flex flex-col gap-5'>
-              <div className='flex items-center gap-4'><img src={icon01} /> Nagpur, India</div>
-              <div className='flex items-center gap-4'><img src={icon02} /> Hello@Email.com</div>
-              <div className='flex items-center gap-4'><img src={icon03} /> ( +91 ) 123 456 789 </div>
+        </div>
+
+        {/* Other Links */}
+        <div className='lg:col-span-1'>
+          <h3 className='font-bold text-[#F3ECDC] font-[abril] text-lg md:text-xl lg:text-[25px] mb-4 md:mb-6'>Other Links</h3>
+          <div className='flex flex-col gap-3 md:gap-4 lg:gap-5 text-sm md:text-base lg:text-[18px] text-[#FFFFFFBF]'>
+            <div className='flex items-center gap-3 md:gap-4 cursor-pointer hover:text-white transition-colors duration-200'>
+              <img src={arrow} className='w-3 h-3 md:w-4 md:h-4' alt="arrow" /> Terms & Conditions
             </div>
-          </div>
-          <div>
-            <p className='font-bold text-[#F3ECDC] font-[abril] text-[25px] '>Other Links</p><br/>
-            <div className='flex flex-col gap-5'>
-              <div className='flex items-center gap-4'><img src={arrow} /> Terms & Conditions</div>
-              <div className='flex items-center gap-4'><img src={arrow} /> Privacy Policy</div>
-              <div className='flex items-center gap-4'><img src={arrow} /> Cookies Policy</div>
+            <div className='flex items-center gap-3 md:gap-4 cursor-pointer hover:text-white transition-colors duration-200'>
+              <img src={arrow} className='w-3 h-3 md:w-4 md:h-4' alt="arrow" /> Privacy Policy
+            </div>
+            <div className='flex items-center gap-3 md:gap-4 cursor-pointer hover:text-white transition-colors duration-200'>
+              <img src={arrow} className='w-3 h-3 md:w-4 md:h-4' alt="arrow" /> Cookies Policy
             </div>
           </div>
         </div>
       </div>
-      <hr className='text-gray-500 '/>
-      <p className='py-8 text-[15px] text-center font-semibold font-[#F3ECDC] ' >@COPYRIGHT ALL RIGHTS RESERVED</p>
+
+      <hr className='border-gray-600'/>
+      <p className='py-6 md:py-8 text-xs md:text-sm lg:text-[15px] text-center font-semibold text-[#F3ECDC]'>
+        @COPYRIGHT ALL RIGHTS RESERVED
+      </p>
     </div>
-    </>
   )
 }
 

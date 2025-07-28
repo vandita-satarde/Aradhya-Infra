@@ -21,51 +21,50 @@ function Home() {
   return (
     <div>
       <HeroSection />
-      <div className='bg-[#F3ECDC] min-h-screen p-12 md:p-12 lg:p-30 '>
+      <div className='bg-[#F3ECDC] min-h-screen p-4 md:p-8 lg:p-12 xl:p-30'>
       
               {/* Section 01 */}
-              <div className='mb-30'>
-              <p className='text-[13px] md:text-base'>OUR LUXURIOUS PROJECTS</p>
+              <div className='mb-20 md:mb-40 lg:mb-140'>
+              <p className='text-sm md:text-base'>OUR LUXURIOUS PROJECTS</p>
               <br/>
-              <div className='flex flex-col md:flex-row md:justify-between items-start md:items-center gap-4 '>
-                <h2 className=' text-[26px] md:text-[48px] font-bold '>Premium Residential,<br/>Commercial & Township Projects.</h2>
-                <p className='text-[13px] md:text-[19px] mr-0 md:mr-30 '>SHOW MORE → </p>
+              <div className='flex flex-col md:flex-row md:justify-between items-start md:items-center gap-4'>
+                <h2 className='text-2xl md:text-3xl lg:text-[48px] font-bold leading-tight'>Premium Residential,<br/>Commercial & Township Projects.</h2>
+                <p className='text-base md:text-lg lg:text-[19px] cursor-pointer hover:text-gray-600 transition-colors duration-200'>SHOW MORE → </p>
               </div>
               <br/><br/>
-              <div className=' flex relative flex-col lg:flex-row'>
-                  <div className=' relative w-full lg:w-[420px] h-auto lg:h-[290px] rounded-4xl p-6 md:p-10 pr-4 md:pr-30 bg-black text-white '>
-                    <img src={quotes} className=' h-10 ' />
+              <div className='flex flex-col lg:flex-row relative gap-6 lg:gap-0'>
+                  <div className='w-full lg:w-[420px] h-auto lg:h-[290px] rounded-2xl lg:rounded-4xl p-6 lg:p-10 bg-black text-white'>
+                    <img src={quotes} className='h-8 lg:h-10' />
                     <br/>
-                    <p>"Doloremque consequatur quasi accusantium ea non excepturi! Saepe accusantium placeat maiores... "</p>
+                    <p className='text-sm lg:text-base'>"Doloremque consequatur quasi accusantium ea non excepturi! Saepe accusantium placeat maiores... "</p>
                     <br/>
-                    <span className=' font-bold text-[18px] '>Nikhil Bawane</span>
+                    <span className='font-bold text-base lg:text-[18px]'>Nikhil Bawane</span>
                   </div>
       
-                  <div className='md:absolute left-[355px] top-7 flex flex-col sm:flex-row gap-3 mt-6 lg:mt-0 ' >
-                    <div className=' bg-fuchsia-50 w-full sm:w-[310px]  p-3 rounded-2xl shadow-2xs '>
-                      <img src={image1} className='  rounded-2xl h-[210px] w-full object-cover ' />                
+                  <div className='flex flex-col lg:flex-row gap-3 lg:absolute lg:left-[355px] lg:top-7'>
+                    <div className='bg-fuchsia-50 w-full lg:w-[310px] p-3 rounded-2xl shadow-2xs'>
+                      <img src={image1} className='w-full rounded-2xl h-[210px] object-cover' />                
                     </div>
-                    <div className=' bg-fuchsia-50 w-full sm:w-[300px] p-3 rounded-2xl shadow-2xs '>
-                      <img src={image1} className='  rounded-2xl h-[210px] w-full object-cover ' />                
+                    <div className='bg-fuchsia-50 w-full lg:w-[300px] p-3 rounded-2xl shadow-2xs'>
+                      <img src={image1} className='w-full rounded-2xl h-[210px] object-cover' />                
+                    </div>                
                     </div>
-                    <div className=' bg-fuchsia-50 w-full sm:w-[300px] p-3 rounded-2xl shadow-2xs '>
-                      <img src={image1} className='  rounded-2xl h-[210px] w-full object-cover ' />                
+                    <div className=' bg-fuchsia-50 w-[300px] p-3 rounded-2xl shadow-2xs '>
+                      <img src={image1} className='  rounded-2xl h-[210px] ' />                
                     </div>
                   </div>
               </div>
               </div>
       
               {/* Section 02 */}
-              <div className='relative flex flex-col md:flex-row mt-30 gap-10 '>
-                  <div className='absolute'>
-                    <img src={image1} className=' w-[170px] md:w-[400px] h-[210px] md:h-[500px] object-cover rounded-2xl ' />
-                    <div className='absolute w-[170px] md:w-[400px] top-[50px] md:top-[110px] left-[60px] md:left-[195px] bg-fuchsia-50 p-2 md:p-4 rounded-2xl '>
-                      <img src={image1} className=' h-[210px] md:h-[500px] rounded-2xl object-cover ' />            
-                    </div>
-                    <div className='absolute w-[120px] h-[60px] top-[170px] md:top-[400px] left-[10px] md:left-[70px] bg-black text-white inline-block text-center p-1 md:p-6 rounded-4xl object-cover '>
-                      <p className='text-[20px] md:text-[50px] '>99</p>
-                      <p className='text-[10px] md:text-[21px] '>Customer Support</p>
-                    </div>
+              <div className='relative'>
+                  <img src={image1} className='absolute w-[400px] h-[500px] rounded-2xl ' />
+                  <div className='absolute top-30 left-55 bg-fuchsia-50  p-5 rounded-2xl '>
+                    <img src={image1} className=' w-[400px] h-[500px] rounded-2xl ' />            
+                  </div>
+                  <div className='absolute top-100 left-20 bg-black text-white inline-block text-center p-6 rounded-4xl '>
+                    <p className=' text-[50px] '>99</p>
+                    <p className=' text-[21px] '>Customer Support</p>
                   </div>
       
                   <div className='ml-200 '>
@@ -94,9 +93,7 @@ function Home() {
                     <button className=' bg-teal-600 text-gray-100 py-5 px-14 rounded-4xl '>MORE ABOUT US →</button>
                   </div>
       
-                  
-              </div>
-              <div className='mt-50 flex'>
+                  <div className='mt-50 flex'>
                     <div className='flex'>
                       <img src={batch} className=' h-8 mr-3' />
                       <div>
@@ -112,6 +109,7 @@ function Home() {
                       </div>
                     </div>
                   </div>
+              </div>
       
               {/* Section 03 */}
                 <div className='mt-60 text-center '>
