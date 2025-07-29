@@ -2,41 +2,46 @@ import React from 'react'
 import { Instagram, Twitter } from 'lucide-react'
 import Navbar from './Navbar'
 
-import image01 from '../assets/image-0.jpg'
+import introVideo from '../assets/videos/intro.mp4'
 
 function HeroSection() {
   return (
     <>
-    
-      <div className="bg-cover bg-center h-[1600px] font-sans" style={{ backgroundImage: `url(${image01})` }}>
-              <div>
-            <Navbar />
+      <div className="relative h-[100vh] md:h-[900px]  bg-opacity-80 bg-black  font-sans overflow-hidden">
+        {/* Video Background */}
+       
+        {/* Dark overlay for better text visibility */}
+        <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-80 z-10"></div>
 
-            <div className=' py-25 px-15 md:p-60 space-y-6'>
-                <p className='text-[12px] md:text-[18px] text-[#048886] '>- A LAND GUIDE</p>
-                <h1 className='text-[36px] md:text-[88px] text-[#FFFFFF] font-[abril] font-bold '>Be Prepared For The<br/> Mountains And Beyond!</h1>
-                <p className='text-[12px] md:text-[18px] text-[#FFFFFF] '>scroll down ↓</p>
+        {/* Content */}
+        <div className="relative z-20 h-full">
+           <video
+          className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"
+          autoPlay
+          muted
+          loop
+      >
+          <source src={introVideo} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+
+          <Navbar />
+
+
+            <div className='py-8 px-6 md:py-16 lg:py-25 md:px-15 lg:px-60 space-y-6'>
+              
+                <p className='text-[12px] md:text-[18px] text-[#048886] font-semibold'>- A LAND GUIDE</p>
+                <h1 className='text-[28px] sm:text-[36px] md:text-[60px] lg:text-[88px] text-[#FFFFFF] font-[abril] font-bold leading-tight'>Be Prepared For The<br/> Mountains And Beyond!</h1>
+                <p className='text-[12px] md:text-[18px] text-[#FFFFFF]'>scroll down ↓</p>
             </div>
             
 
             <div className="flex justify-between items-center mt-10 px-6 md:px-20 text-white">
           {/* Follow Us - Rotated */}
-          <div className=" relative flex flex-col items-center space-y-2">
-            <p className="rotate-90 text-[14px] md:text-[18px]">Follow us</p>
-            <Instagram size={20} className='absolute top-15' />
-            <Twitter size={20} className='absolute top-23'/>
-          </div>
-
-          {/* Section Pager */}
-          <div className=" flex flex-col items-end gap-4 text-right">
-            <p>Start</p>
-            <p>01</p>
-            <p>02</p>
-            <p>03</p>
-          </div>
+          
         </div>
 
-            <div className='flex flex-col md:flex-row justify-around text-[#F3ECDC] font-[abril] font-bold mt-85 md:mt-65 gap-10 px-6 text-center'>
+            <div className='flex flex-col md:flex-row justify-around text-[#F3ECDC] font-[abril] font-bold   gap-10 px-6 text-center'>
                 <div>
                     <p className='text-[36px] md:text-[45px]'>07</p>
                     <p className='text-[18px] md:text-[21px]'>YEARS OF LEGACY</p>
