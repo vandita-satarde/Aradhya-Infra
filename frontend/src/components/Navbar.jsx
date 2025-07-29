@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import logo from '../assets/icons/Ardhya-logo.jpeg';
+import logo from '../assets/icons/ardhya-logo.jpeg';
 import contact from '../assets/icons/Vector.png';
 import { FaBars, FaTimes } from 'react-icons/fa';
 
