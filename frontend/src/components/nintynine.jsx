@@ -5,50 +5,52 @@ import batch from '../assets/icons/b-award.png'
 function nintynine() {
   return (
     <>
-      <img src={image01} className='absolute w-[400px] h-[500px] rounded-2xl ' />
-                  <div className='absolute top-55 left-85 bg-fuchsia-50  p-5 rounded-2xl '>
-                    <img src={image01} className=' w-[400px] h-[500px] rounded-2xl ' />            
-                  </div>
-                  <div className='absolute top-130 left-50 bg-black text-white inline-block text-center p-6 rounded-4xl '>
-                    <p className=' text-[50px] '>99</p>
-                    <p className=' text-[21px] '>Customer Support</p>
-                  </div>
+      <div className='absolute'>
+                          <img src={image01} className=' w-[170px] md:w-[400px] h-[210px] md:h-[500px] object-cover rounded-2xl ' />
+                          <div className='absolute w-[170px] md:w-[400px] top-[50px] md:top-[110px] left-[60px] md:left-[195px] bg-fuchsia-50 p-2 md:p-4 rounded-2xl '>
+                            <img src={image01} className=' h-[210px] md:h-[500px] rounded-2xl object-cover ' />            
+                          </div>
+                          <div className='absolute w-[120px] md:w-[220px] h-[60px] md:h-[120px] top-[170px] md:top-[400px] left-[10px] md:left-[70px] bg-black text-white inline-block text-center p-1 rounded-4xl object-cover '>
+                            <p className='text-[20px] md:text-[50px] '>99</p>
+                            <p className='text-[10px] md:text-[21px] '>Customer Support</p>
+                          </div>
+                        </div>
       
-                  <div className='ml-180 my-20 '>
-                    <p className='text-[15px] text-[#048886] font-sans '>ABOUT US</p>
+                  <div className='flex-1 mt-80 lg:mt-0 md:ml-200'>
+                    <p className='text-[12px] md:text-base text-[#048886] font-sans '>ABOUT US</p>
                     <br/><br/>
-                    <p className=' text-[45px] text-[#2D2D2D] font-[abril] font-bold '>“Aradhya Infra: Building Futures in Central India”</p>          
+                    <p className=' text-[26px] md:text-[45px] text-[#2D2D2D] font-[abril] font-bold '>“Aradhya Infra: Building Futures in Central India”</p>          
                     <br/>
-                    <p className=' text-[18px] text-[#6E6E6E] font-sans '>"Aradhya Infra: Building Futures in Central India"</p>
+                    <p className=' text-[14px] md:text-[18px] text-[#6E6E6E] font-sans '>"Aradhya Infra: Building Futures in Central India"</p>
                     <br/>
-                    <div className=' font-bold text-[18px] '>
-                      <div className=' flex items-center '>
+                    <div className=' font-bold text-[16px] md:text-[18px] '>
+                      <div className=' flex items-start '>
                         <img src={batch} className=' h-8 mr-5 ' />
                         <p className=' font-[abril] text-[21px] text-[#2D2D2D] font-bold '>Local experts deeply rootes in Nagpur and surrounding areas.</p>
                       </div>
                       <br/>
-                      <div className='flex justify-center items-center '>
+                      <div className='flex items-start '>
                         <img src={batch} className=' h-8 mr-5 ' />
                         <p className=' font-[abril] text-[21px] text-[#2D2D2D] font-bold '>Focus on community-centric planning and future-ready infrastructure.</p>
                       </div>
                     </div>
                     <br/><br/>
-                    <button className=' bg-[#048886] font-sans text-[#F3ECDC] text-[15px] py-5 px-14 rounded-4xl '>MORE ABOUT US →</button>
+                    <button className=' bg-teal-600 text-gray-100 text-[12px] md:text-[15px] py-3 md:py-5 px-8 md:px-14 rounded-4xl '>MORE ABOUT US →</button>
                   </div>
       
-                  <div className='mt-50 flex'>
-                    <div className='flex'>
+                  <div className='mt-50 flex flex-col lg:flex-row gap-10'>
+                    <div className='flex items-start '>
                       <img src={batch} className=' h-8 mr-3' />
                       <div className='text-[#2D2D2D] '>
-                        <p className='text-[21px] font-[abril] font-bold '>Vision</p>
-                        <p className='text-[18px] '>"To deliver thoughtfully designed living spaces-built sustainably, driven by innovation, and grounded in trust-to elevate communities and lives across Central India."</p>
+                        <p className='text-[22px] md:text-[21px] font-[abril] font-bold '>Vision</p>
+                        <p className='text-[17px] md:text-[18px] '>"To deliver thoughtfully designed living spaces-built sustainably, driven by innovation, and grounded in trust-to elevate communities and lives across Central India."</p>
                       </div>
                     </div>
-                    <div className='flex ml-25 '>
+                    <div className='flex items-start md:ml-25 '>
                       <img src={batch} className=' h-8 mr-3' />
                       <div className='text-[#2D2D2D]'>
-                        <p className='text-[21px] font-[abril] font-bold '>Mission</p>
-                        <p className='text-[18px] '>"To become the leading regional developer known for modern architecture, green initiatives, and socially conscious township developments that foster strong neighborhood bonds."</p>
+                        <p className='text-[22px] md:text-[21px] font-[abril] font-bold '>Mission</p>
+                        <p className='text-[17px] md:text-[18px] '>"To become the leading regional developer known for modern architecture, green initiatives, and socially conscious township developments that foster strong neighborhood bonds."</p>
                       </div>
                     </div>
                   </div>

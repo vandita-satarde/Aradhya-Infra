@@ -23,10 +23,10 @@ function Footer() {
             Aplikasi terbaik layanan penginapan di seluruh apartemen dan hotel di India.
           </p>
           <div className='flex gap-3 md:gap-4 items-center'>
-            <img src={facebook} className='w-6 h-6 md:w-8 md:h-8 cursor-pointer hover:opacity-80 transition-opacity' alt="facebook" />
-            <img src={twitter} className='w-6 h-6 md:w-8 md:h-8 cursor-pointer hover:opacity-80 transition-opacity' alt="twitter" />
-            <img src={instagram} className='w-6 h-6 md:w-8 md:h-8 cursor-pointer hover:opacity-80 transition-opacity' alt="instagram" />
-            <img src={pin} className='w-6 h-6 md:w-8 md:h-8 cursor-pointer hover:opacity-80 transition-opacity' alt="pinterest" />
+            <img src={facebook} className='cursor-pointer hover:opacity-80 transition-opacity' alt="facebook" />
+            <img src={twitter} className='cursor-pointer hover:opacity-80 transition-opacity' alt="twitter" />
+            <img src={instagram} className='cursor-pointer hover:opacity-80 transition-opacity' alt="instagram" />
+            <img src={pin} className='cursor-pointer hover:opacity-80 transition-opacity' alt="pinterest" />
           </div>
         </div>
 
@@ -35,16 +35,16 @@ function Footer() {
           <h3 className='font-bold font-[abril] text-[#F3ECDC] text-lg md:text-xl lg:text-[25px] mb-4 md:mb-6'>Quick Links</h3>
           <div className='flex flex-col gap-3 md:gap-4 lg:gap-5 text-sm md:text-base lg:text-[18px] text-[#FFFFFFBF]'>
             <Link to="/" className='flex items-center gap-3 md:gap-4 hover:text-white transition-colors duration-200'>
-              <img src={arrow} className='w-3 h-3 md:w-4 md:h-4' alt="arrow" /> Home
+              <img src={arrow} alt="arrow" /> Home
             </Link>
             <Link to="/about" className='flex items-center gap-3 md:gap-4 hover:text-white transition-colors duration-200'>
-              <img src={arrow} className='w-3 h-3 md:w-4 md:h-4' alt="arrow" /> About Us
+              <img src={arrow} alt="arrow" /> About Us
             </Link>
             <Link to="/story" className='flex items-center gap-3 md:gap-4 hover:text-white transition-colors duration-200'>
-              <img src={arrow} className='w-3 h-3 md:w-4 md:h-4' alt="arrow" /> Our Story
+              <img src={arrow} alt="arrow" /> Our Story
             </Link>
             <Link to="/projects" className='flex items-center gap-3 md:gap-4 hover:text-white transition-colors duration-200'>
-              <img src={arrow} className='w-3 h-3 md:w-4 md:h-4' alt="arrow" /> Our Projects
+              <img src={arrow} alt="arrow" /> Our Projects
             </Link>
           </div>
         </div>
@@ -54,15 +54,15 @@ function Footer() {
           <h3 className='font-bold text-[#F3ECDC] font-[abril] text-lg md:text-xl lg:text-[25px] mb-4 md:mb-6'>Location, Contact</h3>
           <div className='flex flex-col gap-3 md:gap-4 lg:gap-5 text-sm md:text-base lg:text-[18px] text-[#FFFFFFBF]'>
             <div className='flex items-center gap-3 md:gap-4'>
-              <img src={icon01} className='w-4 h-4 md:w-5 md:h-5 flex-shrink-0' alt="location" /> 
+              <img src={icon01} alt="location" /> 
               <span>Nagpur, India</span>
             </div>
             <div className='flex items-center gap-3 md:gap-4'>
-              <img src={icon02} className='w-4 h-4 md:w-5 md:h-5 flex-shrink-0' alt="email" /> 
+              <img src={icon02} alt="email" /> 
               <a href="mailto:Hello@Email.com" className='hover:text-white transition-colors duration-200'>Hello@Email.com</a>
             </div>
             <div className='flex items-center gap-3 md:gap-4'>
-              <img src={icon03} className='w-4 h-4 md:w-5 md:h-5 flex-shrink-0' alt="phone" /> 
+              <img src={icon03} alt="phone" /> 
               <a href="tel:+91123456789" className='hover:text-white transition-colors duration-200'>( +91 ) 123 456 789</a>
             </div>
           </div>
@@ -73,13 +73,13 @@ function Footer() {
           <h3 className='font-bold text-[#F3ECDC] font-[abril] text-lg md:text-xl lg:text-[25px] mb-4 md:mb-6'>Other Links</h3>
           <div className='flex flex-col gap-3 md:gap-4 lg:gap-5 text-sm md:text-base lg:text-[18px] text-[#FFFFFFBF]'>
             <div className='flex items-center gap-3 md:gap-4 cursor-pointer hover:text-white transition-colors duration-200'>
-              <img src={arrow} className='w-3 h-3 md:w-4 md:h-4' alt="arrow" /> Terms & Conditions
+              <img src={arrow} alt="arrow" /> Terms & Conditions
             </div>
             <div className='flex items-center gap-3 md:gap-4 cursor-pointer hover:text-white transition-colors duration-200'>
-              <img src={arrow} className='w-3 h-3 md:w-4 md:h-4' alt="arrow" /> Privacy Policy
+              <img src={arrow} alt="arrow" /> Privacy Policy
             </div>
             <div className='flex items-center gap-3 md:gap-4 cursor-pointer hover:text-white transition-colors duration-200'>
-              <img src={arrow} className='w-3 h-3 md:w-4 md:h-4' alt="arrow" /> Cookies Policy
+              <img src={arrow} alt="arrow" /> Cookies Policy
             </div>
           </div>
         </div>

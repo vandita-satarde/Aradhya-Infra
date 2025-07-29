@@ -27,7 +27,7 @@ function Gallery() {
         </div>
       </div>
       
-      <p className='text-sm md:text-[15px] text-[#2D2D2D] mt-8 md:mt-12 lg:mt-16 font-medium'>
+      <p className='text-[13px] md:text-[15px] text-[#2D2D2D] mt-8 md:mt-12 lg:mt-16 font-medium'>
         SEE OUR GALLERY SECTION LEGACY OF ARADHYA INFRA
       </p> 
     </div>

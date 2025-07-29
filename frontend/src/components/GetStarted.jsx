@@ -10,9 +10,7 @@ function GetStarted() {
           src={image01} 
           className='w-full h-[300px] md:h-[400px] lg:h-[500px] object-cover' 
           alt="background"
-        />
-        <div className='absolute inset-0 bg-black bg-opacity-40'></div>
-        
+        />        
         <div className='absolute inset-0 flex flex-col justify-center items-center text-white text-center p-6 md:p-12 lg:p-16'>
           <h2 className='text-2xl md:text-3xl lg:text-4xl xl:text-[60px] text-[#F3ECDC] font-bold font-[abril] leading-tight mb-4 md:mb-6 lg:mb-8'>
             Turning your Dreams into<br className='hidden md:block'/> Foundation

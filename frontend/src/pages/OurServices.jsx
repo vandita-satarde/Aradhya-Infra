@@ -21,21 +21,21 @@ function OurServices() {
         <div className="bg-cover bg-center h-[523px] " style={{ backgroundImage: `url(${image01})` }}>
             <div>
                 <Navbar />
-                <div className='p-30'>
-                    <p className='flex gap-5 items-center text-[15px] '>
+                <div className='p-12 md:p-30'>
+                    <p className='flex gap-3 md:gap-5 items-center text-[12px] md:text-[15px] '>
                         <span className='text-[#34FF00] '>HOMEPAGE</span>
-                        <img src={arrow} className='w-[10px] h-[20px]'/>
+                        <img src={arrow}/>
                         <span className='text-[#34FF00] '>OUR STORY</span>
-                        <img src={arrow} className='w-[10px] h-[20px]'/>
+                        <img src={arrow}/>
                         <span className='text-[#FFFFFFBF] '>OUR SERVICES</span>
                     </p>
-                    <p className='font-bold text-[58px] py-7 font-[abril] text-[#F3ECDC]'>What Aradhya Infra Offers</p>
-                    <p className='text-[15px] text-[#FFFFFFBF] '>Building dreams, creating communities”—that’s not just a tagline—it’s why Aradhya Infra exists.</p>
+                    <p className='font-bold text-[38px] md:text-[55px] py-7 font-[abril] text-[#F3ECDC]'>What Aradhya Infra Offers</p>
+                    <p className='text-[12px] md:text-[15px] text-[#FFFFFFBF] '>Building dreams, creating communities”—that’s not just a tagline—it’s why Aradhya Infra exists.</p>
                 </div>
             </div>
         </div>
 
-        <div className='bg-[#F3ECDC] p-30 flex flex-wrap gap-6'>
+        <div className='bg-[#F3ECDC] p-12 md:p-30 flex flex-wrap gap-6'>
             <ServicesCard 
                 icon={icon01}
                 name="Pre-Launch Marketing"
