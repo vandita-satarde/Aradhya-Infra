@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import logo from '../assets/icons/Ardhya-logo.jpeg'
+import logo from '../assets/icons/ardhya-logo.jpeg'
 
 import facebook from '../assets/icons/facebook.png'
 import twitter from '../assets/icons/twitter.png'
