@@ -56,7 +56,7 @@ function Home() {
               </div>
       
               {/* Section 02 */}
-              <div className='relative flex flex-col md:flex-row mt-30 gap-10 '>
+              <div className='relative flex flex-col md:flex-row mt-30 md:mt-40 gap-10 '>
                   <div className='absolute'>
                     <img src={image1} className=' w-[170px] md:w-[400px] h-[210px] md:h-[500px] object-cover rounded-2xl ' />
                     <div className='absolute w-[170px] md:w-[400px] top-[50px] md:top-[110px] left-[60px] md:left-[195px] bg-fuchsia-50 p-2 md:p-4 rounded-2xl '>
@@ -110,9 +110,9 @@ function Home() {
                   </div>
       
               {/* Section 03 */}
-                <div className='mt-60 text-center '>
+                <div className='mt-30 md:mt-55 text-center '>
                   <p className='text-sm md:text-base'>WHY ARADHYA INFRA?</p>
-                  <br/><br/>
+                  <br/>
                   <p className=' text-[32px] md:text-[48px] font-bold'>Why Aradhya Infra?</p>
                   <br/>
                   <div className='w-full flex flex-col md:flex-row gap-8 justify-center items-center mb-10'>
