@@ -36,16 +36,16 @@ function OurProjects() {
             </div>
         </div>
 
-        <div className=' text-center mt-18 px-5 font-sans'>
-            <p className='m-5 text-[#050810] text-[12px] md:text-[16px]  '>ALL PROJECTS</p>
+        <div className=' text-center mt-8 md:mt-18 px-5 font-sans'>
+            <p className=' m-3 md:m-5 text-[#050810] text-[12px] md:text-[16px]  '>ALL PROJECTS</p>
             <p className=' text-[30px] md:text-[45px] text-[#050810] font-[abril] font-bold mb-10 '>Aradhya Business Park</p>
-            <div className='flex flex-wrap gap-8 justify-center text-[13px] md:text-[17px] '>
+            <div className='flex flex-wrap gap-3 md:gap-8 justify-center text-[13px] md:text-[17px] '>
                 <button className=' border py-3 px-6 md:py-4 mdpx-12 bg-[#050810] text-[#F3ECDC] '>All PROPERTIES</button>
                 <button className=' border py-3 px-6 md:py-4 mdpx-12 '>COMMERCIAL</button>
                 <button className=' border py-3 px-6 md:py-4 mdpx-12 '>RESIDENTAL</button>
             </div>
-            <br/><br/><br/><br/>
-            <div className='flex flex-wrap gap-8 justify-center' >
+            <br/><br/><br/>
+            <div className='flex flex-wrap gap-3 md:gap-8 justify-center' >
                 <ProductCard
                     tag="Under Construction"
                     image={image01}
@@ -83,7 +83,7 @@ function OurProjects() {
                     location="Shankar Nagar, Nagpur"
                 />
             </div>
-            <button className='bg-[#048886] text-[15px] text-[#F3ECDC] my-15 py-4 px-10 rounded-4xl '>VIEW MORE PROJECTS</button>
+            <button className='bg-[#048886] text-[12px] md:text-[15px] text-[#F3ECDC] my-7 md:my-15 py-2 md:py-4 px-6 md:px-10 rounded-4xl '>VIEW MORE PROJECTS</button>
         </div>
 
         <GetStarted />
