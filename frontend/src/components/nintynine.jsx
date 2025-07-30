@@ -38,7 +38,7 @@ function nintynine() {
                     <button className=' bg-teal-600 text-gray-100 text-[12px] md:text-[15px] py-3 md:py-5 px-8 md:px-14 rounded-4xl '>MORE ABOUT US →</button>
                   </div>
       
-                  <div className='mt-50 flex flex-col lg:flex-row gap-10'>
+                  <div className='mt-20 md:mt-50 flex flex-col lg:flex-row gap-10'>
                     <div className='flex items-start '>
                       <img src={batch} className=' h-8 mr-3' />
                       <div className='text-[#2D2D2D] '>

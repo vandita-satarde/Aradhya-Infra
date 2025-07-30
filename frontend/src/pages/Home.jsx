@@ -92,7 +92,7 @@ function Home() {
               </div>
 
 
-              <div className='mt-50 flex flex-col lg:flex-row gap-10'>
+              <div className='mt-20 md:mt-50 flex flex-col lg:flex-row gap-10'>
                     <div className='flex flex-row items-start '>
                       <img src={batch} className=' h-8 mr-3' />
                       <div className='text-[#2D2D2D] '>

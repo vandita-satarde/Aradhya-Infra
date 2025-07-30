@@ -77,7 +77,7 @@ function AboutUs() {
                     <p className='text-[15px] text-[#048886] font-sans mb-3'>WHAT WE STAND FOR</p>
                     <p className='text-[30px] sm:text-[36px] md:text-[45px] text-[#2D2D2D] font-bold font-[abril] '>Aradhya Infra<br/> Commitments that Defines Us</p>
 
-                    <div className='flex flex-col sm:flex-row gap-20 mt-20 mx-10 font-[abril]'>
+                    <div className='flex flex-col sm:flex-row gap-20 mt-20 mx-2 md:mx-10 font-[abril]'>
                       <div className=''>
                         <p className='text-[30px] md:text-[35px] text-[#048886] font-extrabold '>01</p>
                         <p className='text-[20px] md:text-[23px] text-[#2D2D2D] font-extrabold mt-4 mb-3'>Local Insight</p>
