@@ -12,7 +12,7 @@ function AboutUs() {
   return (
     <>
       <div className="bg-cover bg-center h-[552px]" style={{ backgroundImage: `url(${image01})` }}>
-        <div>
+        <div className='pt-[100px]'>
           <Navbar />
           <div className=' p-12 md:p-30 text-[12px] md:text-[15px] '>
             <p className='flex gap-3 md:gap-5 items-center'>

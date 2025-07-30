@@ -19,8 +19,8 @@ import icon8 from '../assets/icons/icon-8.png'
 function ProjectDetails() {
   return (
     <>
-      
-        <Navbar className='bg-[#05081080]' />
+      <div className=' pt-[100px] md:pt-[130px]'>
+        <Navbar className='bg-[#11141b80]' />
         <div className='flex flex-col md:flex-row justify-center gap-5 md:gap-10 py-5 md:py-15 bg-[#F3ECDC] '>
             <img src={image01} className=' mx-auto md:mx-0 w-[300px] md:w-[870px] h-[150px] md:h-[413px] ' />
             <div className='flex flex-row md:flex-col gap-5 items-center justify-center'>
@@ -100,6 +100,7 @@ function ProjectDetails() {
 
         </div>
       <Footer />
+      </div>
     </>
   )
 }

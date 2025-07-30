@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import logo from '../assets/icons/ardhya-logo.jpeg';
 import contact from '../assets/icons/Vector.png';
@@ -6,7 +6,17 @@ import { FaBars, FaTimes } from 'react-icons/fa';
 
 function Navbar({ className = '' }) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [navbarBg, setNavbarBg] = useState(false);
   const location = useLocation();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setNavbarBg(window.scrollY > 0);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const isActive = (path) => {
     if (path === '/' && location.pathname === '/') return true;
@@ -34,7 +44,7 @@ function Navbar({ className = '' }) {
   ];
 
   return (
-    <div className={`w-full relative ${className}`}>
+    <div className={`w-full fixed top-0 z-50 transition-all duration-300 ${navbarBg ? 'bg-black/80 backdrop-blur-md' : 'bg-transparent'} ${className}`}>
       {/* Top Navbar */}
       <div className='w-full h-[100px] md:h-[130px] border-b border-[rgba(255, 255, 255, 0.75)] flex justify-evenly items-center text-gray-200 '>
         <div className="flex justify-between px-10 md:px-25 w-full items-center">
