@@ -27,7 +27,7 @@ function OurProjects() {
         </div>
 
         <div className='flex flex-col items-center bg-[#F3ECDC] pb-8 md:pb-25'>
-            <p className='text-[30px] md:text-[55px] text-[#048886] font-bold font-[abril] my-5 md:my-8'>Location</p>
+            <p className='text-[22px] md:text-[55px] text-[#048886] font-bold font-[abril] my-5 md:my-8'>Location</p>
             <div className='bg-fuchsia-50 p-1 md:p-4 rounded-4xl'>
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3721.3107336364287!2d79.05486597503466!3d21.140028780537307!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4c16fe7f30a71%3A0x96d1eb35911d1226!2sTARS%20Technologies!5e0!3m2!1sen!2sin!4v1753256633156!5m2!1sen!2sin" 
                     className='w-[270px] md:w-[1289px] md:h-[460px] rounded-4xl'

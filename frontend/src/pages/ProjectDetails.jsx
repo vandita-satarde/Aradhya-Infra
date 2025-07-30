@@ -19,7 +19,8 @@ import icon8 from '../assets/icons/icon-8.png'
 function ProjectDetails() {
   return (
     <>
-      <div className=' pt-[100px] md:pt-[130px]'>
+      <div className=''>
+        <div className='bg-[#05081080] h-[100px] md:h-[130px] '></div>
         <Navbar />  {/* className='bg-[#34363c80]' */}
         <div className='flex flex-col md:flex-row justify-center gap-5 md:gap-10 py-5 md:py-15 bg-[#F3ECDC] '>
             <img src={image01} className=' mx-auto md:mx-0 w-[300px] md:w-[870px] h-[150px] md:h-[413px] ' />
@@ -47,20 +48,20 @@ function ProjectDetails() {
               <div className='flex flex-col md:flex-row gap-6 md:gap-10'>
                 <div className='flex flex-col gap-5'>
                   <p className='text-[13.34px]'>Facilities Offered</p>
-                  <div className='text-[15.5px] flex flex-col gap-4'>
-                    <div className='flex gap-3'><img src={icon1} className='h-[24px]' /><p>Swimming Pools</p></div>
-                    <div className='flex gap-3'><img src={icon2} className='h-[24px]'/><p>Gymnasium, Yoga & Wellness Zones</p></div>
-                    <div className='flex gap-3'><img src={icon3} className='h-[24px]'/><p>Elevator</p></div>
-                    <div className='flex gap-3'><img src={icon4} className='h-[24px]' /><p>Children & Senior Citizen Zones</p></div>
-                    <div className='flex gap-3'><img src={icon5} className='h-[24px]'/><p>Safety & Conveniences</p></div>
+                  <div className='text-[12px] md:text-[15.5px] flex flex-col gap-4'>
+                    <div className='flex gap-3'><img src={icon1} className='h-[18px] md:h-[24px]' /><p>Swimming Pools</p></div>
+                    <div className='flex gap-3'><img src={icon2} className='h-[18px] md:h-[24px]'/><p>Gymnasium, Yoga & Wellness Zones</p></div>
+                    <div className='flex gap-3'><img src={icon3} className='h-[18px] md:h-[24px]'/><p>Elevator</p></div>
+                    <div className='flex gap-3'><img src={icon4} className='h-[18px] md:h-[24px]' /><p>Children & Senior Citizen Zones</p></div>
+                    <div className='flex gap-3'><img src={icon5} className='h-[18px] md:h-[24px]'/><p>Safety & Conveniences</p></div>
                   </div>
                 </div>
                 <div className='flex flex-col gap-5'>
                   <p className='text-[13.34px]'>The Sonder standard</p>
                   <div className='text-[15.5px] flex flex-col gap-4'>                
-                    <div className='flex gap-3'><img src={icon6} className='h-[24px]'/><p>Airport Access</p></div>
-                    <div className='flex gap-3'><img src={icon7} className='h-[24px]'/><p>Highway Connectivity</p></div>
-                    <div className='flex gap-3'><img src={icon8} className='h-[24px]'/><p>Top Hospitals</p></div>
+                    <div className='flex gap-3'><img src={icon6} className='h-[18px] md:h-[24px]'/><p>Airport Access</p></div>
+                    <div className='flex gap-3'><img src={icon7} className='h-[18px] md:h-[24px]'/><p>Highway Connectivity</p></div>
+                    <div className='flex gap-3'><img src={icon8} className='h-[18px] md:h-[24px]'/><p>Top Hospitals</p></div>
                   </div>
                 </div>
               </div>
@@ -72,7 +73,7 @@ function ProjectDetails() {
 
         <div className='bg-[#F3ECDC]'>
           <div className='flex flex-col md:flex-row md:items-center gap-2 md:gap-5 px-4 md:px-20 py-2 text-[17.5px] border-b border-gray-300'>
-            <p className='border-b-3 border-[#E6B022] pb-1 md:p-3'>List Apartment</p>
+            <p className='w-[115px] md:w-[138px] border-b-3 border-[#E6B022] pb-1 md:p-3'>List Apartment</p>
             <p>Commercial</p>
             <p>Residential</p>
           </div>
