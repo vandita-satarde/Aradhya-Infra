@@ -4,7 +4,7 @@ import icon01 from '../assets/icons/location.png'
 
 function ProductCard({ tag, image, name, location }) {
   return (
-    <div className='relative w-full max-w-[400px] border-2 border-gray-200 rounded-lg overflow-hidden font-sans hover:shadow-lg transition-shadow duration-300 my-5 mx-auto'>
+    <div className='relative w-[270px] md:w-full max-w-[400px] border-2 border-gray-200 rounded-lg overflow-hidden font-sans hover:shadow-lg transition-shadow duration-300 my-5 mx-auto'>
       <div className='relative'>
         <p className='absolute z-10 text-[#050810] text-xs md:text-[14px] bg-gray-100 py-1 px-3 md:px-4 m-3 rounded-full shadow-sm'>{tag}</p>
         <img src={image} className='w-full h-[200px] md:h-[250px] object-cover' alt={name} />

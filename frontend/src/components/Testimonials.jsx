@@ -64,7 +64,7 @@ function Testimonials() {
         </div>
 
         {/* Right Section - Testimonial */}
-        <div className='w-full lg:w-1/3 border border-gray-200 p-6 md:p-10 lg:p-14 rounded-2xl lg:rounded-4xl font-sans bg-white shadow-lg'>
+        <div className='mx-auto w-[280px] lg:w-1/3 border border-gray-200 p-6 md:p-10 lg:p-14 rounded-2xl lg:rounded-4xl font-sans bg-white shadow-lg'>
           <FaQuoteLeft className='w-[30px] h-[35px] md:w-[40px] md:h-[45px] text-[#DADADA] mb-4' />
           <h3 className='font-medium italic text-lg md:text-xl lg:text-[22px] text-[#050810] mb-4 md:mb-6 lg:mb-7'>
             Township Living

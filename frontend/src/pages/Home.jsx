@@ -93,14 +93,14 @@ function Home() {
 
 
               <div className='mt-50 flex flex-col lg:flex-row gap-10'>
-                    <div className='flex flex-col md:flex-row items-start '>
+                    <div className='flex flex-row items-start '>
                       <img src={batch} className=' h-8 mr-3' />
                       <div className='text-[#2D2D2D] '>
                         <p className='text-[22px] md:text-[24px] font-bold '>Vision</p>
                         <p className='text-[17px] md:text-[19px] '>"To deliver thoughtfully designed living spaces-built sustainably, driven by innovation, and grounded in trust-to elevate communities and lives across Central India."</p>
                       </div>
                     </div>
-                    <div className='flex flex-col md:flex-row items-start md:ml-25 '>
+                    <div className='flex flex-row items-start md:ml-25 '>
                       <img src={batch} className=' h-8 mr-3' />
                       <div className='text-[#2D2D2D]'>
                         <p className='text-[22px] md:text-[24px] font-bold '>Mission</p>
