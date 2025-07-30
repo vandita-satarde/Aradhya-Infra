@@ -24,7 +24,7 @@ function ContactUs() {
 
         <div className='bg-[#F3ECDC] px-6 md:px-10 lg:px-30 pt-10 md:pt-30 pb-10 md:pb-14'>
             <div className='flex flex-col lg:flex-row gap-10 mx-auto '>
-                <div className='w-[260px] lg:w-1/2 md:h-[747px] p-6 md:p-[50px] bg-[#F9F9F9] rounded-[30px] shadow-xl '>
+                <div className='w-full lg:w-1/2 md:h-[747px] p-6 md:p-[50px] bg-[#F9F9F9] rounded-[30px] shadow-xl '>
                     <p className='text-[20px] md:text-[35px] font-[abril] font-bold'>Contact Us</p>
                     <p className='text-[14px] md:text-[18px] mt-4 md:mt-5 mb-4 text-[#6E6E6E]'>Connect with us anytime—we’re here to make your home-buying journey seamless and stress-free.</p>
                     <div className='flex flex-wrap gap-4'>
@@ -83,7 +83,7 @@ function ContactUs() {
         </div>
         <hr />
         <div className='bg-[#F3ECDC] px-3 md:px-10 lg:px-30 pt-10 md:pt-14 pb-10 md:pb-25'>
-            <img src={image01} className=' w-[270px] md:w-[1240px] h-[100px] md:h-[350px] rounded-[30px] ' />
+            <img src={image01} className=' w-full md:w-[1240px] h-[100px] md:h-[350px] rounded-[30px] ' />
         </div>
         <Footer />
     </>
