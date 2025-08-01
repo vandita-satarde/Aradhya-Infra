@@ -20,7 +20,7 @@ function Home() {
   return (
     <div>
       <HeroSection />
-      <div className='bg-[#F3ECDC] min-h-screen p-4 md:p-8 lg:p-12 xl:p-30'>
+      <div className='bg-[#E6FFFF] min-h-screen p-4 md:p-8 lg:p-12 xl:p-30'>
       
         {/* Section 01 - Luxurious Projects */}
         <div className='mb-20 md:mb-32 lg:mb-40'>
@@ -38,8 +38,8 @@ function Home() {
           {/* Featured Content */}
           <div className='grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-4'>
             {/* Testimonial Card */}
-            <div className='lg:col-span-1 bg-black text-white rounded-2xl lg:rounded-4xl p-6 lg:p-8'>
-              <img src={quotes} className='h-8 lg:h-10 mb-4' alt="quotes" />
+            <div className='lg:col-span-1 bg-black text-white rounded-[30px] lg:rounded-4xl p-6 lg:p-8'>
+              <img src={quotes} className='w-[27px] h-[35px] lg:h-10 mb-4' alt="quotes" />
               <p className='text-sm lg:text-base mb-4 leading-relaxed'>
                 "Doloremque consequatur quasi accusantium ea non excepturi! Saepe accusantium placeat maiores..."
               </p>
@@ -48,11 +48,11 @@ function Home() {
 
             {/* Project Images */}
             <div className='lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-4'>
-              <div className='bg-white p-3 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300'>
-                <img src={image1} className='w-full rounded-2xl h-[200px] lg:h-[210px] object-cover' alt="project" />
+              <div className='bg-white p-3 rounded-[30px] shadow-lg hover:shadow-xl transition-shadow duration-300'>
+                <img src={image1} className='w-full rounded-[30px] h-[200px] lg:h-[210px] object-cover' alt="project" />
               </div>
-              <div className='bg-white p-3 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300'>
-                <img src={image1} className='w-full rounded-2xl h-[200px] lg:h-[210px] object-cover' alt="project" />
+              <div className='bg-white p-3 rounded-[30px] shadow-lg hover:shadow-xl transition-shadow duration-300'>
+                <img src={image1} className='w-full rounded-[30px] h-[200px] lg:h-[210px] object-cover' alt="project" />
               </div>
             </div>
           </div>
@@ -64,11 +64,11 @@ function Home() {
             {/* Image Section */}
             <div className='relative order-2 lg:order-1'>
               <div className='relative'>
-                <img src={image1} className='w-full h-[300px] md:h-[400px] lg:h-[500px] rounded-2xl object-cover' alt="about" />
-                <div className='absolute -top-4 -right-4 md:-top-6 md:-right-6 bg-white p-3 rounded-2xl shadow-lg'>
-                  <img src={image1} className='w-[150px] md:w-[200px] lg:w-[250px] h-[120px] md:h-[160px] lg:h-[200px] rounded-2xl object-cover' alt="about overlay" />
+                <img src={image1} className='w-full h-[300px] md:h-[400px] lg:h-[500px] rounded-[30px] object-cover' alt="about" />
+                <div className='absolute -top-4 -right-4 md:-top-6 md:-right-6 bg-white p-3 rounded-[30px] shadow-lg'>
+                  <img src={image1} className='w-[150px] md:w-[200px] lg:w-[250px] h-[120px] md:h-[160px] lg:h-[200px] rounded-[30px] object-cover' alt="about overlay" />
                 </div>
-                <div className='absolute -bottom-6 -left-4 md:-bottom-8 md:-left-6 bg-black text-white text-center p-4 md:p-6 rounded-2xl lg:rounded-4xl'>
+                <div className='absolute -bottom-6 -left-4 md:-bottom-8 md:-left-6 bg-black text-white text-center p-4 md:p-6 rounded-[30px] lg:rounded-4xl'>
                   <p className='text-3xl md:text-4xl lg:text-[50px] font-bold'>99%</p>
                   <p className='text-sm md:text-base lg:text-[21px]'>Customer Support</p>
                 </div>
@@ -91,18 +91,18 @@ function Home() {
 
               <div className='space-y-6 mb-8'>
                 <div className='flex items-center gap-4'>
-                  <img src={batch} className='h-6 md:h-8 flex-shrink-0' alt="badge" />
+                  <img src={batch} className='h-6 md:w-[27px] h-[35px] flex-shrink-0' alt="badge" />
                   <p className='text-base md:text-lg font-medium'>Local experts deeply rooted in Nagpur and surrounding areas.</p>
                 </div>
                 <div className='flex items-center gap-4'>
-                  <img src={batch} className='h-6 md:h-8 flex-shrink-0' alt="badge" />
+                  <img src={batch} className='h-6 md:w-[27px] h-[35px] flex-shrink-0' alt="badge" />
                   <p className='text-base md:text-lg font-medium'>Focus on community-centric planning and future-ready infrastructure.</p>
                 </div>
               </div>
 
               <Link 
                 to="/about" 
-                className='inline-block bg-teal-600 hover:bg-teal-700 text-white py-3 md:py-4 lg:py-5 px-8 md:px-12 lg:px-14 rounded-2xl lg:rounded-4xl transition-colors duration-300 font-medium'
+                className='inline-block bg-teal-600 hover:bg-teal-700 text-white py-3 md:py-4 lg:py-5 px-8 md:px-12 lg:px-14 rounded-[30px] lg:rounded-4xl transition-colors duration-300 font-medium'
               >
                 MORE ABOUT US →
               </Link>
@@ -112,7 +112,7 @@ function Home() {
           {/* Vision & Mission */}
           <div className='mt-12 lg:mt-20 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12'>
             <div className='flex gap-4'>
-              <img src={batch} className='h-6 md:h-8 mt-1 flex-shrink-0' alt="badge" />
+              <img src={batch} className='h-6 md:w-[27px] h-[35px] mt-1 flex-shrink-0' alt="badge" />
               <div>
                 <h4 className='text-xl md:text-2xl lg:text-[24px] font-bold mb-3 text-gray-800'>Vision</h4>
                 <p className='text-base md:text-lg lg:text-[19px] text-gray-600 leading-relaxed'>
@@ -121,7 +121,7 @@ function Home() {
               </div>
             </div>
             <div className='flex gap-4'>
-              <img src={batch} className='h-6 md:h-8 mt-1 flex-shrink-0' alt="badge" />
+              <img src={batch} className='h-6 md:w-[27px] h-[35px] mt-1 flex-shrink-0' alt="badge" />
               <div>
                 <h4 className='text-xl md:text-2xl lg:text-[24px] font-bold mb-3 text-gray-800'>Mission</h4>
                 <p className='text-base md:text-lg lg:text-[19px] text-gray-600 leading-relaxed'>

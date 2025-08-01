@@ -4,6 +4,7 @@ import { FaShieldAlt } from "react-icons/fa";
 import { FaList } from "react-icons/fa6";
 import { FaQuoteLeft } from "react-icons/fa6";
 
+
 function Testimonials() {
   return (
     <div className='px-4 md:px-8 lg:px-12 xl:px-30 py-12 md:py-20 lg:py-27'>
@@ -18,7 +19,7 @@ function Testimonials() {
           
           <div className='flex flex-col md:flex-row gap-6 md:gap-8'>
             {/* Image */}
-            <div className='bg-[#F3ECDC] w-full md:w-[300px] lg:w-[380px] p-3 rounded-[20px] md:rounded-[30px] mx-auto md:mx-0'>
+            <div className='bg-[#E6FFFF] w-full md:w-[300px] lg:w-[380px] p-3 rounded-[20px] md:rounded-[30px] mx-auto md:mx-0'>
               <img src={image01} className='w-full h-[250px] md:h-[300px] lg:h-[350px] rounded-[20px] md:rounded-[30px] object-cover' alt="testimonial" />
             </div>
             
@@ -64,7 +65,7 @@ function Testimonials() {
         </div>
 
         {/* Right Section - Testimonial */}
-        <div className='mx-auto w-[280px] lg:w-1/3 border border-gray-200 p-6 md:p-10 lg:p-14 rounded-2xl lg:rounded-4xl font-sans bg-white shadow-lg'>
+        <div className='mx-auto w-[280px] lg:w-1/3 border p-6 md:p-10 lg:p-14 rounded-[30px] lg:rounded-4xl font-sans bg-white shadow-lg'>
           <FaQuoteLeft className='w-[30px] h-[35px] md:w-[40px] md:h-[45px] text-[#DADADA] mb-4' />
           <h3 className='font-medium italic text-lg md:text-xl lg:text-[22px] text-[#050810] mb-4 md:mb-6 lg:mb-7'>
             Township Living

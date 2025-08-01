@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar'
 import ServicesCard from '../components/ServicesCard'
 import Gallery from '../components/Gallery'
@@ -14,6 +15,7 @@ import icon03 from '../assets/icons/icon-03.png'
 import icon04 from '../assets/icons/icon-04.png'
 import icon05 from '../assets/icons/icon-05.png'
 import icon06 from '../assets/icons/icon-06.png'
+import { i } from 'framer-motion/client'
 
 function OurServices() {
   return (
@@ -23,19 +25,23 @@ function OurServices() {
                 <Navbar />
                 <div className='p-12 md:p-30'>
                     <p className='flex gap-3 md:gap-5 items-center text-[12px] md:text-[15px] '>
-                        <span className='text-[#34FF00] '>HOMEPAGE</span>
+                        <Link to="/">
+                            <span className='text-[#34FF00] '>HOMEPAGE</span>
+                        </Link>
                         <img src={arrow}/>
-                        <span className='text-[#34FF00] '>OUR STORY</span>
+                        <Link to="/story">
+                            <span className='text-[#34FF00] '>OUR STORY</span>
+                        </Link>
                         <img src={arrow}/>
                         <span className='text-[#FFFFFFBF] '>OUR SERVICES</span>
                     </p>
-                    <p className='font-bold text-[38px] md:text-[55px] py-7 font-[abril] text-[#F3ECDC]'>What Aradhya Infra Offers</p>
+                    <p className='font-bold text-[38px] md:text-[55px] py-7 font-[abril] text-[#E6FFFF]'>What Aradhya Infra Offers</p>
                     <p className='text-[12px] md:text-[15px] text-[#FFFFFFBF] '>Building dreams, creating communities”—that’s not just a tagline—it’s why Aradhya Infra exists.</p>
                 </div>
             </div>
         </div>
 
-        <div className='bg-[#F3ECDC] p-12 md:p-30 flex flex-wrap gap-6'>
+        <div className='bg-[#E6FFFF] p-12 md:p-30 flex flex-wrap gap-6'>
             <ServicesCard 
                 icon={icon01}
                 name="Pre-Launch Marketing"

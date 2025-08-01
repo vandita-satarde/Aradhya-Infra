@@ -21,7 +21,7 @@ function Home() {
   return (
     <div>
       <HeroSection />
-      <div className='bg-[#F3ECDC] min-h-screen p-12 md:p-12 lg:p-30 '>
+      <div className='bg-[#E6FFFF] min-h-screen p-12 md:p-12 lg:p-30 '>
       
               {/* Section 01 */}
               <div className='mb-140'>
@@ -42,14 +42,14 @@ function Home() {
                   </div>
       
                   <div className='absolute left-[355px] top-7 flex gap-3 ' >
-                    <div className=' bg-fuchsia-50 w-[310px]  p-3 rounded-2xl shadow-2xs '>
-                      <img src={image1} className='  rounded-2xl h-[210px] ' />                
+                    <div className=' bg-[#E6FFFF] w-[310px]  p-3 rounded-[30px] shadow-2xs '>
+                      <img src={image1} className='  rounded-[30px] h-[210px] ' />                
                     </div>
-                    <div className=' bg-fuchsia-50 w-[300px] p-3 rounded-2xl shadow-2xs '>
-                      <img src={image1} className='  rounded-2xl h-[210px] ' />                
+                    <div className=' bg-[#E6FFFF] w-[300px] p-3 rounded-[30px] shadow-2xs '>
+                      <img src={image1} className='  rounded-[30px] h-[210px] ' />                
                     </div>
-                    <div className=' bg-fuchsia-50 w-[300px] p-3 rounded-2xl shadow-2xs '>
-                      <img src={image1} className='  rounded-2xl h-[210px] ' />                
+                    <div className=' bg-[#E6FFFF] w-[300px] p-3 rounded-[30px] shadow-2xs '>
+                      <img src={image1} className='  rounded-[30px] h-[210px] ' />                
                     </div>
                   </div>
               </div>
@@ -57,9 +57,9 @@ function Home() {
       
               {/* Section 02 */}
               <div className='relative'>
-                  <img src={image1} className='absolute w-[400px] h-[500px] rounded-2xl ' />
-                  <div className='absolute top-30 left-55 bg-fuchsia-50  p-5 rounded-2xl '>
-                    <img src={image1} className=' w-[400px] h-[500px] rounded-2xl ' />            
+                  <img src={image1} className='absolute w-[400px] h-[500px] rounded-[30px] ' />
+                  <div className='absolute top-30 left-55 bg-[#E6FFFF]  p-5 rounded-[30px] '>
+                    <img src={image1} className=' w-[400px] h-[500px] rounded-[30px] ' />            
                   </div>
                   <div className='absolute top-100 left-20 bg-black text-white inline-block text-center p-6 rounded-4xl '>
                     <p className=' text-[50px] '>99</p>
@@ -79,12 +79,12 @@ function Home() {
                     <br/>
                     <div className=' font-bold text-[18px] '>
                       <div className=' flex items-center '>
-                        <img src={batch} className=' h-8 mr-5 ' />
+                        <img src={batch} className=' w-[27px] h-[35px] mr-5 ' />
                         <p>Local experts deeply rootes in Nagpur and surrounding areas.</p>
                       </div>
                       <br/>
                       <div className='flex justify-center items-center '>
-                        <img src={batch} className=' h-8 mr-5 ' />
+                        <img src={batch} className=' w-[27px] h-[35px] mr-5 ' />
                         <p>Focus on community-centric planning and future-ready infrastructure.</p>
                       </div>
                     </div>
@@ -94,14 +94,14 @@ function Home() {
       
                   <div className='mt-50 flex'>
                     <div className='flex'>
-                      <img src={batch} className=' h-8 mr-3' />
+                      <img src={batch} className=' w-[27px] h-[35px] mr-3' />
                       <div>
                         <p className='text-[24px] font-bold '>Vision</p>
                         <p className='text-[19px] '>"To deliver thoughtfully designed living spaces-built sustainably, driven by innovation, and grounded in trust-to elevate communities and lives across Central India."</p>
                       </div>
                     </div>
                     <div className='flex ml-25 '>
-                      <img src={batch} className=' h-8 mr-3' />
+                      <img src={batch} className=' w-[27px] h-[35px] mr-3' />
                       <div>
                         <p className='text-[24px] font-bold '>Mission</p>
                         <p className='text-[19px] '>"To become the leading regional developer known for modern architecture, green initiatives, and socially conscious township developments that foster strong neighborhood bonds."</p>

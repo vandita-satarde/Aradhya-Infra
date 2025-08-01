@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar'
 import GetStarted from '../components/GetStarted'
 import Footer from '../components/Footer'
@@ -14,17 +15,19 @@ function OurStory() {
               <Navbar />
               <div className='p-12 md:p-30'>
                 <p className='flex gap-3 md:gap-5 items-center text-[12px] md:text-[15px] '>
-                  <span className='text-[#34FF00] '>HOMEPAGE</span>
+                  <Link to="/">
+                    <span className='text-[#34FF00] '>HOMEPAGE</span>
+                  </Link>
                   <img src={arrow}/>
                   <span className='text-[#FFFFFFBF] '> OUR STORY</span>
                 </p>
-                <p className='font-bold text-[38px] md:text-[55px] py-7 font-[abril] text-[#F3ECDC]'>What Defines Our Journey</p>
+                <p className='font-bold text-[38px] md:text-[55px] py-7 font-[abril] text-[#E6FFFF]'>What Defines Our Journey</p>
                 <p className='text-[12px] md:text-[15px] text-[#FFFFFFBF] '>Building dreams, creating communities”—that’s not just a tagline—it’s why Aradhya Infra exists.</p>
               </div>
             </div>
     </div>
 
-    <div className=' bg-[#F3ECDC] p-12 md:p-30'>
+    <div className=' bg-[#E6FFFF] p-12 md:p-30'>
                     <p className='text-[12px] md:text-[15px] text-[#048886] '>OUR STORY</p>
                     <p className='text-[29px] md:text-[45px] text-[#2D2D2D] font-bold font-[abril] my-8'>Building dreams, creating communities”—that’s not just a tagline—it’s why Aradhya Infra exists.</p>
                     <p className=' text-[#6E6E6E] text-[16px] md:text-[18px] '>Rooted in Nagpur, committed to transparency, fueled by innovation, and motivated by community-first principle, we design homes that stand the test of time—where every address becomes a legacy.</p>

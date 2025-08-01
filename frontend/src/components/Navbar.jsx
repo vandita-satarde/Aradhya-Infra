@@ -37,9 +37,6 @@ function Navbar({ className = '' }) {
     {
       name: 'OUR PROJECTS',
       path: '/projects',
-      dropdown: [
-        { name: 'Project Details', path: '/project-details' },
-      ],
     },
   ];
 
@@ -65,12 +62,12 @@ function Navbar({ className = '' }) {
                   {link.name}
                 </Link>
                 {link.dropdown && (
-                  <div className="absolute left-0 mt-2 w-48 bg-white text-black rounded shadow-lg opacity-0 group-hover:opacity-100 group-hover:visible invisible transition-all duration-300 z-50">
+                  <div className="absolute left-0 mt-2 w-48 bg-gray-200 text-black rounded shadow-lg opacity-0 group-hover:opacity-100 group-hover:visible invisible transition-all duration-300 z-50">
                     {link.dropdown.map((sublink) => (
                       <Link
                         key={sublink.name}
                         to={sublink.path}
-                        className="block px-4 py-2 hover:bg-gray-100 text-sm"
+                        className="block px-4 py-2 hover:bg-gray-300 hover:rounded text-sm"
                       >
                         {sublink.name}
                       </Link>
@@ -84,7 +81,7 @@ function Navbar({ className = '' }) {
           {/* Contact Us button (desktop) */}
           <Link
             to="/contact"
-            className='hidden md:flex justify-center items-center gap-4 bg-[#F3ECDC] text-black text-[15px] w-[240px] h-[60px] rounded-[30px] hover:bg-[#e8dcc5] transition-colors duration-200'
+            className='hidden md:flex justify-center items-center gap-4 bg-[#E6FFFF] text-[#050810] text-[15px] w-[240px] h-[60px] rounded-[30px] hover:bg-[#e8dcc5] transition-colors duration-200'
           >
             <img src={contact} className='h-[29px] w-[29px]' alt="Contact" /> CONTACT US
           </Link>
@@ -135,7 +132,7 @@ function Navbar({ className = '' }) {
             <Link
               to="/contact"
               onClick={() => setMenuOpen(false)}
-              className="flex justify-center text-[12px] items-center gap-2 bg-[#F3ECDC] text-black text-sm w-full h-[40px] rounded-full mx-auto mt-2 hover:bg-[#e8dcc5] transition-colors duration-200"
+              className="flex justify-center text-[12px] items-center gap-2 bg-[#bdb8ad] text-black text-sm w-full h-[40px] rounded-full mx-auto mt-2 hover:bg-[#e8dcc5] transition-colors duration-200"
             >
               <img src={contact} className="h-[18px] w-[18px]" alt="contact" />
               CONTACT US

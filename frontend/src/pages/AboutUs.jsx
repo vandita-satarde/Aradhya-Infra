@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import Nintynine from '../components/nintynine'
 import Testimonials from '../components/Testimonials'
@@ -16,18 +17,20 @@ function AboutUs() {
           <Navbar />
           <div className=' p-12 md:p-30 text-[12px] md:text-[15px] '>
             <p className='flex gap-3 md:gap-5 items-center'>
-              <span className='text-[#34FF00] '>HOMEPAGE</span>
+              <Link to="/">
+                <span className='text-[#34FF00] '>HOMEPAGE</span>
+              </Link>
               <img src={arrow} />
               <span className='text-[#FFFFFFBF] '>ABOUT US</span>
             </p>
-            <p className='font-bold text-[38px] md:text-[55px] py-6 font-[abril] text-[#F3ECDC]'>Welcome to Nagpur</p>
+            <p className='font-bold text-[38px] md:text-[55px] py-6 font-[abril] text-[#E6FFFF]'>Welcome to Nagpur</p>
             <p className='text-[12px] md:text-[15px] text-[#FFFFFFBF] '>Aradhya Infra is deeply rooted in Nagpur, wiht a vision to build sustainable,<br/> community-oriented living across Central India.</p>
           </div>
         </div>
       </div>
 
 
-      <div className='relative  gap-10 bg-[#F3ECDC] p-10 md:p-30'>
+      <div className='relative  gap-10 bg-[#E6FFFF] p-10 md:p-30'>
                   <Nintynine />
 
                   <div className='mt-32 md:mt-60'>

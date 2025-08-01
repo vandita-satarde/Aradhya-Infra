@@ -8,8 +8,8 @@ import icon4 from '../assets/icons/p-icon4.png'
 function PropertyCard() {
   return (
     <>
-      <div className='w-full md:w-[1241px] mx-auto flex flex-col md:flex-row shadow-lg rounded-2xl overflow-hidden bg-[#f9f5ec] '>
-              <img src={image01} className=' md:w-[480px] md:h-[288px] rounded-2xl object-cover m-1' />
+      <div className='w-full md:w-[1241px] mx-auto flex flex-col md:flex-row  '>
+              <img src={image01} className=' md:w-[480px] md:h-[288px] rounded-[30px] object-cover m-1' />
               <div className='flex flex-col md:flex-row justify-between md:ml-10 gap-10 md:gap-32 w-full '>
                 <div className='text-[15px] text-[#048886] p-2'>
                   <p className='text-[22px]'>1 BHK</p>
@@ -33,10 +33,10 @@ function PropertyCard() {
                   </div>
                 </div>
 
-                <div className='flex flex-col md:items-end px-2'>
+                <div className='flex flex-col md:items-end'>
                   <p className='text-[18px] md:text-[23px] text-[#9C1E15] '>Rp. 500.000</p>
                   <p className='text-[9px] text-[#048886] '>Sq /meter</p>
-                  <button className='text-[16px] border border-[#9C9C9C] px-6 md:px-15 py-2 md:py-5 rounded-[98px] mt-5 md:mt-45 mb-2  '>View Details</button>
+                  <button className='text-[16px] border border-[#9C9C9C] px-6 md:px-15 py-2 md:py-5 rounded-[98px] mt-5 md:mt-45   '>View Details</button>
                 </div>
               </div>
             </div>
