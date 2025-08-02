@@ -146,7 +146,7 @@ function OurProjects() {
               <button
                 key={cat}
                 onClick={() => { setFilter(cat); setShowAll(false); }}
-                className={`border py-3 px-6 md:py-4 md:px-12 ${filter === cat ? 'bg-[#050810] text-[#F3ECDC]' : ''}`}
+                className={`border py-3 px-6 md:py-4 md:px-12 hover:bg-black hover:text-[#F3ECDC] transition duration-500 ease-in-out cursor-pointer ${filter === cat ? 'bg-[#050810] text-[#F3ECDC]' : ''}`}
               >
                 {cat.toUpperCase()}
               </button>
@@ -154,7 +154,7 @@ function OurProjects() {
           </div>
 
           {/* Cards */}
-          <div className='flex flex-wrap gap-3 md:gap-8 justify-center mt-12'>
+          <div className='flex flex-wrap gap-3 md:gap-8 mt-12'>
             {visibleProjects.map((project, index) => (
               <ProductCard key={index} {...project} />
             ))}

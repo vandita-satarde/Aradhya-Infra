@@ -92,7 +92,7 @@ const filteredProjects = allProjects.filter(project => {
       
               {/* Section 02 */}
               <div className='relative flex flex-col md:flex-row mt-30 md:mt-50 gap-10 '>
-                  <div className='absolute mx-9 md:mx-0 '>
+                  <div className='absolute mx-9 md:mx-0 '>`6`
                     <img src={image1} className=' w-[170px] md:w-[390px] h-[210px] md:h-[500px] object-cover rounded-[30px] ' />
                     <div className='absolute w-[170px] md:w-[390px] top-[50px] md:top-[110px] left-[60px] md:left-[195px] bg-[#F3ECDC] p-2 md:p-3.5 rounded-[30px] shadow-xl shadow-[#00000012] '>
                       <img src={image1} className=' h-[210px] md:h-[499px] rounded-[30px] object-cover ' />            
@@ -184,17 +184,17 @@ const filteredProjects = allProjects.filter(project => {
   <div className='flex flex-wrap gap-8 justify-center text-[13px] md:text-[17px]'>
     <button
       onClick={() => setFilter('all')}
-      className={`border py-3 px-6 md:py-4 md:px-12 ${filter === 'all' ? 'bg-black text-[#F3ECDC]' : ''}`}>
+      className={`border py-3 px-6 md:py-4 md:px-12 hover:bg-black hover:text-[#F3ECDC] transition duration-500 ease-in-out cursor-pointer ${filter === 'all' ? 'bg-black text-[#F3ECDC]' : ''}`}>
       ALL PROPERTIES
     </button>
     <button
       onClick={() => setFilter('commercial')}
-      className={`border py-3 px-6 md:py-4 md:px-12 ${filter === 'commercial' ? 'bg-black text-white' : ''}`}>
+      className={`border py-3 px-6 md:py-4 md:px-12 hover:bg-black hover:text-[#F3ECDC] transition duration-500 ease-in-out cursor-pointer ${filter === 'commercial' ? 'bg-black text-[#F3ECDC]' : ''}`}>
       COMMERCIAL
     </button>
     <button
       onClick={() => setFilter('residential')}
-      className={`border py-3 px-6 md:py-4 md:px-12 ${filter === 'residential' ? 'bg-black text-white' : ''}`}>
+      className={`border py-3 px-6 md:py-4 md:px-12 hover:bg-black hover:text-[#F3ECDC] transition duration-500 ease-in-out cursor-pointer ${filter === 'residential' ? 'bg-black text-[#F3ECDC]' : ''}`}>
       RESIDENTIAL
     </button>
   </div>

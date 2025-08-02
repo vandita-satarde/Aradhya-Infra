@@ -28,13 +28,13 @@ function ProductCard({ tag, image, name, location, area }) {
         <div className='flex flex-col sm:flex-row gap-3 md:gap-4 w-full'>
           <Link 
             to="/enquiry"
-            className='flex-1 py-2 md:py-3 px-4 md:px-6 bg-black text-[#F3ECDC] hover:bg-gray-800 transition-colors duration-300 rounded-md text-sm md:text-[15px] font-medium'
+            className='flex-1 py-2 md:p-3 md:py-3 md:px-4 md:px-6 bg-black text-[#F3ECDC] hover:bg-gray-800 transition-colors duration-300 rounded-md text-sm md:text-[15px] font-medium'
           >
             ENQUIRY
           </Link>
           <Link 
             to="/project-details"
-            className='flex-1 py-2 md:py-3 px-4 md:px-6 border border-black text-black hover:bg-black hover:text-[#F3ECDC] transition-colors duration-300 rounded-md text-sm md:text-[15px] font-medium text-center'
+            className='flex-1 py-2 md:p-3 md:py-3 md:px-4 md:px-6 border border-black text-black hover:bg-black hover:text-[#F3ECDC] transition-colors duration-300 rounded-md text-sm md:text-[15px] font-medium text-center'
           >
             VIEW DETAILS
           </Link>
