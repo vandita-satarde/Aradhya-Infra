@@ -92,7 +92,7 @@ const filteredProjects = allProjects.filter(project => {
       
               {/* Section 02 */}
               <div className='relative flex flex-col md:flex-row mt-30 md:mt-50 gap-10 '>
-                  <div className='absolute'>
+                  <div className='absolute mx-9 md:mx-0 '>
                     <img src={image1} className=' w-[170px] md:w-[390px] h-[210px] md:h-[500px] object-cover rounded-[30px] ' />
                     <div className='absolute w-[170px] md:w-[390px] top-[50px] md:top-[110px] left-[60px] md:left-[195px] bg-[#F3ECDC] p-2 md:p-3.5 rounded-[30px] shadow-xl shadow-[#00000012] '>
                       <img src={image1} className=' h-[210px] md:h-[499px] rounded-[30px] object-cover ' />            

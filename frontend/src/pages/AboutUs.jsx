@@ -12,7 +12,7 @@ import arrow from '../assets/icons/g-caret-right.png'
 function AboutUs() {
   return (
     <>
-      <div className="bg-cover bg-center h-[552px]" style={{ backgroundImage: `url(${image01})` }}>
+      <div className="bg-cover bg-center h-[523px]" style={{ backgroundImage: `url(${image01})` }}>
         <div className='pt-[100px]'>
           <Navbar />
           <div className=' p-12 md:p-30 text-[12px] md:text-[15px] '>
@@ -81,7 +81,7 @@ function AboutUs() {
                     <p className='text-[30px] sm:text-[36px] md:text-[45px] text-[#2D2D2D] font-bold font-[abril] '>Aradhya Infra<br/> Commitments that Defines Us</p>
 
                     <div className='flex flex-col sm:flex-row gap-20 mt-20 mx-2 md:mx-10 font-[abril]'>
-                      <div className=''>
+                      <div>
                         <p className='text-[30px] md:text-[35px] text-[#048886] font-extrabold '>01</p>
                         <p className='text-[20px] md:text-[23px] text-[#2D2D2D] font-extrabold mt-4 mb-3'>Local Insight</p>
                         <p className='text-[16px] md:text-[18px] text-[#6E6E6E] font-sans'>We understand the region’s climate, culture, and expectations.</p>
