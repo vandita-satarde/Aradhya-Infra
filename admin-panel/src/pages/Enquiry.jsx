@@ -23,7 +23,7 @@ function Enquiry() {
     <div className="flex">
       <Sidebar />
       <div className=" pt-23 md:pt-8 md:ml-64 p-8 w-full min-h-screen bg-gray-100">
-        <h2 className="text-[21px] sm:text-3xl font-bold mb-4 md:mb-10 text-[#048886]">Enquiry</h2>
+        <h2 className="text-[21px] sm:text-3xl font-bold mb-4 md:mb-10 text-[#048886]">Enquiries</h2>
 
         <div className="space-y-6 text-[14px] md:text-[16px] ">
           {entries.map((entry) => (

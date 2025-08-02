@@ -133,9 +133,9 @@ const Dashboard = () => {
                     <button type="button" onClick={() => addListItem('sonderStandard')} className="text-blue-500 text-sm">+ Add Standard</button>
                   </div>
 
-                  <div className="flex gap-4 mt-4">
-                    <button onClick={() => handleUpdate(project._id)} className="bg-green-500 text-white px-4 py-2 rounded">Save</button>
-                    <button onClick={() => setEditingProject(null)} className="bg-gray-400 text-white px-4 py-2 rounded">Cancel</button>
+                  <div className="flex gap-4 mt-4 text-[14px] md:text-[16px]">
+                    <button onClick={() => handleUpdate(project._id)} className="bg-green-500 text-white px-2 md:px-4 py-1 md:py-2 rounded">Save</button>
+                    <button onClick={() => setEditingProject(null)} className="bg-gray-400 text-white px-2 md:px-4 py-1 md:py-2 rounded">Cancel</button>
                   </div>
                 </>
               ) : (
