@@ -57,7 +57,7 @@ const filteredProjects = allProjects.filter(project => {
   return (
     <div>
       <HeroSection />
-      <div className='bg-[#E6FFFF] min-h-screen p-12 lg:p-25 '>
+      <div className='bg-[#F3ECDC] min-h-screen p-12 lg:p-25 '>
       
               {/* Section 01 */}
               <div className='mb-30'>
@@ -70,20 +70,20 @@ const filteredProjects = allProjects.filter(project => {
               </div>
               <br/><br/>
               <div className=' flex relative flex-col lg:flex-row -mt-5 '>
-                  <div className=' relative w-full lg:w-[417px] h-auto lg:h-[305px] rounded-4xl p-6 md:py-8 md:px-12 pr-4 md:pr-40 bg-[#041E1F] text-[#FFFFFFBF] '>
+                  <div className=' relative w-full lg:w-[417px] h-auto lg:h-[305px] rounded-4xl p-6 md:py-8 md:px-12 pr-4 md:pr-40 bg-black text-[#FFFFFFBF] '>
                     <FaQuoteLeft className='w-[30px] h-[35px] md:w-[40px] md:h-[45px] text-[#DADADA] mb-4 ' />
                     <p className='italic text-[22px] mb-3'>“Layanan apartemen paling terbaik di Indonesia, suka banget.. “</p>
-                    <span className=' font-bold text-[25px] text-[#E6FFFF] font-[abril] '>Nikhil Bawane</span>
+                    <span className=' font-bold text-[25px] text-[#F3ECDC] font-[abril] '>Nikhil Bawane</span>
                   </div>
       
                   <div className='md:absolute left-[320px] top-9 flex flex-col sm:flex-row gap-3 mt-6 lg:mt-0 ' >
-                    <div className=' bg-[#E6FFFF] w-full sm:w-[310px]  p-3 rounded-[30px] shadow-sm shaadow-[#00000012] '>
+                    <div className=' bg-[#F3ECDC] w-full sm:w-[310px]  p-3 rounded-[30px] shadow-sm shaadow-[#00000012] '>
                       <img src={image1} className='  rounded-[30px] h-[210px] w-full object-cover ' />                
                     </div>
-                    <div className=' bg-[#E6FFFF] w-full sm:w-[300px] p-3 rounded-[30px] shadow-sm shaadow-[#00000012] '>
+                    <div className=' bg-[#F3ECDC] w-full sm:w-[300px] p-3 rounded-[30px] shadow-sm shaadow-[#00000012] '>
                       <img src={image1} className='  rounded-[30px] h-[210px] w-full object-cover ' />                
                     </div>
-                    <div className=' bg-[#E6FFFF] w-full sm:w-[300px] p-3 rounded-[30px] shadow-sm shaadow-[#00000012] '>
+                    <div className=' bg-[#F3ECDC] w-full sm:w-[300px] p-3 rounded-[30px] shadow-sm shaadow-[#00000012] '>
                       <img src={image1} className='  rounded-[30px] h-[210px] w-full object-cover ' />                
                     </div>
                   </div>
@@ -94,15 +94,15 @@ const filteredProjects = allProjects.filter(project => {
               <div className='relative flex flex-col md:flex-row mt-30 md:mt-50 gap-10 '>
                   <div className='absolute'>
                     <img src={image1} className=' w-[170px] md:w-[390px] h-[210px] md:h-[500px] object-cover rounded-[30px] ' />
-                    <div className='absolute w-[170px] md:w-[390px] top-[50px] md:top-[110px] left-[60px] md:left-[195px] bg-[#E6FFFF] p-2 md:p-3.5 rounded-[30px] shadow-xl shadow-[#00000012] '>
+                    <div className='absolute w-[170px] md:w-[390px] top-[50px] md:top-[110px] left-[60px] md:left-[195px] bg-[#F3ECDC] p-2 md:p-3.5 rounded-[30px] shadow-xl shadow-[#00000012] '>
                       <img src={image1} className=' h-[210px] md:h-[499px] rounded-[30px] object-cover ' />            
                     </div>
-                    <div className='absolute w-[120px] md:w-[234px] h-[60px] md:h-[149px] top-[170px] md:top-[395px] left-[10px] md:left-[55px] bg-[#041E1F] text-white inline-block text-center p-4 rounded-4xl object-cover '>
+                    <div className='absolute w-[120px] md:w-[234px] h-[60px] md:h-[149px] top-[170px] md:top-[395px] left-[10px] md:left-[55px] bg-black text-white inline-block text-center p-[6px] md:p-4 rounded-4xl object-cover '>
                       <p className='relative  text-[20px] md:text-[50px] text-[#A3B18A] '>
                         99
-                        <p className='absolute top-1.5 left-32 text-[18px] font-[abril] '>%</p>  
+                        <p className='absolute top-0.5 md:top-1.5 left-16 md:left-32 text-[8px] md:text-[18px] font-[abril] '>%</p>  
                       </p>
-                      <p className='font-[abril] font-bold text-[10px] md:text-[23px] text-[#E6FFFF] '>Customer Support</p>
+                      <p className='font-[abril] font-bold text-[10px] md:text-[23px] text-[#F3ECDC] '>Customer Support</p>
                     </div>
                   </div>
       
@@ -126,7 +126,7 @@ const filteredProjects = allProjects.filter(project => {
                     </div>
                     <br/><br/>
                     <a href='/about'>
-                      <button className=' bg-[#048886] text-[#E6FFFF] text-[12px] md:text-[15px] py-3 md:py-5 px-8 md:px-14 rounded-4xl '>MORE ABOUT US →</button>
+                      <button className=' bg-[#048886] text-[#F3ECDC] text-[12px] md:text-[15px] py-3 md:py-5 px-8 md:px-14 rounded-4xl '>MORE ABOUT US →</button>
                     </a>
                   </div>
               </div>
@@ -184,7 +184,7 @@ const filteredProjects = allProjects.filter(project => {
   <div className='flex flex-wrap gap-8 justify-center text-[13px] md:text-[17px]'>
     <button
       onClick={() => setFilter('all')}
-      className={`border py-3 px-6 md:py-4 md:px-12 ${filter === 'all' ? 'bg-[#041E1F] text-[#E6FFFF]' : ''}`}>
+      className={`border py-3 px-6 md:py-4 md:px-12 ${filter === 'all' ? 'bg-black text-[#F3ECDC]' : ''}`}>
       ALL PROPERTIES
     </button>
     <button

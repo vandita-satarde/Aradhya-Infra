@@ -7,15 +7,15 @@ function nintynine() {
     <>
       <div className='absolute'>
                           <img src={image1} className=' w-[170px] md:w-[390px] h-[210px] md:h-[500px] object-cover rounded-[30px] ' />
-                          <div className='absolute w-[170px] md:w-[390px] top-[50px] md:top-[110px] left-[60px] md:left-[195px] bg-[#E6FFFF] p-2 md:p-3.5 rounded-[30px] shadow-xl shadow-[#00000012] '>
+                          <div className='absolute w-[170px] md:w-[390px] top-[50px] md:top-[110px] left-[60px] md:left-[195px] bg-[#F3ECDC] p-2 md:p-3.5 rounded-[30px] shadow-xl shadow-[#00000012] '>
                             <img src={image1} className=' h-[210px] md:h-[499px] rounded-[30px] object-cover ' />            
                           </div>
-                          <div className='absolute w-[120px] md:w-[234px] h-[60px] md:h-[149px] top-[170px] md:top-[395px] left-[10px] md:left-[55px] bg-[#041E1F] text-white inline-block text-center p-4 rounded-4xl object-cover '>
+                          <div className='absolute w-[120px] md:w-[234px] h-[60px] md:h-[149px] top-[170px] md:top-[395px] left-[10px] md:left-[55px] bg-black text-white inline-block text-center p-4 rounded-4xl object-cover '>
                             <p className='relative  text-[20px] md:text-[50px] text-[#A3B18A] '>
                               99
                               <p className='absolute top-1.5 left-32 text-[18px] font-[abril] '>%</p>  
                             </p>
-                            <p className='font-[abril] font-bold text-[10px] md:text-[23px] text-[#E6FFFF] '>Customer Support</p>
+                            <p className='font-[abril] font-bold text-[10px] md:text-[23px] text-[#F3ECDC] '>Customer Support</p>
                           </div>
                         </div>
             
@@ -39,7 +39,7 @@ function nintynine() {
                           </div>
                           <br/><br/>
                           <a href='/about'>
-                            <button className=' bg-[#048886] text-[#E6FFFF] text-[12px] md:text-[15px] py-3 md:py-5 px-8 md:px-14 rounded-4xl '>MORE ABOUT US →</button>
+                            <button className=' bg-[#048886] text-[#F3ECDC] text-[12px] md:text-[15px] py-3 md:py-5 px-8 md:px-14 rounded-4xl '>MORE ABOUT US →</button>
                           </a>
                         </div>
       

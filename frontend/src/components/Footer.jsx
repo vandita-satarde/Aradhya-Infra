@@ -13,7 +13,7 @@ import icon03 from '../assets/icons/phone-square.png'
 
 function Footer() {
   return (
-    <div className='bg-[#041E1F] font-sans px-4 md:px-8 lg:px-12 xl:px-30 pt-8 md:pt-10'>
+    <div className='bg-black font-sans px-4 md:px-8 lg:px-12 xl:px-30 pt-8 md:pt-10'>
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 lg:gap-16 mb-12 md:mb-20 lg:mb-25'>
         
         {/* Company Info */}
@@ -32,7 +32,7 @@ function Footer() {
 
         {/* Quick Links */}
         <div className='lg:col-span-1'>
-          <h3 className='font-bold font-[abril] text-[#E6FFFF] text-lg md:text-xl lg:text-[25px] mb-4 md:mb-6'>Quick Links</h3>
+          <h3 className='font-bold font-[abril] text-[#F3ECDC] text-lg md:text-xl lg:text-[25px] mb-4 md:mb-6'>Quick Links</h3>
           <div className='flex flex-col gap-3 md:gap-4 lg:gap-5 text-sm md:text-base lg:text-[18px] text-[#FFFFFFBF]'>
             <Link to="/" className='flex items-center gap-3 md:gap-4 hover:text-white transition-colors duration-200'>
               <img src={arrow} alt="arrow" /> Home
@@ -51,7 +51,7 @@ function Footer() {
 
         {/* Contact Info */}
         <div className='lg:col-span-1'>
-          <h3 className='font-bold text-[#E6FFFF] font-[abril] text-lg md:text-xl lg:text-[25px] mb-4 md:mb-6'>Location, Contact</h3>
+          <h3 className='font-bold text-[#F3ECDC] font-[abril] text-lg md:text-xl lg:text-[25px] mb-4 md:mb-6'>Location, Contact</h3>
           <div className='flex flex-col gap-3 md:gap-4 lg:gap-5 text-sm md:text-base lg:text-[18px] text-[#FFFFFFBF]'>
             <div className='flex items-center gap-3 md:gap-4'>
               <img src={icon01} alt="location" /> 
@@ -70,7 +70,7 @@ function Footer() {
 
         {/* Other Links */}
         <div className='lg:col-span-1'>
-          <h3 className='font-bold text-[#E6FFFF] font-[abril] text-lg md:text-xl lg:text-[25px] mb-4 md:mb-6'>Other Links</h3>
+          <h3 className='font-bold text-[#F3ECDC] font-[abril] text-lg md:text-xl lg:text-[25px] mb-4 md:mb-6'>Other Links</h3>
           <div className='flex flex-col gap-3 md:gap-4 lg:gap-5 text-sm md:text-base lg:text-[18px] text-[#FFFFFFBF]'>
             <div className='flex items-center gap-3 md:gap-4 cursor-pointer hover:text-white transition-colors duration-200'>
               <img src={arrow} alt="arrow" /> Terms & Conditions
@@ -86,7 +86,7 @@ function Footer() {
       </div>
 
       <hr className='border-gray-600'/>
-      <p className='py-6 md:py-8 text-xs md:text-sm lg:text-[15px] text-center font-semibold text-[#E6FFFF]'>
+      <p className='py-6 md:py-8 text-xs md:text-sm lg:text-[15px] text-center font-semibold text-[#F3ECDC]'>
         @COPYRIGHT ALL RIGHTS RESERVED
       </p>
     </div>

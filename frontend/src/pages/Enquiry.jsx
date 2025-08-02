@@ -48,11 +48,11 @@ const Enquiry = () => {
 
   return (
     <>
-    <div className='bg-[#041E1F] h-[100px] md:h-[130px] '></div>
+    <div className='bg-black h-[100px] md:h-[130px] '></div>
     <Navbar />
     <div className="min-h-screen bg-[#F9F9F9]  py-16 px-6 flex items-center justify-center">
       <div className="max-w-2xl w-full bg-[#F9F9F9]  p-10 rounded-[30px] shadow-2xl border border-gray-200">
-        <h2 className="text-[#041E1F] text-[20px] md:text-[35px] font-[abril] font-bold mb-8 text-center tracking-wide">
+        <h2 className="text-black text-[20px] md:text-[35px] font-[abril] font-bold mb-8 text-center tracking-wide">
           Get in Touch – Enquiry Form
         </h2>
 
@@ -130,7 +130,7 @@ const Enquiry = () => {
           <div className="text-center">
             <button
               type="submit"
-              className="bg-[#041E1F] text-[#E6FFFF]  px-6 py-3 rounded-xl hover:bg-teal-700 transition-all duration-300"
+              className="bg-black text-[#F3ECDC]  px-6 py-3 rounded-xl hover:bg-teal-700 transition-all duration-300"
             >
               Submit Enquiry
             </button>

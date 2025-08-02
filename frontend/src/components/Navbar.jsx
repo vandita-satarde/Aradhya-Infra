@@ -81,7 +81,7 @@ function Navbar({ className = '' }) {
           {/* Contact Us button (desktop) */}
           <Link
             to="/contact"
-            className='hidden md:flex justify-center items-center gap-4 bg-[#E6FFFF] text-[#050810] text-[15px] w-[240px] h-[60px] rounded-[30px] hover:bg-[#e8dcc5] transition-colors duration-200'
+            className='hidden md:flex justify-center items-center gap-4 bg-[#F3ECDC] text-[#050810] text-[15px] w-[240px] h-[60px] rounded-[30px] hover:bg-[#e8dcc5] transition-colors duration-200'
           >
             <img src={contact} className='h-[29px] w-[29px]' alt="Contact" /> CONTACT US
           </Link>

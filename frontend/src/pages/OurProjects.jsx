@@ -118,16 +118,16 @@ function OurProjects() {
                 <img src={arrow} />
                 <span className='text-[#FFFFFFBF]'> OUR PROJECTS</span>
               </p>
-              <p className='font-bold text-[38px] md:text-[55px] py-7 font-[abril] text-[#E6FFFF]'>List Of Your Dreams</p>
+              <p className='font-bold text-[38px] md:text-[55px] py-7 font-[abril] text-[#F3ECDC]'>List Of Your Dreams</p>
               <p className='text-[12px] md:text-[15px] text-[#FFFFFFBF]'>Crafting spaces that reflect our values—design, sustainability, and community.</p>
             </div>
           </div>
         </div>
 
         {/* Map Section */}
-        <div className='flex flex-col items-center bg-[#E6FFFF] pb-8 md:pb-25'>
+        <div className='flex flex-col items-center bg-[#F3ECDC] pb-8 md:pb-25'>
             <p className='text-[22px] md:text-[55px] text-[#048886] font-bold font-[abril] my-5 md:my-8'>Location</p>
-            <div className='bg-[#E6FFFF] p-1 md:p-4 rounded-4xl shadow-lg'>
+            <div className='bg-[#F3ECDC] p-1 md:p-4 rounded-4xl shadow-lg'>
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3721.3107336364287!2d79.05486597503466!3d21.140028780537307!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4c16fe7f30a71%3A0x96d1eb35911d1226!2sTARS%20Technologies!5e0!3m2!1sen!2sin!4v1753256633156!5m2!1sen!2sin" 
                     className='w-[270px] md:w-[1289px] md:h-[460px] rounded-4xl'
                     allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">            
@@ -146,7 +146,7 @@ function OurProjects() {
               <button
                 key={cat}
                 onClick={() => { setFilter(cat); setShowAll(false); }}
-                className={`border py-3 px-6 md:py-4 md:px-12 ${filter === cat ? 'bg-[#050810] text-[#E6FFFF]' : ''}`}
+                className={`border py-3 px-6 md:py-4 md:px-12 ${filter === cat ? 'bg-[#050810] text-[#F3ECDC]' : ''}`}
               >
                 {cat.toUpperCase()}
               </button>
@@ -164,7 +164,7 @@ function OurProjects() {
           {filteredProjects.length > 6 && (
             <button
               onClick={toggleView}
-              className='bg-[#048886] text-[12px] md:text-[15px] text-[#E6FFFF] my-7 md:my-15 py-2 md:py-4 px-6 md:px-10 rounded-4xl'
+              className='bg-[#048886] text-[12px] md:text-[15px] text-[#F3ECDC] my-7 md:my-15 py-2 md:py-4 px-6 md:px-10 rounded-4xl'
             >
               {showAll ? 'VIEW LESS PROJECTS' : 'VIEW MORE PROJECTS'}
             </button>

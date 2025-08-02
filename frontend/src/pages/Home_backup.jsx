@@ -21,7 +21,7 @@ function Home() {
   return (
     <div>
       <HeroSection />
-      <div className='bg-[#E6FFFF] min-h-screen p-12 md:p-12 lg:p-30 '>
+      <div className='bg-[#F3ECDC] min-h-screen p-12 md:p-12 lg:p-30 '>
       
               {/* Section 01 */}
               <div className='mb-140'>
@@ -42,13 +42,13 @@ function Home() {
                   </div>
       
                   <div className='absolute left-[355px] top-7 flex gap-3 ' >
-                    <div className=' bg-[#E6FFFF] w-[310px]  p-3 rounded-[30px] shadow-2xs '>
+                    <div className=' bg-[#F3ECDC] w-[310px]  p-3 rounded-[30px] shadow-2xs '>
                       <img src={image1} className='  rounded-[30px] h-[210px] ' />                
                     </div>
-                    <div className=' bg-[#E6FFFF] w-[300px] p-3 rounded-[30px] shadow-2xs '>
+                    <div className=' bg-[#F3ECDC] w-[300px] p-3 rounded-[30px] shadow-2xs '>
                       <img src={image1} className='  rounded-[30px] h-[210px] ' />                
                     </div>
-                    <div className=' bg-[#E6FFFF] w-[300px] p-3 rounded-[30px] shadow-2xs '>
+                    <div className=' bg-[#F3ECDC] w-[300px] p-3 rounded-[30px] shadow-2xs '>
                       <img src={image1} className='  rounded-[30px] h-[210px] ' />                
                     </div>
                   </div>
@@ -58,7 +58,7 @@ function Home() {
               {/* Section 02 */}
               <div className='relative'>
                   <img src={image1} className='absolute w-[400px] h-[500px] rounded-[30px] ' />
-                  <div className='absolute top-30 left-55 bg-[#E6FFFF]  p-5 rounded-[30px] '>
+                  <div className='absolute top-30 left-55 bg-[#F3ECDC]  p-5 rounded-[30px] '>
                     <img src={image1} className=' w-[400px] h-[500px] rounded-[30px] ' />            
                   </div>
                   <div className='absolute top-100 left-20 bg-black text-white inline-block text-center p-6 rounded-4xl '>

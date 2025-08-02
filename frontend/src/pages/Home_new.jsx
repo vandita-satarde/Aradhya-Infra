@@ -20,7 +20,7 @@ function Home() {
   return (
     <div>
       <HeroSection />
-      <div className='bg-[#E6FFFF] min-h-screen p-4 md:p-8 lg:p-12 xl:p-30'>
+      <div className='bg-[#F3ECDC] min-h-screen p-4 md:p-8 lg:p-12 xl:p-30'>
       
         {/* Section 01 - Luxurious Projects */}
         <div className='mb-20 md:mb-32 lg:mb-40'>

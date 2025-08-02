@@ -40,7 +40,7 @@ function HeroSection() {
           
         </div> */}
 
-            <div className='flex flex-col md:flex-row justify-around text-[#E6FFFF] font-[abril] font-bold gap-10 px-6 text-center'>
+            <div className='flex flex-col md:flex-row justify-around text-[#F3ECDC] font-[abril] font-bold gap-10 px-6 text-center'>
                 <div>
                     <p className='text-[30px] md:text-[45px]'>07</p>
                     <p className='text-[15px] md:text-[21px]'>YEARS OF LEGACY</p>

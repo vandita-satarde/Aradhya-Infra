@@ -21,7 +21,7 @@ function Home() {
   return (
     <div>
       <HeroSection />
-      <div className='bg-[#E6FFFF] min-h-screen p-4 md:p-8 lg:p-12 xl:p-30'>
+      <div className='bg-[#F3ECDC] min-h-screen p-4 md:p-8 lg:p-12 xl:p-30'>
       
               {/* Section 01 */}
               <div className='mb-20 md:mb-40 lg:mb-140'>
@@ -42,14 +42,14 @@ function Home() {
                   </div>
       
                   <div className='flex flex-col lg:flex-row gap-3 lg:absolute lg:left-[355px] lg:top-7'>
-                    <div className='bg-[#E6FFFF] w-full lg:w-[310px] p-3 rounded-[30px] shadow-2xs'>
+                    <div className='bg-[#F3ECDC] w-full lg:w-[310px] p-3 rounded-[30px] shadow-2xs'>
                       <img src={image1} className='w-full rounded-[30px] h-[210px] object-cover' />                
                     </div>
-                    <div className='bg-[#E6FFFF] w-full lg:w-[300px] p-3 rounded-[30px] shadow-2xs'>
+                    <div className='bg-[#F3ECDC] w-full lg:w-[300px] p-3 rounded-[30px] shadow-2xs'>
                       <img src={image1} className='w-full rounded-[30px] h-[210px] object-cover' />                
                     </div>                
                     </div>
-                    <div className=' bg-[#E6FFFF] w-[300px] p-3 rounded-[30px] shadow-2xs '>
+                    <div className=' bg-[#F3ECDC] w-[300px] p-3 rounded-[30px] shadow-2xs '>
                       <img src={image1} className='  rounded-[30px] h-[210px] ' />                
                     </div>
                   </div>
@@ -59,7 +59,7 @@ function Home() {
               {/* Section 02 */}
               <div className='relative'>
                   <img src={image1} className='absolute w-[400px] h-[500px] rounded-[30px] ' />
-                  <div className='absolute top-30 left-55 bg-[#E6FFFF]  p-5 rounded-[30px] '>
+                  <div className='absolute top-30 left-55 bg-[#F3ECDC]  p-5 rounded-[30px] '>
                     <img src={image1} className=' w-[400px] h-[500px] rounded-[30px] ' />            
                   </div>
                   <div className='absolute top-100 left-20 bg-black text-white inline-block text-center p-6 rounded-4xl '>

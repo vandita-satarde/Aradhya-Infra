@@ -34,13 +34,13 @@ function OurServices() {
                         <img src={arrow}/>
                         <span className='text-[#FFFFFFBF] '>OUR SERVICES</span>
                     </p>
-                    <p className='font-bold text-[38px] md:text-[55px] py-7 font-[abril] text-[#E6FFFF]'>What Aradhya Infra Offers</p>
+                    <p className='font-bold text-[38px] md:text-[55px] py-7 font-[abril] text-[#F3ECDC]'>What Aradhya Infra Offers</p>
                     <p className='text-[12px] md:text-[15px] text-[#FFFFFFBF] '>Building dreams, creating communities”—that’s not just a tagline—it’s why Aradhya Infra exists.</p>
                 </div>
             </div>
         </div>
 
-        <div className='bg-[#E6FFFF] p-12 md:p-30 flex flex-wrap gap-6'>
+        <div className='bg-[#F3ECDC] p-12 md:p-30 flex flex-wrap gap-6'>
             <ServicesCard 
                 icon={icon01}
                 name="Pre-Launch Marketing"

@@ -85,7 +85,7 @@ function Ourprojects() {
   return (
     <div className="flex">
       <Sidebar />
-      <div className="ml-64 p-8 w-full min-h-screen bg-[#E6FFFF]">
+      <div className="ml-64 p-8 w-full min-h-screen bg-[#F3ECDC]">
         <h2 className="text-3xl font-bold mb-8 text-[#048886]">Add Project</h2>
         <form onSubmit={handleSubmit} className="bg-[#f3efe7] w-[900px] p-6 rounded shadow-md space-y-4">
 

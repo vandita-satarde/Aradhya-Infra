@@ -50,7 +50,7 @@ function Nintynine() {
         
         <Link 
           to="/about" 
-          className='inline-block bg-[#048886] hover:bg-[#036d6b] font-sans text-[#E6FFFF] text-sm md:text-[15px] py-3 md:py-4 lg:py-5 px-8 md:px-12 lg:px-14 rounded-[30px] lg:rounded-4xl transition-colors duration-300 font-medium'
+          className='inline-block bg-[#048886] hover:bg-[#036d6b] font-sans text-[#F3ECDC] text-sm md:text-[15px] py-3 md:py-4 lg:py-5 px-8 md:px-12 lg:px-14 rounded-[30px] lg:rounded-4xl transition-colors duration-300 font-medium'
         >
           MORE ABOUT US →
         </Link>

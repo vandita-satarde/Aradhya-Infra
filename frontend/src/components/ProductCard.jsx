@@ -21,20 +21,20 @@ function ProductCard({ tag, image, name, location, area }) {
         <p className='font-semibold text-sm md:text-base lg:text-[18px] mb-3 md:mb-4 text-gray-800'>{area}</p>
         
         <div className='flex flex-wrap gap-2 mb-4 md:mb-6'>
-          <span className='bg-[#E6FFFF] text-[#050810] px-3 py-1 rounded-full text-xs md:text-sm'>Retail</span>
-          <span className='bg-[#E6FFFF] text-[#050810] px-3 py-1 rounded-full text-xs md:text-sm'>Office Space</span>
+          <span className='bg-[#F3ECDC] text-[#050810] px-3 py-1 rounded-full text-xs md:text-sm'>Retail</span>
+          <span className='bg-[#F3ECDC] text-[#050810] px-3 py-1 rounded-full text-xs md:text-sm'>Office Space</span>
         </div>
         
         <div className='flex flex-col sm:flex-row gap-3 md:gap-4 w-full'>
           <Link 
             to="/enquiry"
-            className='flex-1 py-2 md:py-3 px-4 md:px-6 bg-[#041E1F] text-[#E6FFFF] hover:bg-gray-800 transition-colors duration-300 rounded-md text-sm md:text-[15px] font-medium'
+            className='flex-1 py-2 md:py-3 px-4 md:px-6 bg-black text-[#F3ECDC] hover:bg-gray-800 transition-colors duration-300 rounded-md text-sm md:text-[15px] font-medium'
           >
             ENQUIRY
           </Link>
           <Link 
             to="/project-details"
-            className='flex-1 py-2 md:py-3 px-4 md:px-6 border border-[#041E1F] text-[#041E1F] hover:bg-[#041E1F] hover:text-[#E6FFFF] transition-colors duration-300 rounded-md text-sm md:text-[15px] font-medium text-center'
+            className='flex-1 py-2 md:py-3 px-4 md:px-6 border border-black text-black hover:bg-black hover:text-[#F3ECDC] transition-colors duration-300 rounded-md text-sm md:text-[15px] font-medium text-center'
           >
             VIEW DETAILS
           </Link>

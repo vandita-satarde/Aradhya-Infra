@@ -18,7 +18,7 @@ function Testimonials() {
           
           <div className='flex flex-col md:flex-row gap-6 md:gap-8'>
             {/* Image */}
-            <div className='bg-[#E6FFFF] w-full md:w-[300px] lg:w-[380px] p-3 rounded-[20px] md:rounded-[30px] mx-auto md:mx-0'>
+            <div className='bg-[#F3ECDC] w-full md:w-[300px] lg:w-[380px] p-3 rounded-[20px] md:rounded-[30px] mx-auto md:mx-0'>
               <img src={image01} className='w-full h-[250px] md:h-[300px] lg:h-[350px] rounded-[20px] md:rounded-[30px] object-cover' alt="testimonial" />
             </div>
             

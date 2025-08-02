@@ -44,13 +44,13 @@ function ContactUs() {
                     <Navbar />
                     <div className='p-12 md:p-30'>
                         <p className='flex gap-5 items-center text-[12px] md:text-[15px] '><span className='text-[#34FF00] '>HOMEPAGE</span> <img src={arrow} /><span className='text-[#FFFFFFBF] '>CONTACT US</span></p>
-                        <p className='font-bold text-[38px] md:text-[55px] py-7 font-[abril] text-[#E6FFFF]'>Reach Out <span className='text-[#048886] '>Anytime</span></p>
+                        <p className='font-bold text-[38px] md:text-[55px] py-7 font-[abril] text-[#F3ECDC]'>Reach Out <span className='text-[#048886] '>Anytime</span></p>
                         <p className='text-[12px] md:text-[15px] text-[#FFFFFFBF] '>Get in touch with our team for expert guidance on your next property move.</p>
                     </div>
                 </div>
             </div>
 
-            <div className='bg-[#E6FFFF] px-6 md:px-10 lg:px-30 pt-10 md:pt-30 pb-10 md:pb-14'>
+            <div className='bg-[#F3ECDC] px-6 md:px-10 lg:px-30 pt-10 md:pt-30 pb-10 md:pb-14'>
                 <div className='flex flex-col lg:flex-row gap-10 mx-auto '>
                     <div className='w-full lg:w-1/2 md:h-[747px] p-6 md:p-[50px] bg-[#F9F9F9] rounded-[30px] shadow-xl '>
                         <p className='text-[20px] md:text-[35px] font-[abril] font-bold'>Contact Us</p>
@@ -140,7 +140,7 @@ function ContactUs() {
                 </div>
             </div>
             <hr />
-            <div className='bg-[#E6FFFF] px-3 md:px-10 lg:px-30 pt-10 md:pt-14 pb-10 md:pb-25'>
+            <div className='bg-[#F3ECDC] px-3 md:px-10 lg:px-30 pt-10 md:pt-14 pb-10 md:pb-25'>
                 <img src={image01} className=' w-full md:w-[1240px] h-[100px] md:h-[350px] rounded-[30px] ' />
             </div>
             <Footer />

@@ -3,7 +3,7 @@ import image01 from '../assets/image-0.jpg'
 
 function Gallery() {
   return (
-    <div className='text-center bg-[#E6FFFF] py-12 md:py-20 lg:py-30 px-4 md:px-8 lg:px-12'>
+    <div className='text-center bg-[#F3ECDC] py-12 md:py-20 lg:py-30 px-4 md:px-8 lg:px-12'>
       <p className='mb-4 md:mb-5 text-[#048886] text-sm md:text-[15px] font-medium'>GALLERY</p>
       <h2 className='text-2xl md:text-3xl lg:text-4xl xl:text-[50px] text-[#2D2D2D] font-[abril] font-bold mb-8 md:mb-12 lg:mb-16'>
         Our Fabulous Projects
