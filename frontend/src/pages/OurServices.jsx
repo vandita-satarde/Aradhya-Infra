@@ -15,7 +15,6 @@ import icon03 from '../assets/icons/icon-03.png'
 import icon04 from '../assets/icons/icon-04.png'
 import icon05 from '../assets/icons/icon-05.png'
 import icon06 from '../assets/icons/icon-06.png'
-import { i } from 'framer-motion'
 
 function OurServices() {
   return (
