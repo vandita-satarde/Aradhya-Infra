@@ -5,7 +5,7 @@ import Login from './pages/Login'
 import Register from './pages/Register'
 import Dashboard from './pages/Dashboard'
 import Ourprojects from './pages/Ourprojects'
-import ContactUs from './pages/ContactUs'
+import ContactUs from './pages/Contactus'
 import Enquiry from './pages/Enquiry'
 
 function App() {
