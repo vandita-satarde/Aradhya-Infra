@@ -85,9 +85,9 @@ function Ourprojects() {
   return (
     <div className="flex">
       <Sidebar />
-      <div className="ml-64 p-8 w-full min-h-screen bg-[#F3ECDC]">
-        <h2 className="text-3xl font-bold mb-8 text-[#048886]">Add Project</h2>
-        <form onSubmit={handleSubmit} className="bg-[#f3efe7] w-[900px] p-6 rounded shadow-md space-y-4">
+      <div className="pt-23 md:pt-8 md:ml-64 p-8 w-full min-h-screen bg-gray-100">
+        <h2 className="text-[21px] sm:text-3xl font-bold mb-4 md:mb-10 text-[#048886]">Add Project</h2>
+        <form onSubmit={handleSubmit} className=" w-full max-w-4xl p-5 md:p-6 rounded shadow-2xl space-y-4 text-[13px] md:text-[16px] ">
 
           <input name="title" value={formData.title} onChange={handleChange} placeholder="Project Title" className="w-full p-2 border rounded" required />
           <input name="location" value={formData.location} onChange={handleChange} placeholder="Location" className="w-full p-2 border rounded" required />
@@ -98,7 +98,7 @@ function Ourprojects() {
 
           <input name="tags" value={formData.tags} onChange={handleChange} placeholder="Tags (comma separated)" className="w-full p-2 border rounded" required />
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <input type="file" accept="image/*" onChange={(e) => setMainImage(e.target.files[0])} className="p-2 border rounded" required />
             <input type="file" accept="image/*" onChange={(e) => setSideImage1(e.target.files[0])} className="p-2 border rounded" required />
             <input type="file" accept="image/*" onChange={(e) => setSideImage2(e.target.files[0])} className="p-2 border rounded" required />
@@ -144,7 +144,7 @@ function Ourprojects() {
             <button type="button" onClick={() => addListItem('sonderStandard')} className="text-sm text-blue-600">+ Add Standard</button>
           </div>
 
-          <button type="submit" className="bg-[#048886] hover:bg-[#03696b] text-white font-semibold px-4 py-2 rounded">
+          <button type="submit" className="bg-[#048886] hover:bg-[#03696b] text-white font-semibold px-4 py-2 rounded w-full sm:w-auto">
             Submit Project
           </button>
         </form>

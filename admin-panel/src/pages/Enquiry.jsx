@@ -22,28 +22,28 @@ function Enquiry() {
   return (
     <div className="flex">
       <Sidebar />
-      <div className="ml-64 p-8 w-full min-h-screen bg-[#F3ECDC]">
-        <h2 className="text-3xl font-bold mb-10 text-[#048886]">Enquiry</h2>
+      <div className=" pt-23 md:pt-8 md:ml-64 p-8 w-full min-h-screen bg-gray-100">
+        <h2 className="text-[21px] sm:text-3xl font-bold mb-4 md:mb-10 text-[#048886]">Enquiry</h2>
 
-        <div className="space-y-6 ">
+        <div className="space-y-6 text-[14px] md:text-[16px] ">
           {entries.map((entry) => (
             <div
               key={entry._id}
-              className="bg-[#f3efe7] border-l-3 border-[#048886] p-6 rounded-md shadow-lg hover:shadow-xl transition"
+              className=" border-l-3 border-[#048886] p-3 md:p-6 rounded-md shadow-lg hover:shadow-xl transition"
             >
-              <div className="mb-2">
+              <div className="mb-1 md:mb-2">
                 <span className="font-semibold text-gray-700">Name: </span>
                 <span className="text-gray-900">{entry.name}</span>
               </div>
-              <div className="mb-2">
+              <div className="mb-1 md:mb-2">
                 <span className="font-semibold text-gray-700">Address: </span>
                 <span className="text-gray-900">{entry.address}</span>
               </div>
-              <div className="mb-2">
+              <div className="mb-1 md:mb-2">
                 <span className="font-semibold text-gray-700">Phone: </span>
                 <span className="text-gray-900">{entry.phone}</span>
               </div>
-              <div className="mb-2">
+              <div className="mb-1 md:mb-2">
                 <span className="font-semibold text-gray-700">Interested Area: </span>
                 <span className="text-gray-900">{entry.interestedArea}</span>
               </div>

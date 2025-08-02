@@ -84,14 +84,14 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="flex">
+    <div className="flex ">
       <Sidebar />
-      <div className="ml-64 p-8 w-full min-h-screen bg-gray-100">
-        <h2 className="text-3xl font-bold mb-6 text-[#048886]">Welcome, {name}</h2>
+      <div className="pt-23 md:pt-8 md:ml-64 p-8 w-full min-h-screen bg-gray-100">
+        <h2 className="text-[20px] md:text-3xl font-bold mb-4 md:mb-10 text-[#048886]">Welcome, {name}</h2>
 
         <div className="grid gap-6">
           {projects.map((project) => (
-            <div key={project._id} className="bg-white p-4 rounded shadow-md">
+            <div key={project._id} className=" p-4 rounded shadow-xl">
               {editingProject === project._id ? (
                 <>
                   <input value={editFormData.title} onChange={(e) => setEditFormData({ ...editFormData, title: e.target.value })} className="border p-2 w-full mb-2" placeholder="Title" />
@@ -140,7 +140,7 @@ const Dashboard = () => {
                 </>
               ) : (
                 <>
-                  <h3 className="text-xl font-bold">{project.title}</h3>
+                  <h3 className="text-sm md:text-xl font-bold">{project.title}</h3>
                   <p className="text-gray-500">{project.location}</p>
                   <img src={`http://localhost:5000/uploads/${project.mainImage}`} alt={project.title} className="w-40 mt-2 rounded" />
                   <p className="mt-2">{project.description}</p>
@@ -149,9 +149,9 @@ const Dashboard = () => {
                   <p className="text-sm mt-1">Facilities: {project.facilities?.join(', ')}</p>
                   <p className="text-sm mt-1">Sonder Standard: {project.sonderStandard?.join(', ')}</p>
 
-                  <div className="flex gap-4 mt-4">
-                    <button onClick={() => handleEdit(project._id)} className="px-4 py-2 bg-yellow-400 hover:bg-yellow-500 text-white rounded">Edit</button>
-                    <button onClick={() => handleDelete(project._id)} className="px-4 py-2 bg-red-500 hover:bg-red-600 text-white rounded">Delete</button>
+                  <div className="flex gap-4 mt-4 text-[14px] md:text-[16px] ">
+                    <button onClick={() => handleEdit(project._id)} className="px-2 md:px-4 py-1 md:py-2 bg-yellow-400 hover:bg-yellow-500 text-white rounded">Edit</button>
+                    <button onClick={() => handleDelete(project._id)} className="px-2 md:px-4 py-1 md:py-2 bg-red-500 hover:bg-red-600 text-white rounded">Delete</button>
                   </div>
                 </>
               )}
