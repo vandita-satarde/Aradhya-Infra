@@ -32,7 +32,7 @@ function ContactUs() {
         if (!firstName || !lastName || !email || !topic || !message) {
             alert('Please fill in all fields before submitting.');
             return;
-        }
+    }
 
         try {
             await axios.post('http://localhost:5000/api/contact', formData);

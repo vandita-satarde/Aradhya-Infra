@@ -10,13 +10,13 @@ function nintynine() {
                           <div className='absolute w-[170px] md:w-[390px] top-[50px] md:top-[110px] left-[60px] md:left-[195px] bg-[#F3ECDC] p-2 md:p-3.5 rounded-[30px] shadow-xl shadow-[#00000012] '>
                             <img src={image1} className=' h-[210px] md:h-[499px] rounded-[30px] object-cover ' />            
                           </div>
-                          <div className='absolute w-[120px] md:w-[234px] h-[60px] md:h-[149px] top-[170px] md:top-[395px] left-[10px] md:left-[55px] bg-black text-white inline-block text-center p-4 rounded-4xl object-cover '>
-                            <p className='relative  text-[20px] md:text-[50px] text-[#A3B18A] '>
-                              99
-                              <p className='absolute top-1.5 left-32 text-[18px] font-[abril] '>%</p>  
-                            </p>
-                            <p className='font-[abril] font-bold text-[10px] md:text-[23px] text-[#F3ECDC] '>Customer Support</p>
-                          </div>
+                          <div className='absolute w-[120px] md:w-[234px] h-[60px] md:h-[149px] top-[170px] md:top-[395px] left-[10px] md:left-[55px] bg-black text-white inline-block text-center p-[6px] md:p-4 rounded-4xl object-cover '>
+                      <p className='relative  text-[20px] md:text-[50px] text-[#A3B18A] '>
+                        99
+                        <p className='absolute top-0.5 md:top-1.5 left-16 md:left-32 text-[8px] md:text-[18px] font-[abril] '>%</p>  
+                      </p>
+                      <p className='font-[abril] font-bold text-[10px] md:text-[23px] text-[#F3ECDC] '>Customer Support</p>
+                    </div>
                         </div>
             
                         <div className='flex-1 mt-80 lg:mt-26 md:ml-167'>

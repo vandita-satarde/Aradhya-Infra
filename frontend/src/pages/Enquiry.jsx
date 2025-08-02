@@ -50,14 +50,14 @@ const Enquiry = () => {
     <>
     <div className='bg-black h-[100px] md:h-[130px] '></div>
     <Navbar />
-    <div className="min-h-screen bg-[#F9F9F9]  py-16 px-6 flex items-center justify-center">
+    <div className="min-h-screen bg-[#F9F9F9] py-16 px-6 flex items-center justify-center">
       <div className="max-w-2xl w-full bg-[#F9F9F9]  p-10 rounded-[30px] shadow-2xl border border-gray-200">
         <h2 className="text-black text-[20px] md:text-[35px] font-[abril] font-bold mb-8 text-center tracking-wide">
           Get in Touch – Enquiry Form
         </h2>
 
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <div>
+        <form onSubmit={handleSubmit} className="space-y-6 text-[14px] md:text-[16px]">
+          <div className=''>
             <label className="block text-gray-700 mb-1">Full Name</label>
             <input
               type="text"
@@ -65,7 +65,7 @@ const Enquiry = () => {
               placeholder="Enter your name"
               value={formData.name}
               onChange={handleChange}
-              className="w-full border border-gray-300 rounded-xl p-3 focus:outline-none focus:ring-2 focus:ring-teal-500"
+              className="w-full border border-gray-300 rounded-xl p-1 md:p-3 focus:outline-none focus:ring-2 focus:ring-teal-500"
               required
             />
           </div>
@@ -78,7 +78,7 @@ const Enquiry = () => {
               placeholder="Enter your address"
               value={formData.address}
               onChange={handleChange}
-              className="w-full border border-gray-300 rounded-xl p-3 focus:outline-none focus:ring-2 focus:ring-teal-500"
+              className="w-full border border-gray-300 rounded-xl p-1 md:p-3 focus:outline-none focus:ring-2 focus:ring-teal-500"
               required
             />
           </div>
@@ -91,7 +91,7 @@ const Enquiry = () => {
               placeholder="Enter your phone number"
               value={formData.phone}
               onChange={handleChange}
-              className="w-full border border-gray-300 rounded-xl p-3 focus:outline-none focus:ring-2 focus:ring-teal-500"
+              className="w-full border border-gray-300 rounded-xl p-1 md:p-3 focus:outline-none focus:ring-2 focus:ring-teal-500"
               required
             />
           </div>
@@ -102,7 +102,7 @@ const Enquiry = () => {
               name="interestedArea"
               value={formData.interestedArea}
               onChange={handleChange}
-              className="w-full border border-gray-300 rounded-xl p-3 focus:outline-none focus:ring-2 focus:ring-teal-500"
+              className="w-full border border-gray-300 rounded-xl p-1 md:p-3 focus:outline-none focus:ring-2 focus:ring-teal-500"
               required
             >
               <option value="">-- Select --</option>
@@ -130,7 +130,7 @@ const Enquiry = () => {
           <div className="text-center">
             <button
               type="submit"
-              className="bg-black text-[#F3ECDC]  px-6 py-3 rounded-xl hover:bg-teal-700 transition-all duration-300"
+              className="bg-black text-[#F3ECDC] text-[13px] md:text-[16px] px-3 md:px-6 py-2 md:py-3 rounded-xl hover:bg-teal-700 transition-all duration-300"
             >
               Submit Enquiry
             </button>

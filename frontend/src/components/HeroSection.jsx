@@ -7,7 +7,7 @@ import introVideo from '../assets/videos/intro.mp4'
 function HeroSection() {
   return (
     <>
-      <div className="relative h-[830px] md:h-[930px]  bg-opacity-80 bg-black  font-sans overflow-hidden">
+      <div className="relative h-[860px] md:h-[930px]  bg-opacity-80 bg-black  font-sans overflow-hidden">
         {/* Video Background */}
        
         {/* Dark overlay for better text visibility */}
