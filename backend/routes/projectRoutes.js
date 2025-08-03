@@ -27,13 +27,14 @@ router.post('/', upload.fields([
 ]), async (req, res) => {
   try {
     const {
-      title, location, rating, reviewCount,
+      title, location, area, rating, reviewCount,
       description, tags, facilities, sonderStandard
     } = req.body;
 
     const newProject = new Project({
       title,
       location,
+      area,
       rating,
       reviewCount,
       description,

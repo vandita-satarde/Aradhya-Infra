@@ -4,7 +4,7 @@ import icon01 from '../assets/icons/location.png'
 
 function ProductCard({ tag, image, name, location, area }) {
   return (
-    <div className='relative w-[270px] md:w-full max-w-[400px] border-2 border-gray-200 rounded-lg overflow-hidden font-sans hover:shadow-lg transition-shadow duration-300 my-5 mx-auto'>
+    <div className='relative w-[270px] md:w-full max-w-[400px] border-2 border-gray-200 rounded-lg overflow-hidden font-sans hover:shadow-lg transition-shadow duration-300 my-5 mx-5'>
       <div className='relative'>
         <p className='absolute z-10 text-[#050810] text-xs md:text-[14px] bg-gray-100 py-1 px-3 md:px-4 m-3 rounded-full shadow-sm'>{tag}</p>
         <img src={image} className='w-full h-[200px] md:h-[250px] object-cover' alt={name} />
@@ -28,13 +28,13 @@ function ProductCard({ tag, image, name, location, area }) {
         <div className='flex flex-col sm:flex-row gap-3 md:gap-4 w-full'>
           <Link 
             to="/enquiry"
-            className='flex-1 py-2 md:p-3 md:py-3 md:px-4 md:px-6 bg-black text-[#F3ECDC] hover:bg-gray-800 transition-colors duration-300 rounded-md text-sm md:text-[15px] font-medium'
+            className='flex-1 py-2 md:px-4 md:px-6 bg-black text-[#F3ECDC] hover:bg-gray-800 transition-colors duration-300 rounded-md text-sm md:text-[15px] font-medium'
           >
             ENQUIRY
           </Link>
           <Link 
             to="/project-details"
-            className='flex-1 py-2 md:p-3 md:py-3 md:px-4 md:px-6 border border-black text-black hover:bg-black hover:text-[#F3ECDC] transition-colors duration-300 rounded-md text-sm md:text-[15px] font-medium text-center'
+            className='flex-1 py-2 md:px-4 md:px-6 border border-black text-black hover:bg-black hover:text-[#F3ECDC] transition-colors duration-300 rounded-md text-sm md:text-[15px] font-medium text-center'
           >
             VIEW DETAILS
           </Link>

@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import Sidebar from '../components/Sidebar';
 import axios from 'axios';
+import { area } from 'framer-motion/client';
 
 function Ourprojects() {
   const [formData, setFormData] = useState({
     title: '',
     location: '',
+    area: '',
     rating: '',
     reviewCount: '',
     description: '',
@@ -44,6 +46,7 @@ function Ourprojects() {
   const data = new FormData();
   data.append('title', formData.title);
   data.append('location', formData.location);
+  data.append('area', formData.area);
   data.append('rating', Number(formData.rating.split('/')[0]));
   data.append('reviewCount', formData.reviewCount); // renamed to match backend
   data.append('description', formData.description);
@@ -65,6 +68,7 @@ function Ourprojects() {
     setFormData({
       title: '',
       location: '',
+      area:'',
       rating: '',
       reviewCount: '',
       description: '',
@@ -91,6 +95,15 @@ function Ourprojects() {
 
           <input name="title" value={formData.title} onChange={handleChange} placeholder="Project Title" className="w-full p-2 border rounded" required />
           <input name="location" value={formData.location} onChange={handleChange} placeholder="Location" className="w-full p-2 border rounded" required />
+          <select name="area" value={formData.area} onChange={handleChange} className="w-full p-2 border rounded" required >
+            <option value="">Select Area</option>
+            <option value="Premium Commercial Space">Premium Commercial Space</option>
+            <option value="Premium Residential Space">Premium Residential Space</option>
+            <option value="Commercial Space">Commercial Space</option>
+            <option value="Residential Space">Residential Space</option>
+            <option value="Other">Other</option>
+          </select>
+
           <input name="rating" value={formData.rating} onChange={handleChange} placeholder="Rating (e.g., 4.5/5)" className="w-full p-2 border rounded" required />
           <input name="reviewCount" value={formData.reviewCount} onChange={handleChange} placeholder="Review Count (e.g., 900+ reviews)" className="w-full p-2 border rounded" required />
 

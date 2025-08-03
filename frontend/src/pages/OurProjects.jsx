@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
+
 import Navbar from '../components/Navbar';
 import ProductCard from '../components/ProductCard';
 import GetStarted from '../components/GetStarted';
@@ -8,96 +10,23 @@ import Footer from '../components/Footer';
 import image01 from '../assets/image-0.jpg';
 import arrow from '../assets/icons/caret-right.png';
 
-const projectsData = [
-  {
-    tag: 'Under Construction',
-    image: image01,
-    name: 'Aradhya Business Park',
-    location: 'Shankar Nagar, Nagpur',
-    area: 'Premium Commercial Space',
-    category: 'Commercial',
-  },
-  {
-    tag: 'Under Construction',
-    image: image01,
-    name: 'Aradhya Business Park',
-    location: 'Shankar Nagar, Nagpur',
-    area: 'Premium Residential Space',
-    category: 'Residential',
-  },
-  {
-    tag: 'Sold Out',
-    image: image01,
-    name: 'Aradhya Business Park',
-    location: 'Shankar Nagar, Nagpur',
-    area: 'Premium Commercial Space',
-    category: 'Commercial',
-  },
-  {
-    tag: 'Under Construction',
-    image: image01,
-    name: 'Aradhya Business Park',
-    location: 'Shankar Nagar, Nagpur',
-    area: 'Premium Residential Space',
-    category: 'Residential',
-  },
-  {
-    tag: 'Sold Out',
-    image: image01,
-    name: 'Aradhya Business Park',
-    location: 'Shankar Nagar, Nagpur',
-    area: 'Premium Residential Space',
-    category: 'Residential',
-  },
-  {
-    tag: 'Under Construction',
-    image: image01,
-    name: 'Aradhya Business Park',
-    location: 'Shankar Nagar, Nagpur',
-    area: 'Premium Commercial Space',
-    category: 'Commercial',
-  },
-  {
-    tag: 'Upcoming',
-    image: image01,
-    name: 'New Heights',
-    location: 'Ramdas Peth, Nagpur',
-    area: 'Upcoming Residential Tower',
-    category: 'Residential',
-  },
-  {
-    tag: 'Under Construction',
-    image: image01,
-    name: 'Tech Plaza',
-    location: 'IT Park, Nagpur',
-    area: 'Modern Office Space',
-    category: 'Commercial',
-  },
-  {
-    tag: 'Completed',
-    image: image01,
-    name: 'Green Villas',
-    location: 'Manewada, Nagpur',
-    area: 'Luxury Residential Villas',
-    category: 'Residential',
-  },
-  {
-    tag: 'Upcoming',
-    image: image01,
-    name: 'Skyline Towers',
-    location: 'Dharampeth, Nagpur',
-    area: 'High-rise Commercial Tower',
-    category: 'Commercial',
-  },
-];
 
 function OurProjects() {
+  const [projects, setProjects] = useState([]);
   const [filter, setFilter] = useState('All PROPERTIES');
   const [showAll, setShowAll] = useState(false);
 
+  useEffect(() => {
+    axios.get('http://localhost:5000/api/projects')
+      .then(res => setProjects(res.data))
+      .catch(err => console.error('Error fetching projects:', err));
+  }, []);
+
   const filteredProjects = filter === 'All PROPERTIES'
-    ? projectsData
-    : projectsData.filter((project) => project.category === filter);
+  ? projects
+  : projects.filter((project) =>
+      project.area?.toLowerCase().includes(filter.toLowerCase())
+    );
 
   const visibleProjects = showAll ? filteredProjects : filteredProjects.slice(0, 6);
 
@@ -130,7 +59,7 @@ function OurProjects() {
             <div className='bg-[#F3ECDC] p-1 md:p-4 rounded-4xl shadow-lg'>
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3721.3107336364287!2d79.05486597503466!3d21.140028780537307!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4c16fe7f30a71%3A0x96d1eb35911d1226!2sTARS%20Technologies!5e0!3m2!1sen!2sin!4v1753256633156!5m2!1sen!2sin" 
                     className='w-[270px] md:w-[1289px] md:h-[460px] rounded-4xl'
-                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">            
+                    allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade">            
                 </iframe>
             </div>
         </div>
@@ -154,11 +83,18 @@ function OurProjects() {
           </div>
 
           {/* Cards */}
-          <div className='flex flex-wrap gap-3 md:gap-8 mt-12'>
-            {visibleProjects.map((project, index) => (
-              <ProductCard key={index} {...project} />
-            ))}
-          </div>
+          <div className='flex flex-wrap justify-start mx-15 gap-5 mb-8'>
+          {visibleProjects.map((project, idx) => (
+            <ProductCard
+              key={idx}
+              tag={project.tags}
+              image={project.mainImage}
+              name={project.title}
+              location={project.location}
+              area={project.area}
+            />
+          ))}
+        </div>
 
           {/* Toggle Button */}
           {filteredProjects.length > 6 && (

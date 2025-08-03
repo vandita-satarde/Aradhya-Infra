@@ -5,6 +5,7 @@ const projectSchema = new mongoose.Schema({
   title: { type: String, required: true },
   description: String,
   location: String,
+  area:String,
   rating: Number,
   reviews: Number,
   facilities: [String],
