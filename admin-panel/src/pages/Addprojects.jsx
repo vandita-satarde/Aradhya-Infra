@@ -86,7 +86,7 @@ function Addprojects() {
     if (sideImage2) data.append('sideImage2', sideImage2);
 
     try {
-      const response = await axios.post('http://localhost:5000/api/projects', data, {
+      const response = await axios.post('https://aradhya-infra-e57v.vercel.app/api/projects', data, {
         headers: { 'Content-Type': 'multipart/form-data' },
         onUploadProgress: (progressEvent) => {
           const percentCompleted = Math.round((progressEvent.loaded * 100) / progressEvent.total);

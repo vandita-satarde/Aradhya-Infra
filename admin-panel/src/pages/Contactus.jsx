@@ -9,7 +9,7 @@ function Contact() {
   useEffect(() => {
   const fetchContacts = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/contact');
+      const res = await axios.get('https://aradhya-infra-e57v.vercel.app/api/contact');
       setContacts(res.data);
     } catch (err) {
       console.error('Error fetching contacts:', err);

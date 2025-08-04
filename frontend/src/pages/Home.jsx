@@ -26,7 +26,7 @@ function Home() {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/projects");
+        const res = await fetch("https://aradhya-infra-e57v.vercel.app/api/projects");
         const data = await res.json();
         setProjects(data);
       } catch (error) {

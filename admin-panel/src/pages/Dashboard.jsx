@@ -23,7 +23,7 @@ const Dashboard = () => {
 
   const fetchProjects = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/projects');
+      const res = await axios.get('https://aradhya-infra-e57v.vercel.app/api/projects');
       setProjects(res.data);
     } catch (err) {
       console.error('Error fetching projects:', err);
@@ -47,7 +47,7 @@ const Dashboard = () => {
 
   const handleUpdate = async (id) => {
     try {
-      const res = await axios.put(`http://localhost:5000/api/projects/${id}`, editFormData);
+      const res = await axios.put(`https://aradhya-infra-e57v.vercel.app/api/projects/${id}`, editFormData);
       const updated = projects.map(p => p._id === id ? res.data : p);
       setProjects(updated);
       setEditingProject(null);
@@ -60,7 +60,7 @@ const Dashboard = () => {
   const handleDelete = async (id) => {
     if (!window.confirm('Are you sure you want to delete this project?')) return;
     try {
-      await axios.delete(`http://localhost:5000/api/projects/${id}`);
+      await axios.delete(`https://aradhya-infra-e57v.vercel.app/api/projects/${id}`);
       fetchProjects();
     } catch (err) {
       console.error('Error deleting project:', err);

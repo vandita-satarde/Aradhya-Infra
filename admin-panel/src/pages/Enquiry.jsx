@@ -9,7 +9,7 @@ function Enquiry() {
   useEffect(() => {
   const fetchEnquiries = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/enquiry');
+      const res = await axios.get('https://aradhya-infra-e57v.vercel.app/api/enquiry');
       setEntries(res.data);
     } catch (error) {
       console.error('Error fetching enquiries:', error);
