@@ -15,6 +15,9 @@ const Dashboard = () => {
     tags: '',
     facilities: [''],
     sonderStandard: [''],
+    mainImage: '',
+    sideImage1: '',
+    sideImage2: ''
   });
 
   useEffect(() => {
@@ -41,9 +44,45 @@ const Dashboard = () => {
       reviewCount: project.reviews || '',
       tags: project.tags || '',
       facilities: project.facilities || [''],
-      sonderStandard: project.sonderStandard || ['']
+      sonderStandard: project.sonderStandard || [''],
+      mainImage: project.mainImage || '',
+      sideImage1: project.sideImage1 || '',
+      sideImage2: project.sideImage2 || ''
     });
   };
+
+  const handleImageChange = async (e) => {
+    const { name, files } = e.target;
+    if (!files || !files[0]) return;
+
+    try {
+      const formData = new FormData();
+      formData.append('file', files[0]);
+      formData.append('upload_preset', 'dsauuyk9v'); // Your Cloudinary upload preset
+      
+      const response = await axios.post(
+        'https://api.cloudinary.com/v1_1/dsauuyk9v/image/upload',
+        formData
+      );
+
+      setEditFormData(prev => ({
+        ...prev,
+        [name]: response.data.secure_url
+      }));
+    } catch (error) {
+      console.error('Error uploading image:', error);
+      alert('Error uploading image. Please try again.');
+    }
+  };
+
+
+  const handleRemoveImage = (indexToRemove) => {
+    setEditFormData((prev) => ({
+      ...prev,
+      images: prev.images.filter((_, idx) => idx !== indexToRemove),
+    }));
+  };
+
 
   const handleUpdate = async (id) => {
     try {
@@ -100,6 +139,81 @@ const Dashboard = () => {
                   <input value={editFormData.reviewCount} onChange={(e) => setEditFormData({ ...editFormData, reviewCount: e.target.value })} className="border p-2 w-full mb-2" placeholder="Reviews" />
                   <input value={editFormData.tags} onChange={(e) => setEditFormData({ ...editFormData, tags: e.target.value })} className="border p-2 w-full mb-2" placeholder="Tags" />
                   <textarea value={editFormData.description} onChange={(e) => setEditFormData({ ...editFormData, description: e.target.value })} className="border p-2 w-full mb-2" placeholder="Description" />
+                  <div className="space-y-4">
+                    <div>
+                      <label className="text-sm font-medium block mb-2">Main Image</label>
+                      <div className="flex items-center gap-4">
+                        <input
+                          type="file"
+                          name="mainImage"
+                          accept="image/*"
+                          onChange={handleImageChange}
+                          className="flex-1"
+                        />
+                        {editFormData.mainImage && (
+                          <div className="relative group">
+                            <img src={editFormData.mainImage} alt="Main" className="w-24 h-24 object-cover rounded" />
+                            <button
+                              onClick={() => setEditFormData(prev => ({ ...prev, mainImage: '' }))}
+                              className="absolute top-0 right-0 bg-black bg-opacity-50 text-white rounded-full px-1 text-xs hidden group-hover:block"
+                            >
+                              ✕
+                            </button>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+
+                    <div>
+                      <label className="text-sm font-medium block mb-2">Side Image 1</label>
+                      <div className="flex items-center gap-4">
+                        <input
+                          type="file"
+                          name="sideImage1"
+                          accept="image/*"
+                          onChange={handleImageChange}
+                          className="flex-1"
+                        />
+                        {editFormData.sideImage1 && (
+                          <div className="relative group">
+                            <img src={editFormData.sideImage1} alt="Side 1" className="w-24 h-24 object-cover rounded" />
+                            <button
+                              onClick={() => setEditFormData(prev => ({ ...prev, sideImage1: '' }))}
+                              className="absolute top-0 right-0 bg-black bg-opacity-50 text-white rounded-full px-1 text-xs hidden group-hover:block"
+                            >
+                              ✕
+                            </button>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+
+                    <div>
+                      <label className="text-sm font-medium block mb-2">Side Image 2</label>
+                      <div className="flex items-center gap-4">
+                        <input
+                          type="file"
+                          name="sideImage2"
+                          accept="image/*"
+                          onChange={handleImageChange}
+                          className="flex-1"
+                        />
+                        {editFormData.sideImage2 && (
+                          <div className="relative group">
+                            <img src={editFormData.sideImage2} alt="Side 2" className="w-24 h-24 object-cover rounded" />
+                            <button
+                              onClick={() => setEditFormData(prev => ({ ...prev, sideImage2: '' }))}
+                              className="absolute top-0 right-0 bg-black bg-opacity-50 text-white rounded-full px-1 text-xs hidden group-hover:block"
+                            >
+                              ✕
+                            </button>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+
+
 
                   {/* Facilities */}
                   <div>
