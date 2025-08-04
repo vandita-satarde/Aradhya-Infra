@@ -6,6 +6,7 @@ const projectSchema = new mongoose.Schema({
   description: String,
   location: String,
   area:String,
+  tags: [String], 
   rating: Number,
   reviews: Number,
   facilities: [String],

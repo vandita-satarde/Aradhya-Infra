@@ -142,7 +142,7 @@ const Dashboard = () => {
                 <>
                   <h3 className="text-sm md:text-xl font-bold">{project.title}</h3>
                   <p className="text-gray-500">{project.location}</p>
-                  <img src={`http://localhost:5000/uploads/${project.mainImage}`} alt={project.title} className="w-40 mt-2 rounded" />
+                  <img src={project.mainImage} alt={project.title} className="w-40 mt-2 rounded" />
                   <p className="mt-2">{project.description}</p>
                   <p className="text-sm text-gray-600 mt-1">⭐ {project.rating} | {project.reviews} reviews</p>
                   <p className="text-sm mt-1">Tags: {project.tags}</p>

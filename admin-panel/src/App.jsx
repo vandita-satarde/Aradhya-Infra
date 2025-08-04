@@ -3,7 +3,7 @@ import './App.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Login from './pages/Login'
 import Dashboard from './pages/Dashboard'
-import Ourprojects from './pages/Ourprojects'
+import Addprojects from './pages/Addprojects'
 import ContactUs from './pages/Contactus'
 import Enquiry from './pages/Enquiry'
 
@@ -14,7 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/ourprojects" element={<Ourprojects />} />
+        <Route path="/addprojects" element={<Addprojects />} />
         <Route path="/contactus" element={< ContactUs/>} />
         <Route path="/enquiry" element={<Enquiry />} />
       </Routes>

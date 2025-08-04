@@ -20,10 +20,10 @@ function HeroSection() {
           autoPlay
           muted
           loop
-      >
+          >
           <source src={introVideo} type="video/mp4" />
           Your browser does not support the video tag.
-        </video>
+          </video>
 
           <Navbar />
 

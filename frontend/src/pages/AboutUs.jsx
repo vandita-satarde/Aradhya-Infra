@@ -30,7 +30,7 @@ function AboutUs() {
       </div>
 
 
-      <div className='relative  gap-10 bg-[#F3ECDC] p-10 md:p-30'>
+      <div className='relative  gap-10 bg-[#F3ECDC]  p-10 md:p-30'>
                   <Nintynine />
 
                   <div className='mt-32 md:mt-60'>

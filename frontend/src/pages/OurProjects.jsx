@@ -83,16 +83,10 @@ function OurProjects() {
           </div>
 
           {/* Cards */}
-          <div className='flex flex-wrap justify-start mx-15 gap-5 mb-8'>
+          <div className='flex flex-wrap justify-center md:justify-start md:mx-15 gap-5 mb-8'>
           {visibleProjects.map((project, idx) => (
-            <ProductCard
-              key={idx}
-              tag={project.tags}
-              image={project.mainImage}
-              name={project.title}
-              location={project.location}
-              area={project.area}
-            />
+            <ProductCard key={project._id || idx} project={project} />
+
           ))}
         </div>
 
