@@ -132,7 +132,7 @@ function Navbar({ className = '' }) {
             <Link
               to="/contact"
               onClick={() => setMenuOpen(false)}
-              className="flex justify-center text-[12px] items-center gap-2 bg-[#bdb8ad] text-black text-sm w-full h-[40px] rounded-full mx-auto mt-2 hover:bg-[#e8dcc5] transition-colors duration-200"
+              className="flex justify-center text-[12px] items-center gap-2 bg-[#bdb8ad] text-black text-sm w-[130px] md:w-full h-[40px] rounded-full mx-auto mt-2 hover:bg-[#e8dcc5] transition-colors duration-200"
             >
               <img src={contact} className="h-[18px] w-[18px]" alt="contact" />
               CONTACT US

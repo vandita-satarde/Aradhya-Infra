@@ -17,11 +17,11 @@ function ProductCard({ project }) {
       <div className='relative'>
 
         {tags && tags.length > 0 && (
-          <div className='absolute z-10 flex flex-wrap gap-2 top-2 left-2'>
+          <div className='absolute z-10 flex flex-wrap gap-2 md:top-2 md:left-2'>
             {tags.map((tag, index) => (
               <span
                 key={index}
-                className='text-[#050810] text-xs md:text-[14px] bg-gray-100 bg-opacity-80 py-1 px-3 md:px-4 m-3  rounded-full shadow-sm'
+                className='text-[#050810] text-[10px] md:text-[14px] bg-gray-100 bg-opacity-80 py-1 px-3 md:px-4 m-3  rounded-full shadow-sm'
               >
                 {tag}
               </span>
@@ -45,8 +45,8 @@ function ProductCard({ project }) {
       <div className='flex flex-col items-start p-4 md:p-6 lg:p-8'>
         <h3 className='font-bold font-[abril] text-[#050810] text-lg md:text-xl lg:text-[22px] mb-3 md:mb-4 leading-tight'>{title}</h3>
 
-        <div className='flex items-center mb-3 md:mb-4'>
-          <img src={icon01} className='h-4 md:h-5 mr-2 md:mr-3 flex-shrink-0' alt="location" />
+        <div className='flex mb-1 md:mb-4'>
+          <img src={icon01} className='h-4 md:h-5 mr-2 md:mr-3 mt-1 flex-shrink-0' alt="location" />
           <p className='text-sm md:text-base lg:text-[18px] text-gray-600'>{location}</p>
         </div>
 
@@ -57,16 +57,16 @@ function ProductCard({ project }) {
           <span className='bg-[#F3ECDC] text-[#050810] px-3 py-1 rounded-full text-xs md:text-sm'>Office Space</span>
         </div>
 
-        <div className='flex flex-col sm:flex-row gap-3 md:gap-4 w-full'>
+        <div className='flex flex-row gap-3 md:gap-4 w-full text-[12px] md:text-[15px] '>
           <Link
             to="/enquiry"
-            className=' text-center flex-1 py-2 md:px-4 bg-black text-[#F3ECDC] hover:bg-gray-800 transition-colors duration-300 rounded-md text-sm md:text-[15px] font-medium'
+            className=' text-center flex-1 py-2 md:px-4 bg-black text-[#F3ECDC] hover:bg-gray-800 transition-colors duration-300 rounded-md font-medium'
           >
             ENQUIRY
           </Link>
           <Link
             to={`/project-details/${project._id}`}
-            className='flex-1 py-2 md:px-4 border border-black text-black hover:bg-black hover:text-[#F3ECDC] transition-colors duration-300 rounded-md text-sm md:text-[15px] font-medium text-center'
+            className='text-center flex-1 py-2 px-1 md:px-4 text-black hover:bg-black hover:text-[#F3ECDC] transition-colors duration-300 rounded-md font-medium border border-black'
           >
             VIEW DETAILS
           </Link>

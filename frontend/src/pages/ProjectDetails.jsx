@@ -89,9 +89,9 @@ const ProjectDetails = () => {
               </div>
               <div className='md:w-1/2'>
                 <div className='flex flex-col md:flex-row gap-6 md:gap-10'>
-                  <div className='flex flex-col gap-5'>
+                  <div className='flex flex-col gap-3 md:gap-5'>
                     <p className='text-[13.34px]'>Facilities Offered</p>
-                    <ul className='text-[12px] md:text-[15.5px] flex flex-col gap-4'>
+                    <ul className='text-[12px] md:text-[15.5px] flex flex-col gap-1 md:gap-4'>
                       {project.facilities?.map((item, i) => (
                         <li key={i} className='flex items-center gap-2'>
                           <span className='text-xl text-[#073937]'>{facilityIcons[item] || "🏢"}</span>
@@ -101,9 +101,9 @@ const ProjectDetails = () => {
 
                     </ul>
                   </div>
-                  <div className='flex flex-col gap-5'>
+                  <div className='flex flex-col gap-3 md:gap-5'>
                     <p className='text-[13.34px]'>The Sonder standard</p>
-                    <ul className='text-[15.5px] flex flex-col gap-4'>
+                    <ul className='text-[12px] md:text-[15.5px] flex flex-col gap-1 md:gap-4'>
                       {project.sonderStandard?.map((item, i) => (
                         <li key={i} className='flex items-center gap-2'>
                           <span className='text-xl text-[#073937]'>{standardIcons[item] || "📌"}</span>
@@ -114,7 +114,7 @@ const ProjectDetails = () => {
                     </ul>
                   </div>
                 </div>
-                <p className='text-[13.45px] mt-6 md:mt-15 mb-8 md:mb-35'>Explore more facilities</p>
+                <p className='text-[11px] md:text-[13.45px] mt-6 md:mt-15 mb-8 md:mb-35'>Explore more facilities</p>
                 <a href='/enquiry'>
                   <button className='text-[14px] md:text-[18px] w-full md:w-[590px] h-[40px] md:h-[60px] bg-black text-[#F3ECDC] cursor-pointer '>ENQUIRY</button>
                 </a>

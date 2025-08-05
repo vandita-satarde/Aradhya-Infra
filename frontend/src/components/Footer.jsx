@@ -14,13 +14,13 @@ import icon03 from '../assets/icons/phone-square.png'
 function Footer() {
   return (
     <div className='bg-black font-sans px-4 md:px-8 lg:px-12 xl:px-30 pt-8 md:pt-10'>
-      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 lg:gap-16 mb-12 md:mb-20 lg:mb-25'>
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 lg:gap-14 mb-12 md:mb-20'>
         
         {/* Company Info */}
         <div className='lg:col-span-1'>
           <img src={logo} className='h-20 w-20 md:h-24 md:w-24 lg:h-28 lg:w-28 rounded-full mb-4 md:mb-6' alt="Aradhya Infra logo" />
-          <p className='text-sm md:text-base lg:text-[18px] text-[#FFFFFFBF] leading-relaxed mb-6'>
-            Aplikasi terbaik layanan penginapan di seluruh apartemen dan hotel di India.
+          <p className='text-[12px] md:text-base lg:text-[15px] text-[#FFFFFFBF] leading-relaxed mb-6'>
+            Discover the exceptional plots at Aradhya Infratech Nagpur, a premier residential enclave that perfectly blends modern living with the calmness of nature. Here, at Aradhya Infratech Ngpur Plots, select from diverse plots surrounded by verdant greenery and orchards, providing a peaceful living environment in sync with the natural world.
           </p>
           <div className='flex gap-3 md:gap-4 items-center'>
             <img src={facebook} className=' cursor-pointer hover:opacity-80 transition-opacity' alt="facebook" />
@@ -53,17 +53,17 @@ function Footer() {
         <div className='lg:col-span-1'>
           <h3 className='font-bold text-[#F3ECDC] font-[abril] text-lg md:text-xl lg:text-[25px] mb-4 md:mb-6'>Location, Contact</h3>
           <div className='flex flex-col gap-3 md:gap-4 lg:gap-5 text-sm md:text-base lg:text-[18px] text-[#FFFFFFBF]'>
-            <div className='flex items-center gap-3 md:gap-4'>
-              <img src={icon01} alt="location" /> 
-              <span>Nagpur, India</span>
+            <div className='flex gap-3 md:gap-4'>
+              <img src={icon01} alt="location" className='h-5 mt-1' /> 
+              <span>Plot No. 234, 32nd Floor, Suyog Nagar Square,<br/>(Opposite Yokohama Tyres)<br/>MANEWADA RING ROAD, NAGPUR,<br/>Pin Code - 440027</span>
             </div>
             <div className='flex items-center gap-3 md:gap-4'>
               <img src={icon02} alt="email" /> 
-              <a href="mailto:Hello@Email.com" className='hover:text-white transition-colors duration-200'>Hello@Email.com</a>
+              <a href="mailto:Hello@Email.com" className='hover:text-white transition-colors duration-200'>aradhyainfratech07@gmail.com</a>
             </div>
             <div className='flex items-center gap-3 md:gap-4'>
               <img src={icon03} alt="phone" /> 
-              <a href="tel:+91123456789" className='hover:text-white transition-colors duration-200'>( +91 ) 123 456 789</a>
+              <a href="tel:+91123456789" className='hover:text-white transition-colors duration-200'>( +91 ) 7666044916</a>
             </div>
           </div>
         </div>

@@ -243,7 +243,7 @@ const Dashboard = () => {
                         />
                         <button type="button" onClick={() => removeListItem('sonderStandard', index)} className="text-red-500">✕</button>
                       </div>
-                    ))}
+                    ))} 
                     <button type="button" onClick={() => addListItem('sonderStandard')} className="text-blue-500 text-sm">+ Add Standard</button>
                   </div>
 

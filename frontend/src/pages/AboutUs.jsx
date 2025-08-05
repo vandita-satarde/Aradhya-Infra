@@ -12,7 +12,7 @@ import arrow from '../assets/icons/g-caret-right.png'
 function AboutUs() {
   return (
     <>
-      <div className="bg-cover bg-center h-[523px]" style={{ backgroundImage: `url(${image01})` }}>
+      <div className="bg-cover bg-center h-[438px] md:h-[523px]" style={{ backgroundImage: `url(${image01})` }}>
         <div className='pt-[100px]'>
           <Navbar />
           <div className=' p-12 md:p-30 text-[12px] md:text-[15px] '>
