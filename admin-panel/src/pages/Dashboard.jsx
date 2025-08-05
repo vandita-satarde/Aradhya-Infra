@@ -51,48 +51,118 @@ const Dashboard = () => {
     });
   };
 
+  const [uploadProgress, setUploadProgress] = useState({});
+  const [previewImages, setPreviewImages] = useState({});
+
   const handleImageChange = async (e) => {
     const { name, files } = e.target;
     if (!files || !files[0]) return;
 
+    const file = files[0];
+    
+    // Validate file type
+    const validTypes = ['image/jpeg', 'image/png', 'image/jpg'];
+    if (!validTypes.includes(file.type)) {
+      alert('Please select a valid image file (JPEG, PNG)');
+      return;
+    }
+
+    console.log('Uploading file:', file.name, 'for field:', name);
+
+    // Set initial progress and preview
+    setUploadProgress(prev => ({ ...prev, [name]: 0 }));
+    
+    // Create object URL for immediate preview
+    const previewUrl = URL.createObjectURL(file);
+    setPreviewImages(prev => ({ ...prev, [name]: previewUrl }));
+
     try {
       const formData = new FormData();
-      formData.append('file', files[0]);
-      formData.append('upload_preset', 'dsauuyk9v'); // Your Cloudinary upload preset
-      
+      formData.append('file', file);
+      formData.append('upload_preset', 'newerror');
+
+      console.log('Starting Cloudinary upload...');
       const response = await axios.post(
         'https://api.cloudinary.com/v1_1/dsauuyk9v/image/upload',
-        formData
+        formData,
+        {
+          headers: {
+            'Content-Type': 'multipart/form-data'
+          },
+          onUploadProgress: (progressEvent) => {
+            const percentCompleted = Math.round((progressEvent.loaded * 100) / progressEvent.total);
+            console.log(`Upload progress: ${percentCompleted}%`);
+            setUploadProgress(prev => ({ ...prev, [name]: percentCompleted }));
+          }
+        }
       );
 
-      setEditFormData(prev => ({
-        ...prev,
-        [name]: response.data.secure_url
-      }));
+      console.log('Upload successful:', response.data);
+      
+      // Revoke object URL to free memory
+      URL.revokeObjectURL(previewUrl);
+      
+      // Update form data with the new image URL
+      setEditFormData(prev => {
+        const newState = {
+          ...prev,
+          [name]: response.data.secure_url
+        };
+        console.log('Updated form data:', newState);
+        return newState;
+      });
+
+      // Update preview with the actual uploaded image URL
+      setPreviewImages(prev => ({ ...prev, [name]: response.data.secure_url }));
+      
+      // Clear progress
+      setUploadProgress(prev => ({ ...prev, [name]: null }));
+
     } catch (error) {
       console.error('Error uploading image:', error);
+      if (error.response) {
+        console.error('Cloudinary response:', error.response.data);
+      }
+      
+      // Clear progress and preview on error
+      setUploadProgress(prev => ({ ...prev, [name]: null }));
+      setPreviewImages(prev => ({ ...prev, [name]: null }));
+      
       alert('Error uploading image. Please try again.');
     }
   };
 
 
-  const handleRemoveImage = (indexToRemove) => {
-    setEditFormData((prev) => ({
-      ...prev,
-      images: prev.images.filter((_, idx) => idx !== indexToRemove),
-    }));
-  };
+  // We can remove this function as we're now handling image removal directly in the UI
+  // using the onClick handlers in the image preview sections
 
 
   const handleUpdate = async (id) => {
     try {
-      const res = await axios.put(`https://aradhya-infra-e57v.vercel.app/api/projects/${id}`, editFormData);
+      console.log('Updating project with data:', editFormData);
+      
+      const dataToUpdate = {
+        ...editFormData,
+        mainImage: editFormData.mainImage || '',
+        sideImage1: editFormData.sideImage1 || '',
+        sideImage2: editFormData.sideImage2 || ''
+      };
+
+      console.log('Sending update request with data:', dataToUpdate);
+      
+      const res = await axios.put(`https://aradhya-infra-e57v.vercel.app/api/projects/${id}`, dataToUpdate);
+      console.log('Update response:', res.data);
+      
       const updated = projects.map(p => p._id === id ? res.data : p);
       setProjects(updated);
       setEditingProject(null);
       alert("Project updated successfully!");
     } catch (err) {
-      console.error("Error updating project", err);
+      console.error("Error updating project:", err);
+      if (err.response) {
+        console.error('Server response:', err.response.data);
+      }
+      alert("Error updating project. Please try again.");
     }
   };
 
@@ -140,77 +210,60 @@ const Dashboard = () => {
                   <input value={editFormData.tags} onChange={(e) => setEditFormData({ ...editFormData, tags: e.target.value })} className="border p-2 w-full mb-2" placeholder="Tags" />
                   <textarea value={editFormData.description} onChange={(e) => setEditFormData({ ...editFormData, description: e.target.value })} className="border p-2 w-full mb-2" placeholder="Description" />
                   <div className="space-y-4">
-                    <div>
-                      <label className="text-sm font-medium block mb-2">Main Image</label>
-                      <div className="flex items-center gap-4">
-                        <input
-                          type="file"
-                          name="mainImage"
-                          accept="image/*"
-                          onChange={handleImageChange}
-                          className="flex-1"
-                        />
-                        {editFormData.mainImage && (
-                          <div className="relative group">
-                            <img src={editFormData.mainImage} alt="Main" className="w-24 h-24 object-cover rounded" />
-                            <button
-                              onClick={() => setEditFormData(prev => ({ ...prev, mainImage: '' }))}
-                              className="absolute top-0 right-0 bg-black bg-opacity-50 text-white rounded-full px-1 text-xs hidden group-hover:block"
-                            >
-                              ✕
-                            </button>
+                    {['mainImage', 'sideImage1', 'sideImage2'].map((fieldName) => (
+                      <div key={fieldName} className="mb-6">
+                        <label className="text-sm font-medium block mb-2">
+                          {fieldName === 'mainImage' ? 'Main Image' : 
+                           fieldName === 'sideImage1' ? 'Side Image 1' : 'Side Image 2'}
+                        </label>
+                        <div className="space-y-3">
+                          {/* File Input */}
+                          <div className="flex items-center gap-4">
+                            <input
+                              type="file"
+                              name={fieldName}
+                              accept="image/*"
+                              onChange={handleImageChange}
+                              className="flex-1 border p-2 rounded"
+                            />
                           </div>
-                        )}
-                      </div>
-                    </div>
 
-                    <div>
-                      <label className="text-sm font-medium block mb-2">Side Image 1</label>
-                      <div className="flex items-center gap-4">
-                        <input
-                          type="file"
-                          name="sideImage1"
-                          accept="image/*"
-                          onChange={handleImageChange}
-                          className="flex-1"
-                        />
-                        {editFormData.sideImage1 && (
-                          <div className="relative group">
-                            <img src={editFormData.sideImage1} alt="Side 1" className="w-24 h-24 object-cover rounded" />
-                            <button
-                              onClick={() => setEditFormData(prev => ({ ...prev, sideImage1: '' }))}
-                              className="absolute top-0 right-0 bg-black bg-opacity-50 text-white rounded-full px-1 text-xs hidden group-hover:block"
-                            >
-                              ✕
-                            </button>
-                          </div>
-                        )}
-                      </div>
-                    </div>
+                          {/* Upload Progress */}
+                          {uploadProgress[fieldName] !== null && uploadProgress[fieldName] !== undefined && (
+                            <div className="w-full bg-gray-200 rounded-full h-2.5">
+                              <div
+                                className="bg-blue-600 h-2.5 rounded-full transition-all duration-300"
+                                style={{ width: `${uploadProgress[fieldName]}%` }}
+                              ></div>
+                              <p className="text-sm text-gray-600 mt-1">
+                                Uploading... {uploadProgress[fieldName]}%
+                              </p>
+                            </div>
+                          )}
 
-                    <div>
-                      <label className="text-sm font-medium block mb-2">Side Image 2</label>
-                      <div className="flex items-center gap-4">
-                        <input
-                          type="file"
-                          name="sideImage2"
-                          accept="image/*"
-                          onChange={handleImageChange}
-                          className="flex-1"
-                        />
-                        {editFormData.sideImage2 && (
-                          <div className="relative group">
-                            <img src={editFormData.sideImage2} alt="Side 2" className="w-24 h-24 object-cover rounded" />
-                            <button
-                              onClick={() => setEditFormData(prev => ({ ...prev, sideImage2: '' }))}
-                              className="absolute top-0 right-0 bg-black bg-opacity-50 text-white rounded-full px-1 text-xs hidden group-hover:block"
-                            >
-                              ✕
-                            </button>
-                          </div>
-                        )}
+                          {/* Image Preview */}
+                          {(previewImages[fieldName] || editFormData[fieldName]) && (
+                            <div className="relative group inline-block">
+                              <img
+                                src={previewImages[fieldName] || editFormData[fieldName]}
+                                alt={`Preview ${fieldName}`}
+                                className="w-32 h-32 object-cover rounded border"
+                              />
+                              <button
+                                onClick={() => {
+                                  setEditFormData(prev => ({ ...prev, [fieldName]: '' }));
+                                  setPreviewImages(prev => ({ ...prev, [fieldName]: null }));
+                                }}
+                                className="absolute top-2 right-2 bg-black bg-opacity-50 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm opacity-0 group-hover:opacity-100 transition-opacity"
+                                title="Remove image"
+                              >
+                                ✕
+                              </button>
+                            </div>
+                          )}
+                        </div>
                       </div>
-                    </div>
+                    ))}
                   </div>
 
 
