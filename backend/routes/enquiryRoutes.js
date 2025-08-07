@@ -25,4 +25,35 @@ router.get('/', async (req, res) => {
   }
 });
 
+
+// PUT: update admin remark
+router.put('/:id/remark', async (req, res) => {
+  try {
+    const updated = await Enquiry.findByIdAndUpdate(
+      req.params.id,
+      { adminRemark: req.body.adminRemark },
+      { new: true }
+    );
+    res.status(200).json(updated);
+  } catch (err) {
+    res.status(500).json({ message: 'Failed to update remark' });
+  }
+});
+
+// Toggle read/unread
+router.put('/:id/read-toggle', async (req, res) => {
+  try {
+    const updated = await Enquiry.findByIdAndUpdate(
+      req.params.id,
+      { isRead: req.body.isRead },
+      { new: true }
+    );
+    res.status(200).json(updated);
+  } catch (err) {
+    res.status(500).json({ message: 'Failed to update read status' });
+  }
+});
+
+
+
 export default router;

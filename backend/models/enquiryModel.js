@@ -6,7 +6,9 @@ const enquirySchema = new mongoose.Schema({
   address: { type: String, required: true },
   phone: { type: String, required: true },
   interestedArea: { type: String, required: true },
-  otherInterest: { type: String } // optional
+  otherInterest: { type: String },
+  adminRemark: { type: String, default: '' },
+  isRead: { type: Boolean, default: false }
 }, { timestamps: true });
 
 const Enquiry = mongoose.model('Enquiry', enquirySchema);
