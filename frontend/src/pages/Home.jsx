@@ -63,29 +63,28 @@ function Home() {
           </div>
           <br /><br />
           <div className=' flex relative flex-col lg:flex-row -mt-5 '>
-            <div className=' relative w-full lg:w-[417px] h-auto lg:h-[305px] rounded-4xl p-6 md:py-8 md:px-12 pr-4 md:pr-40 bg-black text-[#FFFFFFBF] '>
-              <FaQuoteLeft className='w-[30px] h-[35px] md:w-[40px] md:h-[45px] text-[#DADADA] mb-4 ' />
-              <p className='italic text-[22px] mb-3'>“Layanan apartemen paling terbaik di Indonesia, suka banget.. “</p>
-              <span className=' font-bold text-[25px] text-[#F3ECDC] font-[abril] '>Nikhil Bawane</span>
+            <div className=' relative w-full lg:w-[417px] h-[260px] lg:h-[305px] rounded-4xl p-6 md:py-8 md:px-12 pr-4 md:pr-40 bg-black text-[#FFFFFFBF] '>
+              <FaQuoteLeft className='w-[30px] h-[30px] md:w-[40px] md:h-[45px] text-[#DADADA] mb-4 ' />
+              <p className='italic text-[15px] md:text-[22px] mb-3'>“Layanan apartemen paling terbaik di Indonesia, suka banget.. “</p>
+              <span className=' font-bold md:text-[25px] text-[#F3ECDC] font-[abril] '>Nikhil Bawane</span>
             </div>
 
-            <div className='md:absolute left-[320px] top-9 flex flex-col sm:flex-row gap-3 mt-6 lg:mt-0 ' >
-              <div className=' bg-[#F3ECDC] w-full sm:w-[310px]  p-3 rounded-[30px] shadow-sm shaadow-[#00000012] '>
-                <img src={image1} className='  rounded-[30px] h-[210px] w-full object-cover ' />
+            <div className='absolute md:left-[320px] top-40 md:top-9 flex flex-col sm:flex-row gap-3 mt-6 lg:mt-0 ' >
+              <div className=' bg-[#F3ECDC] w-full sm:w-[310px] p-1 md:p-3 rounded-[30px] shadow-sm shaadow-[#00000012] '>
+                <img src={image1} className='  rounded-[30px] md:h-[210px] w-full object-cover ' />
               </div>
-              <div className=' bg-[#F3ECDC] w-full sm:w-[300px] p-3 rounded-[30px] shadow-sm shaadow-[#00000012] '>
-                <img src={image1} className='  rounded-[30px] h-[210px] w-full object-cover ' />
+              <div className=' bg-[#F3ECDC] w-full sm:w-[300px] p-1 md:p-3 rounded-[30px] shadow-sm shaadow-[#00000012] '>
+                <img src={image1} className='  rounded-[30px] md:h-[210px] w-full object-cover ' />
               </div>
-              <div className=' bg-[#F3ECDC] w-full sm:w-[300px] p-3 rounded-[30px] shadow-sm shaadow-[#00000012] '>
-                <img src={image1} className='  rounded-[30px] h-[210px] w-full object-cover ' />
+              <div className=' bg-[#F3ECDC] w-full sm:w-[300px] p-1 md:p-3 rounded-[30px] shadow-sm shaadow-[#00000012] '>
+                <img src={image1} className='  rounded-[30px] md:h-[210px] w-full object-cover ' />
               </div>
             </div>
           </div>
         </div>
 
         {/* Section 02 */}
-        <Nintynine />
-
+        <Nintynine className='mt-130 md:mt-50'/>
 
         {/* Section 03 */}
         <div className='mt-30 md:mt-55 text-center '>
@@ -154,15 +153,15 @@ function Home() {
         </div>
       </div>
 
-      
 
-        <GalleryPage limit={5} className='!h-0' />
-        <Link to='/gallery-page' >
-          <p className='bg-[#F3ECDC] text-center cursor-pointer text-[13px] md:text-[15px] text-[#2D2D2D] font-medium'>
-            SEE OUR GALLERY SECTION LEGACY OF ARADHYA INFRA →
-          </p>
-        </Link>
-      
+
+      <GalleryPage limit={5} className='!h-0' />
+      <Link to='/gallery-page' >
+        <p className='bg-[#F3ECDC] text-center cursor-pointer text-[9px] md:text-[15px] text-[#2D2D2D] font-medium'>
+          SEE OUR GALLERY SECTION LEGACY OF ARADHYA INFRA →
+        </p>
+      </Link>
+
       <GetStarted />
       <Testimonials />
       <Footer />

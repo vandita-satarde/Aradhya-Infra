@@ -51,16 +51,16 @@ function Enquiry() {
     <div className="flex">
       <Sidebar />
       <div className=" pt-23 md:pt-8 md:ml-64 p-8 w-full min-h-screen bg-gray-100">
-        <h2 className="text-[21px] sm:text-3xl font-bold mb-4 md:mb-10 text-[#048886]">Enquiries</h2>
+        <h2 className="text-[21px] md:text-3xl font-bold mb-4 md:mb-10 text-[#048886]">Enquiries</h2>
 
-        <div className="mb-4 space-x-2">
-          <button onClick={() => setFilter('all')} className="px-2 py-1 bg-gray-200 rounded">All</button>
-          <button onClick={() => setFilter('read')} className="px-2 py-1 bg-green-200 rounded">Connected</button>
-          <button onClick={() => setFilter('unread')} className="px-2 py-1 bg-yellow-200 rounded">Not Connected</button>
+        <div className="mb-4 space-x-2 text-[10px] md:text-[16px] ">
+          <button onClick={() => setFilter('all')} className="px-2 py-1 bg-gray-200 rounded cursor-pointer ">All</button>
+          <button onClick={() => setFilter('read')} className="px-2 py-1 bg-green-200 rounded cursor-pointer">Connected</button>
+          <button onClick={() => setFilter('unread')} className="px-2 py-1 bg-yellow-200 rounded cursor-pointer">Not Connected</button>
         </div>
 
 
-        <div className="space-y-6 text-[14px] md:text-[16px] ">
+        <div className="space-y-6 text-[13px] md:text-[16px] ">
           {filteredEntries.map((entry) => (
             <div
               key={entry._id}
@@ -126,7 +126,7 @@ function Enquiry() {
                           setEditingId(entry._id);
                           setRemarkInput(entry.adminRemark || '');
                         }}
-                        className="ml-4 text-sm text-[#048886] hover:underline"
+                        className="ml-4 md:text-sm text-[#048886] hover:underline"
                       >
                         Edit
                       </button>
@@ -152,7 +152,7 @@ function Enquiry() {
                       console.error("Failed to toggle read status", err);
                     }
                   }}
-                  className={`px-3 py-1 rounded text-sm ${entry.isRead ? 'bg-green-100 text-green-700' : 'bg-yellow-100 text-yellow-700'
+                  className={`px-3 py-1 rounded md:text-sm ${entry.isRead ? 'bg-green-100 text-green-700' : 'bg-yellow-100 text-yellow-700'
                     }`}
                 >
                   {entry.isRead ? 'Connected' : 'Not Connected'}

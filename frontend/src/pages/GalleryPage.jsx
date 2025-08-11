@@ -80,7 +80,7 @@ function GalleryPage({className=''}) {
               className="absolute top-2 right-4 text-2xl font-bold text-white hover:text-red-500 hover:scale-110 transition-all duration-200 z-50"
               aria-label="Close modal"
             >
-              ×
+              &times;
             </button>
 
             {selectedItem.type === 'image' ? (

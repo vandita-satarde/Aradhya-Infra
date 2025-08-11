@@ -15,7 +15,7 @@ function AddGalleryItem() {
         if (!window.confirm('Are you sure you want to delete this item?')) {
             return;
         }
-        
+
         setDeleting(true);
         try {
             await axios.delete(`https://aradhya-infra-e57v.vercel.app/api/gallery/${id}`);
@@ -80,17 +80,17 @@ function AddGalleryItem() {
         <>
             <Sidebar />
             <div className="pt-23 md:pt-8 md:ml-64 p-8 w-full min-h-screen bg-gray-100">
-                <h2 className="text-2xl md:text-3xl font-bold text-[#048886] mb-6 ">
+                <h2 className="text-[21px] md:text-3xl font-bold text-[#048886] mb-6 ">
                     Add to Gallery
                 </h2>
-                <div className="max-w-md bg-gray-100 rounded-xl shadow-lg p-8">
+                <div className="text-[13px] md:text-[16px] max-w-md bg-gray-100 rounded-xl shadow-lg p-4 md:p-8">
                     <form onSubmit={handleSubmit} className="space-y-6">
                         <div>
                             <label className="block mb-2 font-medium text-gray-700">Upload File</label>
                             <input
                                 type="file"
                                 onChange={handleFileChange}
-                                className="w-full text-[14px] border border-gray-300 rounded px-3 py-1.5 focus:outline-none focus:ring-2 focus:ring-[#048886]"
+                                className="w-full text-[11px] md:text-[14px] border border-gray-300 rounded px-3 py-1.5 focus:outline-none focus:ring-2 focus:ring-[#048886]"
                                 required
                             />
                         </div>
@@ -100,7 +100,7 @@ function AddGalleryItem() {
                             <select
                                 value={type}
                                 onChange={(e) => setType(e.target.value)}
-                                className="w-full text-[14px] border border-gray-300 rounded px-3 py-1.5 focus:outline-none focus:ring-2 focus:ring-[#048886]"
+                                className="w-full text-[11px] md:text-[14px] border border-gray-300 rounded px-3 py-1.5 focus:outline-none focus:ring-2 focus:ring-[#048886]"
                                 required
                             >
                                 <option value="">Select Type</option>
@@ -113,7 +113,7 @@ function AddGalleryItem() {
 
                         <button
                             type="submit"
-                            className=" bg-[#048886] hover:bg-[#03696b] text-white font-semibold px-6 py-2 rounded transition duration-200"
+                            className=" bg-[#048886] hover:bg-[#03696b] text-white font-semibold px-3 md:px-6 py-1 md:py-2 rounded transition duration-200"
                         >
                             Upload
                         </button>
@@ -121,25 +121,25 @@ function AddGalleryItem() {
                 </div>
 
                 <div className="mt-12">
-                    <h3 className="text-xl font-bold text-[#048886] mb-6">Gallery Items</h3>
+                    <h3 className="md:text-xl font-bold text-[#048886] mb-6">Gallery Items</h3>
                     {loading ? (
                         <p>Loading...</p>
                     ) : (
                         <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4">
                             {galleryItems.map((item) => (
-                                <div key={item._id} className="break-inside-avoid mb-4 bg-white rounded-lg shadow-md overflow-hidden">
+                                <div key={item._id} className="break-inside-avoid mb-4 rounded-[20px] overflow-hidden">
                                     {item.type === 'image' ? (
-                                        <img 
-                                            src={item.url} 
-                                            alt="Gallery item" 
+                                        <img
+                                            src={item.url}
+                                            alt="Gallery item"
                                             onClick={() => setSelectedItem(item)}
-                                            className="w-full object-cover hover:scale-105 transition-transform duration-300 cursor-pointer"
+                                            className="w-full rounded-[20px] object-cover transition-transform duration-300 cursor-pointer"
                                         />
                                     ) : (
-                                        <video 
+                                        <video
                                             src={item.url}
                                             onClick={() => setSelectedItem(item)}
-                                            className="w-full object-cover hover:scale-105 transition-transform duration-300 cursor-pointer"
+                                            className="w-full rounded-[20px] object-cover transition-transform duration-300 cursor-pointer"
                                             muted
                                             loop
                                             playsInline
@@ -147,9 +147,9 @@ function AddGalleryItem() {
                                             onMouseLeave={(e) => e.target.pause()}
                                         />
                                     )}
-                                    <div className="p-4">
+                                    <div className="p-2 md:p-3">
                                         <div className="flex justify-between items-center">
-                                            <p className="text-sm text-gray-600">
+                                            <p className="text-[12px] md:text-sm text-gray-600">
                                                 Added: {new Date(item.uploadedAt).toLocaleDateString()}
                                             </p>
                                             <button
@@ -158,7 +158,7 @@ function AddGalleryItem() {
                                                     handleDelete(item._id);
                                                 }}
                                                 disabled={deleting}
-                                                className="text-red-500 hover:text-red-700 bg-red-50 hover:bg-red-100 px-3 py-1 rounded-md text-sm font-medium transition duration-200"
+                                                className="text-red-600 hover:text-red-700 bg-red-200 hover:bg-red-100 px-3 py-1 rounded-md text-[12px] md:text-sm font-medium transition duration-200"
                                             >
                                                 {deleting ? 'Deleting...' : 'Delete'}
                                             </button>
@@ -170,13 +170,15 @@ function AddGalleryItem() {
                     )}
                 </div>
 
-                {/* Modal for viewing items */}
+                {/* ✅ MODAL POPUP */}
                 {selectedItem && (
-                    <div className="fixed inset-0 z-50 bg-black bg-opacity-50 backdrop-blur-sm flex items-center justify-center">
-                        <div className="relative p-4 bg-white rounded-lg max-w-[90vw] max-h-[90vh] shadow-xl">
+                    <div className="fixed inset-0 z-50 backdrop-blur-sm flex items-center justify-center">
+                        <div className="relative max-w-[90vw] max-h-[90vh] shadow-xl">
+                            {/* Close button positioned outside the content area */}
                             <button
                                 onClick={() => setSelectedItem(null)}
-                                className="absolute top-2 right-2 text-black text-2xl font-bold hover:text-red-500"
+                                className="absolute top-2 right-4 text-2xl font-bold text-white hover:text-red-500 hover:scale-110 transition-all duration-200 z-50"
+                                aria-label="Close modal"
                             >
                                 &times;
                             </button>
@@ -185,14 +187,14 @@ function AddGalleryItem() {
                                 <img
                                     src={selectedItem.url}
                                     alt="Modal View"
-                                    className="rounded-lg max-w-full max-h-[80vh] object-contain"
+                                    className="rounded-lg max-w-full max-h-[80vh] object-contain bg-black"
                                 />
                             ) : (
                                 <video
                                     src={selectedItem.url}
                                     controls
                                     autoPlay
-                                    className="rounded-lg max-w-full max-h-[80vh] object-contain"
+                                    className="rounded-lg max-w-full max-h-[80vh] object-contain bg-black"
                                 />
                             )}
                         </div>

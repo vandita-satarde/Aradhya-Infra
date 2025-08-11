@@ -10,15 +10,36 @@ import Footer from '../components/Footer'
 
 const ProjectDetails = () => {
   const { id } = useParams();
-  const [project, setProject] = useState(null);
-  const [otherProjects, setOtherProjects] = useState([]);
+  const [project, setProject] = useState({
+    title: '',
+    description: '',
+    mainImage: '',
+    sideImage1: '',
+    sideImage2: '',
+    rating: 0,
+    reviews: 0,
+    facilities: [],
+    sonderStandard: []
+  });
+  
+  const [displayedImages, setDisplayedImages] = useState({
+    main: '',
+    side1: '',
+    side2: ''
+  });
 
+  const [otherProjects, setOtherProjects] = useState([]);
 
   useEffect(() => {
     const fetchProject = async () => {
       try {
         const res = await axios.get(`https://aradhya-infra-e57v.vercel.app/api/projects/${id}`);
         setProject(res.data);
+        setDisplayedImages({
+          main: res.data.mainImage,
+          side1: res.data.sideImage1,
+          side2: res.data.sideImage2
+        });
       } catch (error) {
         console.error('Error fetching project:', error);
       }
@@ -38,8 +59,16 @@ const ProjectDetails = () => {
     fetchAllProjects();
   }, [id]);
 
-
-  if (!project) return <p>Loading...</p>;
+  // Swap main image with side image
+  const handleImageSwap = (side) => {
+    setDisplayedImages((prev) => {
+      const newImages = { ...prev };
+      const temp = newImages.main;
+      newImages.main = newImages[side];
+      newImages[side] = temp;
+      return newImages;
+    });
+  };
 
 
   return (
@@ -52,22 +81,24 @@ const ProjectDetails = () => {
           <div className='flex flex-col md:flex-row justify-center gap-5 md:gap-10 py-5 md:py-15 bg-[#F3ECDC]'>
             {/* Main Image */}
             <img
-              src={project.mainImage || "https://via.placeholder.com/870x413?text=No+Image"}
+              src={displayedImages.main || "https://via.placeholder.com/870x413?text=No+Image"}
               alt="Main"
-              className='mx-auto md:mx-0 w-[300px] md:w-[870px] h-[150px] md:h-[413px] object-cover rounded-lg'
+              className='border mx-auto md:mx-0 w-[300px] md:w-[870px] h-[150px] md:h-[413px] object-cover rounded-lg'
             />
 
             {/* Side Images */}
             <div className='flex flex-row md:flex-col gap-5 items-center justify-center'>
               <img
-                src={project.sideImage1 || "https://via.placeholder.com/348x196?text=No+Image"}
+                src={displayedImages.side1 || "https://via.placeholder.com/348x196?text=No+Image"}
                 alt="Side 1"
                 className='w-[140px] md:w-[348px] h-[80px] md:h-[196px] object-cover rounded-lg'
+                onClick={() => handleImageSwap("side1")}
               />
               <img
-                src={project.sideImage2 || "https://via.placeholder.com/348x196?text=No+Image"}
+                src={displayedImages.side2 || "https://via.placeholder.com/348x196?text=No+Image"}
                 alt="Side 2"
                 className='w-[140px] md:w-[348px] h-[80px] md:h-[196px] object-cover rounded-lg'
+                onClick={() => handleImageSwap("side2")}
               />
             </div>
           </div>
@@ -94,7 +125,7 @@ const ProjectDetails = () => {
                     <ul className='text-[12px] md:text-[15.5px] flex flex-col gap-1 md:gap-4'>
                       {project.facilities?.map((item, i) => (
                         <li key={i} className='flex items-center gap-2'>
-                          <span className='text-xl text-[#073937]'>{facilityIcons[item] || "🏢"}</span>
+                          <span className='text-md text-[#073937]'>{facilityIcons[item] || "🏢"}</span>
                           <span>{item}</span>
                         </li>
                       ))}
@@ -106,7 +137,7 @@ const ProjectDetails = () => {
                     <ul className='text-[12px] md:text-[15.5px] flex flex-col gap-1 md:gap-4'>
                       {project.sonderStandard?.map((item, i) => (
                         <li key={i} className='flex items-center gap-2'>
-                          <span className='text-xl text-[#073937]'>{standardIcons[item] || "📌"}</span>
+                          <span className='text-md text-[#073937]'>{standardIcons[item] || "📌"}</span>
                           <span>{item}</span>
                         </li>
                       ))}

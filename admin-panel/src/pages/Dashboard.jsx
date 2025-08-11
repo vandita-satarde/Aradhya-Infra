@@ -198,9 +198,9 @@ const Dashboard = () => {
       <div className="pt-23 md:pt-8 md:ml-64 p-8 w-full min-h-screen bg-gray-100">
         <h2 className="text-[20px] md:text-3xl font-bold mb-4 md:mb-10 text-[#048886]">Welcome, {name}</h2>
 
-        <div className="grid gap-6">
+        <div className="flex flex-col md:flex-row gap-8">
           {projects.map((project) => (
-            <div key={project._id} className=" p-4 rounded shadow-xl">
+            <div key={project._id} className=" md:w-1/2 p-4 rounded shadow-xl">
               {editingProject === project._id ? (
                 <>
                   <input value={editFormData.title} onChange={(e) => setEditFormData({ ...editFormData, title: e.target.value })} className="border p-2 w-full mb-2" placeholder="Title" />

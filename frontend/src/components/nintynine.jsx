@@ -3,10 +3,10 @@ import image1 from '../assets/images/nintynine-1.jpeg'
 import image2 from '../assets/images/nintynine-2.jpeg'
 import batch from '../assets/icons/b-award.png'
 
-function nintynine() {
+function nintynine({className=''}) {
   return (
     <>
-      <div className='flex flex-col lg:flex-row gap-10 relative'>
+      <div className={`flex flex-col lg:flex-row gap-10 relative ${className}`}>
         <div className='absolute '>
                           <img src={image1} className=' w-[170px] md:w-[390px] h-[210px] md:h-[500px] object-cover rounded-[30px] ' />
                           <div className='absolute w-[170px] md:w-[390px] top-[50px] md:top-[110px] left-[60px] md:left-[195px] bg-[#F3ECDC] p-2 md:p-3.5 rounded-[30px] shadow-xl shadow-[#00000012] '>
