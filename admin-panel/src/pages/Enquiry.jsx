@@ -55,8 +55,8 @@ function Enquiry() {
 
         <div className="mb-4 space-x-2">
           <button onClick={() => setFilter('all')} className="px-2 py-1 bg-gray-200 rounded">All</button>
-          <button onClick={() => setFilter('read')} className="px-2 py-1 bg-green-200 rounded">Read</button>
-          <button onClick={() => setFilter('unread')} className="px-2 py-1 bg-yellow-200 rounded">Unread</button>
+          <button onClick={() => setFilter('read')} className="px-2 py-1 bg-green-200 rounded">Connected</button>
+          <button onClick={() => setFilter('unread')} className="px-2 py-1 bg-yellow-200 rounded">Not Connected</button>
         </div>
 
 
@@ -83,45 +83,59 @@ function Enquiry() {
                 <span className="text-gray-900">{entry.interestedArea}</span>
               </div>
               <div className="mb-1 md:mb-2">
-                <label className="font-semibold text-gray-700">Admin Remark: </label>
-
-                {editingId === entry._id ? (
-                  <>
-                    <textarea
-                      value={remarkInput}
-                      onChange={(e) => setRemarkInput(e.target.value)}
-                      className="w-full mt-1 p-2 border rounded"
-                      rows={2}
-                    />
-                    <button
-                      onClick={async () => {
-                        await handleRemarkChange(entry._id, remarkInput);
-                        setEditingId(null);
-                      }}
-                      className="mt-2 bg-[#048886] hover:bg-[#037076] text-white px-4 py-1 rounded"
-                    >
-                      Save
-                    </button>
-                  </>
-                ) : (
-                  <div className="flex justify-between items-center">
-                    <p className="text-gray-900">
-                      {entry.adminRemark ? entry.adminRemark : <span className="italic text-gray-400">No remarks added</span>}
-                    </p>
-                    <button
-                      onClick={() => {
-                        setEditingId(entry._id);
-                        setRemarkInput(entry.adminRemark || '');
-                      }}
-                      className="ml-4 text-sm text-[#048886] hover:underline"
-                    >
-                      Edit
-                    </button>
-                  </div>
-                )}
+                <span className="font-semibold text-gray-700">Submitted On: </span>
+                <span className="text-gray-900">
+                  {new Date(entry.createdAt).toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                    // hour: '2-digit',
+                    // minute: '2-digit'
+                  })}
+                </span>
               </div>
+              {entry.isRead && (
+                <div className="mb-1 md:mb-2">
+                  <label className="font-semibold text-gray-700">Admin Remark: </label>
 
-              <div className="mb-1 md:mb-2 flex justify-between items-center">
+                  {editingId === entry._id ? (
+                    <>
+                      <textarea
+                        value={remarkInput}
+                        onChange={(e) => setRemarkInput(e.target.value)}
+                        className="w-full mt-1 p-2 border rounded"
+                        rows={2}
+                      />
+                      <button
+                        onClick={async () => {
+                          await handleRemarkChange(entry._id, remarkInput);
+                          setEditingId(null);
+                        }}
+                        className="mt-2 bg-[#048886] hover:bg-[#037076] text-white px-4 py-1 rounded"
+                      >
+                        Save
+                      </button>
+                    </>
+                  ) : (
+                    <div className="flex justify-between items-center">
+                      <p className="text-gray-900">
+                        {entry.adminRemark ? entry.adminRemark : <span className="italic text-gray-400">No remarks added</span>}
+                      </p>
+                      <button
+                        onClick={() => {
+                          setEditingId(entry._id);
+                          setRemarkInput(entry.adminRemark || '');
+                        }}
+                        className="ml-4 text-sm text-[#048886] hover:underline"
+                      >
+                        Edit
+                      </button>
+                    </div>
+                  )}
+                </div>
+              )}
+
+              <div className="mb-1 md:mb-2 flex gap-3 items-center">
                 <span className="font-semibold text-gray-700">Status: </span>
                 <button
                   onClick={async () => {
@@ -141,11 +155,9 @@ function Enquiry() {
                   className={`px-3 py-1 rounded text-sm ${entry.isRead ? 'bg-green-100 text-green-700' : 'bg-yellow-100 text-yellow-700'
                     }`}
                 >
-                  {entry.isRead ? 'Mark as Read' : 'Mark as Unread'}
+                  {entry.isRead ? 'Connected' : 'Not Connected'}
                 </button>
               </div>
-
-
             </div>
           ))}
         </div>

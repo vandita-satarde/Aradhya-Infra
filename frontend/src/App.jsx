@@ -10,6 +10,9 @@ import OurStory from './pages/OurStory'
 import OurServices from './pages/OurServices'
 import ContactUs from './pages/ContactUs'
 import ScrollToTop from './components/ScrollToTop'
+import GalleryPage from './pages/GalleryPage'
+import Navbar from './components/Navbar'
+import Footer from './components/Footer'
 
 // trigger
 
@@ -27,6 +30,16 @@ function App() {
         <Route path="/story" element={<OurStory />} />
         <Route path="/services" element={<OurServices />} />
         <Route path="/contact" element={<ContactUs />} />
+        <Route 
+          path="/gallery-page" 
+          element={
+            <>
+            <Navbar />
+            <GalleryPage />
+            <Footer />
+            </>
+          } />
+        <Route path="/gallery-section" element={<GalleryPage />} />
       </Routes>
     </BrowserRouter>
   )

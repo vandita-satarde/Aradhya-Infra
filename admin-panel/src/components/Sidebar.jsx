@@ -30,6 +30,7 @@ const Sidebar = () => {
         <h1 className="text-[25px] font-bold mb-10 border-b border-teal-800 pb-6 hidden md:block">Admin Panel</h1>
         <NavLink to="/dashboard" className="mb-4 hover:text-teal-200 block text-[14px] md:text-[16px] pt-15 md:pt-0 ">Dashboard</NavLink>
         <NavLink to="/addprojects" className="mb-4 hover:text-teal-200 block text-[14px] md:text-[16px]">Add Property</NavLink>
+        <NavLink to="/addgallery" className="mb-4 hover:text-teal-200 block text-[14px] md:text-[16px]">Add to Gallery</NavLink>
         <NavLink to="/contactus" className="mb-4 hover:text-teal-200 block text-[14px] md:text-[16px]">Contact Submissions</NavLink>
         <NavLink to="/Enquiry" className="mb-4 hover:text-teal-200 block text-[14px] md:text-[16px]">Enquiries</NavLink>
         <button onClick={handleLogout} className="p-1 md:p-2 mt-85 md:mt-auto text-center rounded-sm text-[#048886] bg-[#F9F9F9] w-full text-[14px] md:text-[16px]">Logout</button>

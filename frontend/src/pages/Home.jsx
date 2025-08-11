@@ -1,17 +1,16 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom';
 
 import HeroSection from '../components/HeroSection'
 import Nintynine from '../components/nintynine'
 import ProductCard from '../components/ProductCard'
 import ServicesCard from '../components/ServicesCard'
-import Gallery from '../components/Gallery'
+import GalleryPage from './GalleryPage';
 import GetStarted from '../components/GetStarted'
 import Testimonials from '../components/Testimonials'
 import Footer from '../components/Footer'
 
 import image1 from '../assets/image-0.jpg'
-import batch from '../assets/icons/b-award.png'
-import image01 from '../assets/image-0.jpg'
 import hsIcon1 from '../assets/icons/hs-icon1.png'
 import hsIcon2 from '../assets/icons/hs-icon2.png'
 import hsIcon3 from '../assets/icons/hs-icon3.png'
@@ -39,8 +38,8 @@ function Home() {
 
 
   const filteredProjects = filter === 'all'
-  ? projects
-  : projects.filter(project =>
+    ? projects
+    : projects.filter(project =>
       project.area?.toLowerCase().includes(filter.toLowerCase())
     );
 
@@ -155,8 +154,15 @@ function Home() {
         </div>
       </div>
 
+      
 
-      <Gallery />
+        <GalleryPage limit={5} className='!h-0' />
+        <Link to='/gallery-page' >
+          <p className='bg-[#F3ECDC] text-center cursor-pointer text-[13px] md:text-[15px] text-[#2D2D2D] font-medium'>
+            SEE OUR GALLERY SECTION LEGACY OF ARADHYA INFRA →
+          </p>
+        </Link>
+      
       <GetStarted />
       <Testimonials />
       <Footer />
