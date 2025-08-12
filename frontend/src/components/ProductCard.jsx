@@ -13,7 +13,7 @@ function ProductCard({ project }) {
     images,
   } = project;
   return (
-    <div className='relative w-[270px] md:w-full max-w-[400px] border-2 border-gray-200 rounded-lg overflow-hidden font-sans hover:shadow-lg transition-shadow duration-300 my-5 mx-5'>
+    <div className='relative w-[270px] bg-white md:w-full max-w-[400px] border-2 border-gray-200 rounded-lg overflow-hidden font-sans hover:shadow-lg transition-shadow duration-300 my-5 mx-5'>
       <div className='relative'>
 
         {tags && tags.length > 0 && (
@@ -32,8 +32,8 @@ function ProductCard({ project }) {
 
         <img
           src={
-            project.mainImage
-              ? project.mainImage
+            project.images && project.images.length > 0
+              ? project.images[0]
               : "https://via.placeholder.com/400x250?text=No+Image"
           }
           alt={project.title}

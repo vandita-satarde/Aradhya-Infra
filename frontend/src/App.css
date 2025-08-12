@@ -5,3 +5,16 @@
   overflow-x: hidden;
   scroll-behavior: smooth;
 } */
+
+/* custom scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background: #d7d6d6;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}

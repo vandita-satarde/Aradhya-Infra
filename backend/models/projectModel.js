@@ -12,10 +12,16 @@ const projectSchema = new mongoose.Schema({
   facilities: [String],
   sonderStandard: [String],
 
-  // Individual image fields
-  mainImage: String,
-  sideImage1: String,
-  sideImage2: String,
+  images: {
+    type: [String],
+    required: [true, 'At least one image is required'],
+    validate: {
+      validator: function(arr) {
+        return arr && arr.length > 0;
+      },
+      message: 'At least one image URL is required'
+    }
+  }
 }, { timestamps: true });
 
 

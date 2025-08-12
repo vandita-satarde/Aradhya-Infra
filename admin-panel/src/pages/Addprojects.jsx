@@ -10,56 +10,58 @@ function Addprojects() {
     location: '',
     area: '',
     rating: '',
-    reviewCount: '',
+    reviews: '',
     description: '',
     tags: '',
-    facilities: [''],
-    sonderStandard: [''],
+    facilities: [],
+    sonderStandard: [],
   });
-
-  const [mainImage, setMainImage] = useState(null);
-  const [sideImage1, setSideImage1] = useState(null);
-  const [sideImage2, setSideImage2] = useState(null);
+  
+  const [selectedImages, setSelectedImages] = useState([]);
+  const [previewImages, setPreviewImages] = useState([]);
+  const [isUploading, setIsUploading] = useState(false);
+  const [uploadProgress, setUploadProgress] = useState(0);
 
   const handleChange = (e) => {
     const { name, type, value, files } = e.target;
 
     if (type === 'file') {
-      // Handle file inputs
-      switch (name) {
-        case 'mainImage':
-          setMainImage(files[0]);
-          break;
-        case 'sideImage1':
-          setSideImage1(files[0]);
-          break;
-        case 'sideImage2':
-          setSideImage2(files[0]);
-          break;
-        default:
-          break;
-      }
+      const newFiles = Array.from(files);
+      setSelectedImages(prev => [...prev, ...newFiles]);
+      
+      // Create preview URLs for the new images
+      const newPreviews = newFiles.map(file => URL.createObjectURL(file));
+      setPreviewImages(prev => [...prev, ...newPreviews]);
     } else {
       // Handle other inputs
       setFormData(prev => ({ ...prev, [name]: value }));
     }
   };
 
-  const handleListChange = (index, field, value) => {
-    const updated = [...formData[field]];
-    updated[index] = value.trimStart(); // optional: only remove leading space
-    setFormData({ ...formData, [field]: updated });
+  const handleDeleteImage = (index) => {
+    setSelectedImages(prev => prev.filter((_, i) => i !== index));
+    setPreviewImages(prev => {
+      // Revoke the URL to prevent memory leaks
+      URL.revokeObjectURL(prev[index]);
+      return prev.filter((_, i) => i !== index);
+    });
   };
 
-  const addListItem = (field) => {
-    setFormData({ ...formData, [field]: [...formData[field], ''] });
-  };
+  // const handleListChange = (index, field, value) => {
+  //   const updated = [...formData[field]];
+  //   updated[index] = value.trimStart(); // optional: only remove leading space
+  //   setFormData({ ...formData, [field]: updated });
+  // };
 
-  const removeListItem = (field, index) => {
-    const updated = [...formData[field]];
-    updated.splice(index, 1);
-    setFormData({ ...formData, [field]: updated });
-  };
+  // const addListItem = (field) => {
+  //   setFormData({ ...formData, [field]: [...formData[field], ''] });
+  // };
+
+  // const removeListItem = (field, index) => {
+  //   const updated = [...formData[field]];
+  //   updated.splice(index, 1);
+  //   setFormData({ ...formData, [field]: updated });
+  // };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -69,8 +71,8 @@ function Addprojects() {
     data.append('location', formData.location);
     data.append('area', formData.area);
     data.append('tags', formData.tags);
-    data.append('rating', Number(formData.rating.split('/')[0]));
-    data.append('reviewCount', formData.reviewCount); // renamed to match backend
+    data.append('rating', formData.rating.includes('/') ? Number(formData.rating.split('/')[0]) : Number(formData.rating));
+    data.append('reviews', formData.reviews); // renamed to match backend
     data.append('description', formData.description);
     formData.facilities.forEach(facility => {
       data.append('facilities[]', facility.trim());
@@ -81,38 +83,81 @@ function Addprojects() {
     });
 
 
-    if (mainImage) data.append('mainImage', mainImage);
-    if (sideImage1) data.append('sideImage1', sideImage1);
-    if (sideImage2) data.append('sideImage2', sideImage2);
+    if (selectedImages.length === 0) {
+      alert('Please select at least one image');
+      return;
+    }
+
+    // Append all selected images
+    selectedImages.forEach(image => {
+      data.append('images', image);
+    });
 
     try {
+      setIsUploading(true);
+      setUploadProgress(0);
+      
+      console.log('Submitting form with data:', {
+        title: formData.title,
+        location: formData.location,
+        area: formData.area,
+        tags: formData.tags,
+        rating: formData.rating,
+        reviews: formData.reviews,
+        description: formData.description,
+        facilities: formData.facilities,
+        sonderStandard: formData.sonderStandard,
+        imageCount: selectedImages.length
+      });
+
       const response = await axios.post('https://aradhya-infra-e57v.vercel.app/api/projects', data, {
         headers: { 'Content-Type': 'multipart/form-data' },
+        timeout: 300000, // Increased to 5 minutes timeout for multiple large images
         onUploadProgress: (progressEvent) => {
           const percentCompleted = Math.round((progressEvent.loaded * 100) / progressEvent.total);
+          setUploadProgress(percentCompleted);
           console.log('Upload progress:', percentCompleted + '%');
         }
       });
 
-      console.log('Server response:', response.data);
-      alert('Project submitted successfully');
+      console.log('✅ Server response:', response.data);
+      alert(`Project "${formData.title}" submitted successfully! Images uploaded to Cloudinary.`);
+      
+      // Reset form data
       setFormData({
         title: '',
         location: '',
         area: '',
         rating: '',
-        reviewCount: '',
+        reviews: '',
         description: '',
         tags: '',
-        facilities: [''],
-        sonderStandard: [''],
+        facilities: [],
+        sonderStandard: [],
       });
-      setMainImage(null);
-      setSideImage1(null);
-      setSideImage2(null);
+      
+      // Clear images and revoke URLs
+      setSelectedImages([]);
+      setPreviewImages(prev => {
+        prev.forEach(url => URL.revokeObjectURL(url));
+        return [];
+      });
+      
     } catch (error) {
-      console.error('Error submitting project:', error);
-      alert('Error submitting project');
+      console.error('❌ Error submitting project:', error);
+      
+      let errorMessage = 'Error submitting project';
+      if (error.response) {
+        console.error('Error response:', error.response.data);
+        errorMessage = error.response.data.message || errorMessage;
+      } else if (error.request) {
+        errorMessage = 'No response from server. Please check if the backend is running.';
+      }
+      
+      alert(errorMessage);
+    } finally {
+      setIsUploading(false);
+      setUploadProgress(0);
     }
   };
 
@@ -147,34 +192,40 @@ function Addprojects() {
           </select>
 
           <input name="rating" value={formData.rating} onChange={handleChange} placeholder="Rating (out of 5)" className="w-full p-2 border rounded" required />
-          <input name="reviewCount" value={formData.reviewCount} onChange={handleChange} placeholder="Review Count (e.g., 900+ reviews)" className="w-full p-2 border rounded" required />
+          <input name="reviews" value={formData.reviews} onChange={handleChange} placeholder="Review Count (e.g., 900+ reviews)" className="w-full p-2 border rounded" required />
 
           <textarea name="description" value={formData.description} onChange={handleChange} placeholder="Description (use \\n\\n for new paragraphs)" rows="4" className="w-full p-2 border rounded" required />
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          {/* Image Upload Section */}
+          <div className="space-y-4">
             <input
               type="file"
-              name="mainImage"
-              accept="image/*"
+              name="images"
+              accept="image/*,.jpg,.jpeg,.png,.gif,.bmp,.webp,.svg,.tiff,.ico,.avif,.heic,.heif"
               onChange={handleChange}
-              className="p-2 border rounded"
-              required
+              multiple
+              className="w-full p-2 border rounded"
+              required={selectedImages.length === 0}
             />
-            <input
-              type="file"
-              name="sideImage1"
-              accept="image/*"
-              onChange={handleChange}
-              className="p-2 border rounded"
-              required
-            />
-            <input
-              type="file"
-              name="sideImage2"
-              accept="image/*"
-              onChange={handleChange}
-              className="p-2 border rounded"
-              required
-            />
+            
+            {/* Image Preview Grid */}
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+              {previewImages.map((url, index) => (
+                <div key={index} className="relative group">
+                  <img
+                    src={url}
+                    alt={`Preview ${index + 1}`}
+                    className="w-full h-40 object-cover rounded"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => handleDeleteImage(index)}
+                    className="absolute top-2 right-2 bg-red-500 text-white p-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
+                  >
+                    ✕
+                  </button>
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* Facilities Dropdown */}
@@ -215,8 +266,29 @@ function Addprojects() {
           </div>
 
 
-          <button type="submit" className="bg-[#048886] hover:bg-[#03696b] text-white font-semibold px-4 py-2 rounded w-full sm:w-auto">
-            Submit Project
+          {/* Upload Progress */}
+          {isUploading && (
+            <div className="w-full bg-gray-200 rounded-full h-2.5">
+              <div 
+                className="bg-[#048886] h-2.5 rounded-full transition-all duration-300" 
+                style={{ width: `${uploadProgress}%` }}
+              ></div>
+              <p className="text-sm text-gray-600 mt-2">
+                Uploading images... {uploadProgress}% ({selectedImages.length} images)
+              </p>
+            </div>
+          )}
+
+          <button 
+            type="submit" 
+            disabled={isUploading}
+            className={`font-semibold px-4 py-2 rounded w-full sm:w-auto ${
+              isUploading 
+                ? 'bg-gray-400 text-gray-700 cursor-not-allowed' 
+                : 'bg-[#048886] hover:bg-[#03696b] text-white'
+            }`}
+          >
+            {isUploading ? `Uploading... ${uploadProgress}%` : 'Submit Project'}
           </button>
         </form>
       </div>

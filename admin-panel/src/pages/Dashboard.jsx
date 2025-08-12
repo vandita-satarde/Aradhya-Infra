@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Sidebar from '../components/Sidebar';
 import axios from 'axios';
+import Select from 'react-select';
+
 
 const Dashboard = () => {
   const name = localStorage.getItem("name");
@@ -11,13 +13,12 @@ const Dashboard = () => {
     description: '',
     location: '',
     rating: '',
-    reviewCount: '',
+    reviews: '',
+    area: '',
     tags: '',
     facilities: [''],
     sonderStandard: [''],
-    mainImage: '',
-    sideImage1: '',
-    sideImage2: ''
+    images: [],
   });
 
   useEffect(() => {
@@ -27,6 +28,7 @@ const Dashboard = () => {
   const fetchProjects = async () => {
     try {
       const res = await axios.get('https://aradhya-infra-e57v.vercel.app/api/projects');
+      console.log('Projects fetched:', res.data);
       setProjects(res.data);
     } catch (err) {
       console.error('Error fetching projects:', err);
@@ -41,128 +43,113 @@ const Dashboard = () => {
       description: project.description || '',
       location: project.location || '',
       rating: project.rating || '',
-      reviewCount: project.reviews || '',
+      reviews: project.reviews || '',
+      area: project.area || '',
       tags: project.tags || '',
       facilities: project.facilities || [''],
       sonderStandard: project.sonderStandard || [''],
-      mainImage: project.mainImage || '',
-      sideImage1: project.sideImage1 || '',
-      sideImage2: project.sideImage2 || ''
+      images: project.images || []
     });
   };
 
-  const [uploadProgress, setUploadProgress] = useState({});
-  const [previewImages, setPreviewImages] = useState({});
-
-  const handleImageChange = async (e) => {
-    const { name, files } = e.target;
-    if (!files || !files[0]) return;
-
-    const file = files[0];
-    
-    // Validate file type
-    const validTypes = ['image/jpeg', 'image/png', 'image/jpg'];
-    if (!validTypes.includes(file.type)) {
-      alert('Please select a valid image file (JPEG, PNG)');
-      return;
-    }
-
-    console.log('Uploading file:', file.name, 'for field:', name);
-
-    // Set initial progress and preview
-    setUploadProgress(prev => ({ ...prev, [name]: 0 }));
-    
-    // Create object URL for immediate preview
-    const previewUrl = URL.createObjectURL(file);
-    setPreviewImages(prev => ({ ...prev, [name]: previewUrl }));
-
-    try {
-      const formData = new FormData();
-      formData.append('file', file);
-      formData.append('upload_preset', 'newerror');
-
-      console.log('Starting Cloudinary upload...');
-      const response = await axios.post(
-        'https://api.cloudinary.com/v1_1/dsauuyk9v/image/upload',
-        formData,
-        {
-          headers: {
-            'Content-Type': 'multipart/form-data'
-          },
-          onUploadProgress: (progressEvent) => {
-            const percentCompleted = Math.round((progressEvent.loaded * 100) / progressEvent.total);
-            console.log(`Upload progress: ${percentCompleted}%`);
-            setUploadProgress(prev => ({ ...prev, [name]: percentCompleted }));
-          }
-        }
-      );
-
-      console.log('Upload successful:', response.data);
-      
-      // Revoke object URL to free memory
-      URL.revokeObjectURL(previewUrl);
-      
-      // Update form data with the new image URL
-      setEditFormData(prev => {
-        const newState = {
-          ...prev,
-          [name]: response.data.secure_url
-        };
-        console.log('Updated form data:', newState);
-        return newState;
-      });
-
-      // Update preview with the actual uploaded image URL
-      setPreviewImages(prev => ({ ...prev, [name]: response.data.secure_url }));
-      
-      // Clear progress
-      setUploadProgress(prev => ({ ...prev, [name]: null }));
-
-    } catch (error) {
-      console.error('Error uploading image:', error);
-      if (error.response) {
-        console.error('Cloudinary response:', error.response.data);
-      }
-      
-      // Clear progress and preview on error
-      setUploadProgress(prev => ({ ...prev, [name]: null }));
-      setPreviewImages(prev => ({ ...prev, [name]: null }));
-      
-      alert('Error uploading image. Please try again.');
-    }
+  // Handle change for normal inputs
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setEditFormData(prev => ({ ...prev, [name]: value }));
   };
 
+  // Handle changing an item in facilities or sonderStandard arrays
+  const handleListChange = (field, index, value) => {
+    const updatedList = [...editFormData[field]];
+    updatedList[index] = value;
+    setEditFormData(prev => ({ ...prev, [field]: updatedList }));
+  };
 
-  // We can remove this function as we're now handling image removal directly in the UI
-  // using the onClick handlers in the image preview sections
+  // Add item to list
+  const addListItem = (field) => {
+    setEditFormData(prev => ({ ...prev, [field]: [...prev[field], ''] }));
+  };
 
+  // Remove item from list
+  const removeListItem = (field, index) => {
+    const updated = [...editFormData[field]];
+    updated.splice(index, 1);
+    setEditFormData(prev => ({ ...prev, [field]: updated }));
+  };
 
-  const handleUpdate = async (id) => {
+  // Handle image file change: replace specific image at index
+  const handleImageChange = (e, index) => {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    // Create preview URL to show instantly
+    const previewUrl = URL.createObjectURL(file);
+
+    // Replace the image at index with the file object wrapped with preview URL (we keep file for upload)
+    const updatedImages = [...editFormData.images];
+    updatedImages[index] = file; // store file object
+
+    setEditFormData(prev => ({ ...prev, images: updatedImages }));
+  };
+
+  // Add new image slot (empty)
+  const addImage = () => {
+    setEditFormData(prev => ({ ...prev, images: [...prev.images, ''] }));
+  };
+
+  // Remove image by index
+  const removeImage = (index) => {
+    const updated = [...editFormData.images];
+    updated.splice(index, 1);
+    setEditFormData(prev => ({ ...prev, images: updated }));
+  };
+
+  // Upload new images and update project
+  const handleUpdate = async () => {
     try {
-      console.log('Updating project with data:', editFormData);
-      
-      const dataToUpdate = {
-        ...editFormData,
-        mainImage: editFormData.mainImage || '',
-        sideImage1: editFormData.sideImage1 || '',
-        sideImage2: editFormData.sideImage2 || ''
-      };
+      const data = new FormData();
+      data.append('title', editFormData.title);
+      data.append('description', editFormData.description);
+      data.append('location', editFormData.location);
+      data.append('rating', editFormData.rating);
+      data.append('reviews', editFormData.reviews);
+      data.append('area', editFormData.area);
+      data.append('tags', editFormData.tags);
+      editFormData.facilities.forEach(f => data.append('facilities[]', f));
+      editFormData.sonderStandard.forEach(s => data.append('sonderStandard[]', s));
 
-      console.log('Sending update request with data:', dataToUpdate);
-      
-      const res = await axios.put(`https://aradhya-infra-e57v.vercel.app/api/projects/${id}`, dataToUpdate);
-      console.log('Update response:', res.data);
-      
-      const updated = projects.map(p => p._id === id ? res.data : p);
-      setProjects(updated);
+      // For images:
+      // If the image is a file (newly uploaded), append the file
+      // If it is a string (existing URL), append the URL as is (backend should handle this)
+      editFormData.images.forEach(img => {
+        if (typeof img === 'string') {
+          // Existing image URL - send as string
+          data.append('existingImages[]', img);
+        } else {
+          // New file to upload
+          data.append('images', img);
+        }
+      });
+
+      const res = await axios.put(`https://aradhya-infra-e57v.vercel.app/api/projects/${editingProject}`, data, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      });
+
+      console.log('Updated project response:', res.data); // <-- add this!
+
+      // Option 1: update local projects with response (only if res.data contains full updated project)
+      // setProjects(prev => prev.map(p => (p._id === editingProject ? res.data : p)));
+
+      // Option 2: re-fetch projects from server after update (recommended if unsure)
+      await fetchProjects();
+
       setEditingProject(null);
-      alert("Project updated successfully!");
-    } catch (err) {
-      console.error("Error updating project:", err);
-      if (err.response) {
-        console.error('Server response:', err.response.data);
-      }
-      alert("Error updating project. Please try again.");
+      alert('Project updated successfully!');
+    } catch (error) {
+      console.error('Error updating project:', error);
+      alert('Failed to update project. Check console for details.');
     }
   };
 
@@ -173,24 +160,37 @@ const Dashboard = () => {
       fetchProjects();
     } catch (err) {
       console.error('Error deleting project:', err);
+      alert('Failed to delete project.');
     }
   };
 
-  const handleListChange = (field, index, value) => {
-    const updatedList = [...editFormData[field]];
-    updatedList[index] = value;
-    setEditFormData({ ...editFormData, [field]: updatedList });
-  };
 
-  const addListItem = (field) => {
-    setEditFormData({ ...editFormData, [field]: [...editFormData[field], ''] });
-  };
+  const areaOptions = [
+    { value: 'Premium Commercial Space', label: 'Premium Commercial Space' },
+    { value: 'Premium Residential Space', label: 'Premium Residential Space' },
+    { value: 'Commercial Space', label: 'Commercial Space' },
+    { value: 'Residential Space', label: 'Residential Space' },
+    { value: 'Other', label: 'Other' },
+  ];
 
-  const removeListItem = (field, index) => {
-    const updated = [...editFormData[field]];
-    updated.splice(index, 1);
-    setEditFormData({ ...editFormData, [field]: updated });
-  };
+  const tagsOptions = [
+    { value: 'Under Construction', label: 'Under Construction' },
+    { value: 'Sold Out', label: 'Sold Out' },
+  ];
+
+  const facilitiesOptions = [
+    { value: 'gym', label: 'Gym' },
+    { value: 'wifi', label: 'Wi-Fi' },
+    { value: 'parking', label: 'Parking' },
+    { value: 'pool', label: 'Swimming Pool' },
+  ];
+
+  const sonderStandardOptions = [
+    { value: 'kitchen', label: 'Modular Kitchen' },
+    { value: 'furnished', label: 'Furnished' },
+    { value: 'balcony', label: 'Balcony' },
+  ];
+
 
   return (
     <div className="flex ">
@@ -198,63 +198,71 @@ const Dashboard = () => {
       <div className="pt-23 md:pt-8 md:ml-64 p-8 w-full min-h-screen bg-gray-100">
         <h2 className="text-[20px] md:text-3xl font-bold mb-4 md:mb-10 text-[#048886]">Welcome, {name}</h2>
 
-        <div className="flex flex-col md:flex-row gap-8">
+        <div className="flex flex-wrap gap-8">
           {projects.map((project) => (
-            <div key={project._id} className=" md:w-1/2 p-4 rounded shadow-xl">
+            <div key={project._id} className="w-[500px] p-4 rounded shadow-xl">
               {editingProject === project._id ? (
                 <>
-                  <input value={editFormData.title} onChange={(e) => setEditFormData({ ...editFormData, title: e.target.value })} className="border p-2 w-full mb-2" placeholder="Title" />
-                  <input value={editFormData.location} onChange={(e) => setEditFormData({ ...editFormData, location: e.target.value })} className="border p-2 w-full mb-2" placeholder="Location" />
-                  <input value={editFormData.rating} onChange={(e) => setEditFormData({ ...editFormData, rating: e.target.value })} className="border p-2 w-full mb-2" placeholder="Rating" />
-                  <input value={editFormData.reviewCount} onChange={(e) => setEditFormData({ ...editFormData, reviewCount: e.target.value })} className="border p-2 w-full mb-2" placeholder="Reviews" />
-                  <input value={editFormData.tags} onChange={(e) => setEditFormData({ ...editFormData, tags: e.target.value })} className="border p-2 w-full mb-2" placeholder="Tags" />
-                  <textarea value={editFormData.description} onChange={(e) => setEditFormData({ ...editFormData, description: e.target.value })} className="border p-2 w-full mb-2" placeholder="Description" />
+                  <input name='title' value={editFormData.title} onChange={handleChange} className="border p-2 w-full mb-2" placeholder="Title" />
+                  <input name="location" value={editFormData.location} onChange={handleChange} className="border p-2 w-full mb-2" placeholder="Location" />
+                  <input name="rating" value={editFormData.rating} onChange={handleChange} className="border p-2 w-full mb-2" placeholder="Rating" />
+                  <input name="reviews" value={editFormData.reviews} onChange={handleChange} className="border p-2 w-full mb-2" placeholder="Reviews" />
+                  <div className="mb-2">
+                    <label className="font-semibold">Area</label>
+                    <Select
+                      options={areaOptions}
+                      value={areaOptions.find(opt => opt.value === editFormData.area) || null}
+                      onChange={(selected) => {
+                        setEditFormData(prev => ({
+                          ...prev,
+                          area: selected ? selected.value : ''
+                        }));
+                      }}
+                      placeholder="Select Area"
+                      isClearable
+                    />
+                  </div>
+
+                  <div className="mb-2">
+                    <label className="font-semibold">Tags</label>
+                    <Select
+                      options={tagsOptions}
+                      value={tagsOptions.find(opt => editFormData.tags.includes(opt.value))}
+                      onChange={(selected) => {
+                        setEditFormData(prev => ({
+                          ...prev,
+                          tags: selected ? selected.value : ''
+                        }));
+                      }}
+                      placeholder="Select Tag"
+                      isClearable
+                    />
+                  </div>
+                  <textarea name="description" value={editFormData.description} onChange={handleChange} className="border p-2 w-full mb-2" placeholder="Description" />
                   <div className="space-y-4">
-                    {['mainImage', 'sideImage1', 'sideImage2'].map((fieldName) => (
-                      <div key={fieldName} className="mb-6">
-                        <label className="text-sm font-medium block mb-2">
-                          {fieldName === 'mainImage' ? 'Main Image' : 
-                           fieldName === 'sideImage1' ? 'Side Image 1' : 'Side Image 2'}
-                        </label>
-                        <div className="space-y-3">
-                          {/* File Input */}
-                          <div className="flex items-center gap-4">
-                            <input
-                              type="file"
-                              name={fieldName}
-                              accept="image/*"
-                              onChange={handleImageChange}
-                              className="flex-1 border p-2 rounded"
-                            />
-                          </div>
+                    <div className="flex flex-wrap gap-6 justify-start my-4 mx-5 ">
+                      {editFormData.images.map((img, idx) => (
+                        <div key={idx} className="flex flex-col ">
+                          <label className="text-sm font-medium block mb-2">Image {idx + 1}</label>
+                          <input
+                            type="file"
+                            accept="image/*"
+                            onChange={(e) => handleImageChange(e, idx)}
+                            className="border p-2 rounded w-50 "
+                          />
 
-                          {/* Upload Progress */}
-                          {uploadProgress[fieldName] !== null && uploadProgress[fieldName] !== undefined && (
-                            <div className="w-full bg-gray-200 rounded-full h-2.5">
-                              <div
-                                className="bg-blue-600 h-2.5 rounded-full transition-all duration-300"
-                                style={{ width: `${uploadProgress[fieldName]}%` }}
-                              ></div>
-                              <p className="text-sm text-gray-600 mt-1">
-                                Uploading... {uploadProgress[fieldName]}%
-                              </p>
-                            </div>
-                          )}
-
-                          {/* Image Preview */}
-                          {(previewImages[fieldName] || editFormData[fieldName]) && (
-                            <div className="relative group inline-block">
+                          {/* Show preview: if string URL or if file object show object URL */}
+                          {img && (
+                            <div className="relative inline-block mt-2">
                               <img
-                                src={previewImages[fieldName] || editFormData[fieldName]}
-                                alt={`Preview ${fieldName}`}
+                                src={typeof img === 'string' ? img : URL.createObjectURL(img)}
+                                alt={`Project Image ${idx + 1}`}
                                 className="w-32 h-32 object-cover rounded border"
                               />
                               <button
-                                onClick={() => {
-                                  setEditFormData(prev => ({ ...prev, [fieldName]: '' }));
-                                  setPreviewImages(prev => ({ ...prev, [fieldName]: null }));
-                                }}
-                                className="absolute top-2 right-2 bg-black bg-opacity-50 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm opacity-0 group-hover:opacity-100 transition-opacity"
+                                type="button"
+                                onClick={() => removeImage(idx)}
+                                className="absolute top-1 right-1 bg-black bg-opacity-50 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm"
                                 title="Remove image"
                               >
                                 ✕
@@ -262,46 +270,54 @@ const Dashboard = () => {
                             </div>
                           )}
                         </div>
-                      </div>
-                    ))}
+                      ))}
+
+                    </div>
+                    <button
+                      type="button"
+                      onClick={addImage}
+                      className="text-blue-500 text-sm mb-4"
+                    >
+                      + Add Image
+                    </button>
                   </div>
 
 
-
-                  {/* Facilities */}
+                  {/* Facilities Multi-select */}
                   <div>
                     <label className="font-semibold">Facilities</label>
-                    {editFormData.facilities.map((item, index) => (
-                      <div key={index} className="flex gap-2 items-center mb-2">
-                        <input
-                          value={item}
-                          onChange={(e) => handleListChange('facilities', index, e.target.value)}
-                          className="w-full border p-2"
-                        />
-                        <button type="button" onClick={() => removeListItem('facilities', index)} className="text-red-500">✕</button>
-                      </div>
-                    ))}
-                    <button type="button" onClick={() => addListItem('facilities')} className="text-blue-500 text-sm">+ Add Facility</button>
+                    <Select
+                      isMulti
+                      options={facilitiesOptions}
+                      value={facilitiesOptions.filter(opt => editFormData.facilities.includes(opt.value))}
+                      onChange={(selected) => {
+                        setEditFormData(prev => ({
+                          ...prev,
+                          facilities: selected ? selected.map(opt => opt.value) : []
+                        }));
+                      }}
+                    />
                   </div>
 
-                  {/* Sonder Standard */}
+                  {/* Sonder Standard Multi-select */}
                   <div className="mt-4">
                     <label className="font-semibold">Sonder Standards</label>
-                    {editFormData.sonderStandard.map((item, index) => (
-                      <div key={index} className="flex gap-2 items-center mb-2">
-                        <input
-                          value={item}
-                          onChange={(e) => handleListChange('sonderStandard', index, e.target.value)}
-                          className="w-full border p-2"
-                        />
-                        <button type="button" onClick={() => removeListItem('sonderStandard', index)} className="text-red-500">✕</button>
-                      </div>
-                    ))} 
-                    <button type="button" onClick={() => addListItem('sonderStandard')} className="text-blue-500 text-sm">+ Add Standard</button>
+                    <Select
+                      isMulti
+                      options={sonderStandardOptions}
+                      value={sonderStandardOptions.filter(opt => editFormData.sonderStandard.includes(opt.value))}
+                      onChange={(selected) => {
+                        setEditFormData(prev => ({
+                          ...prev,
+                          sonderStandard: selected ? selected.map(opt => opt.value) : []
+                        }));
+                      }}
+                    />
                   </div>
 
+
                   <div className="flex gap-4 mt-4 text-[14px] md:text-[16px]">
-                    <button onClick={() => handleUpdate(project._id)} className="bg-green-500 text-white px-2 md:px-4 py-1 md:py-2 rounded">Save</button>
+                    <button onClick={handleUpdate} className="bg-green-500 text-white px-2 md:px-4 py-1 md:py-2 rounded">Save</button>
                     <button onClick={() => setEditingProject(null)} className="bg-gray-400 text-white px-2 md:px-4 py-1 md:py-2 rounded">Cancel</button>
                   </div>
                 </>
@@ -309,9 +325,14 @@ const Dashboard = () => {
                 <>
                   <h3 className="text-sm md:text-xl font-bold">{project.title}</h3>
                   <p className="text-gray-500">{project.location}</p>
-                  <img src={project.mainImage} alt={project.title} className="w-40 mt-2 rounded" />
+                  <img
+                    src={project.images?.[0] || '/placeholder.jpg'}
+                    alt={project.title}
+                    className="w-40 mt-2 rounded"
+                  />
                   <p className="mt-2">{project.description}</p>
-                  <p className="text-sm text-gray-600 mt-1">⭐ {project.rating} | {project.reviews} reviews</p>
+                  <p className="text-sm text-gray-600 mt-1">⭐ {project.rating}/5 | {project.reviews} reviews</p>
+                  <p className="text-sm mt-1">Area: {project.area}</p>
                   <p className="text-sm mt-1">Tags: {project.tags}</p>
                   <p className="text-sm mt-1">Facilities: {project.facilities?.join(', ')}</p>
                   <p className="text-sm mt-1">Sonder Standard: {project.sonderStandard?.join(', ')}</p>

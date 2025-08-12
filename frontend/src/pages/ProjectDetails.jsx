@@ -21,13 +21,9 @@ const ProjectDetails = () => {
     facilities: [],
     sonderStandard: []
   });
-  
-  const [displayedImages, setDisplayedImages] = useState({
-    main: '',
-    side1: '',
-    side2: ''
-  });
 
+  const [mainImage, setMainImage] = useState('');
+  const [currentSideImageIndex, setCurrentSideImageIndex] = useState(0);
   const [otherProjects, setOtherProjects] = useState([]);
 
   useEffect(() => {
@@ -35,11 +31,9 @@ const ProjectDetails = () => {
       try {
         const res = await axios.get(`https://aradhya-infra-e57v.vercel.app/api/projects/${id}`);
         setProject(res.data);
-        setDisplayedImages({
-          main: res.data.mainImage,
-          side1: res.data.sideImage1,
-          side2: res.data.sideImage2
-        });
+        if (res.data.images && res.data.images.length > 0) {
+          setMainImage(res.data.images[0]);
+        }
       } catch (error) {
         console.error('Error fetching project:', error);
       }
@@ -59,16 +53,18 @@ const ProjectDetails = () => {
     fetchAllProjects();
   }, [id]);
 
-  // Swap main image with side image
-  const handleImageSwap = (side) => {
-    setDisplayedImages((prev) => {
-      const newImages = { ...prev };
-      const temp = newImages.main;
-      newImages.main = newImages[side];
-      newImages[side] = temp;
-      return newImages;
+
+  // Swap main image with clicked side image
+  const handleImageSwap = (clickedIndex) => {
+    setProject((prev) => {
+      const newImages = [...prev.images]; // copy array
+      // Swap main (index 0) with clicked image
+      [newImages[0], newImages[clickedIndex]] = [newImages[clickedIndex], newImages[0]];
+      return { ...prev, images: newImages };
     });
+    setMainImage(project.images[clickedIndex]); // optional, ensures mainImage updates instantly
   };
+
 
 
   return (
@@ -78,33 +74,33 @@ const ProjectDetails = () => {
         </div>
         <Navbar />  {/* className='bg-[#34363c80]' */}
         <div>
-          <div className='flex flex-col md:flex-row justify-center gap-5 md:gap-10 py-5 md:py-15 bg-[#F3ECDC]'>
-            {/* Main Image */}
+          {/* Images */}
+          <div className='flex flex-col md:flex-row justify-center gap-5 md:gap-10 py-5 md:py-15 bg-[#F3ECDC] relative'>
             <img
-              src={displayedImages.main || "https://via.placeholder.com/870x413?text=No+Image"}
+              src={mainImage || "https://via.placeholder.com/870x413?text=No+Image"}
               alt="Main"
               className='border mx-auto md:mx-0 w-[300px] md:w-[870px] h-[150px] md:h-[413px] object-cover rounded-lg'
             />
 
-            {/* Side Images */}
-            <div className='flex flex-row md:flex-col gap-5 items-center justify-center'>
-              <img
-                src={displayedImages.side1 || "https://via.placeholder.com/348x196?text=No+Image"}
-                alt="Side 1"
-                className='w-[140px] md:w-[348px] h-[80px] md:h-[196px] object-cover rounded-lg'
-                onClick={() => handleImageSwap("side1")}
-              />
-              <img
-                src={displayedImages.side2 || "https://via.placeholder.com/348x196?text=No+Image"}
-                alt="Side 2"
-                className='w-[140px] md:w-[348px] h-[80px] md:h-[196px] object-cover rounded-lg'
-                onClick={() => handleImageSwap("side2")}
-              />
+            <div className="flex flex-row md:flex-col gap-5 overflow-x-auto md:overflow-y-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-transparent max-h-[413px]">
+              {project.images &&
+                project.images.slice(1).map((image, index) => {
+                  const realIndex = index + 1; // actual index in images array
+                  return (
+                    <img
+                      key={realIndex}
+                      src={image || "https://via.placeholder.com/348x196?text=No+Image"}
+                      alt={`Side ${realIndex}`}
+                      className="w-[140px] md:w-[348px] h-[80px] md:h-[196px] object-cover rounded-lg shadow cursor-pointer hover:border hover:opacity-90 transition-opacity flex-shrink-0"
+                      onClick={() => handleImageSwap(realIndex)}
+                    />
+                  );
+                })}
             </div>
           </div>
 
 
-
+          {/* Detials Content */}
           <div className='px-5 md:px-28 py-8 md:py-15 text-[#073937]'>
             <p className='text-[28px] md:text-[45px] font-[abril] font-bold '>{project.title} </p>
             <div className='flex flex-col md:flex-row gap-10 md:gap-40 '>
