@@ -24,8 +24,8 @@ const Login = () => {
 
   return (
     <div className="bg-[#c0d7d7] flex justify-center items-center h-screen">
-      <form className="bg-[#F9F9F9] p-6 md:p-8 text-center rounded-xl shadow-md w-70 md:w-96" onSubmit={handleLogin}>
-        <h2 className="text-[25px] md:text-3xl font-bold mb-5 md:mb-10 text-[#048886]">Admin Login</h2>
+      <form className="bg-[#F9F9F9] p-6 md:p-8 text-center rounded-xl shadow-md w-65 md:w-96" onSubmit={handleLogin}>
+        <h2 className="text-[22px] md:text-3xl font-bold mb-5 md:mb-10 text-[#048886]">Admin Login</h2>
 
         <input
           type="email"
@@ -45,7 +45,7 @@ const Login = () => {
         />
         <button
           type="submit"
-          className="w-[90px] md:w-[120px] bg-[#048886] text-white p-1.5 md:p-3 rounded-lg hover:bg-teal-700"
+          className="w-[80px] md:w-[120px] bg-[#048886] text-white p-1.5 md:p-3 rounded-lg hover:bg-teal-700"
         >
           Login
         </button>

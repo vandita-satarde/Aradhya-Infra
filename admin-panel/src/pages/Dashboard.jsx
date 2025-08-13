@@ -27,7 +27,7 @@ const Dashboard = () => {
 
   const fetchProjects = async () => {
     try {
-      const res = await axios.get('https://aradhya-infra-e57v.vercel.app/api/projects');
+      const res = await axios.get('http://localhost:5000/api/projects');
       console.log('Projects fetched:', res.data);
       setProjects(res.data);
     } catch (err) {
@@ -131,7 +131,7 @@ const Dashboard = () => {
         }
       });
 
-      const res = await axios.put(`https://aradhya-infra-e57v.vercel.app/api/projects/${editingProject}`, data, {
+      const res = await axios.put(`http://localhost:5000/api/projects/${editingProject}`, data, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
@@ -156,7 +156,7 @@ const Dashboard = () => {
   const handleDelete = async (id) => {
     if (!window.confirm('Are you sure you want to delete this project?')) return;
     try {
-      await axios.delete(`https://aradhya-infra-e57v.vercel.app/api/projects/${id}`);
+      await axios.delete(`http://localhost:5000/api/projects/${id}`);
       fetchProjects();
     } catch (err) {
       console.error('Error deleting project:', err);
@@ -200,13 +200,13 @@ const Dashboard = () => {
 
         <div className="flex flex-wrap gap-8">
           {projects.map((project) => (
-            <div key={project._id} className="w-[500px] p-4 rounded shadow-xl">
+            <div key={project._id} className="text-[12px] md:text-[16px] w-[500px] p-4 rounded shadow-xl">
               {editingProject === project._id ? (
                 <>
-                  <input name='title' value={editFormData.title} onChange={handleChange} className="border p-2 w-full mb-2" placeholder="Title" />
-                  <input name="location" value={editFormData.location} onChange={handleChange} className="border p-2 w-full mb-2" placeholder="Location" />
-                  <input name="rating" value={editFormData.rating} onChange={handleChange} className="border p-2 w-full mb-2" placeholder="Rating" />
-                  <input name="reviews" value={editFormData.reviews} onChange={handleChange} className="border p-2 w-full mb-2" placeholder="Reviews" />
+                  <input name='title' value={editFormData.title} onChange={handleChange} className="border p-1 md:p-2 w-full mb-2" placeholder="Title" />
+                  <input name="location" value={editFormData.location} onChange={handleChange} className="border p-1 md:p-2 w-full mb-2" placeholder="Location" />
+                  <input name="rating" value={editFormData.rating} onChange={handleChange} className="border p-1 md:p-2 w-full mb-2" placeholder="Rating" />
+                  <input name="reviews" value={editFormData.reviews} onChange={handleChange} className="border p-1 md:p-2 w-full mb-2" placeholder="Reviews" />
                   <div className="mb-2">
                     <label className="font-semibold">Area</label>
                     <Select
@@ -238,17 +238,17 @@ const Dashboard = () => {
                       isClearable
                     />
                   </div>
-                  <textarea name="description" value={editFormData.description} onChange={handleChange} className="border p-2 w-full mb-2" placeholder="Description" />
+                  <textarea name="description" value={editFormData.description} onChange={handleChange} className="border p-1 md:p-2 w-full mb-2" placeholder="Description" />
                   <div className="space-y-4">
-                    <div className="flex flex-wrap gap-6 justify-start my-4 mx-5 ">
+                    <div className="flex flex-wrap gap-3 md:gap-6 justify-start my-2 md:my-4 mx-3 md:mx-5 ">
                       {editFormData.images.map((img, idx) => (
                         <div key={idx} className="flex flex-col ">
-                          <label className="text-sm font-medium block mb-2">Image {idx + 1}</label>
+                          <label className="md:text-sm font-medium block mb-1 md:mb-2">Image {idx + 1}</label>
                           <input
                             type="file"
                             accept="image/*"
                             onChange={(e) => handleImageChange(e, idx)}
-                            className="border p-2 rounded w-50 "
+                            className="border p-1 md:p-2 rounded w-45 md:w-50 "
                           />
 
                           {/* Show preview: if string URL or if file object show object URL */}
@@ -257,12 +257,12 @@ const Dashboard = () => {
                               <img
                                 src={typeof img === 'string' ? img : URL.createObjectURL(img)}
                                 alt={`Project Image ${idx + 1}`}
-                                className="w-32 h-32 object-cover rounded border"
+                                className="w-37 md:w-42 md:h-25 object-cover rounded border"
                               />
                               <button
                                 type="button"
                                 onClick={() => removeImage(idx)}
-                                className="absolute top-1 right-1 bg-black bg-opacity-50 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm"
+                                className="absolute top-1 right-1 bg-red-600 bg-opacity-50 text-white rounded-full w-4 h-4 flex items-center justify-center text-[9px] "
                                 title="Remove image"
                               >
                                 ✕
@@ -276,7 +276,7 @@ const Dashboard = () => {
                     <button
                       type="button"
                       onClick={addImage}
-                      className="text-blue-500 text-sm mb-4"
+                      className="text-blue-600 md:text-sm mb-4"
                     >
                       + Add Image
                     </button>
@@ -300,7 +300,7 @@ const Dashboard = () => {
                   </div>
 
                   {/* Sonder Standard Multi-select */}
-                  <div className="mt-4">
+                  <div className="mt-2 md:mt-4">
                     <label className="font-semibold">Sonder Standards</label>
                     <Select
                       isMulti
@@ -316,30 +316,30 @@ const Dashboard = () => {
                   </div>
 
 
-                  <div className="flex gap-4 mt-4 text-[14px] md:text-[16px]">
-                    <button onClick={handleUpdate} className="bg-green-500 text-white px-2 md:px-4 py-1 md:py-2 rounded">Save</button>
-                    <button onClick={() => setEditingProject(null)} className="bg-gray-400 text-white px-2 md:px-4 py-1 md:py-2 rounded">Cancel</button>
+                  <div className="flex gap-2 md:gap-4 mt-2 md:mt-4 text-[13px] md:text-[16px]">
+                    <button onClick={handleUpdate} className="text-green-600 hover:text-green-700 bg-green-200 hover:bg-green-300 px-1.5 md:px-2 py-0.5 md:py-1 rounded-sm md:rounded-md font-medium transition duration-200">Save</button>
+                    <button onClick={() => setEditingProject(null)} className="text-gray-600 hover:text-gray-700 bg-gray-300 hover:bg-gray-400 px-1.5 md:px-2 py-0.5 md:py-1 rounded-sm md:rounded-md font-medium transition duration-200">Cancel</button>
                   </div>
                 </>
               ) : (
                 <>
-                  <h3 className="text-sm md:text-xl font-bold">{project.title}</h3>
+                  <h3 className=" text-[15px] md:text-xl font-bold">{project.title}</h3>
                   <p className="text-gray-500">{project.location}</p>
                   <img
                     src={project.images?.[0] || '/placeholder.jpg'}
                     alt={project.title}
                     className="w-40 mt-2 rounded"
                   />
-                  <p className="mt-2">{project.description}</p>
-                  <p className="text-sm text-gray-600 mt-1">⭐ {project.rating}/5 | {project.reviews} reviews</p>
-                  <p className="text-sm mt-1">Area: {project.area}</p>
-                  <p className="text-sm mt-1">Tags: {project.tags}</p>
-                  <p className="text-sm mt-1">Facilities: {project.facilities?.join(', ')}</p>
-                  <p className="text-sm mt-1">Sonder Standard: {project.sonderStandard?.join(', ')}</p>
+                  <p className="text-[13px] md:text-[14px] mt-2">{project.description}</p>
+                  <p className=" text-gray-600 mt-1">⭐ {project.rating}/5 | {project.reviews}+ reviews</p>
+                  <p className="mt-1">Area: {project.area}</p>
+                  <p className="mt-1">Tags: {project.tags}</p>
+                  <p className="mt-1">Facilities: {project.facilities?.join(', ')}</p>
+                  <p className="mt-1">Sonder Standard: {project.sonderStandard?.join(', ')}</p>
 
-                  <div className="flex gap-4 mt-4 text-[14px] md:text-[16px] ">
-                    <button onClick={() => handleEdit(project._id)} className="px-2 md:px-4 py-1 md:py-2 bg-yellow-400 hover:bg-yellow-500 text-white rounded">Edit</button>
-                    <button onClick={() => handleDelete(project._id)} className="px-2 md:px-4 py-1 md:py-2 bg-red-500 hover:bg-red-600 text-white rounded">Delete</button>
+                  <div className="flex gap-2 md:gap-4 mt-3 md:mt-4 text-[12px] md:text-[14px] ">
+                    <button onClick={() => handleEdit(project._id)} className="text-yellow-600 hover:text-yellow-700 bg-yellow-200 hover:bg-yellow-100 px-1.5 md:px-2 py-0.5 md:py-1 rounded-sm md:rounded-md font-medium transition duration-200">Edit</button>
+                    <button onClick={() => handleDelete(project._id)} className="text-red-600 hover:text-red-700 bg-red-200 hover:bg-red-100 px-1.5 md:px-2 py-0.5 md:py-1 rounded-sm md:rounded-md font-medium transition duration-200">Delete</button>
                   </div>
                 </>
               )}

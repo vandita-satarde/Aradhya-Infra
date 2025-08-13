@@ -16,12 +16,10 @@ function Enquiry() {
     return true;
   });
 
-
-
   useEffect(() => {
     const fetchEnquiries = async () => {
       try {
-        const res = await axios.get('https://aradhya-infra-e57v.vercel.app/api/enquiry');
+        const res = await axios.get('http://localhost:5000/api/enquiry');
         setEntries(res.data);
       } catch (error) {
         console.error('Error fetching enquiries:', error);
@@ -33,7 +31,7 @@ function Enquiry() {
 
   const handleRemarkChange = async (id, remark) => {
     try {
-      await axios.put(`https://aradhya-infra-e57v.vercel.app/api/enquiry/${id}/remark`, {
+      await axios.put(`http://localhost:5000/api/enquiry/${id}/remark`, {
         adminRemark: remark
       });
       setEntries((prevEntries) =>
@@ -46,6 +44,15 @@ function Enquiry() {
     }
   };
 
+  const handleDelete = async (id) => {
+    if (!window.confirm('Are you sure you want to delete this enquiry?')) return;
+    try {
+      await axios.delete(`http://localhost:5000/api/enquiry/${id}`);
+      setEntries((prevEntries) => prevEntries.filter((entry) => entry._id !== id));
+    } catch (err) {
+      console.error('Failed to delete enquiry', err);
+    }
+  };
 
   return (
     <div className="flex">
@@ -58,31 +65,30 @@ function Enquiry() {
           <button onClick={() => setFilter('read')} className="px-2 py-1 bg-green-200 rounded cursor-pointer">Connected</button>
           <button onClick={() => setFilter('unread')} className="px-2 py-1 bg-yellow-200 rounded cursor-pointer">Not Connected</button>
         </div>
-
-
-        <div className="space-y-6 text-[13px] md:text-[16px] ">
+      
+        <div className="space-y-6 text-[12px] md:text-[16px] ">
           {filteredEntries.map((entry) => (
             <div
               key={entry._id}
-              className=" border-l-3 border-[#048886] p-3 md:p-6 rounded-md shadow-lg hover:shadow-xl transition"
+              className="relative border-l-3 border-[#048886] px-3 md:px-6 py-2 md:py-3 rounded-md shadow-lg hover:shadow-xl transition"
             >
-              <div className="mb-1 md:mb-2">
+              <div className="mb-0.5 md:mb-2">
                 <span className="font-semibold text-gray-700">Name: </span>
                 <span className="text-gray-900">{entry.name}</span>
               </div>
-              <div className="mb-1 md:mb-2">
+              <div className="mb-0.5 md:mb-2">
                 <span className="font-semibold text-gray-700">Address: </span>
                 <span className="text-gray-900">{entry.address}</span>
               </div>
-              <div className="mb-1 md:mb-2">
+              <div className="mb-0.5 md:mb-2">
                 <span className="font-semibold text-gray-700">Phone: </span>
                 <span className="text-gray-900">{entry.phone}</span>
               </div>
-              <div className="mb-1 md:mb-2">
+              <div className="mb-0.5 md:mb-2">
                 <span className="font-semibold text-gray-700">Interested Area: </span>
                 <span className="text-gray-900">{entry.interestedArea}</span>
               </div>
-              <div className="mb-1 md:mb-2">
+              <div className="mb-0.5 md:mb-2">
                 <span className="font-semibold text-gray-700">Submitted On: </span>
                 <span className="text-gray-900">
                   {new Date(entry.createdAt).toLocaleDateString('en-US', {
@@ -95,7 +101,7 @@ function Enquiry() {
                 </span>
               </div>
               {entry.isRead && (
-                <div className="mb-1 md:mb-2">
+                <div className="mb-0.5 md:mb-2">
                   <label className="font-semibold text-gray-700">Admin Remark: </label>
 
                   {editingId === entry._id ? (
@@ -111,7 +117,7 @@ function Enquiry() {
                           await handleRemarkChange(entry._id, remarkInput);
                           setEditingId(null);
                         }}
-                        className="mt-2 bg-[#048886] hover:bg-[#037076] text-white px-4 py-1 rounded"
+                        className="md:mt-2 bg-[#048886] hover:bg-[#037076] text-white px-2 md:px-4 py-0.5 md:py-1 rounded"
                       >
                         Save
                       </button>
@@ -140,7 +146,7 @@ function Enquiry() {
                 <button
                   onClick={async () => {
                     try {
-                      const res = await axios.put(`https://aradhya-infra-e57v.vercel.app/api/enquiry/${entry._id}/read-toggle`, {
+                      const res = await axios.put(`http://localhost:5000/api/enquiry/${entry._id}/read-toggle`, {
                         isRead: !entry.isRead
                       });
                       setEntries((prev) =>
@@ -152,12 +158,19 @@ function Enquiry() {
                       console.error("Failed to toggle read status", err);
                     }
                   }}
-                  className={`px-3 py-1 rounded md:text-sm ${entry.isRead ? 'bg-green-100 text-green-700' : 'bg-yellow-100 text-yellow-700'
+                  className={`px-1 md:px-3 py-1 rounded text-[11px] md:text-sm ${entry.isRead ? 'bg-green-100 text-green-700' : 'bg-yellow-100 text-yellow-700'
                     }`}
                 >
                   {entry.isRead ? 'Connected' : 'Not Connected'}
                 </button>
               </div>
+                    
+              <button
+                onClick={() => handleDelete(entry._id)}
+                className="cursor-pointer absolute left-50 md:left-280 top-3 md:top-5 text-red-600 hover:text-red-700 bg-red-200 hover:bg-red-100 px-1.5 md:px-2 md:py-1 rounded-md text-[9px] md:text-[12px] font-medium transition duration-200 "
+              >
+                Delete
+              </button>
             </div>
           ))}
         </div>

@@ -110,7 +110,7 @@ function Addprojects() {
         imageCount: selectedImages.length
       });
 
-      const response = await axios.post('https://aradhya-infra-e57v.vercel.app/api/projects', data, {
+      const response = await axios.post('http://localhost:5000/api/projects', data, {
         headers: { 'Content-Type': 'multipart/form-data' },
         timeout: 300000, // Increased to 5 minutes timeout for multiple large images
         onUploadProgress: (progressEvent) => {
@@ -167,11 +167,11 @@ function Addprojects() {
       <Sidebar />
       <div className="pt-23 md:pt-8 md:ml-64 p-8 w-full min-h-screen bg-gray-100">
         <h2 className="text-[21px] sm:text-3xl font-bold mb-4 md:mb-10 text-[#048886]">Add Property</h2>
-        <form onSubmit={handleSubmit} className=" w-full max-w-4xl p-5 md:p-6 rounded shadow-2xl space-y-4 text-[13px] md:text-[16px] ">
 
-          <input name="title" value={formData.title} onChange={handleChange} placeholder="Project Title" className="w-full p-2 border rounded" required />
-          <input name="location" value={formData.location} onChange={handleChange} placeholder="Location" className="w-full p-2 border rounded" required />
-          <select name="area" value={formData.area} onChange={handleChange} className="w-full p-2 border rounded" required >
+        <form onSubmit={handleSubmit} className=" w-full max-w-4xl p-3 md:p-6 rounded shadow-2xl space-y-3 md:space-y-4 text-[13px] md:text-[16px] ">
+          <input name="title" value={formData.title} onChange={handleChange} placeholder="Project Title" className="w-full p-1 md:p-2 border rounded" required />
+          <input name="location" value={formData.location} onChange={handleChange} placeholder="Location" className="w-full p-1 md:p-2 border rounded" required />
+          <select name="area" value={formData.area} onChange={handleChange} className="w-full p-1 md:p-2 border rounded" required >
             <option value="">Select Area</option>
             <option value="Premium Commercial Space">Premium Commercial Space</option>
             <option value="Premium Residential Space">Premium Residential Space</option>
@@ -183,7 +183,7 @@ function Addprojects() {
             name="tags"
             value={formData.tags}
             onChange={handleChange}
-            className="w-full p-2 border rounded"
+            className="w-full p-1 md:p-2 border rounded"
             required
           >
             <option value="">Select Tag</option>
@@ -191,10 +191,10 @@ function Addprojects() {
             <option value="Sold Out">Sold Out</option>
           </select>
 
-          <input name="rating" value={formData.rating} onChange={handleChange} placeholder="Rating (out of 5)" className="w-full p-2 border rounded" required />
-          <input name="reviews" value={formData.reviews} onChange={handleChange} placeholder="Review Count (e.g., 900+ reviews)" className="w-full p-2 border rounded" required />
+          <input name="rating" value={formData.rating} onChange={handleChange} placeholder="Rating (out of 5)" className="w-full p-1 md:p-2 border rounded" required />
+          <input name="reviews" value={formData.reviews} onChange={handleChange} placeholder="Review Count (e.g + reviews)" className="w-full p-1 md:p-2 border rounded" required />
 
-          <textarea name="description" value={formData.description} onChange={handleChange} placeholder="Description (use \\n\\n for new paragraphs)" rows="4" className="w-full p-2 border rounded" required />
+          <textarea name="description" value={formData.description} onChange={handleChange} placeholder="Description (use \\n\\n for new paragraphs)" rows="4" className="w-full p-1 md:p-2 border rounded" required />
           {/* Image Upload Section */}
           <div className="space-y-4">
             <input
@@ -203,23 +203,23 @@ function Addprojects() {
               accept="image/*,.jpg,.jpeg,.png,.gif,.bmp,.webp,.svg,.tiff,.ico,.avif,.heic,.heif"
               onChange={handleChange}
               multiple
-              className="w-full p-2 border rounded"
+              className="w-full p-1 md:p-2 border rounded"
               required={selectedImages.length === 0}
             />
             
             {/* Image Preview Grid */}
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
               {previewImages.map((url, index) => (
                 <div key={index} className="relative group">
                   <img
                     src={url}
                     alt={`Preview ${index + 1}`}
-                    className="w-full h-40 object-cover rounded"
+                    className="w-full h-18 md:h-40 object-cover rounded"
                   />
                   <button
                     type="button"
                     onClick={() => handleDeleteImage(index)}
-                    className="absolute top-2 right-2 bg-red-500 text-white p-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
+                    className="absolute top-1 md:top-2 right-1 md:right-2 bg-red-500 text-white w-4 md:w-5 h-4 md:h-5 text-[9px] md:text-[11px] rounded-full"
                   >
                     ✕
                   </button>
@@ -279,10 +279,10 @@ function Addprojects() {
             </div>
           )}
 
-          <button 
+          <button
             type="submit" 
             disabled={isUploading}
-            className={`font-semibold px-4 py-2 rounded w-full sm:w-auto ${
+            className={`font-semibold px-2 md:px-4 py-1 md:py-2 rounded  ${
               isUploading 
                 ? 'bg-gray-400 text-gray-700 cursor-not-allowed' 
                 : 'bg-[#048886] hover:bg-[#03696b] text-white'

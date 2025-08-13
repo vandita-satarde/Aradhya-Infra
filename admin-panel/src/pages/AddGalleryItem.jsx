@@ -18,7 +18,7 @@ function AddGalleryItem() {
 
         setDeleting(true);
         try {
-            await axios.delete(`https://aradhya-infra-e57v.vercel.app/api/gallery/${id}`);
+            await axios.delete(`http://localhost:5000/api/gallery/${id}`);
             await fetchGalleryItems();
             alert('Item deleted successfully');
         } catch (error) {
@@ -31,7 +31,7 @@ function AddGalleryItem() {
 
     const fetchGalleryItems = async () => {
         try {
-            const response = await axios.get('https://aradhya-infra-e57v.vercel.app/api/gallery');
+            const response = await axios.get('http://localhost:5000/api/gallery');
             setGalleryItems(response.data);
             setLoading(false);
         } catch (error) {
@@ -62,7 +62,7 @@ function AddGalleryItem() {
         formData.append('location', 'gallerypage');
 
         try {
-            const res = await axios.post('https://aradhya-infra-e57v.vercel.app/api/gallery/upload', formData, {
+            const res = await axios.post('http://localhost:5000/api/gallery/upload', formData, {
                 headers: { 'Content-Type': 'multipart/form-data' },
             });
 
@@ -79,18 +79,18 @@ function AddGalleryItem() {
     return (
         <>
             <Sidebar />
-            <div className="pt-23 md:pt-8 md:ml-64 p-8 w-full min-h-screen bg-gray-100">
+            <div className="pt-23 md:pt-8 md:ml-64 p-8 min-h-screen bg-gray-100">
                 <h2 className="text-[21px] md:text-3xl font-bold text-[#048886] mb-6 ">
                     Add to Gallery
                 </h2>
-                <div className="text-[13px] md:text-[16px] max-w-md bg-gray-100 rounded-xl shadow-lg p-4 md:p-8">
-                    <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="text-[13px] md:text-[16px] max-w-md bg-gray-100 rounded-xl shadow-lg p-3 md:p-8">
+                    <form onSubmit={handleSubmit} className="space-y-3 md:space-y-6">
                         <div>
                             <label className="block mb-2 font-medium text-gray-700">Upload File</label>
                             <input
                                 type="file"
                                 onChange={handleFileChange}
-                                className="w-full text-[11px] md:text-[14px] border border-gray-300 rounded px-3 py-1.5 focus:outline-none focus:ring-2 focus:ring-[#048886]"
+                                className="w-full text-[11px] md:text-[14px] border border-gray-300 rounded px-1 md:px-3 py-1.5 focus:outline-none focus:ring-2 focus:ring-[#048886]"
                                 required
                             />
                         </div>
@@ -100,7 +100,7 @@ function AddGalleryItem() {
                             <select
                                 value={type}
                                 onChange={(e) => setType(e.target.value)}
-                                className="w-full text-[11px] md:text-[14px] border border-gray-300 rounded px-3 py-1.5 focus:outline-none focus:ring-2 focus:ring-[#048886]"
+                                className="w-full text-[11px] md:text-[14px] border border-gray-300 rounded px-1 md:px-3 py-1.5 focus:outline-none focus:ring-2 focus:ring-[#048886]"
                                 required
                             >
                                 <option value="">Select Type</option>
@@ -108,8 +108,6 @@ function AddGalleryItem() {
                                 <option value="video">Video</option>
                             </select>
                         </div>
-
-
 
                         <button
                             type="submit"
@@ -120,8 +118,8 @@ function AddGalleryItem() {
                     </form>
                 </div>
 
-                <div className="mt-12">
-                    <h3 className="md:text-xl font-bold text-[#048886] mb-6">Gallery Items</h3>
+                <div className="mt-8 md:mt-12">
+                    <h3 className="md:text-xl font-bold text-[#048886] mb-3 md:mb-6">Gallery Items</h3>
                     {loading ? (
                         <p>Loading...</p>
                     ) : (
@@ -158,7 +156,7 @@ function AddGalleryItem() {
                                                     handleDelete(item._id);
                                                 }}
                                                 disabled={deleting}
-                                                className="text-red-600 hover:text-red-700 bg-red-200 hover:bg-red-100 px-3 py-1 rounded-md text-[12px] md:text-sm font-medium transition duration-200"
+                                                className="text-red-600 hover:text-red-700 bg-red-200 hover:bg-red-100 px-2 md:px-3 md:py-1 rounded-md text-[10px] md:text-[12px] font-medium transition duration-200"
                                             >
                                                 {deleting ? 'Deleting...' : 'Delete'}
                                             </button>
