@@ -41,7 +41,7 @@ function Navbar({ className = '' }) {
   ];
 
   return (
-    <div className={`w-full fixed top-0 z-50 transition-all duration-300 ${navbarBg ? 'bg-white/80 backdrop-blur-md' : 'bg-transparent'} ${className}`}>
+    <div className={`w-full fixed top-0 z-50 transition-all duration-300 ${navbarBg ? 'bg-white' : 'bg-transparent'} ${className}`}>
       {/* Top Navbar */}
       <div className='w-full h-[100px] md:h-[130px] flex justify-evenly items-center text-black '>
         <div className="flex justify-between px-10 md:px-25 w-full items-center">
