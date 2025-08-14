@@ -14,10 +14,10 @@ import icon03 from '../assets/icons/phone-square.png'
 function Footer() {
   return (
     <div className='bg-black font-sans px-4 md:px-8 lg:px-12 xl:px-30 pt-8 md:pt-10'>
-      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 lg:gap-14 mb-12 md:mb-20'>
+      <div className='flex flex-col md:flex-row md:gap-20 mb-12 md:mb-20'>
         
         {/* Company Info */}
-        <div className='lg:col-span-1'>
+        <div className=' md:w-1/4'>
           <img src={logo} className='h-20 w-20 md:h-24 md:w-24 lg:h-28 lg:w-28 mb-4 md:mb-6' alt="Aradhya Infra logo" />
           <p className='text-[12px] md:text-base lg:text-[15px] text-[#FFFFFFBF] leading-relaxed mb-6'>
             Discover the exceptional plots at Aradhya Infratech Nagpur, a premier residential enclave that perfectly blends modern living with the calmness of nature. Here, at Aradhya Infratech Ngpur Plots, select from diverse plots surrounded by verdant greenery and orchards, providing a peaceful living environment in sync with the natural world.
@@ -30,63 +30,66 @@ function Footer() {
           </div>
         </div>
 
-        {/* Quick Links */}
-        <div className='lg:col-span-1'>
-          <h3 className='font-bold font-[abril] text-[#F3ECDC] text-lg md:text-xl lg:text-[25px] mb-4 md:mb-6'>Quick Links</h3>
-          <div className='flex flex-col gap-3 md:gap-4 lg:gap-5 text-sm md:text-base lg:text-[18px] text-[#FFFFFFBF]'>
-            <Link to="/" className='flex items-center gap-3 md:gap-4 hover:text-white transition-colors duration-200'>
-              <img src={arrow} alt="arrow" className='h-2.5 md:h-3.5 ' /> Home
+        <div className=' md:w-3/4 flex flex-col md:flex-row gap-8 md:gap-30 text-[14px] md:text-base lg:text-[18px] mt-15 '>
+          {/* Quick Links */}
+        <div className=''>
+          <h3 className='font-bold font-[abril] text-[#F3ECDC] text-[15px] md:text-xl lg:text-[25px] mb-2 md:mb-6'>Quick Links</h3>
+          <div className='flex flex-col gap-2 md:gap-4 lg:gap-5 text-[#FFFFFFBF]'>
+            <Link to="/" className='flex items-center gap-2 md:gap-4 hover:text-white transition-colors duration-200'>
+              <img src={arrow} alt="arrow" className='h-2 md:h-3.5 ' /> Home
             </Link>
-            <Link to="/about" className='flex items-center gap-3 md:gap-4 hover:text-white transition-colors duration-200'>
-              <img src={arrow} alt="arrow" className='h-2.5 md:h-3.5 ' /> About Us
+            <Link to="/about" className='flex items-center gap-2 md:gap-4 hover:text-white transition-colors duration-200'>
+              <img src={arrow} alt="arrow" className='h-2 md:h-3.5 ' /> About Us
             </Link>
-            <Link to="/story" className='flex items-center gap-3 md:gap-4 hover:text-white transition-colors duration-200'>
-              <img src={arrow} alt="arrow" className='h-2.5 md:h-3.5 ' /> Our Story
+            <Link to="/story" className='flex items-center gap-2 md:gap-4 hover:text-white transition-colors duration-200'>
+              <img src={arrow} alt="arrow" className='h-2 md:h-3.5 ' /> Our Story
             </Link>
-            <Link to="/projects" className='flex items-center gap-3 md:gap-4 hover:text-white transition-colors duration-200'>
-              <img src={arrow} alt="arrow" className='h-2.5 md:h-3.5 ' /> Our Projects
+            <Link to="/projects" className='flex items-center gap-2 md:gap-4 hover:text-white transition-colors duration-200'>
+              <img src={arrow} alt="arrow" className='h-2 md:h-3.5 ' /> Our Projects
             </Link>
           </div>
         </div>
 
         {/* Contact Info */}
-        <div className='lg:col-span-1'>
-          <h3 className='font-bold text-[#F3ECDC] font-[abril] text-lg md:text-xl lg:text-[25px] mb-4 md:mb-6'>Location, Contact</h3>
-          <div className='flex flex-col gap-3 md:gap-4 lg:gap-5 text-sm md:text-base lg:text-[18px] text-[#FFFFFFBF]'>
+        <div className='md:w-70'>
+          <h3 className='font-bold text-[#F3ECDC] font-[abril] text-[15px] md:text-xl lg:text-[25px] mb-2 md:mb-6'>Location, Contact</h3>
+          <div className='flex flex-col gap-3 md:gap-4 lg:gap-5 text-[#FFFFFFBF]'>
             <div className='flex gap-3 md:gap-4'>
-              <img src={icon01} alt="location" className='h-4 md:h-5 mt-1' /> 
+              <img src={icon01} alt="location" className='h-3.5 md:h-5 mt-1' /> 
               <span>Plot No. 234, 32nd Floor, Suyog Nagar Square,<br/>(Opposite Yokohama Tyres)<br/>MANEWADA RING ROAD, NAGPUR,<br/>Pin Code - 440027</span>
             </div>
-            <div className='flex items-center gap-3 md:gap-4'>
-              <img src={icon02} alt="email" className='h-3 md:h-3.5' /> 
+            <div className='flex items-center gap-2 md:gap-4'>
+              <img src={icon02} alt="email" className='h-2.5 md:h-3.5' /> 
               <a href="mailto:Hello@Email.com" className='hover:text-white transition-colors duration-200'>aradhyainfratech07@gmail.com</a>
             </div>
-            <div className='flex items-center gap-3 md:gap-4'>
-              <img src={icon03} alt="phone" className='h-3.5 md:h-4.5' /> 
+            <div className='flex items-center gap-2 md:gap-4'>
+              <img src={icon03} alt="phone" className='h-3 md:h-4.5' /> 
               <a href="tel:+91123456789" className='hover:text-white transition-colors duration-200'>( +91 ) 7666044916</a>
             </div>
           </div>
         </div>
 
         {/* Other Links */}
-        <div className='lg:col-span-1'>
-          <h3 className='font-bold text-[#F3ECDC] font-[abril] text-lg md:text-xl lg:text-[25px] mb-4 md:mb-6'>Other Links</h3>
-          <div className='flex flex-col gap-3 md:gap-4 lg:gap-5 text-sm md:text-base lg:text-[18px] text-[#FFFFFFBF]'>
-            <div className='flex items-center gap-3 md:gap-4 cursor-pointer hover:text-white transition-colors duration-200'>
-              <img src={arrow} alt="arrow" className='h-2.5 md:h-3.5 ' /> Terms & Conditions
+        <div className=''>
+          <h3 className='font-bold text-[#F3ECDC] font-[abril] text-[15px] md:text-xl lg:text-[25px] mb-2 md:mb-6'>Other Links</h3>
+          <div className='flex flex-col gap-2 md:gap-4 lg:gap-5 text-[#FFFFFFBF]'>
+            <div className='flex items-center gap-2 md:gap-4 cursor-pointer hover:text-white transition-colors duration-200'>
+              <img src={arrow} alt="arrow" className='h-2 md:h-3.5 ' /> Terms & Conditions
             </div>
-            <div className='flex items-center gap-3 md:gap-4 cursor-pointer hover:text-white transition-colors duration-200'>
-              <img src={arrow} alt="arrow" className='h-2.5 md:h-3.5 ' /> Privacy Policy
+            <div className='flex items-center gap-2 md:gap-4 cursor-pointer hover:text-white transition-colors duration-200'>
+              <img src={arrow} alt="arrow" className='h-2 md:h-3.5 ' /> Privacy Policy
             </div>
-            <div className='flex items-center gap-3 md:gap-4 cursor-pointer hover:text-white transition-colors duration-200'>
-              <img src={arrow} alt="arrow" className='h-2.5 md:h-3.5 ' /> Cookies Policy
+            <div className='flex items-center gap-2 md:gap-4 cursor-pointer hover:text-white transition-colors duration-200'>
+              <img src={arrow} alt="arrow" className='h-2 md:h-3.5 ' /> Cookies Policy
             </div>
           </div>
         </div>
+        </div>
+        
       </div>
 
       <hr className='border-gray-600'/>
-      <p className='py-6 md:py-8 text-xs md:text-sm lg:text-[15px] text-center font-semibold text-[#F3ECDC]'>
+      <p className='py-6 md:py-8 text-[8px] md:text-sm lg:text-[15px] text-center font-semibold text-[#F3ECDC]'>
         @COPYRIGHT ALL RIGHTS RESERVED
       </p>
     </div>

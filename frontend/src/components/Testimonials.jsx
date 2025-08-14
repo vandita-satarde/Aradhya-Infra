@@ -24,7 +24,7 @@ function Testimonials() {
             </div>
             
             {/* Features List */}
-            <div className='flex flex-col justify-between space-y-6 md:space-y-8 flex-1'>
+            <div className='flex flex-col justify-around gap-5 '>
               <div className='flex items-start gap-3 md:gap-6'>
                 <FaShieldAlt className='text-[#048886] w-[23px] md:w-[35px] h-[23px] md:h-[35px] mt-1 flex-shrink-0'/>
                 <div>
@@ -65,7 +65,7 @@ function Testimonials() {
         </div>
 
         {/* Right Section - Testimonial */}
-        <div className='mx-auto w-[270px] lg:w-1/3 border p-5 md:p-10 lg:p-14 rounded-[30px] lg:rounded-4xl font-sans bg-white shadow-lg'>
+        <div className='mx-auto w-[270px] lg:w-1/3 border p-5 md:p-10 lg:p-14 rounded-[30px] lg:rounded-4xl font-sans bg-white shadow-xl'>
           <FaQuoteLeft className='w-[28px] md:w-[40px] h-[33px] md:h-[45px] text-[#DADADA] mb-2 md:mb-4' />
           <h3 className='font-medium italic text-lg md:text-xl lg:text-[22px] text-[#050810] mb-3 md:mb-6 lg:mb-7'>
             Township Living
