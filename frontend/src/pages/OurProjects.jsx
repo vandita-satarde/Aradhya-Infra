@@ -17,7 +17,7 @@ function OurProjects() {
   const [showAll, setShowAll] = useState(false);
 
   useEffect(() => {
-    axios.get('https://aradhya-infra-e57v.vercel.app/api/projects')
+    axios.get('http://localhost:5000/api/projects')
       .then(res => setProjects(res.data))
       .catch(err => console.error('Error fetching projects:', err));
   }, []);

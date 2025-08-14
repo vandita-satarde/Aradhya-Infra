@@ -31,7 +31,7 @@ const Enquiry = () => {
     };
 
     try {
-      const response = await axios.post('https://aradhya-infra-e57v.vercel.app/api/enquiry', finalData);
+      const response = await axios.post('http://localhost:5000/api/enquiry', finalData);
       alert('Enquiry submitted successfully!');
       setFormData({
         name: '',

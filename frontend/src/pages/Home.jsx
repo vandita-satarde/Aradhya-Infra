@@ -25,7 +25,7 @@ function Home() {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const res = await fetch("https://aradhya-infra-e57v.vercel.app/api/projects");
+        const res = await fetch("http://localhost:5000/api/projects");
         const data = await res.json();
         setProjects(data);
       } catch (error) {
@@ -53,7 +53,7 @@ function Home() {
       <div className='bg-[#F3ECDC] px-12 md:px-25 pt-12 md:pt-25 md:pb-1 '>
 
         {/* Section 01 */}
-        <div className=' h-260 md:h-155 pb-30'>
+        <div className=' h-270 md:h-155 pb-30'>
           <p className='text-[13px] md:text-[15px] font-semibold text-[#048886] mb-3 '>OUR LUXURIOUS PROJECTS</p>
           <div className='flex flex-col md:flex-row md:justify-between items-start md:items-center gap-4 '>
             <h2 className=' text-[26px] md:text-[48px]  font-extrabold font-[abril] '>Premium Residential,<br />Commercial & Township Projects.</h2>
@@ -69,14 +69,14 @@ function Home() {
               <span className=' font-bold md:text-[25px] text-[#F3ECDC] font-[abril] '>Nikhil Bawane</span>
             </div>
 
-            <div className='absolute md:left-[320px] top-40 md:top-9 flex flex-col sm:flex-row gap-3 mt-6 lg:mt-0 ' >
-              <div className=' bg-[#F3ECDC] w-[250px] md:w-[310px] p-1 md:p-3 rounded-[30px] shadow-sm shaadow-[#00000012] '>
+            <div className='absolute md:left-[320px] mx-3 top-43 md:top-9 flex flex-col sm:flex-row gap-3 mt-6 lg:mt-0 ' >
+              <div className=' bg-[#F3ECDC] w-full md:w-[310px] p-2 md:p-3 rounded-[30px] shadow-sm shaadow-[#00000012] '>
                 <img src={image1} className='  rounded-[30px] md:h-[210px] w-full object-cover ' />
               </div>
-              <div className=' bg-[#F3ECDC] w-full md:w-[300px] p-1 md:p-3 rounded-[30px] shadow-sm shaadow-[#00000012] '>
+              <div className=' bg-[#F3ECDC] w-full md:w-[300px] p-2 md:p-3 rounded-[30px] shadow-sm shaadow-[#00000012] '>
                 <img src={image1} className='  rounded-[30px] md:h-[210px] w-full object-cover ' />
               </div>
-              <div className=' bg-[#F3ECDC] w-full md:w-[300px] p-1 md:p-3 rounded-[30px] shadow-sm shaadow-[#00000012] '>
+              <div className=' bg-[#F3ECDC] w-full md:w-[300px] p-2 md:p-3 rounded-[30px] shadow-sm shaadow-[#00000012] '>
                 <img src={image1} className='  rounded-[30px] md:h-[210px] w-full object-cover ' />
               </div>
             </div>

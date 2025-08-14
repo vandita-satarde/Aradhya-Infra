@@ -12,7 +12,7 @@ function GalleryPage({className=''}) {
 
     useEffect(() => {
         setLoading(true);
-        axios.get('https://aradhya-infra-e57v.vercel.app/api/gallery')
+        axios.get('http://localhost:5000/api/gallery')
             .then((res) => {
                 setGalleryItems(res.data);
                 setLoading(false);
