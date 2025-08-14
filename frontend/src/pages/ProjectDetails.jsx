@@ -29,7 +29,7 @@ const ProjectDetails = () => {
   useEffect(() => {
     const fetchProject = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/projects/${id}`);
+        const res = await axios.get(`https://aradhya-infra-e57v.vercel.app/api/projects/${id}`);
         setProject(res.data);
         if (res.data.images && res.data.images.length > 0) {
           setMainImage(res.data.images[0]);
@@ -41,7 +41,7 @@ const ProjectDetails = () => {
 
     const fetchAllProjects = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/projects');
+        const res = await axios.get('https://aradhya-infra-e57v.vercel.app/api/projects');
         const others = res.data.filter((proj) => proj._id !== id); // Exclude current
         setOtherProjects(others.slice(0, 3)); // Only 3 other cards
       } catch (error) {

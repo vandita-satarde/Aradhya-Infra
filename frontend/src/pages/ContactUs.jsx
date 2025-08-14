@@ -36,7 +36,7 @@ function ContactUs() {
         }
 
         try {
-            await axios.post('http://localhost:5000/api/contact', formData);
+            await axios.post('https://aradhya-infra-e57v.vercel.app/api/contact', formData);
             alert('Message sent successfully');
             setFormData({ firstName: '', lastName: '', email: '', topic: '', message: '' });
         } catch (error) {

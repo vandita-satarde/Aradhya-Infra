@@ -10,6 +10,7 @@ import GetStarted from '../components/GetStarted'
 import Testimonials from '../components/Testimonials'
 import Footer from '../components/Footer'
 
+import aboutImage from '../assets/images/nintynine-1.jpeg'
 import image1 from '../assets/image-0.jpg'
 import hsIcon1 from '../assets/icons/hs-icon1.png'
 import hsIcon2 from '../assets/icons/hs-icon2.png'
@@ -25,7 +26,7 @@ function Home() {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/projects");
+        const res = await fetch("https://aradhya-infra-e57v.vercel.app/api/projects");
         const data = await res.json();
         setProjects(data);
       } catch (error) {
@@ -53,7 +54,7 @@ function Home() {
       <div className='bg-[#F3ECDC] px-12 md:px-25 pt-12 md:pt-25 md:pb-1 '>
 
         {/* Section 01 */}
-        <div className=' h-270 md:h-155 pb-30'>
+        <div className=' pb-160 md:pb-30'>
           <p className='text-[13px] md:text-[15px] font-semibold text-[#048886] mb-3 '>OUR LUXURIOUS PROJECTS</p>
           <div className='flex flex-col md:flex-row md:justify-between items-start md:items-center gap-4 '>
             <h2 className=' text-[26px] md:text-[48px]  font-extrabold font-[abril] '>Premium Residential,<br />Commercial & Township Projects.</h2>
@@ -86,6 +87,7 @@ function Home() {
       
       {/* Section 02 */}
       <div className=' px-6 md:px-30 pb-10 md:pb-20'>
+        <img src={aboutImage} className='md:hidden block my-10 mx-auto w-[340px] h-[210px] object-cover rounded-[30px] ' />
         <Nintynine className='mt-10 md:mt-30 bg-white'/>
       </div>
         

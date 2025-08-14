@@ -99,15 +99,15 @@ function Navbar({ className = '' }) {
 
       {/* Mobile Dropdown Menu */}
       {menuOpen && (
-        <div className='absolute bg-[rgba(0,0,0,0.90)] backdrop-blur-sm w-full px-5 py-3 text-[14px] z-50'>
-          <div className="flex flex-col mt-4 gap-4 text-center text-[rgba(255,255,255,0.75)] md:hidden">
+        <div className='absolute bg-[rgba(255,255,255,0.90)] backdrop-blur-sm w-full px-5 py-3 text-[14px] z-50'>
+          <div className="flex flex-col mt-4 gap-4 text-center text-[rgba(0,0,0,0.75)] md:hidden">
             {navLinks.map((link) => (
               <div key={link.name} className="flex flex-col items-center">
                 <Link
                   to={link.path}
                   onClick={() => setMenuOpen(false)}
-                  className={`cursor-pointer hover:text-white transition-colors duration-200 ${
-                    isActive(link.path) ? 'text-white font-semibold' : ''
+                  className={`cursor-pointer hover:text-black transition-colors duration-200 ${
+                    isActive(link.path) ? 'text-black font-semibold' : ''
                   }`}
                 >
                   {link.name}
@@ -119,7 +119,7 @@ function Navbar({ className = '' }) {
                         key={sublink.name}
                         to={sublink.path}
                         onClick={() => setMenuOpen(false)}
-                        className="text-[13px] text-gray-400 hover:text-white"
+                        className="text-[13px] text-gray-600 hover:text-black"
                       >
                         ↳ {sublink.name}
                       </Link>
@@ -132,7 +132,7 @@ function Navbar({ className = '' }) {
             <Link
               to="/contact"
               onClick={() => setMenuOpen(false)}
-              className="flex justify-center text-[12px] items-center gap-2 bg-[#bdb8ad] text-black text-sm w-[130px] md:w-full h-[40px] rounded-full mx-auto mt-2 hover:bg-[#e8dcc5] transition-colors duration-200"
+              className="flex justify-center text-[12px] items-center gap-2 bg-[#bdb8ad] text-black shadow-md text-sm w-[130px] md:w-full h-[40px] rounded-full mx-auto mt-2 hover:bg-[#e8dcc5] transition-colors duration-200"
             >
               <img src={contact} className="h-[18px] w-[18px]" alt="contact" />
               CONTACT US
