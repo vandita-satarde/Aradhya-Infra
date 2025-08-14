@@ -17,7 +17,7 @@ function OurProjects() {
   const [showAll, setShowAll] = useState(false);
 
   useEffect(() => {
-    axios.get('https://aradhya-infra-e57v.vercel.app/api/projects')
+    axios.get('http://localhost:5000/api/projects')
       .then(res => setProjects(res.data))
       .catch(err => console.error('Error fetching projects:', err));
   }, []);
@@ -67,16 +67,16 @@ function OurProjects() {
 
         {/* Projects */}
         <div className='text-center mt-8 md:mt-18 px-5 font-sans'>
-          <p className='m-3 md:m-5 text-[#050810] text-[12px] md:text-[16px]'>ALL PROJECTS</p>
-          <p className='text-[30px] md:text-[45px] text-[#050810] font-[abril] font-bold mb-10'>Aradhya Business Park</p>
+          <p className='md:m-5 text-[#050810] text-[12px] md:text-[16px] font-sans'>ALL PROJECTS</p>
+          <p className='text-[25px] md:text-[45px] text-[#050810] font-[abril] font-extrabold mb-5 md:mb-10'>Aradhya Business Park</p>
 
           {/* Filter Buttons */}
-          <div className='flex flex-wrap gap-3 md:gap-8 justify-center text-[13px] md:text-[17px]'>
+          <div className='flex flex-wrap gap-3 md:gap-8 justify-center text-[10px] md:text-[17px]'>
             {['All PROPERTIES', 'Commercial', 'Residential'].map((cat) => (
               <button
                 key={cat}
                 onClick={() => { setFilter(cat); setShowAll(false); }}
-                className={`border py-3 px-6 md:py-4 md:px-12 hover:bg-black hover:text-[#F3ECDC] transition duration-500 ease-in-out cursor-pointer ${filter === cat ? 'bg-[#050810] text-[#F3ECDC]' : ''}`}
+                className={`border py-2 md:py-4 px-4 md:px-12 hover:bg-black hover:text-[#F3ECDC] transition duration-500 ease-in-out cursor-pointer ${filter === cat ? 'bg-[#050810] text-[#F3ECDC]' : ''}`}
               >
                 {cat.toUpperCase()}
               </button>
@@ -84,7 +84,7 @@ function OurProjects() {
           </div>
 
           {/* Cards */}
-          <div className='flex flex-wrap justify-center md:justify-start md:mx-15 gap-5 mb-8'>
+          <div className='flex flex-wrap justify-center md:justify-start md:mx-15 md:gap-8 mb-8'>
           {visibleProjects.map((project, idx) => (
             <ProductCard key={project._id || idx} project={project} />
 

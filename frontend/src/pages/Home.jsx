@@ -127,17 +127,17 @@ function Home() {
         <div className='flex flex-wrap gap-3 md:gap-8 justify-center text-[10px] md:text-[17px]'>
           <button
             onClick={() => setFilter('all')}
-            className={`border py-2 md:py-4 px-4 md:px-12 hover:bg-black hover:text-[#F3ECDC] transition duration-500 ease-in-out cursor-pointer ${filter === 'all' ? 'bg-black text-[#F3ECDC]' : ''}`}>
+            className={`border py-2 md:py-4 px-4 md:px-12 hover:bg-black hover:text-[#F3ECDC] transition duration-500 ease-in-out cursor-pointer ${filter === 'all' ? 'bg-[#050810] text-[#F3ECDC]' : ''}`}>
             ALL PROPERTIES
           </button>
           <button
             onClick={() => setFilter('commercial')}
-            className={`border py-2 md:py-4 px-4 md:px-12 hover:bg-black hover:text-[#F3ECDC] transition duration-500 ease-in-out cursor-pointer ${filter === 'commercial' ? 'bg-black text-[#F3ECDC]' : ''}`}>
+            className={`border py-2 md:py-4 px-4 md:px-12 hover:bg-black hover:text-[#F3ECDC] transition duration-500 ease-in-out cursor-pointer ${filter === 'commercial' ? 'bg-[#050810] text-[#F3ECDC]' : ''}`}>
             COMMERCIAL
           </button>
           <button
             onClick={() => setFilter('residential')}
-            className={`border py-2 md:py-4 px-4 md:px-12 hover:bg-black hover:text-[#F3ECDC] transition duration-500 ease-in-out cursor-pointer ${filter === 'residential' ? 'bg-black text-[#F3ECDC]' : ''}`}>
+            className={`border py-2 md:py-4 px-4 md:px-12 hover:bg-black hover:text-[#F3ECDC] transition duration-500 ease-in-out cursor-pointer ${filter === 'residential' ? 'bg-[#050810] text-[#F3ECDC]' : ''}`}>
             RESIDENTIAL
           </button>
         </div>

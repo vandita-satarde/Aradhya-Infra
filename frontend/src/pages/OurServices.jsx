@@ -40,7 +40,7 @@ function OurServices() {
             </div>
         </div>
 
-        <div className='bg-[#F3ECDC] p-12 md:p-20 flex flex-wrap gap-y-15'>
+        <div className='bg-[#F3ECDC] p-12 md:p-20 flex flex-wrap gap-y-8 md:gap-y-15'>
             <ServicesCard 
                 icon={icon01}
                 name="Pre-Launch Marketing"
@@ -75,7 +75,7 @@ function OurServices() {
 
         <GalleryPage limit={5} className='!h-0' />
       <Link to='/gallery-page' >
-        <p className='bg-[#F3ECDC] pb-10 text-center cursor-pointer text-[9px] md:text-[15px] text-[#2D2D2D] font-medium'>
+        <p className='bg-[#F3ECDC] pb-10 text-center cursor-pointer text-[10px] md:text-[15px] text-[#2D2D2D] font-medium'>
           SEE OUR GALLERY SECTION LEGACY OF ARADHYA INFRA →
         </p>
       </Link>
