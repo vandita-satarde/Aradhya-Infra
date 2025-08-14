@@ -49,7 +49,7 @@ router.post(
   '/', 
   (req, res, next) => {
     // Custom multer middleware with error handling
-    upload.array('images', 20)(req, res, (err) => {
+    upload.array('images', 10)(req, res, (err) => {
       if (err) {
         console.error('❌ Multer error:', {
           message: err.message,

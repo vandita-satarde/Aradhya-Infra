@@ -16,7 +16,7 @@ function Addprojects() {
     facilities: [],
     sonderStandard: [],
   });
-  
+
   const [selectedImages, setSelectedImages] = useState([]);
   const [previewImages, setPreviewImages] = useState([]);
   const [isUploading, setIsUploading] = useState(false);
@@ -28,7 +28,7 @@ function Addprojects() {
     if (type === 'file') {
       const newFiles = Array.from(files);
       setSelectedImages(prev => [...prev, ...newFiles]);
-      
+
       // Create preview URLs for the new images
       const newPreviews = newFiles.map(file => URL.createObjectURL(file));
       setPreviewImages(prev => [...prev, ...newPreviews]);
@@ -83,8 +83,13 @@ function Addprojects() {
     });
 
 
-    if (selectedImages.length === 0) {
-      alert('Please select at least one image');
+    if (selectedImages.length < 3) {
+      alert('Please select at least 3 images.');
+      return;
+    }
+
+    if (selectedImages.length > 20) {
+      alert('You can upload a maximum of 20 images.');
       return;
     }
 
@@ -96,7 +101,7 @@ function Addprojects() {
     try {
       setIsUploading(true);
       setUploadProgress(0);
-      
+
       console.log('Submitting form with data:', {
         title: formData.title,
         location: formData.location,
@@ -122,7 +127,7 @@ function Addprojects() {
 
       console.log('✅ Server response:', response.data);
       alert(`Project "${formData.title}" submitted successfully! Images uploaded to Cloudinary.`);
-      
+
       // Reset form data
       setFormData({
         title: '',
@@ -135,17 +140,17 @@ function Addprojects() {
         facilities: [],
         sonderStandard: [],
       });
-      
+
       // Clear images and revoke URLs
       setSelectedImages([]);
       setPreviewImages(prev => {
         prev.forEach(url => URL.revokeObjectURL(url));
         return [];
       });
-      
+
     } catch (error) {
       console.error('❌ Error submitting project:', error);
-      
+
       let errorMessage = 'Error submitting project';
       if (error.response) {
         console.error('Error response:', error.response.data);
@@ -153,7 +158,7 @@ function Addprojects() {
       } else if (error.request) {
         errorMessage = 'No response from server. Please check if the backend is running.';
       }
-      
+
       alert(errorMessage);
     } finally {
       setIsUploading(false);
@@ -206,7 +211,7 @@ function Addprojects() {
               className="w-full p-1 md:p-2 border rounded"
               required={selectedImages.length === 0}
             />
-            
+
             {/* Image Preview Grid */}
             <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
               {previewImages.map((url, index) => (
@@ -269,8 +274,8 @@ function Addprojects() {
           {/* Upload Progress */}
           {isUploading && (
             <div className="w-full bg-gray-200 rounded-full h-2.5">
-              <div 
-                className="bg-[#048886] h-2.5 rounded-full transition-all duration-300" 
+              <div
+                className="bg-[#048886] h-2.5 rounded-full transition-all duration-300"
                 style={{ width: `${uploadProgress}%` }}
               ></div>
               <p className="text-sm text-gray-600 mt-2">
@@ -280,13 +285,12 @@ function Addprojects() {
           )}
 
           <button
-            type="submit" 
+            type="submit"
             disabled={isUploading}
-            className={`font-semibold px-2 md:px-4 py-1 md:py-2 rounded  ${
-              isUploading 
-                ? 'bg-gray-400 text-gray-700 cursor-not-allowed' 
+            className={`font-semibold px-2 md:px-4 py-1 md:py-2 rounded  ${isUploading
+                ? 'bg-gray-400 text-gray-700 cursor-not-allowed'
                 : 'bg-[#048886] hover:bg-[#03696b] text-white'
-            }`}
+              }`}
           >
             {isUploading ? `Uploading... ${uploadProgress}%` : 'Submit Project'}
           </button>
