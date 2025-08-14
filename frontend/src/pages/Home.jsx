@@ -120,11 +120,11 @@ function Home() {
 
 
       {/* <Projects /> */}
-      <div className='text-center my-12 px-5'>
+      <div className='text-center py-12 px-1 md:px-5'>
         <p className='md:m-5 text-[#050810] text-[12px] md:text-[16px] font-sans'>ALL PROJECTS</p>
         <p className='text-[25px] md:text-[45px] text-[#050810] font-[abril] font-extrabold mb-5 md:mb-10'>Aradhya Business Park</p>
 
-        <div className='flex flex-wrap gap-2 md:gap-8 justify-center text-[10px] md:text-[17px]'>
+        <div className='flex flex-wrap gap-3 md:gap-8 justify-center text-[10px] md:text-[17px]'>
           <button
             onClick={() => setFilter('all')}
             className={`border py-2 md:py-4 px-4 md:px-12 hover:bg-black hover:text-[#F3ECDC] transition duration-500 ease-in-out cursor-pointer ${filter === 'all' ? 'bg-black text-[#F3ECDC]' : ''}`}>

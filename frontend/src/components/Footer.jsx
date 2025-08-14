@@ -35,16 +35,16 @@ function Footer() {
           <h3 className='font-bold font-[abril] text-[#F3ECDC] text-lg md:text-xl lg:text-[25px] mb-4 md:mb-6'>Quick Links</h3>
           <div className='flex flex-col gap-3 md:gap-4 lg:gap-5 text-sm md:text-base lg:text-[18px] text-[#FFFFFFBF]'>
             <Link to="/" className='flex items-center gap-3 md:gap-4 hover:text-white transition-colors duration-200'>
-              <img src={arrow} alt="arrow" /> Home
+              <img src={arrow} alt="arrow" className='h-2.5 md:h-3.5 ' /> Home
             </Link>
             <Link to="/about" className='flex items-center gap-3 md:gap-4 hover:text-white transition-colors duration-200'>
-              <img src={arrow} alt="arrow" /> About Us
+              <img src={arrow} alt="arrow" className='h-2.5 md:h-3.5 ' /> About Us
             </Link>
             <Link to="/story" className='flex items-center gap-3 md:gap-4 hover:text-white transition-colors duration-200'>
-              <img src={arrow} alt="arrow" /> Our Story
+              <img src={arrow} alt="arrow" className='h-2.5 md:h-3.5 ' /> Our Story
             </Link>
             <Link to="/projects" className='flex items-center gap-3 md:gap-4 hover:text-white transition-colors duration-200'>
-              <img src={arrow} alt="arrow" /> Our Projects
+              <img src={arrow} alt="arrow" className='h-2.5 md:h-3.5 ' /> Our Projects
             </Link>
           </div>
         </div>
@@ -54,15 +54,15 @@ function Footer() {
           <h3 className='font-bold text-[#F3ECDC] font-[abril] text-lg md:text-xl lg:text-[25px] mb-4 md:mb-6'>Location, Contact</h3>
           <div className='flex flex-col gap-3 md:gap-4 lg:gap-5 text-sm md:text-base lg:text-[18px] text-[#FFFFFFBF]'>
             <div className='flex gap-3 md:gap-4'>
-              <img src={icon01} alt="location" className='h-5 mt-1' /> 
+              <img src={icon01} alt="location" className='h-4 md:h-5 mt-1' /> 
               <span>Plot No. 234, 32nd Floor, Suyog Nagar Square,<br/>(Opposite Yokohama Tyres)<br/>MANEWADA RING ROAD, NAGPUR,<br/>Pin Code - 440027</span>
             </div>
             <div className='flex items-center gap-3 md:gap-4'>
-              <img src={icon02} alt="email" /> 
+              <img src={icon02} alt="email" className='h-3 md:h-3.5' /> 
               <a href="mailto:Hello@Email.com" className='hover:text-white transition-colors duration-200'>aradhyainfratech07@gmail.com</a>
             </div>
             <div className='flex items-center gap-3 md:gap-4'>
-              <img src={icon03} alt="phone" /> 
+              <img src={icon03} alt="phone" className='h-3.5 md:h-4.5' /> 
               <a href="tel:+91123456789" className='hover:text-white transition-colors duration-200'>( +91 ) 7666044916</a>
             </div>
           </div>
@@ -73,13 +73,13 @@ function Footer() {
           <h3 className='font-bold text-[#F3ECDC] font-[abril] text-lg md:text-xl lg:text-[25px] mb-4 md:mb-6'>Other Links</h3>
           <div className='flex flex-col gap-3 md:gap-4 lg:gap-5 text-sm md:text-base lg:text-[18px] text-[#FFFFFFBF]'>
             <div className='flex items-center gap-3 md:gap-4 cursor-pointer hover:text-white transition-colors duration-200'>
-              <img src={arrow} alt="arrow" /> Terms & Conditions
+              <img src={arrow} alt="arrow" className='h-2.5 md:h-3.5 ' /> Terms & Conditions
             </div>
             <div className='flex items-center gap-3 md:gap-4 cursor-pointer hover:text-white transition-colors duration-200'>
-              <img src={arrow} alt="arrow" /> Privacy Policy
+              <img src={arrow} alt="arrow" className='h-2.5 md:h-3.5 ' /> Privacy Policy
             </div>
             <div className='flex items-center gap-3 md:gap-4 cursor-pointer hover:text-white transition-colors duration-200'>
-              <img src={arrow} alt="arrow" /> Cookies Policy
+              <img src={arrow} alt="arrow" className='h-2.5 md:h-3.5 ' /> Cookies Policy
             </div>
           </div>
         </div>

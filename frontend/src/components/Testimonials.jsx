@@ -7,7 +7,7 @@ import { FaQuoteLeft } from "react-icons/fa6";
 
 function Testimonials() {
   return (
-    <div className='px-4 md:px-8 lg:px-12 xl:px-30 py-12 md:py-20 lg:py-27'>
+    <div className='px-3 md:px-8 lg:px-12 xl:px-30 py-12 md:py-20 lg:py-27'>
       <div className='flex flex-col lg:flex-row gap-8 lg:gap-12 max-w-7xl mx-auto'>
         
         {/* Left Section - Features */}
@@ -25,10 +25,10 @@ function Testimonials() {
             
             {/* Features List */}
             <div className='flex flex-col justify-between space-y-6 md:space-y-8 flex-1'>
-              <div className='flex items-start gap-4 md:gap-6'>
-                <FaShieldAlt className='text-[#048886] w-[25px] h-[25px] md:w-[35px] md:h-[35px] mt-1 flex-shrink-0'/>
+              <div className='flex items-start gap-3 md:gap-6'>
+                <FaShieldAlt className='text-[#048886] w-[23px] md:w-[35px] h-[23px] md:h-[35px] mt-1 flex-shrink-0'/>
                 <div>
-                  <h3 className='font-[abril] font-bold text-lg md:text-xl lg:text-[21px] mb-2 md:mb-3 text-gray-800'>
+                  <h3 className='font-[abril] font-bold text-lg md:text-xl lg:text-[21px] md:mb-3 text-gray-800'>
                     NMRDA & RI Approved
                   </h3>
                   <p className='font-sans text-sm md:text-base lg:text-[18px] text-[#050810]'>
@@ -37,10 +37,10 @@ function Testimonials() {
                 </div>
               </div>
               
-              <div className='flex items-start gap-4 md:gap-6'>
-                <FaList className='text-[#048886] w-[25px] h-[25px] md:w-[35px] md:h-[35px] mt-1 flex-shrink-0'/>
+              <div className='flex items-start gap-3 md:gap-6'>
+                <FaList className='text-[#048886] w-[23px] md:w-[35px] h-[23px] md:h-[35px] mt-1 flex-shrink-0'/>
                 <div>
-                  <h3 className='font-[abril] font-bold text-lg md:text-xl lg:text-[21px] mb-2 md:mb-3 text-gray-800'>
+                  <h3 className='font-[abril] font-bold text-lg md:text-xl lg:text-[21px] md:mb-3 text-gray-800'>
                     List Apartments Nagpur
                   </h3>
                   <p className='font-sans text-sm md:text-base lg:text-[18px] text-[#050810]'>
@@ -49,10 +49,10 @@ function Testimonials() {
                 </div>
               </div>
               
-              <div className='flex items-start gap-4 md:gap-6'>
-                <FaShieldAlt className='text-[#048886] w-[25px] h-[25px] md:w-[35px] md:h-[35px] mt-1 flex-shrink-0'/>
+              <div className='flex items-start gap-3 md:gap-6'>
+                <FaShieldAlt className='text-[#048886] w-[23px] md:w-[35px] h-[23px] md:h-[35px] mt-1 flex-shrink-0'/>
                 <div>
-                  <h3 className='font-[abril] font-bold text-lg md:text-xl lg:text-[21px] mb-2 md:mb-3 text-gray-800'>
+                  <h3 className='font-[abril] font-bold text-lg md:text-xl lg:text-[21px] md:mb-3 text-gray-800'>
                     Free Consultation
                   </h3>
                   <p className='font-sans text-sm md:text-base lg:text-[18px] text-[#050810]'>
@@ -65,12 +65,12 @@ function Testimonials() {
         </div>
 
         {/* Right Section - Testimonial */}
-        <div className='mx-auto w-[280px] lg:w-1/3 border p-6 md:p-10 lg:p-14 rounded-[30px] lg:rounded-4xl font-sans bg-white shadow-lg'>
-          <FaQuoteLeft className='w-[30px] h-[35px] md:w-[40px] md:h-[45px] text-[#DADADA] mb-4' />
-          <h3 className='font-medium italic text-lg md:text-xl lg:text-[22px] text-[#050810] mb-4 md:mb-6 lg:mb-7'>
+        <div className='mx-auto w-[270px] lg:w-1/3 border p-5 md:p-10 lg:p-14 rounded-[30px] lg:rounded-4xl font-sans bg-white shadow-lg'>
+          <FaQuoteLeft className='w-[28px] md:w-[40px] h-[33px] md:h-[45px] text-[#DADADA] mb-2 md:mb-4' />
+          <h3 className='font-medium italic text-lg md:text-xl lg:text-[22px] text-[#050810] mb-3 md:mb-6 lg:mb-7'>
             Township Living
           </h3>
-          <p className='text-sm md:text-base lg:text-[18px] text-[#050810] leading-relaxed mb-6 md:mb-8 lg:mb-10'>
+          <p className='text-[13px] md:text-base lg:text-[18px] text-[#050810] leading-relaxed mb-6 md:mb-8 lg:mb-10'>
             "We were first-time home buyers and nervous about everything. But Aradhya Infra made the process smooth and stress-free. From site visit to final handover, their team was transparent, responsive, and genuinely cared about our needs. We love our new 2BHK!"
           </p>
           
