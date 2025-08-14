@@ -31,7 +31,7 @@ const Enquiry = () => {
     };
 
     try {
-      const response = await axios.post('https://aradhya-infra-e57v.vercel.app/api/enquiry', finalData);
+      const response = await axios.post('http://localhost:5000/api/enquiry', finalData);
       alert('Enquiry submitted successfully!');
       setFormData({
         name: '',
@@ -50,8 +50,8 @@ const Enquiry = () => {
     <>
     <div className='bg-[#e7dfce] h-[100px] md:h-[130px] '></div>
     <Navbar />
-    <div className="min-h-screen bg-[#F9F9F9] py-16 px-6 flex items-center justify-center">
-      <div className="max-w-2xl w-full bg-[#F9F9F9]  p-10 rounded-[30px] shadow-2xl border border-gray-200">
+    <div className=" bg-[#F9F9F9] py-13 px-6 flex items-center justify-center">
+      <div className="max-w-2xl w-full bg-[#F9F9F9] p-10 rounded-[30px] shadow-2xl border border-gray-200">
         <h2 className="text-black text-[20px] md:text-[35px] font-[abril] font-bold mb-8 text-center tracking-wide">
           Get in Touch – Enquiry Form
         </h2>

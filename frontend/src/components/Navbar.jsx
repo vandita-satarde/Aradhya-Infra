@@ -87,7 +87,7 @@ function Navbar({ className = '' }) {
           </Link>
 
           {/* Mobile Hamburger */}
-          <div className='md:hidden text-[rgba(255,255,255,0.85)] text-xl cursor-pointer'>
+          <div className='md:hidden text-gray-700 text-xl cursor-pointer'>
             {menuOpen ? (
               <FaTimes onClick={() => setMenuOpen(false)} />
             ) : (
