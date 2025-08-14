@@ -19,7 +19,7 @@ function Enquiry() {
   useEffect(() => {
     const fetchEnquiries = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/enquiry');
+        const res = await axios.get('https://aradhya-infra-e57v.vercel.app/api/enquiry');
         setEntries(res.data);
       } catch (error) {
         console.error('Error fetching enquiries:', error);
@@ -31,7 +31,7 @@ function Enquiry() {
 
   const handleRemarkChange = async (id, remark) => {
     try {
-      await axios.put(`http://localhost:5000/api/enquiry/${id}/remark`, {
+      await axios.put(`https://aradhya-infra-e57v.vercel.app/api/enquiry/${id}/remark`, {
         adminRemark: remark
       });
       setEntries((prevEntries) =>
@@ -47,7 +47,7 @@ function Enquiry() {
   const handleDelete = async (id) => {
     if (!window.confirm('Are you sure you want to delete this enquiry?')) return;
     try {
-      await axios.delete(`http://localhost:5000/api/enquiry/${id}`);
+      await axios.delete(`https://aradhya-infra-e57v.vercel.app/api/enquiry/${id}`);
       setEntries((prevEntries) => prevEntries.filter((entry) => entry._id !== id));
     } catch (err) {
       console.error('Failed to delete enquiry', err);
@@ -146,7 +146,7 @@ function Enquiry() {
                 <button
                   onClick={async () => {
                     try {
-                      const res = await axios.put(`http://localhost:5000/api/enquiry/${entry._id}/read-toggle`, {
+                      const res = await axios.put(`https://aradhya-infra-e57v.vercel.app/api/enquiry/${entry._id}/read-toggle`, {
                         isRead: !entry.isRead
                       });
                       setEntries((prev) =>

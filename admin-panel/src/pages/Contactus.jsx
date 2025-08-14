@@ -17,7 +17,7 @@ function Contact() {
   useEffect(() => {
     const fetchContacts = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/contact');
+        const res = await axios.get('https://aradhya-infra-e57v.vercel.app/api/contact');
         setContacts(res.data);
       } catch (err) {
         console.error('Error fetching contacts:', err);
@@ -32,7 +32,7 @@ function Contact() {
   const handleDelete = async (id) => {
     if (!window.confirm('Are you sure you want to delete this contact entry?')) return;
     try {
-      await axios.delete(`http://localhost:5000/api/contact/${id}`);
+      await axios.delete(`https://aradhya-infra-e57v.vercel.app/api/contact/${id}`);
       setContacts((prev) => prev.filter((contact) => contact._id !== id));
     } catch (err) {
       console.error('Error deleting contact:', err);
@@ -57,7 +57,7 @@ function Contact() {
 
   const handleSave = async (id) => {
     try {
-      const res = await axios.put(`http://localhost:5000/api/contact/${id}`, editForm);
+      const res = await axios.put(`https://aradhya-infra-e57v.vercel.app/api/contact/${id}`, editForm);
       setContacts((prev) =>
         prev.map((contact) => (contact._id === id ? res.data : contact))
       );

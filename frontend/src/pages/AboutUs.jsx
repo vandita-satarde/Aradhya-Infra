@@ -33,9 +33,9 @@ function AboutUs() {
       <div className='relative  gap-10 bg-[#F3ECDC]  p-10 md:p-30'>
                   <Nintynine />
 
-                  <div className='mt-32 md:mt-60'>
+                  <div className='mt-32 md:mt-45'>
                     <p className='text-[12px] md:text-[15px] text-[#048886] '>OUR BELIEFS</p>
-                    <p className='text-[30px] md:text-[45px] text-[#2D2D2D] font-bold font-[abril] my-8'>Aradhya Infra - rooted in Nagpur, inspired to build thriving communities across Central India</p>
+                    <p className='text-[30px] md:text-[45px] text-[#2D2D2D] font-bold font-[abril] my-4 '>Aradhya Infra - rooted in Nagpur, inspired to build thriving communities across Central India</p>
                     <p className=' text-[#6E6E6E] text-[16px] md:text-[18px] '>Aradhya Infra - rooted in Nagpur, inspired to build thriving communities across Central India</p>
 
                     <div className='flex flex-col lg:flex-row gap-6 mt-10 font-[abril]'>

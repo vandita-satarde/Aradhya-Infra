@@ -27,7 +27,7 @@ const Dashboard = () => {
 
   const fetchProjects = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/projects');
+      const res = await axios.get('https://aradhya-infra-e57v.vercel.app/api/projects');
       console.log('Projects fetched:', res.data);
       setProjects(res.data);
     } catch (err) {
@@ -131,7 +131,7 @@ const Dashboard = () => {
         }
       });
 
-      const res = await axios.put(`http://localhost:5000/api/projects/${editingProject}`, data, {
+      const res = await axios.put(`https://aradhya-infra-e57v.vercel.app/api/projects/${editingProject}`, data, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
@@ -156,7 +156,7 @@ const Dashboard = () => {
   const handleDelete = async (id) => {
     if (!window.confirm('Are you sure you want to delete this project?')) return;
     try {
-      await axios.delete(`http://localhost:5000/api/projects/${id}`);
+      await axios.delete(`https://aradhya-infra-e57v.vercel.app/api/projects/${id}`);
       fetchProjects();
     } catch (err) {
       console.error('Error deleting project:', err);

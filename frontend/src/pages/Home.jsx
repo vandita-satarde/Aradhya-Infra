@@ -50,10 +50,10 @@ function Home() {
   return (
     <div>
       <HeroSection />
-      <div className='bg-[#F3ECDC] min-h-screen p-12 lg:p-25 '>
+      <div className='bg-[#F3ECDC] px-12 md:px-25 pt-12 md:pt-25 md:pb-1 '>
 
         {/* Section 01 */}
-        <div className='mb-30'>
+        <div className=' h-260 md:h-155 pb-30'>
           <p className='text-[13px] md:text-[15px] font-semibold text-[#048886] mb-3 '>OUR LUXURIOUS PROJECTS</p>
           <div className='flex flex-col md:flex-row md:justify-between items-start md:items-center gap-4 '>
             <h2 className=' text-[26px] md:text-[48px]  font-extrabold font-[abril] '>Premium Residential,<br />Commercial & Township Projects.</h2>
@@ -70,26 +70,30 @@ function Home() {
             </div>
 
             <div className='absolute md:left-[320px] top-40 md:top-9 flex flex-col sm:flex-row gap-3 mt-6 lg:mt-0 ' >
-              <div className=' bg-[#F3ECDC] w-full sm:w-[310px] p-1 md:p-3 rounded-[30px] shadow-sm shaadow-[#00000012] '>
+              <div className=' bg-[#F3ECDC] w-[250px] md:w-[310px] p-1 md:p-3 rounded-[30px] shadow-sm shaadow-[#00000012] '>
                 <img src={image1} className='  rounded-[30px] md:h-[210px] w-full object-cover ' />
               </div>
-              <div className=' bg-[#F3ECDC] w-full sm:w-[300px] p-1 md:p-3 rounded-[30px] shadow-sm shaadow-[#00000012] '>
+              <div className=' bg-[#F3ECDC] w-full md:w-[300px] p-1 md:p-3 rounded-[30px] shadow-sm shaadow-[#00000012] '>
                 <img src={image1} className='  rounded-[30px] md:h-[210px] w-full object-cover ' />
               </div>
-              <div className=' bg-[#F3ECDC] w-full sm:w-[300px] p-1 md:p-3 rounded-[30px] shadow-sm shaadow-[#00000012] '>
+              <div className=' bg-[#F3ECDC] w-full md:w-[300px] p-1 md:p-3 rounded-[30px] shadow-sm shaadow-[#00000012] '>
                 <img src={image1} className='  rounded-[30px] md:h-[210px] w-full object-cover ' />
               </div>
             </div>
           </div>
         </div>
-
-        {/* Section 02 */}
-        <Nintynine className='mt-130 md:mt-50'/>
-
-        {/* Section 03 */}
-        <div className='mt-30 md:mt-55 text-center '>
-          <p className='text-sm md:text-base mb-3 font-sans'>WHY ARADHYA INFRA?</p>
-          <p className=' text-[32px] md:text-[48px] font-extrabold mb-7 font-[abril] '>Why Aradhya Infra?</p>
+      </div>
+      
+      {/* Section 02 */}
+      <div className=' px-6 md:px-30 pb-10 md:pb-20'>
+        <Nintynine className='mt-10 md:mt-30 bg-white'/>
+      </div>
+        
+      {/* Section 03 */}
+      <div className='bg-[#F3ECDC] px-12 md:px-25 pb-10 md:pb-20'>
+        <div className='pt-12 md:pt-25 text-center '>
+          <p className='text-[12px] md:text-base mb-1 md:mb-3 font-sans'>WHY ARADHYA INFRA?</p>
+          <p className=' text-[26px] md:text-[48px] font-extrabold mb-7 font-[abril] '>Why Aradhya Infra?</p>
           <div className='w-full flex flex-col md:flex-row gap-8 justify-center items-center mb-10'>
             <ServicesCard
               icon={hsIcon1}
@@ -114,31 +118,31 @@ function Home() {
 
 
       {/* <Projects /> */}
-      <div className='text-center mt-18 mb-20 px-5'>
-        <p className='m-5 text-[#050810] text-[12px] md:text-[16px] font-sans'>ALL PROJECTS</p>
-        <p className='text-[30px] md:text-[45px] text-[#050810] font-[abril] font-extrabold mb-10'>Aradhya Business Park</p>
+      <div className='text-center my-12 px-5'>
+        <p className='md:m-5 text-[#050810] text-[12px] md:text-[16px] font-sans'>ALL PROJECTS</p>
+        <p className='text-[25px] md:text-[45px] text-[#050810] font-[abril] font-extrabold mb-5 md:mb-10'>Aradhya Business Park</p>
 
-        <div className='flex flex-wrap gap-8 justify-center text-[13px] md:text-[17px]'>
+        <div className='flex flex-wrap gap-2 md:gap-8 justify-center text-[10px] md:text-[17px]'>
           <button
             onClick={() => setFilter('all')}
-            className={`border py-3 px-6 md:py-4 md:px-12 hover:bg-black hover:text-[#F3ECDC] transition duration-500 ease-in-out cursor-pointer ${filter === 'all' ? 'bg-black text-[#F3ECDC]' : ''}`}>
+            className={`border py-2 md:py-4 px-4 md:px-12 hover:bg-black hover:text-[#F3ECDC] transition duration-500 ease-in-out cursor-pointer ${filter === 'all' ? 'bg-black text-[#F3ECDC]' : ''}`}>
             ALL PROPERTIES
           </button>
           <button
             onClick={() => setFilter('commercial')}
-            className={`border py-3 px-6 md:py-4 md:px-12 hover:bg-black hover:text-[#F3ECDC] transition duration-500 ease-in-out cursor-pointer ${filter === 'commercial' ? 'bg-black text-[#F3ECDC]' : ''}`}>
+            className={`border py-2 md:py-4 px-4 md:px-12 hover:bg-black hover:text-[#F3ECDC] transition duration-500 ease-in-out cursor-pointer ${filter === 'commercial' ? 'bg-black text-[#F3ECDC]' : ''}`}>
             COMMERCIAL
           </button>
           <button
             onClick={() => setFilter('residential')}
-            className={`border py-3 px-6 md:py-4 md:px-12 hover:bg-black hover:text-[#F3ECDC] transition duration-500 ease-in-out cursor-pointer ${filter === 'residential' ? 'bg-black text-[#F3ECDC]' : ''}`}>
+            className={`border py-2 md:py-4 px-4 md:px-12 hover:bg-black hover:text-[#F3ECDC] transition duration-500 ease-in-out cursor-pointer ${filter === 'residential' ? 'bg-black text-[#F3ECDC]' : ''}`}>
             RESIDENTIAL
           </button>
         </div>
 
-        <br /><br /><br /><br />
+        <br />
 
-        <div className='flex flex-wrap justify-center md:justify-start gap-8  '>
+        <div className='flex flex-wrap justify-center md:justify-start md:gap-8  '>
           {displayedProjects.map((project, index) => (
             <ProductCard
               key={index}

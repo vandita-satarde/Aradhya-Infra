@@ -41,12 +41,12 @@ function Navbar({ className = '' }) {
   ];
 
   return (
-    <div className={`w-full fixed top-0 z-50 transition-all duration-300 ${navbarBg ? 'bg-black/80 backdrop-blur-md' : 'bg-transparent'} ${className}`}>
+    <div className={`w-full fixed top-0 z-50 transition-all duration-300 ${navbarBg ? 'bg-white/80 backdrop-blur-md' : 'bg-transparent'} ${className}`}>
       {/* Top Navbar */}
-      <div className='w-full h-[100px] md:h-[130px] border-b border-[rgba(255, 255, 255, 0.75)] flex justify-evenly items-center text-gray-200 '>
+      <div className='w-full h-[100px] md:h-[130px] flex justify-evenly items-center text-black '>
         <div className="flex justify-between px-10 md:px-25 w-full items-center">
           <Link to="/">
-            <img src={logo} className='h-[75px] md:h-[104px] w-[75px] md:w-[104px] rounded-[50%] m-3' alt="Logo" />
+            <img src={logo} className='h-[75px] md:h-[104px] w-[75px] md:w-[104px] m-3' alt="Logo" />
           </Link>
 
           {/* Desktop Menu */}
@@ -55,19 +55,19 @@ function Navbar({ className = '' }) {
               <div key={link.name} className="group relative">
                 <Link
                   to={link.path}
-                  className={`cursor-pointer hover:text-white transition-colors duration-200 ${
-                    isActive(link.path) ? 'text-white font-semibold' : ''
+                  className={`cursor-pointer hover:text-black transition-colors duration-200 ${
+                    isActive(link.path) ? 'text-black font-semibold' : ''
                   }`}
                 >
                   {link.name}
                 </Link>
                 {link.dropdown && (
-                  <div className="absolute left-0 mt-2 w-48 bg-gray-200 text-black rounded shadow-lg opacity-0 group-hover:opacity-100 group-hover:visible invisible transition-all duration-300 z-50">
+                  <div className="absolute left-0 mt-2 w-48 bg-[#F3ECDC] text-black rounded shadow-lg opacity-0 group-hover:opacity-100 group-hover:visible invisible transition-all duration-300 z-50">
                     {link.dropdown.map((sublink) => (
                       <Link
                         key={sublink.name}
                         to={sublink.path}
-                        className="block px-4 py-2 hover:bg-gray-300 hover:rounded text-sm"
+                        className="block px-4 py-2 hover:bg-[#f8f4ec] hover:rounded text-sm"
                       >
                         {sublink.name}
                       </Link>
@@ -81,7 +81,7 @@ function Navbar({ className = '' }) {
           {/* Contact Us button (desktop) */}
           <Link
             to="/contact"
-            className='hidden md:flex justify-center items-center gap-4 bg-[#F3ECDC] text-[#050810] text-[15px] w-[240px] h-[60px] rounded-[30px] hover:bg-[#e8dcc5] transition-colors duration-200'
+            className='hidden md:flex justify-center items-center gap-4 shadow-md bg-[#F3ECDC] text-[#050810] text-[15px] w-[240px] h-[60px] rounded-[30px] hover:bg-[#e8dcc5] transition-colors duration-200'
           >
             <img src={contact} className='h-[29px] w-[29px]' alt="Contact" /> CONTACT US
           </Link>

@@ -18,7 +18,7 @@ function AddGalleryItem() {
 
         setDeleting(true);
         try {
-            await axios.delete(`http://localhost:5000/api/gallery/${id}`);
+            await axios.delete(`https://aradhya-infra-e57v.vercel.app/api/gallery/${id}`);
             await fetchGalleryItems();
             alert('Item deleted successfully');
         } catch (error) {
@@ -31,7 +31,7 @@ function AddGalleryItem() {
 
     const fetchGalleryItems = async () => {
         try {
-            const response = await axios.get('http://localhost:5000/api/gallery');
+            const response = await axios.get('https://aradhya-infra-e57v.vercel.app/api/gallery');
             setGalleryItems(response.data);
             setLoading(false);
         } catch (error) {
@@ -62,7 +62,7 @@ function AddGalleryItem() {
         formData.append('location', 'gallerypage');
 
         try {
-            const res = await axios.post('http://localhost:5000/api/gallery/upload', formData, {
+            const res = await axios.post('https://aradhya-infra-e57v.vercel.app/api/gallery/upload', formData, {
                 headers: { 'Content-Type': 'multipart/form-data' },
             });
 

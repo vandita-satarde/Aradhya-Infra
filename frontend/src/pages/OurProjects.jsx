@@ -54,7 +54,7 @@ function OurProjects() {
         </div>
 
         {/* Map Section */}
-        <div className='flex flex-col items-center bg-[#F3ECDC] pb-8 md:pb-25'>
+        <div className=' flex flex-col items-center bg-[#F3ECDC] pb-8 md:pb-25'>
             <p className='text-[22px] md:text-[55px] text-[#048886] font-bold font-[abril] my-5 md:my-8'>Location</p>
             <div className='bg-[#F3ECDC] p-1 md:p-4 rounded-4xl shadow-lg'>
                 <iframe 

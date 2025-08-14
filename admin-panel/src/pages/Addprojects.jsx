@@ -110,7 +110,7 @@ function Addprojects() {
         imageCount: selectedImages.length
       });
 
-      const response = await axios.post('http://localhost:5000/api/projects', data, {
+      const response = await axios.post('https://aradhya-infra-e57v.vercel.app/api/projects', data, {
         headers: { 'Content-Type': 'multipart/form-data' },
         timeout: 300000, // Increased to 5 minutes timeout for multiple large images
         onUploadProgress: (progressEvent) => {

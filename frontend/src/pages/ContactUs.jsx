@@ -33,7 +33,7 @@ function ContactUs() {
         if (!firstName || !lastName || !email || !topic || !message) {
             alert('Please fill in all fields before submitting.');
             return;
-    }
+        }
 
         try {
             await axios.post('https://aradhya-infra-e57v.vercel.app/api/contact', formData);
@@ -132,29 +132,31 @@ function ContactUs() {
                                 <img src={icon01} className='w-5 md:w-[40px] h-5 md:h-[30px] mr-5 md:mr-[30px] ' />
                                 <div>
                                     <p className=' md:text-[21px] font-bold font-[abril]'>Location</p>
-                                    <p className='text-[13px] md:text-[18px] text-[#6E6E6E]'>Nagpur, India</p>
+                                    <p className='text-[13px] md:text-[18px] text-[#6E6E6E]'>Plot No. 234, 32nd Floor, Suyog Nagar Square,
+                                        (Opposite Yokohama Tyres)
+                                        MANEWADA RING ROAD, NAGPUR,
+                                        Pin Code - 440027</p>
                                 </div>
                             </div>
                             <div className='flex'>
                                 <img src={icon02} className='w-5 md:w-[35px] h-4 md:h-[28px] mr-5 md:mr-[30px] ' />
                                 <div>
                                     <p className='md:text-[21px] font-bold font-[abril]'>Email Address</p>
-                                    <p className='text-[13px] md:text-[18px] text-[#6E6E6E]'>aradhya@Email.com</p>
+                                    <p className='text-[13px] md:text-[18px] text-[#6E6E6E]'>aradhyainfratech07@gmail.com</p>
                                 </div>
                             </div>
                             <div className='flex '>
                                 <img src={icon03} className='w-5 md:w-[31px] h-5 md:h-[33px] mr-5 md:mr-[30px] ' />
                                 <div>
                                     <p className='md:text-[21px] font-bold font-[abril]'>Telephone</p>
-                                    <p className='text-[12px] md:text-[18px] text-[#6E6E6E]'>( +91 ) 123 456 789</p>
+                                    <p className='text-[12px] md:text-[18px] text-[#6E6E6E]'>( +91 ) 7666044916</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <hr />
-            <div className='bg-[#F3ECDC] px-3 md:px-10 lg:px-30 pt-10 md:pt-14 pb-10 md:pb-25'>
+            <div className='bg-[#F3ECDC] border border-gray-300 px-3 md:px-10 lg:px-30 pt-10 md:pt-14 pb-10 md:pb-25'>
                 <img src={image01} className=' w-full md:w-[1240px] h-[100px] md:h-[350px] rounded-[30px] ' />
             </div>
             <Footer />

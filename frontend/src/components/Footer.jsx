@@ -18,7 +18,7 @@ function Footer() {
         
         {/* Company Info */}
         <div className='lg:col-span-1'>
-          <img src={logo} className='h-20 w-20 md:h-24 md:w-24 lg:h-28 lg:w-28 rounded-full mb-4 md:mb-6' alt="Aradhya Infra logo" />
+          <img src={logo} className='h-20 w-20 md:h-24 md:w-24 lg:h-28 lg:w-28 mb-4 md:mb-6' alt="Aradhya Infra logo" />
           <p className='text-[12px] md:text-base lg:text-[15px] text-[#FFFFFFBF] leading-relaxed mb-6'>
             Discover the exceptional plots at Aradhya Infratech Nagpur, a premier residential enclave that perfectly blends modern living with the calmness of nature. Here, at Aradhya Infratech Ngpur Plots, select from diverse plots surrounded by verdant greenery and orchards, providing a peaceful living environment in sync with the natural world.
           </p>

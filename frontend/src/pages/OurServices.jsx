@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar'
 import ServicesCard from '../components/ServicesCard'
-import Gallery from '../components/Gallery'
+import GalleryPage from './GalleryPage';
 import Testimonals from '../components/Testimonials'
 import GetStarted from '../components/GetStarted'
 import Footer from '../components/Footer'
@@ -40,7 +40,7 @@ function OurServices() {
             </div>
         </div>
 
-        <div className='bg-[#F3ECDC] p-12 md:p-30 flex flex-wrap gap-6'>
+        <div className='bg-[#F3ECDC] p-12 md:p-20 flex flex-wrap gap-y-15'>
             <ServicesCard 
                 icon={icon01}
                 name="Pre-Launch Marketing"
@@ -73,7 +73,12 @@ function OurServices() {
             />
         </div>
 
-        <Gallery />
+        <GalleryPage limit={5} className='!h-0' />
+      <Link to='/gallery-page' >
+        <p className='bg-[#F3ECDC] pb-10 text-center cursor-pointer text-[9px] md:text-[15px] text-[#2D2D2D] font-medium'>
+          SEE OUR GALLERY SECTION LEGACY OF ARADHYA INFRA →
+        </p>
+      </Link>
         <Testimonals />
         <GetStarted />
         <Footer />
