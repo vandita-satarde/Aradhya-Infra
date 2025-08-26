@@ -200,7 +200,7 @@ const Dashboard = () => {
 
         <div className="flex flex-wrap gap-8">
           {projects.map((project) => (
-            <div key={project._id} className="text-[12px] md:text-[16px] w-[500px] p-4 rounded shadow-xl">
+            <div key={project._id} className="text-[12px] md:text-[16px] w-[320px] lg:w-[500px] p-4 rounded shadow-xl">
               {editingProject === project._id ? (
                 <>
                   <input name='title' value={editFormData.title} onChange={handleChange} className="border p-1 md:p-2 w-full mb-2" placeholder="Title" />

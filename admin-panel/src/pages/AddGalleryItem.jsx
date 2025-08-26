@@ -147,7 +147,7 @@ function AddGalleryItem() {
                                     )}
                                     <div className="p-2 md:p-3">
                                         <div className="flex justify-between items-center">
-                                            <p className="text-[12px] md:text-sm text-gray-600">
+                                            <p className="text-[12px] lg:text-sm text-gray-600">
                                                 Added: {new Date(item.uploadedAt).toLocaleDateString()}
                                             </p>
                                             <button
@@ -156,7 +156,7 @@ function AddGalleryItem() {
                                                     handleDelete(item._id);
                                                 }}
                                                 disabled={deleting}
-                                                className="text-red-600 hover:text-red-700 bg-red-200 hover:bg-red-100 px-2 md:px-3 md:py-1 rounded-md text-[10px] md:text-[12px] font-medium transition duration-200"
+                                                className="text-red-600 hover:text-red-700 bg-red-200 hover:bg-red-100 px-2 lg:px-3 md:py-1 rounded-md text-[10px] lg:text-[12px] font-medium transition duration-200"
                                             >
                                                 {deleting ? 'Deleting...' : 'Delete'}
                                             </button>
