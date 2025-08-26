@@ -123,7 +123,7 @@ function AddGalleryItem() {
                     {loading ? (
                         <p>Loading...</p>
                     ) : (
-                        <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4">
+                        <div className="columns-2 md:columns-3 lg:columns-4 gap-4">
                             {galleryItems.map((item) => (
                                 <div key={item._id} className="break-inside-avoid mb-4 rounded-[20px] overflow-hidden">
                                     {item.type === 'image' ? (
