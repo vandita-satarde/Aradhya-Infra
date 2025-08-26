@@ -71,7 +71,7 @@ function Contact() {
   return (
     <div className="flex">
       <Sidebar />
-      <div className="pt-23 md:pt-8 md:ml-64 p-8 lg:w-full md:w-[580px] min-h-screen bg-gray-100">
+      <div className="pt-23 md:pt-8 md:ml-64 p-8 lg:w-full md:w-[580px] w-full min-h-screen bg-gray-100">
         <h2 className="text-[21px] sm:text-3xl font-bold mb-4 md:mb-10 text-[#048886]">Contact Submissions</h2>
 
         <div className="overflow-x-auto rounded-xl shadow-lg text-[12px] md:text-[16px] ">
