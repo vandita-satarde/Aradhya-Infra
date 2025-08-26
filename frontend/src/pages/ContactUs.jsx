@@ -65,8 +65,8 @@ function ContactUs() {
             </div>
 
             <div className='bg-[#F3ECDC] px-6 md:px-10 lg:px-30 pt-10 md:pt-30 pb-10 md:pb-14'>
-                <div className='flex flex-col lg:flex-row gap-10 mx-auto '>
-                    <div className='w-full lg:w-1/2 md:h-[747px] p-6 md:p-[50px] bg-[#F9F9F9] rounded-[30px] shadow-xl '>
+                <div className='flex flex-col lg:flex-row gap-14 lg:gap-10 mx-auto '>
+                    <div className='w-full md:w-[600px] lg:w-1/2 md:h-[747px] p-6 md:p-[50px] mx-auto bg-[#F9F9F9] rounded-[30px] shadow-xl '>
                         <p className='text-[20px] md:text-[35px] font-[abril] font-bold'>Contact Us</p>
                         <p className='text-[14px] md:text-[18px] mt-4 md:mt-5 mb-4 text-[#6E6E6E]'>Connect with us anytime—we’re here to make your home-buying journey seamless and stress-free.</p>
                         <div className='flex flex-wrap gap-4'>
@@ -123,11 +123,11 @@ function ContactUs() {
                         </div>
                         <button onClick={handleSubmit} className='rounded-[30px] text-[12px] md:text-[15px] px-8 md:px-11 py-3 md:py-4 mt-8 md:mt-12 bg-[#048886] text-[#F1F1F1] '>SEND MESSAGE</button>
                     </div>
-                    <div className='w-full md:w-1/2 md:ml-15 my-auto'>
-                        <p className='text-[12px] md:text-[15px] text-[#A3B18A] '>GET IN TOUCH WITH ARADHYA INFRA</p>
-                        <p className='text-[30px] md:text-[45px] my-4 md:my-5 font-[abril] font-bold'>We’re Here for You</p>
-                        <p className='text-[12px] md:text-[18px] text-[#6E6E6E] mb-15'>Let’s turn your vision into reality — reach out today.</p>
-                        <div className='flex flex-col gap-6'>
+                    <div className='w-full md:w-[500px] lg:w-1/2 md:ml-15 my-auto '>
+                        <p className='text-[12px] md:text-[13px] lg:text-[15px] text-[#A3B18A] '>GET IN TOUCH WITH ARADHYA INFRA</p>
+                        <p className='text-[30px] md:text-[40px] lg:text-[45px] my-4 md:my-1 lg:my-5 font-[abril] font-bold'>We’re Here for You</p>
+                        <p className='text-[12px] md:text-[17px] lg:text-[18px] text-[#6E6E6E] mb-15'>Let’s turn your vision into reality — reach out today.</p>
+                        <div className='flex flex-col gap-6 mr-50 md:mr-0'>
                             <div className='flex '>
                                 <img src={icon01} className='w-5 md:w-[40px] h-5 md:h-[30px] mr-5 md:mr-[30px] ' />
                                 <div>

@@ -43,14 +43,14 @@ function Navbar({ className = '' }) {
   return (
     <div className={`w-full fixed top-0 z-50 transition-all duration-300 ${navbarBg ? 'bg-white' : 'bg-transparent'} ${className}`}>
       {/* Top Navbar */}
-      <div className='w-full h-[100px] md:h-[130px] flex justify-evenly items-center text-black '>
-        <div className="flex justify-between px-10 md:px-25 w-full items-center">
+      <div className='w-full h-[60px] md:h-[74px] lg:h-[70px] flex justify-evenly items-center text-black '>
+        <div className="flex justify-between px-10 md:px-11 lg:px-24 w-full items-center">
           <Link to="/">
-            <img src={logo} className='h-[75px] md:h-[104px] w-[75px] md:w-[104px] m-3' alt="Logo" />
+            <img src={logo} className='h-[55px] md:h-[58px] lg:h-[60px] w-[55px] md:w-[58px] lg:w-[60px] m-3' alt="Logo" />
           </Link>
 
           {/* Desktop Menu */}
-          <div className='hidden md:flex md:gap-25 text-[15px] text-[rgba(255, 255, 255, 0.75)] relative'>
+          <div className='hidden md:flex md:gap-7 lg:gap-20 text-[15px] md:text-[14px] lg:text-[16px] text-[rgba(255, 255, 255, 0.75)] relative'>
             {navLinks.map((link) => (
               <div key={link.name} className="group relative">
                 <Link
@@ -62,12 +62,12 @@ function Navbar({ className = '' }) {
                   {link.name}
                 </Link>
                 {link.dropdown && (
-                  <div className="absolute left-0 mt-2 w-48 bg-[#F3ECDC] text-black rounded shadow-lg opacity-0 group-hover:opacity-100 group-hover:visible invisible transition-all duration-300 z-50">
+                  <div className="absolute left-0 mt-2 w-44 md:w-48 lg:w-56 bg-[#F3ECDC] text-black rounded shadow-lg opacity-0 group-hover:opacity-100 group-hover:visible invisible transition-all duration-300 z-50">
                     {link.dropdown.map((sublink) => (
                       <Link
                         key={sublink.name}
                         to={sublink.path}
-                        className="block px-4 py-2 hover:bg-[#f8f4ec] hover:rounded text-sm"
+                        className="block px-4 py-2 md:px-5 md:py-2.5 hover:bg-[#f8f4ec] hover:rounded text-sm md:text-base"
                       >
                         {sublink.name}
                       </Link>
@@ -81,9 +81,9 @@ function Navbar({ className = '' }) {
           {/* Contact Us button (desktop) */}
           <Link
             to="/contact"
-            className='hidden md:flex justify-center items-center gap-4 shadow-md bg-[#F3ECDC] text-[#050810] text-[15px] w-[240px] h-[60px] rounded-[30px] hover:bg-[#e8dcc5] transition-colors duration-200'
+            className='hidden md:flex justify-center items-center gap-3 md:gap-3 shadow-md bg-[#F3ECDC] text-[#050810] text-[15px] md:text-[14px] lg:text-[16px] w-[150px] md:w-[150px] lg:w-[200px] h-[36px] md:h-[40px] lg:h-[45px] rounded-[30px] hover:bg-[#e8dcc5] transition-colors duration-200'
           >
-            <img src={contact} className='h-[29px] w-[29px]' alt="Contact" /> CONTACT US
+            <img src={contact} className='h-[22px] w-[22px] md:h-[23px] md:w-[23px] lg:h-[29px] lg:w-[29px]' alt="Contact" /> CONTACT US
           </Link>
 
           {/* Mobile Hamburger */}

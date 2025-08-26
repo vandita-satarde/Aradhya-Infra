@@ -40,7 +40,7 @@ function OurServices() {
             </div>
         </div>
 
-        <div className='bg-[#F3ECDC] p-12 md:p-20 flex flex-wrap gap-y-8 md:gap-y-15'>
+        <div className='bg-[#F3ECDC] p-12 lg:p-20 flex flex-wrap  gap-y-8 lg:gap-y-15'>
             <ServicesCard 
                 icon={icon01}
                 name="Pre-Launch Marketing"

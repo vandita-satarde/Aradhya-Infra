@@ -8,7 +8,7 @@ function GetStarted() {
       <div className='relative rounded-[20px] md:rounded-[30px] overflow-hidden max-w-7xl mx-auto'>
         <img 
           src={image01} 
-          className='w-full h-[140px] md:h-[400px] lg:h-[500px] object-cover' 
+          className='w-full h-[140px] md:h-[320px] lg:h-[500px] object-cover' 
           alt="background"
         />        
         <div className='absolute inset-0 flex flex-col justify-center items-center text-white text-center p-6 md:p-12 lg:p-16'>

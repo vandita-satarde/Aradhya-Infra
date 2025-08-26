@@ -48,11 +48,11 @@ const Enquiry = () => {
 
   return (
     <>
-    <div className='bg-[#e7dfce] h-[100px] md:h-[130px] '></div>
+    <div className='bg-[#e7dfce] h-[100px] md:h-[75px]  '></div>
     <Navbar />
     <div className=" bg-[#F9F9F9] py-13 px-6 flex items-center justify-center">
-      <div className="max-w-2xl w-full bg-[#F9F9F9] p-10 rounded-[30px] shadow-2xl border border-gray-200">
-        <h2 className="text-black text-[20px] md:text-[35px] font-[abril] font-bold mb-8 text-center tracking-wide">
+      <div className=" lg:max-w-2xl bg-[#F9F9F9] p-5 md:p-10 rounded-[30px] shadow-2xl border border-gray-200">
+        <h2 className="text-black text-[20px] md:text-[28px] lg:text-[35px] font-[abril] font-bold mb-5 md:mb-8 text-center tracking-wide">
           Get in Touch – Enquiry Form
         </h2>
 

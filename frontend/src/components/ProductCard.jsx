@@ -13,7 +13,7 @@ function ProductCard({ project }) {
     images,
   } = project;
   return (
-    <div className='relative w-[270px] bg-white md:w-full max-w-[400px] border-2 border-gray-200 rounded-lg overflow-hidden font-sans hover:shadow-lg transition-shadow duration-300 my-5 mx-5'>
+    <div className='relative w-[270px] bg-white md:w-[350px] lg:w-[410px] border-2 border-gray-200 rounded-lg overflow-hidden font-sans hover:shadow-lg transition-shadow duration-300 my-5 mx-5'>
       <div className='relative'>
 
         {tags && tags.length > 0 && (
@@ -45,12 +45,12 @@ function ProductCard({ project }) {
       <div className='flex flex-col items-start p-4 md:p-6 lg:p-8'>
         <h3 className='font-bold font-[abril] text-[#050810] text-lg md:text-xl lg:text-[22px] mb-3 md:mb-4 leading-tight'>{title}</h3>
 
-        <div className='flex mb-1 md:mb-4'>
-          <img src={icon01} className='h-4 md:h-5 mr-2 md:mr-3 mt-1 flex-shrink-0' alt="location" />
+        <div className='flex mb-1 md:mb-2 lg:mb-4'>
+          <img src={icon01} className='h-4 md:h-5 mr-2 lg:mr-3 mt-1 flex-shrink-0' alt="location" />
           <p className='text-sm md:text-base lg:text-[18px] text-gray-600'>{location}</p>
         </div>
 
-        <p className='font-semibold text-sm md:text-base lg:text-[18px] mb-3 md:mb-4 text-gray-800'>{area}</p>
+        <p className='font-semibold text-sm md:text-base lg:text-[18px] mb-3 lg:mb-4 text-gray-800'>{area}</p>
 
         <div className='flex flex-wrap gap-2 mb-4 md:mb-6'>
           <span className='bg-[#F3ECDC] text-[#050810] px-3 py-1 rounded-full text-xs md:text-sm'>Retail</span>

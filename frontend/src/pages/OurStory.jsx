@@ -28,7 +28,7 @@ function OurStory() {
         </div>
       </div>
 
-      <div className='bg-[#F3ECDC] px-5 md:px-30 py-5 md:py-22'>
+      <div className='bg-[#F3ECDC] px-5 md:px-8 lg:px-30 py-5 md:py-10 lg:py-22'>
         <StoryandBelief
           subtitle='OUR STORY'
           title='Building dreams, creating communities”—that’s not just a tagline—it’s why Aradhya Infra exists.'

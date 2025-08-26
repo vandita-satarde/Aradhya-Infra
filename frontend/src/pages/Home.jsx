@@ -51,34 +51,34 @@ function Home() {
   return (
     <div>
       <HeroSection />
-      <div className='bg-[#F3ECDC] px-12 md:px-25 pt-12 md:pt-25 md:pb-1 '>
+      <div className='bg-[#F3ECDC] px-12 md:px-4 lg:px-25 pt-12 md:pt-14 lg:pt-25 md:pb-1 '>
 
         {/* Section 01 */}
-        <div className=' pb-160 md:pb-30'>
-          <p className='text-[13px] md:text-[15px] font-semibold text-[#048886] mb-3 '>OUR LUXURIOUS PROJECTS</p>
+        <div className=' pb-160 md:pb-20 lg:pb-30'>
+          <p className='text-[13px] md:text-[13px] lg:text-[15px] font-semibold text-[#048886] mb-3 '>OUR LUXURIOUS PROJECTS</p>
           <div className='flex flex-col md:flex-row md:justify-between items-start md:items-center gap-4 '>
-            <h2 className=' text-[26px] md:text-[48px]  font-extrabold font-[abril] '>Premium Residential,<br />Commercial & Township Projects.</h2>
+            <h2 className=' text-[26px] md:text-[32px] lg:text-[48px] font-extrabold font-[abril] md:leading-11 lg:leading-18 '>Premium Residential,<br />Commercial & Township Projects.</h2>
             <a href='/projects'>
-              <p className='text-[13px] md:text-[15px] font-semibold font-sans mr-0 md:mr-30 text-[#00000099] '>SHOW MORE → </p>
+              <p className='text-[13px] lg:text-[15px] font-semibold font-sans mr-0 md:mr-5 lg:mr-30 text-[#00000099] '>SHOW MORE → </p>
             </a>
           </div>
           <br /><br />
           <div className=' flex relative flex-col lg:flex-row -mt-5 '>
-            <div className=' relative w-full lg:w-[417px] h-[260px] lg:h-[305px] rounded-4xl p-6 md:py-8 md:px-12 pr-4 md:pr-40 bg-black text-[#FFFFFFBF] '>
-              <FaQuoteLeft className='w-[30px] h-[30px] md:w-[40px] md:h-[45px] text-[#DADADA] mb-4 ' />
-              <p className='italic text-[15px] md:text-[22px] mb-3'>“Layanan apartemen paling terbaik di Indonesia, suka banget.. “</p>
-              <span className=' font-bold md:text-[25px] text-[#F3ECDC] font-[abril] '>Nikhil Bawane</span>
+            <div className=' relative w-full md:w-[230px] lg:w-[417px] h-[260px] md:h-[220px] lg:h-[305px] rounded-4xl py-6 md:py-4 lg:py-8 px-6 md:px-6 lg:px-12 pr-4 md:pr-14 lg:pr-40 bg-black text-[#FFFFFFBF] '>
+              <FaQuoteLeft className='w-[30px] h-[30px] md:w-[35px] lg:w-[40px] md:h-[35px] lg:h-[45px] text-[#DADADA] mb-4 md:mb-2 lg:mb-4 ' />
+              <p className='italic text-[15px] md:text-[17px] lg:text-[22px] mb-3 md:mb-2 lg:mb-3'>“Layanan apartemen paling terbaik di Indonesia, suka banget.. “</p>
+              <span className=' font-bold md:text-[22px] lg:text-[25px] text-[#F3ECDC] font-[abril] '>Nikhil Bawane</span>
             </div>
 
-            <div className='absolute md:left-[320px] mx-3 top-43 md:top-9 flex flex-col sm:flex-row gap-3 mt-6 lg:mt-0 ' >
-              <div className=' bg-[#F3ECDC] w-full md:w-[310px] p-2 md:p-3 rounded-[30px] shadow-sm shaadow-[#00000012] '>
-                <img src={image1} className='  rounded-[30px] md:h-[210px] w-full object-cover ' />
+            <div className='absolute md:left-[170px] lg:left-[320px] mx-3 top-43 md:top-3 lg:top-9 flex flex-col sm:flex-row gap-3 md:gap-2 lg:gap-3 mt-6 lg:mt-0 ' >
+              <div className=' bg-[#F3ECDC] w-full md:w-[180px] lg:w-[310px] h-full p-1.5 lg:p-3 rounded-[30px] shadow-sm shaadow-[#00000012] '>
+                <img src={image1} className='  rounded-[30px] md:h-[130px] lg:h-[210px] object-cover ' />
               </div>
-              <div className=' bg-[#F3ECDC] w-full md:w-[300px] p-2 md:p-3 rounded-[30px] shadow-sm shaadow-[#00000012] '>
-                <img src={image1} className='  rounded-[30px] md:h-[210px] w-full object-cover ' />
+              <div className=' bg-[#F3ECDC] w-full md:w-[180px] lg:w-[310px] h-full p-1.5 lg:p-3 rounded-[30px] shadow-sm shaadow-[#00000012] '>
+                <img src={image1} className='  rounded-[30px] md:h-[130px] lg:h-[210px] object-cover ' />
               </div>
-              <div className=' bg-[#F3ECDC] w-full md:w-[300px] p-2 md:p-3 rounded-[30px] shadow-sm shaadow-[#00000012] '>
-                <img src={image1} className='  rounded-[30px] md:h-[210px] w-full object-cover ' />
+              <div className=' bg-[#F3ECDC] w-full md:w-[180px] lg:w-[310px] h-full p-1.5 lg:p-3 rounded-[30px] shadow-sm shaadow-[#00000012] '>
+                <img src={image1} className='  rounded-[30px] md:h-[130px] lg:h-[210px] object-cover ' />
               </div>
             </div>
           </div>
@@ -86,17 +86,20 @@ function Home() {
       </div>
       
       {/* Section 02 */}
-      <div className=' px-6 md:px-30 pb-10 md:pb-20'>
+      <div className=' px-6 md:px-10 lg:px-30 pb-10 md:pb-20'>
+        {/* mobile view */}
         <img src={aboutImage} className='md:hidden block my-10 mx-auto w-[340px] h-[210px] object-cover rounded-[30px] ' />
-        <Nintynine className='mt-10 md:mt-30 bg-white'/>
+
+        {/* other devices view */}
+        <Nintynine className='mt-10 md:mt-20 lg:mt-30 bg-white'/>
       </div>
         
       {/* Section 03 */}
-      <div className='bg-[#F3ECDC] px-12 md:px-25 pb-10 md:pb-20'>
-        <div className='pt-12 md:pt-25 text-center '>
-          <p className='text-[12px] md:text-base mb-1 md:mb-3 font-sans'>WHY ARADHYA INFRA?</p>
-          <p className=' text-[26px] md:text-[48px] font-extrabold mb-7 font-[abril] '>Why Aradhya Infra?</p>
-          <div className='w-full flex flex-col md:flex-row gap-8 justify-center items-center mb-10'>
+      <div className='bg-[#F3ECDC] px-8 lg:px-25 pb-12 lg:pb-20'>
+        <div className='pt-12 md:pt-17 lg:pt-25 text-center '>
+          <p className='text-[12px] md:text-[13px] lg:text-base mb-1 md:-mb-1 lg:mb-3 font-sans'>WHY ARADHYA INFRA?</p>
+          <p className=' text-[26px] md:text-[35px] lg:text-[48px] font-extrabold mb-7 font-[abril] '>Why Aradhya Infra?</p>
+          <div className='w-full flex flex-col md:flex-row gap-3 lg:gap-8 justify-center items-center mb-10'>
             <ServicesCard
               icon={hsIcon1}
               name="Nagpur Expertise"
@@ -113,38 +116,38 @@ function Home() {
               description="Vastu‑compliant, clearly priced and inspected, with on‑time delivery."
             />
           </div>
-          <p className='text-[#2D2D2D] text-[12px] md:text-[17px] '><span className=' font-sans font-bold'>CLIENT SUPPORT</span> - DEDICATED GUIDANCE FROM BOOKING TO POST-HANDOVER. </p>
+          <p className='text-[#2D2D2D] text-[12px] md:text-[14px] lg:text-[17px] '><span className=' font-sans font-bold'>CLIENT SUPPORT</span> - DEDICATED GUIDANCE FROM BOOKING TO POST-HANDOVER. </p>
         </div>
       </div>
 
 
 
       {/* <Projects /> */}
-      <div className='text-center py-12 px-1 md:px-5'>
-        <p className='md:m-5 text-[#050810] text-[12px] md:text-[16px] font-sans'>ALL PROJECTS</p>
-        <p className='text-[25px] md:text-[45px] text-[#050810] font-[abril] font-extrabold mb-5 md:mb-10'>Aradhya Business Park</p>
+      <div className='text-center py-10 lg:py-12 px-1 lg:px-5'>
+        <p className=' lg:m-5 text-[#050810] text-[12px] md:text-[13px] lg:text-[16px] font-sans'>ALL PROJECTS</p>
+        <p className='text-[25px] md:text-[33px] lg:text-[45px] text-[#050810] font-[abril] font-extrabold mb-5 lg:mb-10'>Aradhya Business Park</p>
 
-        <div className='flex flex-wrap gap-3 md:gap-8 justify-center text-[10px] md:text-[17px]'>
+        <div className='flex flex-wrap gap-3 md:gap-4 lg:gap-8 justify-center text-[10px] md:text-[16px] lg:text-[17px]'>
           <button
             onClick={() => setFilter('all')}
-            className={`border py-2 md:py-4 px-4 md:px-12 hover:bg-black hover:text-[#F3ECDC] transition duration-500 ease-in-out cursor-pointer ${filter === 'all' ? 'bg-[#050810] text-[#F3ECDC]' : ''}`}>
+            className={`border py-2 md:py-3 lg:py-4 px-4 md:px-6 lg:px-12 hover:bg-black hover:text-[#F3ECDC] transition duration-500 ease-in-out cursor-pointer ${filter === 'all' ? 'bg-[#050810] text-[#F3ECDC]' : ''}`}>
             ALL PROPERTIES
           </button>
           <button
             onClick={() => setFilter('commercial')}
-            className={`border py-2 md:py-4 px-4 md:px-12 hover:bg-black hover:text-[#F3ECDC] transition duration-500 ease-in-out cursor-pointer ${filter === 'commercial' ? 'bg-[#050810] text-[#F3ECDC]' : ''}`}>
+            className={`border py-2 md:py-3 lg:py-4 px-4 md:px-6 lg:px-12 hover:bg-black hover:text-[#F3ECDC] transition duration-500 ease-in-out cursor-pointer ${filter === 'commercial' ? 'bg-[#050810] text-[#F3ECDC]' : ''}`}>
             COMMERCIAL
           </button>
           <button
             onClick={() => setFilter('residential')}
-            className={`border py-2 md:py-4 px-4 md:px-12 hover:bg-black hover:text-[#F3ECDC] transition duration-500 ease-in-out cursor-pointer ${filter === 'residential' ? 'bg-[#050810] text-[#F3ECDC]' : ''}`}>
+            className={`border py-2 md:py-3 lg:py-4 px-4 md:px-6 lg:px-12 hover:bg-black hover:text-[#F3ECDC] transition duration-500 ease-in-out cursor-pointer ${filter === 'residential' ? 'bg-[#050810] text-[#F3ECDC]' : ''}`}>
             RESIDENTIAL
           </button>
         </div>
 
         <br />
 
-        <div className='flex flex-wrap justify-center md:justify-start md:gap-8  '>
+        <div className='flex flex-wrap justify-center md:justify-start gap-3 lg:gap-8  '>
           {displayedProjects.map((project, index) => (
             <ProductCard
               key={index}
@@ -163,7 +166,7 @@ function Home() {
 
       <GalleryPage limit={5} className='!h-0' />
       <Link to='/gallery-page' >
-        <p className='bg-[#F3ECDC] text-center cursor-pointer text-[9px] md:text-[15px] text-[#2D2D2D] font-medium'>
+        <p className='bg-[#F3ECDC] text-center cursor-pointer text-[9px] md:text-[12px] lg:text-[15px] text-[#2D2D2D] font-medium'>
           SEE OUR GALLERY SECTION LEGACY OF ARADHYA INFRA →
         </p>
       </Link>

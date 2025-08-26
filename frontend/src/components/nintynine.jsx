@@ -8,52 +8,52 @@ function nintynine({ className = '' }) {
     <>
       <div className={` flex flex-col lg:flex-row gap-10 relative ${className}`}>
         <div className='hidden md:block absolute '>
-          <img src={image1} className=' w-[340px] md:w-[390px] h-[210px] md:h-[500px] object-cover rounded-[30px] ' />
-          <div className='absolute w-[170px] md:w-[390px] top-[50px] md:top-[110px] left-[60px] md:left-[195px] bg-[#F3ECDC] p-2 md:p-3.5 rounded-[30px] shadow-xl shadow-[#00000012] '>
-            <img src={image2} className=' h-[210px] md:h-[499px] rounded-[30px] object-cover ' />
+          <img src={image1} className=' w-[220px] lg:w-[390px] h-[310px] lg:h-[500px] object-cover rounded-[30px] ' />
+          <div className='absolute w-[230px] lg:w-[390px] top-[70px] lg:top-[110px] left-[100px] lg:left-[195px] bg-[#F3ECDC] p-2 lg:p-3.5 rounded-[30px] shadow-xl shadow-[#00000012] '>
+            <img src={image2} className=' h-[300px] lg:h-[499px] rounded-[30px] object-cover ' />
           </div>
-          <div className='absolute w-[120px] md:w-[234px] h-[60px] md:h-[149px] top-[170px] md:top-[395px] left-[10px] md:left-[55px] bg-black text-white text-center p-[6px] md:p-4 rounded-4xl object-cover '>
-            <p className='relative  text-[20px] md:text-[50px] text-[#A3B18A] '>
+          <div className='absolute w-[120px] lg:w-[234px] h-[60px] lg:h-[149px] top-[280px] lg:top-[395px] left-[35px] lg:left-[55px] bg-black text-white text-center lg:p-4 rounded-3xl lg:rounded-4xl object-cover '>
+            <p className='relative text-[24px] lg:text-[50px] text-[#A3B18A] '>
               99
-              <span className='absolute top-0.5 md:top-1.5 left-16 md:left-32 text-[8px] md:text-[18px] font-[abril] '>%</span>
+              <span className='absolute lg:top-1.5 left-18 lg:left-32 text-[13px] lg:text-[18px] font-[abril] '>%</span>
             </p>
-            <p className='font-[abril] font-bold text-[10px] md:text-[23px] text-[#F3ECDC] '>Customer Support</p>
+            <p className='font-[abril] font-bold text-[12px] lg:text-[23px] text-[#F3ECDC] '>Customer Support</p>
           </div>
         </div>
 
-        <div className='flex flex-col md:mt-26 md:ml-167'>
-          <p className='mb-4 md:mb-10 text-[15px] text-[#00000099] font-semibold md:text-base font-sans '>ABOUT US</p>
-          <p className='text-[26px] md:text-[45px] text-[#2D2D2D] font-[abril] font-extrabold leading-9 md:leading-16 '>“Aradhya Infra: Building Futures in Central India”</p>
-          <p className='my-5 md:my-8 text-[13px] md:text-[17px] text-[#6E6E6E] font-sans '>"Aradhya Infra: Building Futures in Central India"</p>
-          <div className='space-y-3 md:space-y-6 font-bold text-[16px] md:text-[21px] '>
+        <div className='flex flex-col mt-10 lg::mt-26 ml-94 lg:ml-167'>
+          <p className='mb-3 lg:mb-10 text-[12px] lg:text-[15px] text-[#00000099] font-semibold font-sans '>ABOUT US</p>
+          <p className='text-[28px] lg:text-[45px] text-[#2D2D2D] font-[abril] font-extrabold leading-9 lg:leading-16 '>“Aradhya Infra: Building Futures in Central India”</p>
+          <p className='my-4 lg:my-8 text-[13px] lg:text-[17px] text-[#6E6E6E] font-sans '>"Aradhya Infra: Building Futures in Central India"</p>
+          <div className='space-y-3 lg:space-y-6 font-bold text-[16px] lg:text-[21px] '>
             <div className=' flex items-start  '>
-              <img src={batch} className='w-[22px] md:w-[27px] md:h-[35px] mr-3 md:mr-5 ' />
+              <img src={batch} className='w-[21px] lg:w-[27px] lg:h-[35px] mr-3 lg:mr-5 ' />
               <p className='font-[abril] text-[#2D2D2D] font-extrabold'>Local experts deeply rootes in Nagpur and surrounding areas.</p>
             </div>
             <div className='flex items-start '>
-              <img src={batch} className='w-[22px] md:w-[27px] md:h-[35px] mr-3 md:mr-5 ' />
+              <img src={batch} className='w-[21px] lg:w-[27px] lg:h-[35px] mr-3 lg:mr-5' />
               <p className='font-[abril] text-[#2D2D2D] font-extrabold'>Focus on community-centric planning and future-ready infrastructure.</p>
             </div>
           </div>
           <a href='/about'>
-            <button className='mt-6 md:mt-12 bg-[#048886] text-[#F3ECDC] text-[12px] md:text-[15px] py-3 md:py-5 px-5 md:px-14 rounded-4xl '>MORE ABOUT US →</button>
+            <button className='mt-6 lg:mt-12 bg-[#048886] text-[#F3ECDC] text-[13px] lg:text-[15px] py-3 lg:py-5 px-5 lg:px-14 rounded-4xl '>MORE ABOUT US →</button>
           </a>
         </div>
       </div>
 
-      <div className='mt-13 md:mt-20 flex flex-col lg:flex-row gap-6 md:gap-10'>
+      <div className='mt-13 lg:mt-24 flex flex-row gap-3 lg:gap-10 leading-4 lg:leading-7 '>
         <div className='flex flex-row items-start '>
-          <img src={batch} className=' w-[22px] md:w-[27px] md:h-[35px] mr-3 md:mr-4' />
+          <img src={batch} className=' w-[22px] lg:w-[27px] lg:h-[35px] mr-3 lg:mr-4' />
           <div className='text-[#2D2D2D] '>
-            <p className='text-[19px] md:text-[21px] font-extrabold font-[abril] mb-1'>Vision</p>
-            <p className='text-[15px] md:text-[18px] font-semibold font-sans '>"To deliver thoughtfully designed living spaces-built sustainably, driven by innovation, and grounded in trust-to elevate communities and lives across Central India."</p>
+            <p className='text-[19px] lg:text-[21px] font-extrabold font-[abril] mb-1'>Vision</p>
+            <p className='text-[14px] lg:text-[18px] font-semibold font-sans '>"To deliver thoughtfully designed living spaces-built sustainably, driven by innovation, and grounded in trust-to elevate communities and lives across Central India."</p>
           </div>
         </div>
-        <div className='flex flex-row items-start md:ml-10 '>
-          <img src={batch} className=' w-[22px] md:w-[27px] md:h-[35px] mr-3 md:mr-4' />
+        <div className='flex flex-row items-start lg:ml-10 '>
+          <img src={batch} className=' w-[22px] lg:w-[27px] lg:h-[35px] mr-3 lg:mr-4' />
           <div className='text-[#2D2D2D]'>
-            <p className='text-[19px] md:text-[21px] font-extrabold font-[abril] mb-1'>Mission</p>
-            <p className='text-[15px] md:text-[18px] font-semibold font-sans '>"To become the leading regional developer known for modern architecture, green initiatives, and socially conscious township developments that foster strong neighborhood bonds."</p>
+            <p className='text-[19px] lg:text-[21px] font-extrabold font-[abril] mb-1'>Mission</p>
+            <p className='text-[14px] lg:text-[18px] font-semibold font-sans '>"To become the leading regional developer known for modern architecture, green initiatives, and socially conscious township developments that foster strong neighborhood bonds."</p>
           </div>
         </div>
       </div>

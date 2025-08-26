@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 
-function GalleryPage({className=''}) {
+function GalleryPage({className='', limit}) {
     const [galleryItems, setGalleryItems] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -24,25 +24,27 @@ function GalleryPage({className=''}) {
             });
     }, []);
 
+    const displayedItems = limit ? galleryItems.slice(0, limit) : galleryItems;
+
     return (
         <>
             
-            <div className={`bg-[#e7dfce] h-[130px] ${className} `}></div>
-            <div className='text-center bg-[#F3ECDC] pb-4 pt-10 md:pt-20 lg:pt-25 px-4 md:px-8 lg:px-12'>
-                <p className=' md:mb-5 text-[#048886] text-[12px] md:text-[15px] font-medium'>GALLERY</p>
-                <h2 className='text-[25px] md:text-3xl lg:text-4xl xl:text-[50px] text-[#2D2D2D] font-[abril] font-bold mb-4 md:mb-12'>
+            <div className={`bg-[#e7dfce] h-[80px] ${className} `}></div>
+            <div className='text-center bg-[#F3ECDC] pb-4 pt-10 md:pt-14 lg:pt-25 px-4 md:px-6 lg:px-12'>
+                <p className=' md:mb-2 lg:mb-5 text-[#048886] text-[12px] md:text-[13px] lg:text-[15px] font-medium'>GALLERY</p>
+                <h2 className='text-[25px] md:text-3xl lg:text-4xl xl:text-[50px] text-[#2D2D2D] font-[abril] font-bold mb-4 md:mb-6 lg:mb-12'>
                     Our Fabulous Projects
                 </h2>
-                <div className="bg-[#F3ECDC] p-2 md:p-10">
+                <div className="bg-[#F3ECDC] p-2 md:p-5 lg:p-10">
                     {loading ? (
                         <div className="text-center text-xl text-gray-600">Loading gallery items...</div>
                     ) : error ? (
                         <div className="text-center text-xl text-red-600">{error}</div>
-                    ) : galleryItems.length === 0 ? (
+                    ) : displayedItems.length === 0 ? (
                         <div className="text-center text-xl text-gray-600">No gallery items found</div>
-                    ) : (
+                    ) : ( 
                         <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4">
-                            {galleryItems.map((item) => (
+                            {displayedItems.map((item) => (
                                 <div key={item._id} className="break-inside-avoid mb-4">
                                     {item.type === 'image' ? (
                                         <img

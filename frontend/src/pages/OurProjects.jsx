@@ -54,12 +54,12 @@ function OurProjects() {
         </div>
 
         {/* Map Section */}
-        <div className=' flex flex-col items-center bg-[#F3ECDC] pb-8 md:pb-25'>
-            <p className='text-[22px] md:text-[55px] text-[#048886] font-bold font-[abril] my-5 md:my-8'>Location</p>
-            <div className='bg-[#F3ECDC] p-1 md:p-4 rounded-4xl shadow-lg'>
+        <div className=' flex flex-col items-center bg-[#F3ECDC] pb-8 md:pb-15 lg:pb-25'>
+            <p className='text-[22px] md:text-[38px] lg:text-[55px] text-[#048886] font-bold font-[abril] my-5 lg:my-8'>Location</p>
+            <div className='bg-[#F3ECDC] p-1 md:p-3 lg:p-4 rounded-4xl shadow-lg'>
                 <iframe 
                     src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3722.159899713001!2d79.0825674752587!3d21.106190380562712!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjHCsDA2JzIyLjMiTiA3OcKwMDUnMDYuNSJF!5e0!3m2!1sen!2sin!4v1754374662476!5m2!1sen!2sin"
-                    className='w-[270px] md:w-[1289px] md:h-[460px] rounded-4xl'
+                    className='w-[270px] md:w-[640px] lg:w-[1289px] md:h-[300px] lg:h-[460px] rounded-4xl'
                     allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade">            
                 </iframe>
             </div>
