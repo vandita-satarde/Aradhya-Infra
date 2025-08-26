@@ -25,7 +25,7 @@ function AboutUs() {
               <img src={arrow} />
               <span className='text-[#FFFFFFBF] '>ABOUT US</span>
             </p>
-            <p className='font-bold text-[38px] md:text-[55px] py-6 font-[abril] text-[#F3ECDC]'>Welcome to Nagpur</p>
+            <p className='font-bold text-[34px] md:text-[55px] py-11 lg:py-6 font-[abril] text-[#F3ECDC] leading-10'>Welcome to Nagpur</p>
             <p className='text-[12px] md:text-[15px] text-[#FFFFFFBF] '>Aradhya Infra is deeply rooted in Nagpur, wiht a vision to build sustainable,<br /> community-oriented living across Central India.</p>
           </div>
         </div>

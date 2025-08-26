@@ -22,7 +22,7 @@ function OurStory() {
               <img src={arrow} />
               <span className='text-[#FFFFFFBF] '> OUR STORY</span>
             </p>
-            <p className='font-bold text-[38px] md:text-[55px] py-7 font-[abril] text-[#F3ECDC]'>What Defines Our Journey</p>
+            <p className='font-bold text-[34px] md:text-[55px] py-11 lg:py-6 font-[abril] text-[#F3ECDC] leading-12'>What Defines Our Journey</p>
             <p className='text-[12px] md:text-[15px] text-[#FFFFFFBF] '>Building dreams, creating communities”—that’s not just a tagline—it’s why Aradhya Infra exists.</p>
           </div>
         </div>

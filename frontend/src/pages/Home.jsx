@@ -51,33 +51,33 @@ function Home() {
   return (
     <div>
       <HeroSection />
-      <div className='bg-[#F3ECDC] px-12 md:px-4 lg:px-25 pt-12 md:pt-14 lg:pt-25 md:pb-1 '>
+      <div className='bg-[#F3ECDC] px-9 md:px-4 lg:px-25 pt-12 md:pt-14 lg:pt-25 md:pb-1 '>
 
         {/* Section 01 */}
-        <div className=' pb-160 md:pb-20 lg:pb-30'>
+        <div className=' pb-130 md:pb-20 lg:pb-30'>
           <p className='text-[13px] md:text-[13px] lg:text-[15px] font-semibold text-[#048886] mb-3 '>OUR LUXURIOUS PROJECTS</p>
           <div className='flex flex-col md:flex-row md:justify-between items-start md:items-center gap-4 '>
-            <h2 className=' text-[26px] md:text-[32px] lg:text-[48px] font-extrabold font-[abril] md:leading-11 lg:leading-18 '>Premium Residential,<br />Commercial & Township Projects.</h2>
+            <h2 className=' text-[26px] md:text-[32px] lg:text-[48px] font-extrabold font-[abril] leading-7 md:leading-11 lg:leading-18 '>Premium Residential,<br />Commercial & Township Projects.</h2>
             <a href='/projects'>
-              <p className='text-[13px] lg:text-[15px] font-semibold font-sans mr-0 md:mr-5 lg:mr-30 text-[#00000099] '>SHOW MORE → </p>
+              <p className='text-[12px] md:text-[13px] lg:text-[15px] font-semibold font-sans mr-0 md:mr-5 lg:mr-30 text-[#00000099] '>SHOW MORE → </p>
             </a>
           </div>
           <br /><br />
           <div className=' flex relative flex-col lg:flex-row -mt-5 '>
-            <div className=' relative w-full md:w-[230px] lg:w-[417px] h-[260px] md:h-[220px] lg:h-[305px] rounded-4xl py-6 md:py-4 lg:py-8 px-6 md:px-6 lg:px-12 pr-4 md:pr-14 lg:pr-40 bg-black text-[#FFFFFFBF] '>
+            <div className=' relative mx-auto w-[280px] md:w-[230px] lg:w-[417px] h-[240px] md:h-[220px] lg:h-[305px] rounded-4xl py-6 md:py-4 lg:py-8 px-6 md:px-6 lg:px-12 pr-4 md:pr-14 lg:pr-40 bg-black text-[#FFFFFFBF] '>
               <FaQuoteLeft className='w-[30px] h-[30px] md:w-[35px] lg:w-[40px] md:h-[35px] lg:h-[45px] text-[#DADADA] mb-4 md:mb-2 lg:mb-4 ' />
               <p className='italic text-[15px] md:text-[17px] lg:text-[22px] mb-3 md:mb-2 lg:mb-3'>“Layanan apartemen paling terbaik di Indonesia, suka banget.. “</p>
-              <span className=' font-bold md:text-[22px] lg:text-[25px] text-[#F3ECDC] font-[abril] '>Nikhil Bawane</span>
+              <span className=' font-bold text-[20px] md:text-[22px] lg:text-[25px] text-[#F3ECDC] font-[abril] '>Nikhil Bawane</span>
             </div>
 
-            <div className='absolute md:left-[170px] lg:left-[320px] mx-3 top-43 md:top-3 lg:top-9 flex flex-col sm:flex-row gap-3 md:gap-2 lg:gap-3 mt-6 lg:mt-0 ' >
-              <div className=' bg-[#F3ECDC] w-full md:w-[180px] lg:w-[310px] h-full p-1.5 lg:p-3 rounded-[30px] shadow-sm shaadow-[#00000012] '>
+            <div className='absolute left-[12px] md:left-[170px] lg:left-[320px] mx-3 top-38 md:top-3 lg:top-9 flex flex-col sm:flex-row gap-3 md:gap-2 lg:gap-3 mt-6 lg:mt-0 ' >
+              <div className=' bg-[#F3ECDC] w-[240px] md:w-[180px] lg:w-[310px] h-full p-1.5 lg:p-3 rounded-[30px] shadow-sm shaadow-[#00000012] '>
                 <img src={image1} className='  rounded-[30px] md:h-[130px] lg:h-[210px] object-cover ' />
               </div>
-              <div className=' bg-[#F3ECDC] w-full md:w-[180px] lg:w-[310px] h-full p-1.5 lg:p-3 rounded-[30px] shadow-sm shaadow-[#00000012] '>
+              <div className=' bg-[#F3ECDC] w-[240px] md:w-[180px] lg:w-[310px] h-full p-1.5 lg:p-3 rounded-[30px] shadow-sm shaadow-[#00000012] '>
                 <img src={image1} className='  rounded-[30px] md:h-[130px] lg:h-[210px] object-cover ' />
               </div>
-              <div className=' bg-[#F3ECDC] w-full md:w-[180px] lg:w-[310px] h-full p-1.5 lg:p-3 rounded-[30px] shadow-sm shaadow-[#00000012] '>
+              <div className=' bg-[#F3ECDC] w-[240px] md:w-[180px] lg:w-[310px] h-full p-1.5 lg:p-3 rounded-[30px] shadow-sm shaadow-[#00000012] '>
                 <img src={image1} className='  rounded-[30px] md:h-[130px] lg:h-[210px] object-cover ' />
               </div>
             </div>
@@ -99,7 +99,7 @@ function Home() {
         <div className='pt-12 md:pt-17 lg:pt-25 text-center '>
           <p className='text-[12px] md:text-[13px] lg:text-base mb-1 md:-mb-1 lg:mb-3 font-sans'>WHY ARADHYA INFRA?</p>
           <p className=' text-[26px] md:text-[35px] lg:text-[48px] font-extrabold mb-7 font-[abril] '>Why Aradhya Infra?</p>
-          <div className='w-full flex flex-col md:flex-row gap-3 lg:gap-8 justify-center items-center mb-10'>
+          <div className='w-full flex flex-col md:flex-row gap-5 md:gap-3 lg:gap-8 justify-center items-center mb-10'>
             <ServicesCard
               icon={hsIcon1}
               name="Nagpur Expertise"
@@ -116,7 +116,7 @@ function Home() {
               description="Vastu‑compliant, clearly priced and inspected, with on‑time delivery."
             />
           </div>
-          <p className='text-[#2D2D2D] text-[12px] md:text-[14px] lg:text-[17px] '><span className=' font-sans font-bold'>CLIENT SUPPORT</span> - DEDICATED GUIDANCE FROM BOOKING TO POST-HANDOVER. </p>
+          <p className='text-[#2D2D2D] text-[10px] md:text-[14px] lg:text-[17px] '><span className=' font-sans font-bold'>CLIENT SUPPORT</span> - DEDICATED GUIDANCE FROM BOOKING TO POST-HANDOVER. </p>
         </div>
       </div>
 

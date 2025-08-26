@@ -70,7 +70,7 @@ const ProjectDetails = () => {
   return (
     <>
       <div className=''>
-        <div className='bg-[#e7dfce] h-[100px] md:h-[75px] '>
+        <div className='bg-[#e7dfce] h-[65px] md:h-[75px] '>
         </div>
         <Navbar />  {/* className='bg-[#34363c80]' */}
         <div className='md:py-5'>
@@ -101,7 +101,7 @@ const ProjectDetails = () => {
 
           {/* Project Detials */}
           <div className='px-5 md:px-15 lg:px-34 py-8 md:py-4 lg:py-10 text-[#073937]'>
-            <p className='text-[26px] md:text-[30px] lg:text-[40px] font-[abril] font-bold '>{project.title} </p>
+            <p className='text-[23px] md:text-[30px] lg:text-[40px] font-[abril] font-bold '>{project.title} </p>
             <div className='flex flex-col md:flex-row gap-6 md:gap-20 '>
               <div className='md:w-1/2'>
                 <p className='text-[12px] md:text-[13px] lg:text-[16px]'>⭐{project.rating}/5 Superb ({project.reviews} reviews) </p>

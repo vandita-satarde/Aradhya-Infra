@@ -21,7 +21,7 @@ function nintynine({ className = '' }) {
           </div>
         </div>
 
-        <div className='flex flex-col mt-10 lg::mt-26 ml-94 lg:ml-167'>
+        <div className='flex flex-col mt-10 lg::mt-26 md:ml-94 lg:ml-167'>
           <p className='mb-3 lg:mb-10 text-[12px] lg:text-[15px] text-[#00000099] font-semibold font-sans '>ABOUT US</p>
           <p className='text-[28px] lg:text-[45px] text-[#2D2D2D] font-[abril] font-extrabold leading-9 lg:leading-16 '>“Aradhya Infra: Building Futures in Central India”</p>
           <p className='my-4 lg:my-8 text-[13px] lg:text-[17px] text-[#6E6E6E] font-sans '>"Aradhya Infra: Building Futures in Central India"</p>
@@ -41,7 +41,7 @@ function nintynine({ className = '' }) {
         </div>
       </div>
 
-      <div className='mt-13 lg:mt-24 flex flex-row gap-3 lg:gap-10 leading-4 lg:leading-7 '>
+      <div className='mt-13 lg:mt-24 flex flex-col md:flex-row gap-6 md:gap-3 lg:gap-10 leading-4 lg:leading-7 '>
         <div className='flex flex-row items-start '>
           <img src={batch} className=' w-[22px] lg:w-[27px] lg:h-[35px] mr-3 lg:mr-4' />
           <div className='text-[#2D2D2D] '>

@@ -19,11 +19,11 @@ import icon06 from '../assets/icons/icon-06.png'
 function OurServices() {
   return (
     <>
-        <div className="bg-cover bg-center h-[523px] " style={{ backgroundImage: `url(${image01})` }}>
+        <div className="bg-cover bg-center h-[438px] md:h-[523px] " style={{ backgroundImage: `url(${image01})` }}>
             <div className='pt-[100px]'>
                 <Navbar />
                 <div className='p-12 md:p-30'>
-                    <p className='flex gap-3 md:gap-5 items-center text-[12px] md:text-[15px] '>
+                    <p className='flex gap-3 md:gap-5 items-center text-[11px] md:text-[15px] '>
                         <Link to="/">
                             <span className='text-[#34FF00] '>HOMEPAGE</span>
                         </Link>
@@ -34,7 +34,7 @@ function OurServices() {
                         <img src={arrow}/>
                         <span className='text-[#FFFFFFBF] '>OUR SERVICES</span>
                     </p>
-                    <p className='font-bold text-[38px] md:text-[55px] py-7 font-[abril] text-[#F3ECDC]'>What Aradhya Infra Offers</p>
+                    <p className='font-bold text-[34px] md:text-[55px] py-12 lg:py-7 font-[abril] text-[#F3ECDC] leading-9 md:leading-12'>What Aradhya Infra Offers</p>
                     <p className='text-[12px] md:text-[15px] text-[#FFFFFFBF] '>Building dreams, creating communities”—that’s not just a tagline—it’s why Aradhya Infra exists.</p>
                 </div>
             </div>

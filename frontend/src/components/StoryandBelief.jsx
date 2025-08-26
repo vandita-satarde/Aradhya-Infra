@@ -4,42 +4,42 @@ function StoryandBelief({subtitle, title, description, subtitle1, heading1, cont
   return (
     <>
       <div>
-          <p className='text-[12px] md:text-[13px] lg:text-[15px] text-[#048886] pt-5 md:pt-0 '>{subtitle} </p>
-          <p className='text-[27px] md:text-[32px] lg:text-[45px] text-[#2D2D2D] font-bold font-[abril] my-4 leading-9 lg:leading-16 '>{title} </p>
+          <p className='text-[11px] md:text-[13px] lg:text-[15px] text-[#048886] pt-5 md:pt-0 '>{subtitle} </p>
+          <p className='text-[25px] md:text-[32px] lg:text-[45px] text-[#2D2D2D] font-bold font-[abril] my-3 md:my-4 leading-6.5 md:leading-9 lg:leading-16 '>{title} </p>
           <p className=' text-[#6E6E6E] text-[12px] md:text-[15px] lg:text-[18px] '>{description} </p>
 
           <div className='flex flex-col md:flex-row gap-3 md:gap-4 lg:gap-6 mt-10 mx-4 md:mx-0 font-[abril]'>
-            <div className='w-full md:w-1/2 bg-[#F9F9F9] rounded-4xl p-6 lg:p-10 shadow-2xs '>
+            <div className='w-full md:w-1/2 bg-[#F9F9F9] rounded-4xl p-5 md:p-6 lg:p-10 shadow-2xs '>
               <p className='font-semibold text-[#2D2D2D] text-[22px] md:text-[23px] lg:text-[25px]'>{subtitle1} </p>
               <hr className='my-4 lg:my-8' />
-              <div className='flex flex-col gap-5 lg:gap-10 font-[abril]'>
+              <div className='flex flex-col gap-4 md:gap-5 lg:gap-10 font-[abril]'>
                 <div className='flex gap-4 lg:gap-8'>
-                  <p className='text-[30px] md:text-[35px] lg:text-[40px] font-bold text-[#048886]'>01</p>
+                  <p className='text-[28px] md:text-[35px] lg:text-[40px] font-bold text-[#048886]'>01</p>
                   <div>
                     <p className='text-[18px] md:text-[21px] font-bold text-[#2D2D2D]'>{heading1} </p>
-                    <p className='text-[14px] md:text-[16px] lg:text-[18px] md:leading-4.5 lg:leading-7 font-sans text-[#6E6E6E]'>{content1} </p>
+                    <p className='text-[13px] md:text-[16px] lg:text-[18px] md:leading-4.5 lg:leading-7 font-sans text-[#6E6E6E]'>{content1} </p>
                   </div>
                 </div>
                 <div className='flex gap-4 lg:gap-8'>
-                  <p className='text-[30px] md:text-[35px] lg:text-[40px] font-bold text-[#048886] '>02</p>
+                  <p className='text-[28px] md:text-[35px] lg:text-[40px] font-bold text-[#048886] '>02</p>
                   <div>
                     <p className='text-[18px] md:text-[21px] font-bold text-[#2D2D2D]'>{heading2} </p>
-                    <p className='text-[14px] md:text-[16px] lg:text-[18px] md:leading-4.5 lg:leading-7 font-sans text-[#6E6E6E]'>{content2} </p>
+                    <p className='text-[13px] md:text-[16px] lg:text-[18px] md:leading-4.5 lg:leading-7 font-sans text-[#6E6E6E]'>{content2} </p>
                   </div>
                 </div>
                 <div className='flex gap-4 lg:gap-8'>
-                  <p className='text-[30px] md:text-[35px] lg:text-[40px] font-bold text-[#048886] '>03</p>
+                  <p className='text-[28px] md:text-[35px] lg:text-[40px] font-bold text-[#048886] '>03</p>
                   <div>
                     <p className='text-[18px] md:text-[21px] font-bold text-[#2D2D2D] '>{heading3} </p>
-                    <p className='text-[14px] md:text-[16px] lg:text-[18px] md:leading-4.5 lg:leading-7 font-sans text-[#6E6E6E]'>{content3} </p>
+                    <p className='text-[13px] md:text-[16px] lg:text-[18px] md:leading-4.5 lg:leading-7 font-sans text-[#6E6E6E]'>{content3} </p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className='w-full md:w-1/2 bg-[#F9F9F9] rounded-[30px] p-6 lg:p-10 shadow-2xs'>
-              <p className='italic font-semibold text-[18px] md:text-[22px] py-3 lg:py-9 '>{subtitle2} </p>
-              <p className='text-[16px] lg:text-[18px] font-sans md:leading-5 lg:leading-7'>{subtitle2content} </p>
+            <div className='w-full md:w-1/2 bg-[#F9F9F9] rounded-[30px] p-5 md:p-6 lg:p-10 shadow-2xs'>
+              <p className='italic font-semibold text-[18px] md:text-[22px] py-2 md:py-3 lg:py-9 '>{subtitle2} </p>
+              <p className='text-[12px] lg:text-[18px] font-sans md:leading-5 lg:leading-7'>{subtitle2content} </p>
             </div>
           </div>
         </div>

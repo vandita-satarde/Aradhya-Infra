@@ -12,8 +12,8 @@ function Testimonials() {
         
         {/* Left Section - Features */}
         <div className='w-full lg:w-2/3'>
-          <p className='text-sm md:text-[13px] text-[#048886] font-medium mb-4'>OUR TESTIMONIALS</p>
-          <h2 className='text-2xl md:text-[27px] lg:text-4xl xl:text-[50px] font-[abril] font-bold mb-8 lg:mb-12 leading-tight text-gray-800'>
+          <p className='text-[11px] md:text-[13px] text-[#048886] font-medium mb-1 md:mb-4'>OUR TESTIMONIALS</p>
+          <h2 className='text-[22px] md:text-[27px] lg:text-4xl xl:text-[50px] font-[abril] font-bold mb-8 lg:mb-12 leading-tight text-gray-800'>
             Why Families Choose Aradhya Infra
           </h2>
           

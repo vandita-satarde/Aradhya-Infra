@@ -58,7 +58,7 @@ function ContactUs() {
                             <img src={arrow} />
                             <span className='text-[#FFFFFFBF] '>CONTACT US</span>
                         </p>
-                        <p className='font-bold text-[38px] md:text-[55px] py-7 font-[abril] text-[#F3ECDC]'>Reach Out <span className='text-[#048886] '>Anytime</span></p>
+                        <p className='font-bold text-[34px] md:text-[55px] py-7 font-[abril] text-[#F3ECDC]'>Reach Out <span className='text-[#048886] '>Anytime</span></p>
                         <p className='text-[12px] md:text-[15px] text-[#FFFFFFBF] '>Get in touch with our team for expert guidance on your next property move.</p>
                     </div>
                 </div>

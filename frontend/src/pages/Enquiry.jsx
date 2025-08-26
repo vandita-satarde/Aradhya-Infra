@@ -48,7 +48,7 @@ const Enquiry = () => {
 
   return (
     <>
-    <div className='bg-[#e7dfce] h-[100px] md:h-[75px]  '></div>
+    <div className='bg-[#e7dfce] h-[65px] md:h-[75px]  '></div>
     <Navbar />
     <div className=" bg-[#F9F9F9] py-13 px-6 flex items-center justify-center">
       <div className=" lg:max-w-2xl bg-[#F9F9F9] p-5 md:p-10 rounded-[30px] shadow-2xl border border-gray-200">

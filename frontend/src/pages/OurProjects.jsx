@@ -47,7 +47,7 @@ function OurProjects() {
                 <img src={arrow} />
                 <span className='text-[#FFFFFFBF]'> OUR PROJECTS</span>
               </p>
-              <p className='font-bold text-[38px] md:text-[55px] py-7 font-[abril] text-[#F3ECDC]'>List Of Your Dreams</p>
+              <p className='font-bold text-[34px] md:text-[55px] py-11 lg:py-7 font-[abril] text-[#F3ECDC] leading-9'>List Of Your Dreams</p>
               <p className='text-[12px] md:text-[15px] text-[#FFFFFFBF]'>Crafting spaces that reflect our values—design, sustainability, and community.</p>
             </div>
           </div>
