@@ -69,12 +69,12 @@ function Contact() {
 
 
   return (
-    <div className="flex">
+    <div className="flex min-h-screen bg-gray-100">
       <Sidebar />
-      <div className="pt-23 md:pt-8 md:ml-64 p-8 lg:w-full md:w-[580px] w-full min-h-screen bg-gray-100">
-        <h2 className="text-[21px] sm:text-3xl font-bold mb-4 md:mb-10 text-[#048886]">Contact Submissions</h2>
+      <div className="pt-20 md:pt-8 md:ml-64 p-3 md:p-8 w-full md:w-[510px] lg:w-full ">
+        <h2 className="text-[20px] sm:text-3xl font-bold mb-3 md:mb-6 lg:mb-10 text-[#048886]">Contact Submissions</h2>
 
-        <div className="overflow-x-auto rounded-xl shadow-lg text-[12px] md:text-[16px] ">
+        <div className="overflow-x-auto rounded-lg md:rounded-xl shadow-lg text-[12px] md:text-[16px] ">
           <table className="lg:w-full md:w-[100px] shadow-md">
             <thead>
               <tr className="bg-[#048886] text-white text-left">
@@ -91,51 +91,51 @@ function Contact() {
                 <tr key={contact._id} className=" border-b-1 border-gray-200 hover:bg-gray-100">
                   {editId === contact._id ? (
                     <>
-                      <td className="p-2">
+                      <td className="p-2 md:p-3">
                         <input
                           value={editForm.firstName}
                           onChange={(e) => setEditForm({ ...editForm, firstName: e.target.value })}
-                          className="border rounded p-1 w-full"
+                          className="border rounded p-1 md:p-2 w-16 md:w-25"
                         />
                       </td>
-                      <td className="p-2">
+                      <td className="p-2 md:p-3">
                         <input
                           value={editForm.lastName}
                           onChange={(e) => setEditForm({ ...editForm, lastName: e.target.value })}
-                          className="border rounded p-1 w-full"
+                          className="border rounded p-1 md:p-2 w-16 md:w-25"
                         />
                       </td>
-                      <td className="p-2">
+                      <td className="p-2 md:p-3">
                         <input
                           value={editForm.email}
                           onChange={(e) => setEditForm({ ...editForm, email: e.target.value })}
-                          className="border rounded p-1 w-full"
+                          className="border rounded p-1 md:p-2 w-25 md:w-35 lg:w-45"
                         />
                       </td>
-                      <td className="p-2">
+                      <td className="p-2 md:p-3">
                         <input
                           value={editForm.topic}
                           onChange={(e) => setEditForm({ ...editForm, topic: e.target.value })}
-                          className="border rounded p-1 w-full"
+                          className="border rounded p-1 md:p-2 w-25 md:w-35 lg:w-30"
                         />
                       </td>
-                      <td className="p-2">
+                      <td className="p-2 md:p-3">
                         <input
                           value={editForm.message}
                           onChange={(e) => setEditForm({ ...editForm, message: e.target.value })}
-                          className="border rounded p-1 w-full"
+                          className="border rounded p-1 md:p-2 w-40 md:w-50 lg:w-110"
                         />
                       </td>
-                      <td className="p-2">
+                      <td className="p-2 ">
                         <button
                           onClick={() => handleSave(contact._id)}
-                          className="bg-green-500 hover:bg-green-600 text-white px-2 py-1 rounded text-sm mr-2"
+                          className="bg-green-500 hover:bg-green-600 text-white px-1 md:px-2 py-0.5 md:py-1 rounded md:text-sm mr-2 mb-1"
                         >
                           Save
                         </button>
                         <button
                           onClick={handleCancel}
-                          className="bg-gray-500 hover:bg-gray-600 text-white px-2 py-1 rounded text-sm"
+                          className="bg-gray-500 hover:bg-gray-600 text-white px-1 md:px-2 py-0.5 md:py-1 rounded md:text-sm"
                         >
                           Cancel
                         </button>
@@ -147,7 +147,7 @@ function Contact() {
                       <td className="p-2 md:py-3 md:px-4">{contact.lastName}</td>
                       <td className="p-2 md:py-3 md:px-4">{contact.email}</td>
                       <td className="p-2 md:py-3 md:px-4">{contact.topic}</td>
-                      <td className="p-2 md:py-3 md:px-4">{contact.message}</td>
+                      <td className="p-2 md:py-3 md:px-4 leading-3 md:leading-4 text-[11px] md:text-[14px]">{contact.message}</td>
                       <td className="p-2">
                         <button
                           onClick={() => handleEdit(contact)}

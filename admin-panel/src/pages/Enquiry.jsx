@@ -57,8 +57,8 @@ function Enquiry() {
   return (
     <div className="flex">
       <Sidebar />
-      <div className=" pt-23 md:pt-8 md:ml-64 p-8 w-full min-h-screen bg-gray-100">
-        <h2 className="text-[21px] md:text-3xl font-bold mb-4 md:mb-10 text-[#048886]">Enquiries</h2>
+      <div className=" pt-20 md:pt-8 md:ml-64 p-3 md:p-8 w-full min-h-screen bg-gray-100">
+        <h2 className="text-[20px] md:text-3xl font-bold mb-3 md:mb-6 lg:mb-10 text-[#048886]">Enquiries</h2>
 
         <div className="mb-4 space-x-2 text-[10px] md:text-[16px] ">
           <button onClick={() => setFilter('all')} className="px-2 py-1 bg-gray-200 rounded cursor-pointer ">All</button>
@@ -167,7 +167,7 @@ function Enquiry() {
                     
               <button
                 onClick={() => handleDelete(entry._id)}
-                className="cursor-pointer absolute left-50 md:left-280 top-3 md:top-5 text-red-600 hover:text-red-700 bg-red-200 hover:bg-red-100 px-1.5 md:px-2 md:py-1 rounded-md text-[9px] md:text-[12px] font-medium transition duration-200 "
+                className="cursor-pointer absolute right-4 md:left-280 top-3 md:top-5 text-red-600 hover:text-red-700 bg-red-200 hover:bg-red-100 px-1.5 md:px-2 md:py-1 rounded-md text-[9px] md:text-[12px] font-medium transition duration-200 "
               >
                 Delete
               </button>

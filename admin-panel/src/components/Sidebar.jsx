@@ -18,7 +18,7 @@ const Sidebar = () => {
   return (
     <>
       {/* Mobile Toggle Button */}
-      <div className="md:hidden p-5 flex justify-between items-center bg-[#048886] text-white fixed w-full z-50 border-b border-teal-700">
+      <div className="md:hidden p-3.5 flex justify-between items-center bg-[#048886] text-white fixed w-full z-50 border-b border-teal-700">
         <h1 className="text-[17px] font-bold">Admin Panel</h1>
         <button onClick={toggleSidebar}>
           {isOpen ? <X size={22} /> : <Menu size={26} />}

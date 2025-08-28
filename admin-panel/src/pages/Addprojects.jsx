@@ -170,8 +170,8 @@ function Addprojects() {
   return (
     <div className="flex">
       <Sidebar />
-      <div className="pt-23 md:pt-8 md:ml-64 p-8 w-full min-h-screen bg-gray-100">
-        <h2 className="text-[21px] sm:text-3xl font-bold mb-4 md:mb-10 text-[#048886]">Add Property</h2>
+      <div className="pt-20 md:pt-8 md:ml-64 p-8 w-full min-h-screen bg-gray-100">
+        <h2 className="text-[20px] sm:text-3xl font-bold mb-3 md:mb-6 lg:mb-10 text-[#048886]">Add Property</h2>
 
         <form onSubmit={handleSubmit} className=" w-full max-w-4xl p-3 md:p-6 rounded shadow-2xl space-y-3 md:space-y-4 text-[13px] md:text-[16px] ">
           <input name="title" value={formData.title} onChange={handleChange} placeholder="Project Title" className="w-full p-1 md:p-2 border rounded" required />

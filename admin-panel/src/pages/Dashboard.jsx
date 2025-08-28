@@ -195,8 +195,8 @@ const Dashboard = () => {
   return (
     <div className="flex ">
       <Sidebar />
-      <div className="pt-23 md:pt-8 md:ml-64 p-8 w-full min-h-screen bg-gray-100">
-        <h2 className="text-[20px] md:text-3xl font-bold mb-4 md:mb-10 text-[#048886]">Welcome, {name}</h2>
+      <div className="pt-20 md:pt-8 md:ml-64 p-8 w-full min-h-screen bg-gray-100">
+        <h2 className="text-[20px] md:text-3xl font-bold mb-3 md:mb-6 lg:mb-10 text-[#048886]">Welcome, {name}</h2>
 
         <div className="flex flex-wrap gap-8">
           {projects.map((project) => (

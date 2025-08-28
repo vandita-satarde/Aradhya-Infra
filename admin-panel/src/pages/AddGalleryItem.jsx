@@ -79,8 +79,8 @@ function AddGalleryItem() {
     return (
         <>
             <Sidebar />
-            <div className="pt-23 md:pt-8 md:ml-64 p-8 min-h-screen bg-gray-100">
-                <h2 className="text-[21px] md:text-3xl font-bold text-[#048886] mb-6 ">
+            <div className="pt-20 md:pt-8 md:ml-64 p-8 min-h-screen bg-gray-100">
+                <h2 className="text-[20px] md:text-3xl font-bold text-[#048886] mb-3 md:mb-6 lg:mb-10 ">
                     Add to Gallery
                 </h2>
                 <div className="text-[13px] md:text-[16px] max-w-md bg-gray-100 rounded-xl shadow-lg p-3 md:p-8">
