@@ -25,7 +25,7 @@ function AboutUs() {
               <img src={arrow} />
               <span className='text-[#FFFFFFBF] '>ABOUT US</span>
             </p>
-            <p className='font-bold text-[34px] md:text-[55px] py-11 lg:py-6 font-[abril] text-[#F3ECDC] leading-10'>Welcome to Nagpur</p>
+            <p className='font-bold text-[34px] md:text-[55px] py-5 md:py-11 font-[abril] text-[#F3ECDC] leading-10'>Welcome to Nagpur</p>
             <p className='text-[12px] md:text-[15px] text-[#FFFFFFBF] '>Aradhya Infra is deeply rooted in Nagpur, wiht a vision to build sustainable,<br /> community-oriented living across Central India.</p>
           </div>
         </div>
@@ -36,7 +36,7 @@ function AboutUs() {
         <img src={aboutImage} className='md:hidden block my-10 mx-auto w-[340px] h-[210px] object-cover rounded-[30px] ' />
         
         {/* other devices view */}
-        <Nintynine  className='pt-10 md:pt-15 lg:pt-30 '/>
+        <Nintynine  className=' md:pt-15 lg:pt-30 '/>
       </div>
 
       <div className='relative gap-10 bg-[#F3ECDC] px-5 md:px-8 lg:px-30 py-5 md:py-10 lg:py-22'>
@@ -58,30 +58,32 @@ function AboutUs() {
                 With deep roots in Nagpur and surrounding regions, our team brings together local expertise, architectural excellence, and modern design sensibilities to create spaces where families thrive and futures take shape.'
         />
 
-        <div className='mt-22 md:mt-30 lg:mt-40 text-center'>
-          <p className='md:text-[12px] lg:text-[14px] text-[#048886] font-sans md:mb-1 lg:mb-3'>WHAT WE STAND FOR</p>
-          <p className='text-[26px] md:text-[33px] lg:text-[45px] text-[#2D2D2D] font-bold font-[abril] md:leading-9 lg:leading-17 '>Aradhya Infra<br className='hidden md:block'/> Commitments that Defines Us</p>
+        <hr className='text-gray-300 mt-12 md:mt-14 lg:mt-25 mx-20 md:mx-9 lg:mx-15 '/>
 
-          <div className='flex flex-col sm:flex-row gap-8 md:gap-5 lg:gap-20 mt-7 md:mt-9 lg:mt-18 mx-18 md:mx-4 lg:mx-10 font-[abril]'>
+        <div className=' mt-10 md:mt-10 lg:mt-25 text-center'>
+          <p className='text-[10px] md:text-[12px] lg:text-[14px] text-[#048886] font-sans mb-1 lg:mb-3'>WHAT WE STAND FOR</p>
+          <p className='text-[24px] md:text-[33px] lg:text-[45px] text-[#2D2D2D] font-bold font-[abril] leading-8 md:leading-9 lg:leading-17 mx-5 '>Aradhya Infra<br className='hidden md:block'/> Commitments that Defines Us</p>
+
+          <div className='mb-5 md:mb-0 flex flex-col sm:flex-row gap-7 md:gap-5 lg:gap-20 mt-7 md:mt-9 lg:mt-18 mx-18 md:mx-4 lg:mx-10 font-[abril]'>
             <div>
               <p className='text-[30px] lg:text-[35px] text-[#048886] font-extrabold '>01</p>
-              <p className='text-[20px] lg:text-[23px] text-[#2D2D2D] font-extrabold md:mt-1 lg:mt-4 md:mb-1 lg:mb-3 md:leading-6 lg:leading-9'>Local<br className=' md:block lg:hidden'/> Insight</p>
-              <p className='text-[15px] lg:text-[18px] text-[#6E6E6E] font-sans md:leading-4 lg:leading-7'>We understand the region’s climate, culture, and expectations.</p>
+              <p className='text-[20px] lg:text-[23px] text-[#2D2D2D] font-extrabold md:mt-1 lg:mt-4 md:mb-1 lg:mb-3 md:leading-6 lg:leading-9'>Local<br className=' hidden md:block lg:hidden'/> Insight</p>
+              <p className='text-[15px] lg:text-[18px] text-[#6E6E6E] font-sans leading-4 lg:leading-7'>We understand the region’s climate, culture, and expectations.</p>
             </div>
             <div>
               <p className='text-[30px] lg:text-[35px] text-[#048886] font-extrabold '>02</p>
               <p className='text-[20px] lg:text-[23px] text-[#2D2D2D] font-extrabold md:mt-1 lg:mt-4 md:mb-1 lg:mb-3 md:leading-6 lg:leading-9'>Building With Purpose</p>
-              <p className='text-[15px] lg:text-[18px] text-[#6E6E6E] font-sans md:leading-4 lg:leading-7'>Eco-conscious design, vastu compliance, and community-first amenities.</p>
+              <p className='text-[15px] lg:text-[18px] text-[#6E6E6E] font-sans leading-4 lg:leading-7'>Eco-conscious design, vastu compliance, and community-first amenities.</p>
             </div>
             <div>
               <p className='text-[30px] lg:text-[35px] text-[#048886] font-extrabold '>03</p>
               <p className='text-[20px] lg:text-[21px] text-[#2D2D2D] font-extrabold md:mt-1 lg:mt-4 md:mb-1 lg:mb-3 md:leading-6 lg:leading-9'>Transparent By Design</p>
-              <p className='text-[15px] lg:text-[18px] text-[#6E6E6E] font-sans md:leading-4 lg:leading-7'>Clear pricing, straightforward timelines, and real customer care.</p>
+              <p className='text-[15px] lg:text-[18px] text-[#6E6E6E] font-sans leading-4 lg:leading-7'>Clear pricing, straightforward timelines, and real customer care.</p>
             </div>
             <div>
               <p className='text-[30px] lg:text-[35px] text-[#048886] font-extrabold '>04</p>
               <p className='text-[20px] lg:text-[21px] text-[#2D2D2D] font-extrabold md:mt-1 lg:mt-4 md:mb-1 lg:mb-3 md:leading-6 lg:leading-9'>Supporting You Always</p>
-              <p className='text-[15px] lg:text-[18px] text-[#6E6E6E] font-sans md:leading-4 lg:leading-7'>From inquiry to after-handover support, we walk with you at every step.</p>
+              <p className='text-[15px] lg:text-[18px] text-[#6E6E6E] font-sans leading-4 lg:leading-7'>From inquiry to after-handover support, we walk with you at every step.</p>
             </div>
           </div>
         </div>

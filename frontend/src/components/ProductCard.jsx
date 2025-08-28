@@ -13,7 +13,7 @@ function ProductCard({ project }) {
     images,
   } = project;
   return (
-    <div className='relative w-[270px] bg-white md:w-[350px] lg:w-[410px] border-2 border-gray-200 rounded-lg overflow-hidden font-sans hover:shadow-lg transition-shadow duration-300 my-5 mx-5'>
+    <div className='relative w-[270px] bg-white md:w-[340px] lg:w-[410px] border-2 border-gray-200 rounded-lg overflow-hidden font-sans hover:shadow-lg transition-shadow duration-300 md:my-5 lg:mx-5'>
       <div className='relative'>
 
         {tags && tags.length > 0 && (

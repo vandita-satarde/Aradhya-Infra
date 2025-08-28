@@ -125,9 +125,9 @@ function ContactUs() {
                     </div>
                     <div className='w-full md:w-[500px] lg:w-1/2 md:ml-15 my-auto '>
                         <p className='text-[12px] md:text-[13px] lg:text-[15px] text-[#A3B18A] '>GET IN TOUCH WITH ARADHYA INFRA</p>
-                        <p className='text-[30px] md:text-[40px] lg:text-[45px] my-4 md:my-1 lg:my-5 font-[abril] font-bold'>We’re Here for You</p>
-                        <p className='text-[12px] md:text-[17px] lg:text-[18px] text-[#6E6E6E] mb-15'>Let’s turn your vision into reality — reach out today.</p>
-                        <div className='flex flex-col gap-6 mr-50 md:mr-0'>
+                        <p className='text-[30px] md:text-[40px] lg:text-[45px] my-1 lg:my-5 font-[abril] font-bold'>We’re Here for You</p>
+                        <p className='text-[12px] md:text-[17px] lg:text-[18px] text-[#6E6E6E] mb-8 md:mb-10 lg:mb-15'>Let’s turn your vision into reality — reach out today.</p>
+                        <div className='flex flex-col gap-6 mr-15 md:mr-0'>
                             <div className='flex '>
                                 <img src={icon01} className='w-5 md:w-[40px] h-5 md:h-[30px] mr-5 md:mr-[30px] ' />
                                 <div>
@@ -156,8 +156,8 @@ function ContactUs() {
                     </div>
                 </div>
             </div>
-            <div className='bg-[#F3ECDC] border border-gray-300 px-3 md:px-10 lg:px-30 pt-10 md:pt-14 pb-10 md:pb-25'>
-                <img src={image01} className=' w-full md:w-[1240px] h-[100px] md:h-[350px] rounded-[30px] ' />
+            <div className='bg-[#F3ECDC] border border-gray-300 px-5 md:px-10 lg:px-30 py-6 md:py-12 lg:py-20'>
+                <img src={image01} className='object-cover w-full md:w-[1240px] h-[120px] md:h-[240px] lg:h-[370px] rounded-[13px] md:rounded-[30px] ' />
             </div>
             <Footer />
         </>

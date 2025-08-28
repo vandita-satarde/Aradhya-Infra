@@ -4,11 +4,11 @@ function StoryandBelief({subtitle, title, description, subtitle1, heading1, cont
   return (
     <>
       <div>
-          <p className='text-[11px] md:text-[13px] lg:text-[15px] text-[#048886] pt-5 md:pt-0 '>{subtitle} </p>
-          <p className='text-[25px] md:text-[32px] lg:text-[45px] text-[#2D2D2D] font-bold font-[abril] my-3 md:my-4 leading-6.5 md:leading-9 lg:leading-16 '>{title} </p>
-          <p className=' text-[#6E6E6E] text-[12px] md:text-[15px] lg:text-[18px] '>{description} </p>
+          <p className='text-[12px] md:text-[13px] lg:text-[15px] text-[#048886] pt-5 md:pt-3 '>{subtitle} </p>
+          <p className='pr-4 md:pr-24 lg:pr-90 text-[23px] md:text-[31px] lg:text-[45px] text-[#2D2D2D] font-bold font-[abril] my-2 md:my-4  leading-6 md:leading-8 lg:leading-14 '>{title} </p>
+          <p className=' text-[#6E6E6E] text-[11px] md:text-[15px] lg:text-[18px] leading-4 md:leading-5'>{description} </p>
 
-          <div className='flex flex-col md:flex-row gap-3 md:gap-4 lg:gap-6 mt-10 mx-4 md:mx-0 font-[abril]'>
+          <div className='flex flex-col md:flex-row gap-3 md:gap-4 lg:gap-6 mt-6 md:mt-9 lg:mt-10 mx-4 md:mx-0 font-[abril]'>
             <div className='w-full md:w-1/2 bg-[#F9F9F9] rounded-4xl p-5 md:p-6 lg:p-10 shadow-2xs '>
               <p className='font-semibold text-[#2D2D2D] text-[22px] md:text-[23px] lg:text-[25px]'>{subtitle1} </p>
               <hr className='my-4 lg:my-8' />

@@ -5,10 +5,10 @@ import image01 from '../assets/image-0.jpg'
 function GetStarted() {
   return (
     <div className='relative py-8 md:py-16 lg:py-20 px-3 md:px-8 lg:px-12 bg-[#F3ECDC] overflow-hidden'>
-      <div className='relative rounded-[20px] md:rounded-[30px] overflow-hidden max-w-7xl mx-auto'>
+      <div className='relative rounded-[15px] md:rounded-[30px] overflow-hidden max-w-7xl mx-auto'>
         <img 
           src={image01} 
-          className='w-full h-[140px] md:h-[320px] lg:h-[500px] object-cover' 
+          className='w-full h-[140px] md:h-[300px] lg:h-[500px] object-cover' 
           alt="background"
         />        
         <div className='absolute inset-0 flex flex-col justify-center items-center text-white text-center p-6 md:p-12 lg:p-16'>

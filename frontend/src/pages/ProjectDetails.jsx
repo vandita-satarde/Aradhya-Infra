@@ -151,8 +151,8 @@ const ProjectDetails = () => {
 
 
         {otherProjects.length > 0 && (
-          <div className='px-5 md:px-20 py-10 bg-[#F3ECDC]'>
-            <h2 className='text-[20px] md:text-[25px] font-[abril] font-bold text-[#073937] mb-5'>
+          <div className='px-4 md:px-8 lg:px-20 py-7 md:py-8 lg:py-10 bg-[#F3ECDC]'>
+            <h2 className='text-[16px] md:text-[25px] font-[abril] font-bold text-[#073937] mb-4 md:mb-1 lg:mb-5'>
               Explore More Projects
             </h2>
             <div className='flex flex-wrap gap-5 justify-center'>

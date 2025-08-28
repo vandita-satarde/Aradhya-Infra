@@ -47,7 +47,7 @@ function OurProjects() {
                 <img src={arrow} />
                 <span className='text-[#FFFFFFBF]'> OUR PROJECTS</span>
               </p>
-              <p className='font-bold text-[34px] md:text-[55px] py-11 lg:py-7 font-[abril] text-[#F3ECDC] leading-9'>List Of Your Dreams</p>
+              <p className='font-bold text-[34px] md:text-[55px] py-5 md:py-11 font-[abril] text-[#F3ECDC] leading-9'>List Of Your Dreams</p>
               <p className='text-[12px] md:text-[15px] text-[#FFFFFFBF]'>Crafting spaces that reflect our values—design, sustainability, and community.</p>
             </div>
           </div>
@@ -55,20 +55,20 @@ function OurProjects() {
 
         {/* Map Section */}
         <div className=' flex flex-col items-center bg-[#F3ECDC] pb-8 md:pb-15 lg:pb-25'>
-            <p className='text-[22px] md:text-[38px] lg:text-[55px] text-[#048886] font-bold font-[abril] my-5 lg:my-8'>Location</p>
-            <div className='bg-[#F3ECDC] p-1 md:p-3 lg:p-4 rounded-4xl shadow-lg'>
+            <p className='text-[20px] md:text-[38px] lg:text-[55px] text-[#048886] font-bold font-[abril] my-3 md:my-5 lg:my-8'>Location</p>
+            <div className='bg-[#F3ECDC] rounded-4xl shadow-lg '>
                 <iframe 
                     src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3722.159899713001!2d79.0825674752587!3d21.106190380562712!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjHCsDA2JzIyLjMiTiA3OcKwMDUnMDYuNSJF!5e0!3m2!1sen!2sin!4v1754374662476!5m2!1sen!2sin"
-                    className='w-[270px] md:w-[640px] lg:w-[1289px] md:h-[300px] lg:h-[460px] rounded-4xl'
+                    className='w-[330px] md:w-[640px] lg:w-[1289px] md:h-[260px] lg:h-[460px] rounded-lg md:rounded-4xl'
                     allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade">            
                 </iframe>
             </div>
         </div>
 
         {/* Projects */}
-        <div className='text-center mt-8 md:mt-18 px-5 font-sans'>
-          <p className='md:m-5 text-[#050810] text-[12px] md:text-[16px] font-sans'>ALL PROJECTS</p>
-          <p className='text-[25px] md:text-[45px] text-[#050810] font-[abril] font-extrabold mb-5 md:mb-10'>Aradhya Business Park</p>
+        <div className='text-center py-10 lg:py-12 px-1 lg:px-5 font-sans'>
+          <p className=' lg:m-5 text-[#050810] text-[12px] md:text-[13px] lg:text-[16px] font-sans'>ALL PROJECTS</p>
+          <p className='text-[25px] md:text-[33px] lg:text-[45px] text-[#050810] font-[abril] font-extrabold  mb-1 md:mb-5 lg:mb-10'>Aradhya Business Park</p>
 
           {/* Filter Buttons */}
           <div className='flex flex-wrap gap-3 md:gap-8 justify-center text-[10px] md:text-[17px]'>
@@ -76,7 +76,7 @@ function OurProjects() {
               <button
                 key={cat}
                 onClick={() => { setFilter(cat); setShowAll(false); }}
-                className={`border py-2 md:py-4 px-4 md:px-12 hover:bg-black hover:text-[#F3ECDC] transition duration-500 ease-in-out cursor-pointer ${filter === cat ? 'bg-[#050810] text-[#F3ECDC]' : ''}`}
+                className={`border py-2 md:py-3 px-4 md:px-6 lg:px-12 hover:bg-black hover:text-[#F3ECDC] transition duration-500 ease-in-out cursor-pointer ${filter === cat ? 'bg-[#050810] text-[#F3ECDC]' : ''}`}
               >
                 {cat.toUpperCase()}
               </button>
@@ -84,7 +84,7 @@ function OurProjects() {
           </div>
 
           {/* Cards */}
-          <div className='flex flex-wrap justify-center md:justify-start md:mx-15 md:gap-8 mb-8'>
+          <div className='flex flex-wrap justify-center md:justify-start md:mx-15 gap-5 md:gap-8 m-8'>
           {visibleProjects.map((project, idx) => (
             <ProductCard key={project._id || idx} project={project} />
 
