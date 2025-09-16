@@ -64,8 +64,16 @@ function AboutUs() {
           content2="– We design with durability, comfort, and purpose in mind."
           heading3="Community Matters"
           content3="– Our townships are crafted with shared spaces and thoughtful amenities that bring people together."
+          heading4="Sustainability is Non-Negotiable"
+          content4="– Eco-conscious design, vastu compliance, and green building practices are standard."
+          heading5="Customer First, Always"
+          content5="– From inquiry to after-handover support, we walk with you at every step."
+          heading6="Innovation Drives Us"
+          content6="– We embrace new technologies and ideas to enhance quality and efficiency."
           subtitle2='" Chairman - Shri. Lekhraj Patle "'
-          subtitle2content="Shri. Lekhraj Patle is the visionary founder and driving force behind Aradhya Infra. With a deep commitment to quality, transparency, and community development, he has played a pivotal role in shaping the real estate landscape of Central India. Under his leadership, Aradhya Infra continues to deliver thoughtfully designed residential and township projects that reflect modern living while staying rooted in trust and long-term value."
+          subtitle2content="Shri. Lekhraj Patle is the visionary founder and dynamic driving force behind Aradhya Infra, a name synonymous with excellence and integrity in the real estate sector of Central India. With an unwavering commitment to quality, transparency, and sustainable development, Shri. Patle has been instrumental in redefining the real estate landscape across the region.
+
+Driven by a deep-rooted passion for community upliftment and urban transformation, he established Aradhya Infra with the aim of creating not just buildings, but holistic living spaces that nurture families, foster connections, and enhance lifestyles. His leadership is guided by a clear philosophy—to deliver modern, thoughtfully designed homes and townships that offer long-term value while remaining deeply rooted in trust and ethical practices"
         />
 
         <hr className="text-gray-300 mt-12 md:mt-14 lg:mt-25 mx-20 md:mx-9 lg:mx-15 " />
