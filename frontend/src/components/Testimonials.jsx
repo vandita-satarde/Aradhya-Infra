@@ -29,10 +29,10 @@ function Testimonials() {
                 <FaShieldAlt className='text-[#048886] w-[23px] md:w-[26px] lg:w-[35px] h-[23px] md:h-[26px] lg:h-[35px] mt-1 flex-shrink-0'/>
                 <div>
                   <h3 className='font-[abril] font-bold text-lg md:text-[16px] lg:text-[21px] md:mb-1 lg:mb-3 text-gray-800'>
-                    NMRDA & RI Approved
+                    NMRDA & RL Approved
                   </h3>
                   <p className='font-sans text-sm lg:text-[18px] text-[#050810]'>
-                    Mendapatka keamanan
+                    NMRDA SANCTION WITH RL PLOTS
                   </p>
                 </div>
               </div>
