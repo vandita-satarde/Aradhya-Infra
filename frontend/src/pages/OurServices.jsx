@@ -1,89 +1,93 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
-import Navbar from '../components/Navbar'
-import ServicesCard from '../components/ServicesCard'
-import GalleryPage from './GalleryPage';
-import Testimonals from '../components/Testimonials'
-import GetStarted from '../components/GetStarted'
-import Footer from '../components/Footer'
+import React from "react";
+import { Link } from "react-router-dom";
+import Navbar from "../components/Navbar";
+import ServicesCard from "../components/ServicesCard";
+import GalleryPage from "./GalleryPage";
+import Testimonals from "../components/Testimonials";
+import GetStarted from "../components/GetStarted";
+import Footer from "../components/Footer";
 
-import image01 from '../assets/image-0.jpg'
-import arrow from '../assets/icons/g-caret-right.png'
-import icon01 from '../assets/icons/icon-01.png'
-import icon02 from '../assets/icons/icon-02.png'
-import icon03 from '../assets/icons/icon-03.png'
-import icon04 from '../assets/icons/icon-04.png'
-import icon05 from '../assets/icons/icon-05.png'
-import icon06 from '../assets/icons/icon-06.png'
+import image01 from "../assets/image-0.jpg";
+import arrow from "../assets/icons/g-caret-right.png";
+import icon01 from "../assets/icons/icon-01.png";
+import icon02 from "../assets/icons/icon-02.png";
+import icon03 from "../assets/icons/icon-03.png";
+import icon04 from "../assets/icons/icon-04.png";
+import icon05 from "../assets/icons/icon-05.png";
+import icon06 from "../assets/icons/icon-06.png";
+import mainImg from "../assets/images/mainimg4.jpg";
 
 function OurServices() {
   return (
     <>
-        <div className="bg-cover bg-center h-[438px] md:h-[523px] " style={{ backgroundImage: `url(${image01})` }}>
-            <div className='pt-[100px]'>
-                <Navbar />
-                <div className='p-12 md:p-30'>
-                    <p className='flex gap-3 md:gap-5 items-center text-[12px] md:text-[15px] '>
-                        <Link to="/">
-                            <span className='text-[#34FF00] '>HOMEPAGE</span>
-                        </Link>
-                        <img src={arrow}/>
-                        <Link to="/story">
-                            <span className='text-[#34FF00] '>OUR STORY</span>
-                        </Link>
-                        <img src={arrow}/>
-                        <span className='text-[#FFFFFFBF] '>OUR SERVICES</span>
-                    </p>
-                    <p className='font-bold text-[34px] md:text-[55px] py-5 md:py-11  font-[abril] text-[#F3ECDC] leading-9 md:leading-12'>What Aradhya Infra Offers</p>
-                    <p className='text-[12px] md:text-[15px] text-[#FFFFFFBF] '>Building dreams, creating communities”—that’s not just a tagline—it’s why Aradhya Infra exists.</p>
-                </div>
-            </div>
+      <div
+        className="bg-cover bg-center h-[438px] md:h-[523px] "
+        style={{ backgroundImage: `url(${mainImg})` }}
+      >
+        <div className="pt-[100px]">
+          <Navbar />
+          <div className="p-12 md:p-30">
+            <p className="flex gap-3 md:gap-5 items-center text-[12px] md:text-[15px] ">
+              <Link to="/">
+                <span className="text-[#34FF00] ">HOMEPAGE</span>
+              </Link>
+              <img src={arrow} />
+              <Link to="/story">
+                <span className="text-[#34FF00] ">OUR STORY</span>
+              </Link>
+              <img src={arrow} />
+              <span className="text-[#FFFFFFBF] ">OUR SERVICES</span>
+            </p>
+            <p className="font-bold text-[34px] md:text-[55px] py-5 md:py-11  font-[abril] text-[#F3ECDC] leading-9 md:leading-12">
+              What Aradhya Infra Offers
+            </p>
+            <p className="text-[12px] md:text-[15px] text-[#FFFFFFBF] ">
+              Building dreams, creating communities”—that’s not just a
+              tagline—it’s why Aradhya Infra exists.
+            </p>
+          </div>
         </div>
+      </div>
+      <div className="bg-[#F3ECDC] p-15 md:p-12 lg:p-20 flex flex-wrap gap-y-8 lg:gap-y-15">
+        <ServicesCard
+          icon={icon01}
+          name="Pre-Launch Marketing"
+          description="Soft-launch strategies, NRI campaigns, exhibitions to build demand early."
+        />
+        <ServicesCard
+          icon={icon02}
+          name="Residential & Townships"
+          description="Design and build homes, apartments, and integrated communities."
+        />
+        <ServicesCard
+          icon={icon03}
+          name="Commercial Properties"
+          description="Develop offices, retail spaces, & mixed-use complexes."
+        />
+        <ServicesCard
+          icon={icon04}
+          name="Property & Asset Management"
+          description="Tenant services, upkeep, asset reporting, long-term maintenance."
+        />
+        <ServicesCard
+          icon={icon05}
+          name="Sales & Channel"
+          description="Partner with brokers, use digital platforms, host expos, engage cross-border buyers."
+        />
+        <ServicesCard
+          icon={icon06}
+          name="Eco & Sustainability Solutions"
+          description="Green-certified construction, rainwater harvesting, solar, native landscaping."
+        />
+      </div>
 
-        <div className='bg-[#F3ECDC] p-15 md:p-12 lg:p-20 flex flex-wrap gap-y-8 lg:gap-y-15'>
-            <ServicesCard 
-                icon={icon01}
-                name="Pre-Launch Marketing"
-                description="Soft-launch strategies, NRI campaigns, exhibitions to build demand early."
-            />
-            <ServicesCard 
-                icon={icon02}
-                name="Residential & Townships"
-                description="Design and build homes, apartments, and integrated communities."
-            />
-            <ServicesCard 
-                icon={icon03}
-                name="Commercial Properties"
-                description="Develop offices, retail spaces, & mixed-use complexes."
-            />
-            <ServicesCard 
-                icon={icon04}
-                name="Property & Asset Management"
-                description="Tenant services, upkeep, asset reporting, long-term maintenance."
-            />
-            <ServicesCard 
-                icon={icon05}
-                name="Sales & Channel"
-                description="Partner with brokers, use digital platforms, host expos, engage cross-border buyers."
-            />
-            <ServicesCard 
-                icon={icon06}
-                name="Eco & Sustainability Solutions"
-                description="Green-certified construction, rainwater harvesting, solar, native landscaping."
-            />
-        </div>
+      <GalleryPage className="!h-0" />
 
-        <GalleryPage limit={5} className='!h-0' />
-      <Link to='/gallery-page' >
-        <p className='bg-[#F3ECDC] pb-10 text-center cursor-pointer text-[10px] md:text-[15px] text-[#2D2D2D] font-medium'>
-          SEE OUR GALLERY SECTION LEGACY OF ARADHYA INFRA →
-        </p>
-      </Link>
-        <Testimonals />
-        <GetStarted />
-        <Footer />
+      <Testimonals />
+      <GetStarted />
+      <Footer />
     </>
-  )
+  );
 }
 
-export default OurServices
+export default OurServices;

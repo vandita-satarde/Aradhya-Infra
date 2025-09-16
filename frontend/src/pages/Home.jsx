@@ -11,7 +11,9 @@ import Testimonials from "../components/Testimonials";
 import Footer from "../components/Footer";
 
 import aboutImage from "../assets/images/nintynine-1.jpeg";
-import image1 from "../assets/image-0.jpg";
+import image1 from "../assets/images/nintynine-2.jpeg";
+import image2 from "../assets/images/nintynine-1.jpeg";
+import image3 from "../assets/images/grpimg.jpg";
 import hsIcon1 from "../assets/icons/hs-icon1.png";
 import hsIcon2 from "../assets/icons/hs-icon2.png";
 import hsIcon3 from "../assets/icons/hs-icon3.png";
@@ -90,13 +92,13 @@ function Home() {
               </div>
               <div className=" bg-[#F3ECDC] w-[240px] md:w-[180px] lg:w-[310px] h-full p-1.5 lg:p-3 rounded-[30px] shadow-xs shadow-[#00000012]">
                 <img
-                  src={image1}
+                  src={image2}
                   className="  rounded-[30px] md:h-[130px] lg:h-[210px] object-cover "
                 />
               </div>
               <div className=" bg-[#F3ECDC] w-[240px] md:w-[180px] lg:w-[310px] h-full p-1.5 lg:p-3 rounded-[30px] shadow-xs shadow-[#00000012] ">
                 <img
-                  src={image1}
+                  src={image3}
                   className="  rounded-[30px] md:h-[130px] lg:h-[210px] object-cover "
                 />
               </div>

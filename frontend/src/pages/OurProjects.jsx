@@ -9,6 +9,7 @@ import Footer from "../components/Footer";
 
 import image01 from "../assets/image-0.jpg";
 import arrow from "../assets/icons/caret-right.png";
+import mainImg from "../assets/images/mainimg2.jpg";
 
 function OurProjects() {
   const [projects, setProjects] = useState([]);
@@ -41,7 +42,7 @@ function OurProjects() {
         {/* Header */}
         <div
           className="bg-cover bg-center h-[438px] md:h-[523px]"
-          style={{ backgroundImage: `url(${image01})` }}
+          style={{ backgroundImage: `url(${mainImg})` }}
         >
           <div className="pt-[100px]">
             <Navbar />
@@ -77,7 +78,6 @@ function OurProjects() {
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
-            
           </div>
         </div>
 
