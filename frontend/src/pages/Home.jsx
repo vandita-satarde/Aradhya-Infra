@@ -73,13 +73,15 @@ function Home() {
           <br />
           <br />
           <div className=" flex relative flex-col lg:flex-row items-center md:items-start -mt-5 ">
-            <div className=" w-[280px] md:w-[230px] lg:w-[417px] h-[240px] md:h-[220px] lg:h-[305px] rounded-4xl py-6 md:py-4 lg:py-8 px-6 md:px-6 lg:px-12 pr-4 md:pr-14 lg:pr-40 bg-black text-[#FFFFFFBF] ">
-              <FaQuoteLeft className="w-[30px] h-[30px] md:w-[35px] lg:w-[40px] md:h-[35px] lg:h-[45px] text-[#DADADA] mb-4 md:mb-2 lg:mb-4 " />
-              <p className="italic text-[15px] md:text-[17px] lg:text-[22px] mb-3 md:mb-2 lg:mb-3">
-                “Layanan apartemen paling terbaik di Indonesia, suka banget.. “
+            <div className=" w-[280px] md:w-[230px] lg:w-[417px] h-[240px] md:h-[220px] lg:h-[305px] rounded-4xl py-4 md:py-4 lg:py-5 px-6 md:px-6 lg:px-12 pr-4 md:pr-14 lg:pr-30 bg-black text-[#FFFFFFBF] ">
+              <FaQuoteLeft className="w-[30px] h-[30px] md:w-[35px] lg:w-[40px] md:h-[35px] lg:h-[45px] text-[#DADADA] mb-1 md:mb-2 lg:mb-4 " />
+              <p className="italic text-[13px] md:text-[17px] lg:text-[18px] mb-3 md:mb-2 lg:mb-3">
+                “At Aradhya Infratech, we are committed to providing affordable
+                and quality real estate with trust, transparency, and lasting
+                value. “
               </p>
-              <span className=" font-bold text-[20px] md:text-[22px] lg:text-[25px] text-[#F3ECDC] font-[abril] ">
-                Nikhil Bawane
+              <span className=" font-bold text-[18px] md:text-[22px] lg:text-[20px] text-[#F3ECDC] font-[abril] ">
+                Chairman Lekhraj Patle
               </span>
             </div>
 
