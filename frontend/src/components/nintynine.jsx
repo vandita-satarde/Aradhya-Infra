@@ -83,9 +83,15 @@ function nintynine({ className = "" }) {
               Vision
             </p>
             <p className="text-[14px] lg:text-[18px] font-semibold font-sans ">
-              "To deliver thoughtfully designed living spaces-built sustainably,
-              driven by innovation, and grounded in trust-to elevate communities
-              and lives across Central India."
+              "Our vision is to build secure and risk-free societies where
+              people live with trust, safety, and a promise of a better future.
+              We aspire to create communities where every customer has lifelong
+              faith in us, growing together as one family. By fostering trust
+              and unity, we aim to ensure that people not only join us but also
+              grow with us, building a stronger and brighter society for
+              generations to come. Our vision is also to expand our network and
+              build new projects across the world, creating global communities
+              founded on trust and growth."
             </p>
           </div>
         </div>
@@ -99,9 +105,7 @@ function nintynine({ className = "" }) {
               Mission
             </p>
             <p className="text-[14px] lg:text-[18px] font-semibold font-sans ">
-              "To become the leading regional developer known for modern
-              architecture, green initiatives, and socially conscious township
-              developments that foster strong neighborhood bonds."
+              "Our mission is to deliver exceptional real estate services with integrity, innovation, and excellence, ensuring customer satisfaction and trust. We are committed to building the nation by creating employment, empowering individuals, and fostering stronger communities. Through transparency and personalized solutions, we strive to enlighten new buyers and build lasting relationships. Your trust is our commitment"
             </p>
           </div>
         </div>

@@ -25,7 +25,7 @@ function Footer() {
           <p className="text-[12px] md:text-[13px] lg:text-[15px] text-[#FFFFFFBF] leading-relaxed mb-6">
             Discover the exceptional plots at Aradhya Infratech Nagpur, a
             premier residential enclave that perfectly blends modern living with
-            the calmness of nature. Here, at Aradhya Infratech Ngpur Plots,
+            the calmness of nature. Here, at Aradhya Infratech Nagpur Plots,
             select from diverse plots surrounded by verdant greenery and
             orchards, providing a peaceful living environment in sync with the
             natural world.
