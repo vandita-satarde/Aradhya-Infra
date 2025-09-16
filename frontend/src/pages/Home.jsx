@@ -1,32 +1,33 @@
-import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
-import HeroSection from '../components/HeroSection'
-import Nintynine from '../components/nintynine'
-import ProductCard from '../components/ProductCard'
-import ServicesCard from '../components/ServicesCard'
-import GalleryPage from './GalleryPage';
-import GetStarted from '../components/GetStarted'
-import Testimonials from '../components/Testimonials'
-import Footer from '../components/Footer'
+import HeroSection from "../components/HeroSection";
+import Nintynine from "../components/nintynine";
+import ProductCard from "../components/ProductCard";
+import ServicesCard from "../components/ServicesCard";
+import GalleryPage from "./GalleryPage";
+import GetStarted from "../components/GetStarted";
+import Testimonials from "../components/Testimonials";
+import Footer from "../components/Footer";
 
-import aboutImage from '../assets/images/nintynine-1.jpeg'
-import image1 from '../assets/image-0.jpg'
-import hsIcon1 from '../assets/icons/hs-icon1.png'
-import hsIcon2 from '../assets/icons/hs-icon2.png'
-import hsIcon3 from '../assets/icons/hs-icon3.png'
+import aboutImage from "../assets/images/nintynine-1.jpeg";
+import image1 from "../assets/image-0.jpg";
+import hsIcon1 from "../assets/icons/hs-icon1.png";
+import hsIcon2 from "../assets/icons/hs-icon2.png";
+import hsIcon3 from "../assets/icons/hs-icon3.png";
 import { FaQuoteLeft } from "react-icons/fa6";
-
-
+import { FaArrowRight } from "react-icons/fa";
 
 function Home() {
   const [projects, setProjects] = useState([]);
-  const [filter, setFilter] = useState('all');
+  const [filter, setFilter] = useState("all");
 
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const res = await fetch("https://aradhya-infra-e57v.vercel.app/api/projects");
+        const res = await fetch(
+          "https://aradhya-infra-e57v.vercel.app/api/projects"
+        );
         const data = await res.json();
         setProjects(data);
       } catch (error) {
@@ -37,48 +38,67 @@ function Home() {
     fetchProjects();
   }, []);
 
-
-  const filteredProjects = filter === 'all'
-    ? projects
-    : projects.filter(project =>
-      project.area?.toLowerCase().includes(filter.toLowerCase())
-    );
-
+  const filteredProjects =
+    filter === "all"
+      ? projects
+      : projects.filter((project) =>
+          project.area?.toLowerCase().includes(filter.toLowerCase())
+        );
 
   const displayedProjects = filteredProjects.slice(0, 3);
-
 
   return (
     <div>
       <HeroSection />
-      <div className='bg-[#F3ECDC] px-9 md:px-4 lg:px-25 pt-12 md:pt-14 lg:pt-25 md:pb-1 '>
-
+      <div className="bg-[#F3ECDC] px-9 md:px-4 lg:px-25 pt-12 md:pt-14 lg:pt-25 md:pb-1 ">
         {/* Section 01 */}
-        <div className=' pb-130 md:pb-15 lg:pb-30'>
-          <p className='text-[13px] md:text-[13px] lg:text-[15px] font-semibold text-[#048886] mb-3 '>OUR LUXURIOUS PROJECTS</p>
-          <div className='flex flex-col md:flex-row md:justify-between items-start md:items-center gap-4 '>
-            <h2 className=' text-[26px] md:text-[32px] lg:text-[48px] font-extrabold font-[abril] leading-7 md:leading-11 lg:leading-18 '>Premium Residential,<br />Commercial & Township Projects.</h2>
-            <a href='/projects'>
-              <p className='text-[12px] md:text-[13px] lg:text-[15px] font-semibold font-sans mr-0 md:mr-5 lg:mr-30 text-[#00000099] '>SHOW MORE → </p>
+        <div className=" pb-130 md:pb-15 lg:pb-30">
+          <p className="text-[13px] md:text-[13px] lg:text-[15px] font-semibold text-[#048886] mb-3 ">
+            OUR LUXURIOUS PROJECTS
+          </p>
+          <div className="flex flex-col md:flex-row md:justify-between items-start md:items-center gap-4 ">
+            <h2 className=" text-[26px] md:text-[32px] lg:text-[48px]  font-[Abril_Fatface] leading-7 md:leading-11 lg:leading-17 ">
+              Premium Residential,
+              <br />
+              Commercial & Township Projects.
+            </h2>
+            <a href="/projects">
+              <p className="flex items-center gap-2 tracking-wider text-[12px] md:text-[13px] lg:text-[16px] font-semibold font-sans mr-0 md:mr-5 lg:mr-30 text-[#00000099] ">
+                SHOW MORE <FaArrowRight size={20} />{" "}
+              </p>
             </a>
           </div>
-          <br /><br />
-          <div className=' flex relative flex-col lg:flex-row items-center md:items-start -mt-5 '>
-            <div className=' w-[280px] md:w-[230px] lg:w-[417px] h-[240px] md:h-[220px] lg:h-[305px] rounded-4xl py-6 md:py-4 lg:py-8 px-6 md:px-6 lg:px-12 pr-4 md:pr-14 lg:pr-40 bg-black text-[#FFFFFFBF] '>
-              <FaQuoteLeft className='w-[30px] h-[30px] md:w-[35px] lg:w-[40px] md:h-[35px] lg:h-[45px] text-[#DADADA] mb-4 md:mb-2 lg:mb-4 ' />
-              <p className='italic text-[15px] md:text-[17px] lg:text-[22px] mb-3 md:mb-2 lg:mb-3'>“Layanan apartemen paling terbaik di Indonesia, suka banget.. “</p>
-              <span className=' font-bold text-[20px] md:text-[22px] lg:text-[25px] text-[#F3ECDC] font-[abril] '>Nikhil Bawane</span>
+          <br />
+          <br />
+          <div className=" flex relative flex-col lg:flex-row items-center md:items-start -mt-5 ">
+            <div className=" w-[280px] md:w-[230px] lg:w-[417px] h-[240px] md:h-[220px] lg:h-[305px] rounded-4xl py-6 md:py-4 lg:py-8 px-6 md:px-6 lg:px-12 pr-4 md:pr-14 lg:pr-40 bg-black text-[#FFFFFFBF] ">
+              <FaQuoteLeft className="w-[30px] h-[30px] md:w-[35px] lg:w-[40px] md:h-[35px] lg:h-[45px] text-[#DADADA] mb-4 md:mb-2 lg:mb-4 " />
+              <p className="italic text-[15px] md:text-[17px] lg:text-[22px] mb-3 md:mb-2 lg:mb-3">
+                “Layanan apartemen paling terbaik di Indonesia, suka banget.. “
+              </p>
+              <span className=" font-bold text-[20px] md:text-[22px] lg:text-[25px] text-[#F3ECDC] font-[abril] ">
+                Nikhil Bawane
+              </span>
             </div>
 
-            <div className='absolute md:left-[170px] lg:left-[320px]  md:mx-3 top-38 md:top-3 lg:top-9 flex flex-col sm:flex-row gap-3 md:gap-2 lg:gap-3 mt-6 lg:mt-0 ' >
-              <div className=' bg-[#F3ECDC] w-[240px] md:w-[180px] lg:w-[310px] h-full p-1.5 lg:p-3 rounded-[30px] shadow-sm shaadow-[#00000012] '>
-                <img src={image1} className='  rounded-[30px] md:h-[130px] lg:h-[210px] object-cover ' />
+            <div className="absolute md:left-[170px] lg:left-[320px]  md:mx-3 top-38 md:top-3 lg:top-9 flex flex-col sm:flex-row gap-3 md:gap-2 lg:gap-3 mt-6 lg:mt-0 ">
+              <div className=" bg-[#F3ECDC] w-[240px] md:w-[180px] lg:w-[310px] h-full p-1.5 lg:p-3 rounded-[30px] shadow-xs shadow-[#00000012]">
+                <img
+                  src={image1}
+                  className="  rounded-[30px] md:h-[130px] lg:h-[210px] object-cover "
+                />
               </div>
-              <div className=' bg-[#F3ECDC] w-[240px] md:w-[180px] lg:w-[310px] h-full p-1.5 lg:p-3 rounded-[30px] shadow-sm shaadow-[#00000012] '>
-                <img src={image1} className='  rounded-[30px] md:h-[130px] lg:h-[210px] object-cover ' />
+              <div className=" bg-[#F3ECDC] w-[240px] md:w-[180px] lg:w-[310px] h-full p-1.5 lg:p-3 rounded-[30px] shadow-xs shadow-[#00000012]">
+                <img
+                  src={image1}
+                  className="  rounded-[30px] md:h-[130px] lg:h-[210px] object-cover "
+                />
               </div>
-              <div className=' bg-[#F3ECDC] w-[240px] md:w-[180px] lg:w-[310px] h-full p-1.5 lg:p-3 rounded-[30px] shadow-sm shaadow-[#00000012] '>
-                <img src={image1} className='  rounded-[30px] md:h-[130px] lg:h-[210px] object-cover ' />
+              <div className=" bg-[#F3ECDC] w-[240px] md:w-[180px] lg:w-[310px] h-full p-1.5 lg:p-3 rounded-[30px] shadow-xs shadow-[#00000012] ">
+                <img
+                  src={image1}
+                  className="  rounded-[30px] md:h-[130px] lg:h-[210px] object-cover "
+                />
               </div>
             </div>
           </div>
@@ -86,19 +106,26 @@ function Home() {
       </div>
 
       {/* Section 02 */}
-      <div className=' px-6 md:px-10 lg:px-30 pb-10 md:pb-20'>
+      <div className=" px-6 md:px-10 lg:px-30 pb-10 md:pb-20">
         {/* mobile view */}
-        <img src={aboutImage} className='md:hidden block my-10 mx-auto w-[340px] h-[210px] object-cover rounded-[30px] ' />
+        <img
+          src={aboutImage}
+          className="md:hidden block my-10 mx-auto w-[340px] h-[210px] object-cover rounded-[30px] "
+        />
 
         {/* other devices view */}
-        <Nintynine className='mt-10 md:mt-15 lg:mt-30 bg-white' />
+        <Nintynine className="mt-10 md:mt-15 lg:mt-30 bg-white" />
       </div>
 
       {/* Section 03 */}
-      <div className='bg-[#F3ECDC] px-10 md:px-4 lg:px-25 pb-10 lg:pb-15 pt-10 md:pt-12 lg:pt-20 text-center '>
-        <p className='text-[12px] md:text-[13px] lg:text-base mb-1 md:-mb-1 lg:mb-3 font-sans'>WHY ARADHYA INFRA?</p>
-        <p className=' text-[26px] md:text-[35px] lg:text-[48px] font-extrabold mb-7 font-[abril] '>Why Aradhya Infra?</p>
-        <div className='w-full flex flex-col md:flex-row gap-5 md:gap-5 lg:gap-8 justify-center items-center mb-10'>
+      <div className="bg-[#F3ECDC] px-10 md:px-4 lg:px-25 pb-10 lg:pb-15 pt-10 md:pt-12 lg:pt-20 text-center ">
+        <p className="text-[12px] md:text-[13px] lg:text-base mb-1 md:-mb-1 lg:mb-3 font-sans">
+          WHY ARADHYA INFRA?
+        </p>
+        <p className=" text-[26px] md:text-[35px] lg:text-[48px] font-extrabold mb-7 font-[abril] ">
+          Why Aradhya Infra?
+        </p>
+        <div className="w-full flex flex-col md:flex-row gap-5 md:gap-5 lg:gap-8 justify-center items-center mb-10">
           <ServicesCard
             icon={hsIcon1}
             name="Nagpur Expertise"
@@ -115,37 +142,51 @@ function Home() {
             description="Vastu‑compliant, clearly priced and inspected, with on‑time delivery."
           />
         </div>
-        <p className='text-[#2D2D2D] text-[10px] md:text-[14px] lg:text-[17px] '><span className=' font-sans font-bold'>CLIENT SUPPORT</span> - DEDICATED GUIDANCE FROM BOOKING TO POST-HANDOVER. </p>
+        <p className="text-[#2D2D2D] text-[10px] md:text-[14px] lg:text-[17px] ">
+          <span className=" font-sans font-bold">CLIENT SUPPORT</span> -
+          DEDICATED GUIDANCE FROM BOOKING TO POST-HANDOVER.{" "}
+        </p>
       </div>
 
-
-
       {/* <Projects /> */}
-      <div className='text-center py-10 lg:py-12 px-1 lg:px-5'>
-        <p className=' lg:m-5 text-[#050810] text-[12px] md:text-[13px] lg:text-[16px] font-sans'>ALL PROJECTS</p>
-        <p className='text-[25px] md:text-[33px] lg:text-[45px] text-[#050810] font-[abril] font-extrabold mb-1 md:mb-5 lg:mb-10'>Aradhya Business Park</p>
+      <div className="text-center py-10 lg:py-12 px-1 lg:px-5">
+        <p className=" lg:m-5 text-[#050810] text-[12px] md:text-[13px] lg:text-[16px] font-sans">
+          ALL PROJECTS
+        </p>
+        <p className="text-[25px] md:text-[33px] lg:text-[45px] text-[#050810] font-[abril] font-extrabold mb-1 md:mb-5 lg:mb-10">
+          Aradhya Business Park
+        </p>
 
-        <div className='flex flex-wrap gap-3 md:gap-4 lg:gap-8 justify-center text-[10px] md:text-[16px] lg:text-[17px]'>
+        <div className="flex flex-wrap gap-3 md:gap-4 lg:gap-8 justify-center text-[10px] md:text-[16px] lg:text-[17px]">
           <button
-            onClick={() => setFilter('all')}
-            className={`border py-2 md:py-3 lg:py-4 px-4 md:px-6 lg:px-12 hover:bg-black hover:text-[#F3ECDC] transition duration-500 ease-in-out cursor-pointer ${filter === 'all' ? 'bg-[#050810] text-[#F3ECDC]' : ''}`}>
+            onClick={() => setFilter("all")}
+            className={`border py-2 md:py-3 lg:py-4 px-4 md:px-6 lg:px-12 hover:bg-black hover:text-[#F3ECDC] transition duration-500 ease-in-out cursor-pointer ${
+              filter === "all" ? "bg-[#050810] text-[#F3ECDC]" : ""
+            }`}
+          >
             ALL PROPERTIES
           </button>
           <button
-            onClick={() => setFilter('commercial')}
-            className={`border py-2 md:py-3 lg:py-4 px-4 md:px-6 lg:px-12 hover:bg-black hover:text-[#F3ECDC] transition duration-500 ease-in-out cursor-pointer ${filter === 'commercial' ? 'bg-[#050810] text-[#F3ECDC]' : ''}`}>
+            onClick={() => setFilter("commercial")}
+            className={`border py-2 md:py-3 lg:py-4 px-4 md:px-6 lg:px-12 hover:bg-black hover:text-[#F3ECDC] transition duration-500 ease-in-out cursor-pointer ${
+              filter === "commercial" ? "bg-[#050810] text-[#F3ECDC]" : ""
+            }`}
+          >
             COMMERCIAL
           </button>
           <button
-            onClick={() => setFilter('residential')}
-            className={`border py-2 md:py-3 lg:py-4 px-4 md:px-6 lg:px-12 hover:bg-black hover:text-[#F3ECDC] transition duration-500 ease-in-out cursor-pointer ${filter === 'residential' ? 'bg-[#050810] text-[#F3ECDC]' : ''}`}>
+            onClick={() => setFilter("residential")}
+            className={`border py-2 md:py-3 lg:py-4 px-4 md:px-6 lg:px-12 hover:bg-black hover:text-[#F3ECDC] transition duration-500 ease-in-out cursor-pointer ${
+              filter === "residential" ? "bg-[#050810] text-[#F3ECDC]" : ""
+            }`}
+          >
             RESIDENTIAL
           </button>
         </div>
 
         <br />
 
-        <div className='flex flex-wrap justify-center lg:justify-start gap-5 lg:gap-8  '>
+        <div className="flex flex-wrap justify-center gap-5 lg:gap-8  ">
           {displayedProjects.map((project, index) => (
             <ProductCard
               key={index}
@@ -160,20 +201,14 @@ function Home() {
         </div>
       </div>
 
-
-
-      <GalleryPage limit={5} className='!h-0' />
-      <Link to='/gallery-page' >
-        <p className='bg-[#F3ECDC] text-center cursor-pointer text-[9px] md:text-[12px] lg:text-[15px] text-[#2D2D2D] font-medium'>
-          SEE OUR GALLERY SECTION LEGACY OF ARADHYA INFRA →
-        </p>
-      </Link>
+      {/* Gallery Section */}
+      <GalleryPage className="!h-0" />
 
       <GetStarted />
       <Testimonials />
       <Footer />
     </div>
-  )
+  );
 }
 
-export default Home
+export default Home;

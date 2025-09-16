@@ -47,7 +47,7 @@ function ProductCard({ project }) {
 
         <div className='flex mb-1 md:mb-2 lg:mb-4'>
           <img src={icon01} className='h-4 md:h-5 mr-2 lg:mr-3 mt-1 flex-shrink-0' alt="location" />
-          <p className='text-sm md:text-base lg:text-[18px] text-gray-600'>{location}</p>
+          <p className='text-left text-sm md:text-base lg:text-[18px] text-gray-600'>{location}</p>
         </div>
 
         <p className='font-semibold text-sm md:text-base lg:text-[18px] mb-3 lg:mb-4 text-gray-800'>{area}</p>

@@ -1,18 +1,17 @@
-import React, { useState } from 'react';
-import Sidebar from '../components/Sidebar';
-import axios from 'axios';
-import Select from 'react-select';
-
+import React, { useState } from "react";
+import Sidebar from "../components/Sidebar";
+import axios from "axios";
+import Select from "react-select";
 
 function Addprojects() {
   const [formData, setFormData] = useState({
-    title: '',
-    location: '',
-    area: '',
-    rating: '',
-    reviews: '',
-    description: '',
-    tags: '',
+    title: "",
+    location: "",
+    area: "",
+    rating: "",
+    reviews: "",
+    description: "",
+    tags: "",
     facilities: [],
     sonderStandard: [],
   });
@@ -25,22 +24,22 @@ function Addprojects() {
   const handleChange = (e) => {
     const { name, type, value, files } = e.target;
 
-    if (type === 'file') {
+    if (type === "file") {
       const newFiles = Array.from(files);
-      setSelectedImages(prev => [...prev, ...newFiles]);
+      setSelectedImages((prev) => [...prev, ...newFiles]);
 
       // Create preview URLs for the new images
-      const newPreviews = newFiles.map(file => URL.createObjectURL(file));
-      setPreviewImages(prev => [...prev, ...newPreviews]);
+      const newPreviews = newFiles.map((file) => URL.createObjectURL(file));
+      setPreviewImages((prev) => [...prev, ...newPreviews]);
     } else {
       // Handle other inputs
-      setFormData(prev => ({ ...prev, [name]: value }));
+      setFormData((prev) => ({ ...prev, [name]: value }));
     }
   };
 
   const handleDeleteImage = (index) => {
-    setSelectedImages(prev => prev.filter((_, i) => i !== index));
-    setPreviewImages(prev => {
+    setSelectedImages((prev) => prev.filter((_, i) => i !== index));
+    setPreviewImages((prev) => {
       // Revoke the URL to prevent memory leaks
       URL.revokeObjectURL(prev[index]);
       return prev.filter((_, i) => i !== index);
@@ -67,42 +66,46 @@ function Addprojects() {
     e.preventDefault();
 
     const data = new FormData();
-    data.append('title', formData.title);
-    data.append('location', formData.location);
-    data.append('area', formData.area);
-    data.append('tags', formData.tags);
-    data.append('rating', formData.rating.includes('/') ? Number(formData.rating.split('/')[0]) : Number(formData.rating));
-    data.append('reviews', formData.reviews); // renamed to match backend
-    data.append('description', formData.description);
-    formData.facilities.forEach(facility => {
-      data.append('facilities[]', facility.trim());
+    data.append("title", formData.title);
+    data.append("location", formData.location);
+    data.append("area", formData.area);
+    data.append("tags", formData.tags);
+    data.append(
+      "rating",
+      formData.rating.includes("/")
+        ? Number(formData.rating.split("/")[0])
+        : Number(formData.rating)
+    );
+    data.append("reviews", formData.reviews); // renamed to match backend
+    data.append("description", formData.description);
+    formData.facilities.forEach((facility) => {
+      data.append("facilities[]", facility.trim());
     });
 
-    formData.sonderStandard.forEach(item => {
-      data.append('sonderStandard[]', item.trim());
+    formData.sonderStandard.forEach((item) => {
+      data.append("sonderStandard[]", item.trim());
     });
-
 
     if (selectedImages.length < 3) {
-      alert('Please select at least 3 images.');
+      alert("Please select at least 3 images.");
       return;
     }
 
     if (selectedImages.length > 20) {
-      alert('You can upload a maximum of 20 images.');
+      alert("You can upload a maximum of 20 images.");
       return;
     }
 
     // Append all selected images
-    selectedImages.forEach(image => {
-      data.append('images', image);
+    selectedImages.forEach((image) => {
+      data.append("images", image);
     });
 
     try {
       setIsUploading(true);
       setUploadProgress(0);
 
-      console.log('Submitting form with data:', {
+      console.log("Submitting form with data:", {
         title: formData.title,
         location: formData.location,
         area: formData.area,
@@ -112,51 +115,59 @@ function Addprojects() {
         description: formData.description,
         facilities: formData.facilities,
         sonderStandard: formData.sonderStandard,
-        imageCount: selectedImages.length
+        imageCount: selectedImages.length,
       });
 
-      const response = await axios.post('https://aradhya-infra-e57v.vercel.app/api/projects', data, {
-        headers: { 'Content-Type': 'multipart/form-data' },
-        timeout: 300000, // Increased to 5 minutes timeout for multiple large images
-        onUploadProgress: (progressEvent) => {
-          const percentCompleted = Math.round((progressEvent.loaded * 100) / progressEvent.total);
-          setUploadProgress(percentCompleted);
-          console.log('Upload progress:', percentCompleted + '%');
+      const response = await axios.post(
+        "https://aradhya-infra-e57v.vercel.app/api/projects",
+        data,
+        {
+          headers: { "Content-Type": "multipart/form-data" },
+          timeout: 300000, // Increased to 5 minutes timeout for multiple large images
+          onUploadProgress: (progressEvent) => {
+            const percentCompleted = Math.round(
+              (progressEvent.loaded * 100) / progressEvent.total
+            );
+            setUploadProgress(percentCompleted);
+            console.log("Upload progress:", percentCompleted + "%");
+          },
         }
-      });
+      );
 
-      console.log('✅ Server response:', response.data);
-      alert(`Project "${formData.title}" submitted successfully! Images uploaded to Cloudinary.`);
+      console.log("✅ Server response:", response.data);
+      alert(
+        `Project "${formData.title}" submitted successfully! Images uploaded to Cloudinary.`
+      );
 
       // Reset form data
       setFormData({
-        title: '',
-        location: '',
-        area: '',
-        rating: '',
-        reviews: '',
-        description: '',
-        tags: '',
+        title: "",
+        location: "",
+        area: "",
+        rating: "",
+        reviews: "",
+        description: "",
+        tags: "",
         facilities: [],
         sonderStandard: [],
       });
 
       // Clear images and revoke URLs
       setSelectedImages([]);
-      setPreviewImages(prev => {
-        prev.forEach(url => URL.revokeObjectURL(url));
+      setPreviewImages((prev) => {
+        prev.forEach((url) => URL.revokeObjectURL(url));
         return [];
       });
-
     } catch (error) {
-      console.error('❌ Error submitting project:', error);
+      console.error("❌ Error submitting project:", error);
 
-      let errorMessage = 'Error submitting project';
+      let errorMessage = "Error submitting project";
       if (error.response) {
-        console.error('Error response:', error.response.data);
+        console.error("Error response:", error.response.data);
         errorMessage = error.response.data.message || errorMessage;
       } else if (error.request) {
-        errorMessage = 'No response from server. Please check if the backend is running.';
+        errorMessage =
+          "No response from server. Please check if the backend is running.";
       }
 
       alert(errorMessage);
@@ -166,20 +177,48 @@ function Addprojects() {
     }
   };
 
-
   return (
     <div className="flex">
       <Sidebar />
       <div className="pt-20 md:pt-8 md:ml-64 p-8 w-full min-h-screen bg-gray-100">
-        <h2 className="text-[20px] sm:text-3xl font-bold mb-3 md:mb-6 lg:mb-10 text-[#048886]">Add Property</h2>
+        <h2 className="text-[20px] sm:text-3xl font-bold mb-3 md:mb-6 lg:mb-10 text-[#048886]">
+          Add Property
+        </h2>
 
-        <form onSubmit={handleSubmit} className=" w-full max-w-4xl p-3 md:p-6 rounded shadow-2xl space-y-3 md:space-y-4 text-[13px] md:text-[16px] ">
-          <input name="title" value={formData.title} onChange={handleChange} placeholder="Project Title" className="w-full p-1 md:p-2 border rounded" required />
-          <input name="location" value={formData.location} onChange={handleChange} placeholder="Location" className="w-full p-1 md:p-2 border rounded" required />
-          <select name="area" value={formData.area} onChange={handleChange} className="w-full p-1 md:p-2 border rounded" required >
+        <form
+          onSubmit={handleSubmit}
+          className=" w-full max-w-4xl p-3 md:p-6 rounded shadow-2xl space-y-3 md:space-y-4 text-[13px] md:text-[16px] "
+        >
+          <input
+            name="title"
+            value={formData.title}
+            onChange={handleChange}
+            placeholder="Project Title"
+            className="w-full p-1 md:p-2 border rounded"
+            required
+          />
+          <input
+            name="location"
+            value={formData.location}
+            onChange={handleChange}
+            placeholder="Location"
+            className="w-full p-1 md:p-2 border rounded"
+            required
+          />
+          <select
+            name="area"
+            value={formData.area}
+            onChange={handleChange}
+            className="w-full p-1 md:p-2 border rounded"
+            required
+          >
             <option value="">Select Area</option>
-            <option value="Premium Commercial Space">Premium Commercial Space</option>
-            <option value="Premium Residential Space">Premium Residential Space</option>
+            <option value="Premium Commercial Space">
+              Premium Commercial Space
+            </option>
+            <option value="Premium Residential Space">
+              Premium Residential Space
+            </option>
             <option value="Commercial Space">Commercial Space</option>
             <option value="Residential Space">Residential Space</option>
             <option value="Other">Other</option>
@@ -196,10 +235,32 @@ function Addprojects() {
             <option value="Sold Out">Sold Out</option>
           </select>
 
-          <input name="rating" value={formData.rating} onChange={handleChange} placeholder="Rating (out of 5)" className="w-full p-1 md:p-2 border rounded" required />
-          <input name="reviews" value={formData.reviews} onChange={handleChange} placeholder="Review Count (e.g + reviews)" className="w-full p-1 md:p-2 border rounded" required />
+          <input
+            name="rating"
+            value={formData.rating}
+            onChange={handleChange}
+            placeholder="Rating (out of 5)"
+            className="w-full p-1 md:p-2 border rounded"
+            required
+          />
+          <input
+            name="reviews"
+            value={formData.reviews}
+            onChange={handleChange}
+            placeholder="Review Count (e.g + reviews)"
+            className="w-full p-1 md:p-2 border rounded"
+            required
+          />
 
-          <textarea name="description" value={formData.description} onChange={handleChange} placeholder="Description (use \\n\\n for new paragraphs)" rows="4" className="w-full p-1 md:p-2 border rounded" required />
+          <textarea
+            name="description"
+            value={formData.description}
+            onChange={handleChange}
+            placeholder="Description (use \\n\\n for new paragraphs)"
+            rows="4"
+            className="w-full p-1 md:p-2 border rounded"
+            required
+          />
           {/* Image Upload Section */}
           <div className="space-y-4">
             <input
@@ -235,18 +296,36 @@ function Addprojects() {
 
           {/* Facilities Dropdown */}
           <div>
-            <label className="block font-semibold text-gray-700 mb-2">Facilities</label>
+            <label className="block font-semibold text-gray-700 mb-2">
+              Facilities
+            </label>
             <Select
               isMulti
               options={[
-                { value: 'gym', label: 'Gym' },
-                { value: 'wifi', label: 'Wi-Fi' },
-                { value: 'parking', label: 'Parking' },
-                { value: 'pool', label: 'Swimming Pool' },
+                { value: "Cement Road", label: "Cement Road" },
+                {
+                  value: "Water line with water",
+                  label: "Water line with water",
+                },
+                {
+                  value: "Underground Electrification",
+                  label: "Underground Electrification",
+                },
+                {
+                  value: "Sewage/Drainage Line",
+                  label: "Sewage/Drainage Line",
+                },
+                { value: "Garden", label: "Garden" },
               ]}
-              value={formData.facilities.map(value => ({ value, label: value.charAt(0).toUpperCase() + value.slice(1) }))}
+              value={formData.facilities.map((value) => ({
+                value,
+                label: value.charAt(0).toUpperCase() + value.slice(1),
+              }))}
               onChange={(selected) =>
-                setFormData({ ...formData, facilities: selected.map(opt => opt.value) })
+                setFormData({
+                  ...formData,
+                  facilities: selected.map((opt) => opt.value),
+                })
               }
               className="w-full"
             />
@@ -254,22 +333,29 @@ function Addprojects() {
 
           {/* Sonder Standard Dropdown */}
           <div>
-            <label className="block font-semibold text-gray-700 mb-2 mt-4">Sonder Standard</label>
+            <label className="block font-semibold text-gray-700 mb-2 mt-4">
+              Sonder Standard
+            </label>
             <Select
               isMulti
               options={[
-                { value: 'kitchen', label: 'Modular Kitchen' },
-                { value: 'furnished', label: 'Furnished' },
-                { value: 'balcony', label: 'Balcony' },
+                { value: "kitchen", label: "Modular Kitchen" },
+                { value: "furnished", label: "Furnished" },
+                { value: "balcony", label: "Balcony" },
               ]}
-              value={formData.sonderStandard.map(value => ({ value, label: value.charAt(0).toUpperCase() + value.slice(1) }))}
+              value={formData.sonderStandard.map((value) => ({
+                value,
+                label: value.charAt(0).toUpperCase() + value.slice(1),
+              }))}
               onChange={(selected) =>
-                setFormData({ ...formData, sonderStandard: selected.map(opt => opt.value) })
+                setFormData({
+                  ...formData,
+                  sonderStandard: selected.map((opt) => opt.value),
+                })
               }
               className="w-full"
             />
           </div>
-
 
           {/* Upload Progress */}
           {isUploading && (
@@ -279,7 +365,8 @@ function Addprojects() {
                 style={{ width: `${uploadProgress}%` }}
               ></div>
               <p className="text-sm text-gray-600 mt-2">
-                Uploading images... {uploadProgress}% ({selectedImages.length} images)
+                Uploading images... {uploadProgress}% ({selectedImages.length}{" "}
+                images)
               </p>
             </div>
           )}
@@ -287,12 +374,13 @@ function Addprojects() {
           <button
             type="submit"
             disabled={isUploading}
-            className={`font-semibold px-2 md:px-4 py-1 md:py-2 rounded  ${isUploading
-                ? 'bg-gray-400 text-gray-700 cursor-not-allowed'
-                : 'bg-[#048886] hover:bg-[#03696b] text-white'
-              }`}
+            className={`font-semibold px-2 md:px-4 py-1 md:py-2 rounded  ${
+              isUploading
+                ? "bg-gray-400 text-gray-700 cursor-not-allowed"
+                : "bg-[#048886] hover:bg-[#03696b] text-white"
+            }`}
           >
-            {isUploading ? `Uploading... ${uploadProgress}%` : 'Submit Project'}
+            {isUploading ? `Uploading... ${uploadProgress}%` : "Submit Project"}
           </button>
         </form>
       </div>
