@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import image01 from "../assets/images/mainImg1.jpg";
+import image01 from "../assets/images/mainimg1.jpg";
 
 function GetStarted() {
   return (
