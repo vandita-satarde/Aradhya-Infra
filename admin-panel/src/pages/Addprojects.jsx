@@ -20,6 +20,10 @@ function Addprojects() {
   const [previewImages, setPreviewImages] = useState([]);
   const [isUploading, setIsUploading] = useState(false);
   const [uploadProgress, setUploadProgress] = useState(0);
+  const [customFacility, setCustomFacility] = useState("");
+  const [showCustomFacilityInput, setShowCustomFacilityInput] = useState(false);
+  const [customSonderStandard, setCustomSonderStandard] = useState("");
+  const [showCustomSonderInput, setShowCustomSonderInput] = useState(false);
 
   const handleChange = (e) => {
     const { name, type, value, files } = e.target;
@@ -151,6 +155,14 @@ function Addprojects() {
         facilities: [],
         sonderStandard: [],
       });
+
+      // Clear custom facility input
+      setCustomFacility("");
+      setShowCustomFacilityInput(false);
+
+      // Clear custom sonder standard input
+      setCustomSonderStandard("");
+      setShowCustomSonderInput(false);
 
       // Clear images and revoke URLs
       setSelectedImages([]);
@@ -316,19 +328,65 @@ function Addprojects() {
                   label: "Sewage/Drainage Line",
                 },
                 { value: "Garden", label: "Garden" },
+                { value: "Other", label: "Other" },
               ]}
               value={formData.facilities.map((value) => ({
                 value,
                 label: value.charAt(0).toUpperCase() + value.slice(1),
               }))}
-              onChange={(selected) =>
+              onChange={(selected) => {
+                const selectedValues = selected.map((opt) => opt.value);
                 setFormData({
                   ...formData,
-                  facilities: selected.map((opt) => opt.value),
-                })
-              }
+                  facilities: selectedValues,
+                });
+
+                // Show custom input if "Other" is selected
+                setShowCustomFacilityInput(selectedValues.includes("Other"));
+
+                // Clear custom facility if "Other" is removed
+                if (!selectedValues.includes("Other")) {
+                  setCustomFacility("");
+                }
+              }}
               className="w-full"
             />
+
+            {/* Custom Facility Input - appears when "Other" is selected */}
+            {showCustomFacilityInput && (
+              <div className="mt-3">
+                <input
+                  type="text"
+                  value={customFacility}
+                  onChange={(e) => setCustomFacility(e.target.value)}
+                  placeholder="Enter custom facility name"
+                  className="w-full p-1 md:p-2 border rounded text-[13px] md:text-[16px]"
+                />
+                <button
+                  type="button"
+                  onClick={() => {
+                    if (customFacility.trim()) {
+                      // Add custom facility to the list and remove "Other"
+                      const updatedFacilities = formData.facilities.filter(
+                        (f) => f !== "Other"
+                      );
+                      setFormData({
+                        ...formData,
+                        facilities: [
+                          ...updatedFacilities,
+                          customFacility.trim(),
+                        ],
+                      });
+                      setCustomFacility("");
+                      setShowCustomFacilityInput(false);
+                    }
+                  }}
+                  className="mt-2 px-3 py-1 bg-[#048886] text-white text-[12px] md:text-[14px] rounded hover:bg-[#03696b]"
+                >
+                  Add Custom Facility
+                </button>
+              </div>
+            )}
           </div>
 
           {/* Sonder Standard Dropdown */}
@@ -342,19 +400,64 @@ function Addprojects() {
                 { value: "kitchen", label: "Modular Kitchen" },
                 { value: "furnished", label: "Furnished" },
                 { value: "balcony", label: "Balcony" },
+                { value: "Other", label: "Other" },
               ]}
               value={formData.sonderStandard.map((value) => ({
                 value,
                 label: value.charAt(0).toUpperCase() + value.slice(1),
               }))}
-              onChange={(selected) =>
+              onChange={(selected) => {
+                const selectedValues = selected.map((opt) => opt.value);
                 setFormData({
                   ...formData,
-                  sonderStandard: selected.map((opt) => opt.value),
-                })
-              }
+                  sonderStandard: selectedValues,
+                });
+
+                // Show custom input if "Other" is selected
+                setShowCustomSonderInput(selectedValues.includes("Other"));
+
+                // Clear custom sonder standard if "Other" is removed
+                if (!selectedValues.includes("Other")) {
+                  setCustomSonderStandard("");
+                }
+              }}
               className="w-full"
             />
+
+            {/* Custom Sonder Standard Input - appears when "Other" is selected */}
+            {showCustomSonderInput && (
+              <div className="mt-3">
+                <input
+                  type="text"
+                  value={customSonderStandard}
+                  onChange={(e) => setCustomSonderStandard(e.target.value)}
+                  placeholder="Enter custom sonder standard"
+                  className="w-full p-1 md:p-2 border rounded text-[13px] md:text-[16px]"
+                />
+                <button
+                  type="button"
+                  onClick={() => {
+                    if (customSonderStandard.trim()) {
+                      // Add custom sonder standard to the list and remove "Other"
+                      const updatedSonderStandard =
+                        formData.sonderStandard.filter((s) => s !== "Other");
+                      setFormData({
+                        ...formData,
+                        sonderStandard: [
+                          ...updatedSonderStandard,
+                          customSonderStandard.trim(),
+                        ],
+                      });
+                      setCustomSonderStandard("");
+                      setShowCustomSonderInput(false);
+                    }
+                  }}
+                  className="mt-2 px-3 py-1 bg-[#048886] text-white text-[12px] md:text-[14px] rounded hover:bg-[#03696b]"
+                >
+                  Add Custom Standard
+                </button>
+              </div>
+            )}
           </div>
 
           {/* Upload Progress */}

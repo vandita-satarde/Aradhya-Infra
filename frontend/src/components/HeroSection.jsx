@@ -29,9 +29,9 @@ function HeroSection() {
 
 
       <div className='p-12 md:p-20 lg:p-30 pb-30 md:pb-70 lg:pb-50 space-y-6'>  
-        <p className='text-[12px] md:text-[15px] lg:text-[18px] text-[#048886] font-semibold'>- A LAND GUIDE</p>
-        <h1 className='text-[38px] md:text-[57px] lg:text-[85px] text-[#FFFFFF] font-[abril] font-extrabold leading-tight'>Be Prepared For The<br/> Mountains And Beyond!</h1>
-        <p className='text-[12px] md:text-[15px] lg:text-[18px] text-[#FFFFFF]'>scroll down ↓</p>
+        <p className='text-[12px] md:text-[15px] lg:text-[18px] text-[#048886] font-semibold opacity-0'>- A LAND GUIDE</p>
+        <h1 className='text-[38px] md:text-[57px] lg:text-[85px] text-[#FFFFFF] font-[abril] font-extrabold leading-tight opacity-0'>Be Prepared For The<br/> Mountains And Beyond!</h1>
+        <p className='text-[12px] md:text-[15px] lg:text-[18px] text-[#FFFFFF] opacity-0'>scroll down ↓</p>
       </div>
             
 

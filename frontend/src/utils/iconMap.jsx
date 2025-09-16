@@ -1,5 +1,5 @@
 // frontend/src/utils/iconMap.js
-import { MdElevator } from 'react-icons/md'; // Material Design icon
+import { MdElevator } from "react-icons/md"; // Material Design icon
 import {
   FaDumbbell,
   FaWifi,
@@ -9,8 +9,17 @@ import {
   FaShieldAlt,
   FaStar,
   FaRegBuilding,
-  FaRegCheckCircle
-} from 'react-icons/fa';
+  FaRegCheckCircle,
+  FaRoad,
+  FaTint,
+  FaBolt,
+  FaToolbox,
+  FaTree,
+  FaEllipsisH,
+  FaUtensils,
+  FaCouch,
+  FaHome,
+} from "react-icons/fa";
 
 export const facilityIcons = {
   Gym: <FaDumbbell />,
@@ -20,10 +29,20 @@ export const facilityIcons = {
   Elevator: <MdElevator />,
   "Children & Senior Citizen Zones": <FaChild />,
   "Safety & Conveniences": <FaShieldAlt />,
+  "Cement Road": <FaRoad />,
+  "Water line with water": <FaTint />,
+  "Underground Electrification": <FaBolt />,
+  "Sewage/Drainage Line": <FaToolbox />,
+  Garden: <FaTree />,
+  Other: <FaEllipsisH />,
 };
 
 export const standardIcons = {
   "Standard A": <FaStar />,
   "Standard B": <FaRegBuilding />,
   "Standard C": <FaRegCheckCircle />,
+  kitchen: <FaUtensils />,
+  furnished: <FaCouch />,
+  balcony: <FaHome />,
+  Other: <FaEllipsisH />,
 };

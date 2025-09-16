@@ -81,7 +81,8 @@ function Home() {
                 value. “
               </p>
               <span className=" font-bold text-[18px] md:text-[22px] lg:text-[20px] text-[#F3ECDC] font-[abril] ">
-                Chairman Lekhraj Patle
+                 Lekhraj Patle
+                <br />- Chairman
               </span>
             </div>
 
@@ -138,7 +139,7 @@ function Home() {
           <ServicesCard
             icon={hsIcon2}
             name="Sustainable by Design"
-            description="Each project includes rainwater harvesting, solar readiness, and green landscaping."
+            description="Each project includes underground electrification, waterline & Sewerage Treatment Plant and green landscaping"
           />
           <ServicesCard
             icon={hsIcon3}

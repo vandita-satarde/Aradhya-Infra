@@ -40,11 +40,9 @@ function GalleryPage({ className = "", limit }) {
     <>
       <div className={`bg-[#e7dfce] h-[80px] ${className} `}></div>
       <div className="text-center bg-[#F3ECDC] pb-4 pt-9 md:pt-14 lg:pt-18 px-4 md:px-6 lg:px-12">
-        <p className=" md:mb-2 text-[#048886] text-[11px] md:text-[13px] lg:text-[15px] font-medium">
-          GALLERY
-        </p>
+        
         <h2 className="text-[24px] md:text-3xl lg:text-[42px] text-[#2D2D2D] font-[Abril_Fatface] font-bold mb-2 md:mb-5 ">
-          Our Fabulous Projects
+          GALLERY
         </h2>
         <div className="bg-[#F3ECDC] p-3 md:p-5 lg:p-10">
           {loading ? (
