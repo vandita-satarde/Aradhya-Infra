@@ -14,7 +14,9 @@ const LatestProject = () => {
   useEffect(() => {
     const fetchLatestProject = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/projects");
+        const response = await fetch(
+          "https://aradhya-infra-e57v.vercel.app/api/projects"
+        );
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -102,7 +104,7 @@ const LatestProject = () => {
       if (id) {
         try {
           const res = await fetch(
-            `http://localhost:5000/api/projects/${id}/details`
+            `https://aradhya-infra-e57v.vercel.app/api/projects/${id}/details`
           );
           if (res.ok) {
             fetched = await res.json();
@@ -114,7 +116,7 @@ const LatestProject = () => {
 
       // Fallback: re-fetch projects list and take the last entry
       if (!fetched) {
-        const res = await fetch("http://localhost:5000/api/projects");
+        const res = await fetch("https://aradhya-infra-e57v.vercel.app/api/projects");
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const data = await res.json();
         if (Array.isArray(data) && data.length > 0) {

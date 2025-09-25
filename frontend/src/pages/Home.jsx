@@ -154,7 +154,7 @@ function Home() {
                 onMouseLeave={() => setHoveredImageIndex(null)}
               >
                 <img
-                  src="./gardenImg.jpg"
+                  src="./garden.jpeg"
                   className={`rounded-[30px] md:h-[130px] lg:h-[210px] object-cover w-full transition-all duration-500 ${
                     hoveredImageIndex === 0 ? "blur-md scale-110" : ""
                   }`}
@@ -270,7 +270,7 @@ function Home() {
                 onMouseLeave={() => setHoveredImageIndex(null)}
               >
                 <img
-                  src="./properties.jpg"
+                  src="./lands.jpeg"
                   className={`rounded-[30px] md:h-[130px] lg:h-[210px] object-cover w-full transition-all duration-500 ${
                     hoveredImageIndex === 2 ? "blur-md scale-110" : ""
                   }`}
