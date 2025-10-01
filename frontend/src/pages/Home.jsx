@@ -92,7 +92,7 @@ function Home() {
               filter === "residential" ? "bg-[#050810] text-[#F3ECDC]" : ""
             }`}
           >
-            RESIDENTIAL
+            TOWNSHIP
           </button>
         </div>
 

@@ -6,8 +6,8 @@ const router = express.Router();
 // POST contact form submission
 router.post('/', async (req, res) => {
   try {
-    const { firstName, lastName, email, topic, message } = req.body;
-    const newContact = new Contact({ firstName, lastName, email, topic, message });
+    const { firstName, lastName, email, number, message } = req.body;
+    const newContact = new Contact({ firstName, lastName, email, number, message });
     await newContact.save();
     res.status(201).json({ message: 'Contact saved successfully' });
   } catch (err) {

@@ -122,10 +122,10 @@ function ContactUs() {
                 />
               </div>
               <div className="text-sm md:text-[17px] font-semibold w-full sm:w-[48%]">
-                Subject <br />
+                Mobile Number <br />
                 <input
                   name="topic"
-                  placeholder="-- Choose Topic --"
+                  placeholder="Enter your number"
                   className="w-full md:w-[230px] h-[30px] md:h-[60px] pl-4 md:pl-5 mt-2 md:mt-3 md:text-[15px] bg-[#F1F1F1] rounded-[30px]"
                   value={formData.topic}
                   onChange={handleChange}
