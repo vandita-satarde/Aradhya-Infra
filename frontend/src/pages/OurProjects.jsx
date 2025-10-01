@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { API_ENDPOINTS } from "../config/api";
 
 import Navbar from "../components/Navbar";
 import ProductCard from "../components/ProductCard";
@@ -18,7 +19,7 @@ function OurProjects() {
 
   useEffect(() => {
     axios
-      .get("https://aradhya-infra-e57v.vercel.app/api/projects")
+      .get(API_ENDPOINTS.PROJECTS)
       .then((res) => setProjects(res.data))
       .catch((err) => console.error("Error fetching projects:", err));
   }, []);

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { API_ENDPOINTS } from "../config/api";
 
 const LatestProject = () => {
   const navigate = useNavigate();
@@ -14,9 +15,7 @@ const LatestProject = () => {
   useEffect(() => {
     const fetchLatestProject = async () => {
       try {
-        const response = await fetch(
-          "https://aradhya-infra-e57v.vercel.app/api/projects"
-        );
+        const response = await fetch(API_ENDPOINTS.PROJECTS);
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -103,9 +102,7 @@ const LatestProject = () => {
 
       if (id) {
         try {
-          const res = await fetch(
-            `https://aradhya-infra-e57v.vercel.app/api/projects/${id}/details`
-          );
+          const res = await fetch(`${API_ENDPOINTS.PROJECTS}/${id}/details`);
           if (res.ok) {
             fetched = await res.json();
           }
@@ -116,7 +113,7 @@ const LatestProject = () => {
 
       // Fallback: re-fetch projects list and take the last entry
       if (!fetched) {
-        const res = await fetch("https://aradhya-infra-e57v.vercel.app/api/projects");
+        const res = await fetch(API_ENDPOINTS.PROJECTS);
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const data = await res.json();
         if (Array.isArray(data) && data.length > 0) {

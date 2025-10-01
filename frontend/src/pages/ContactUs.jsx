@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import axios from "axios";
+import { API_ENDPOINTS } from "../config/api";
 import { Link } from "react-router-dom";
 
 import Navbar from "../components/Navbar";
@@ -16,11 +17,16 @@ import icon03 from "../assets/icons/b-phone-square.png";
 
 function ContactUs() {
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
+    fullName: "",
+    dateOfBirth: "",
+    address: "",
+    status: "",
+    mobileNumber: "",
+    gender: "",
+    pinCode: "",
+    city: "",
     email: "",
-    topic: "",
-    message: "",
+    preferredCommunication: "",
   });
 
   const handleChange = (e) => {
@@ -28,25 +34,68 @@ function ContactUs() {
   };
 
   const handleSubmit = async () => {
-    const { firstName, lastName, email, topic, message } = formData;
+    const {
+      fullName,
+      dateOfBirth,
+      address,
+      status,
+      mobileNumber,
+      gender,
+      pinCode,
+      city,
+      email,
+      preferredCommunication,
+    } = formData;
 
-    if (!firstName || !lastName || !email || !topic || !message) {
+    if (
+      !fullName ||
+      !dateOfBirth ||
+      !address ||
+      !status ||
+      !mobileNumber ||
+      !gender ||
+      !pinCode ||
+      !city ||
+      !email ||
+      !preferredCommunication
+    ) {
       alert("Please fill in all fields before submitting.");
       return;
     }
 
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      alert("Please enter a valid email address.");
+      return;
+    }
+
+    // Mobile number validation (10 digits)
+    if (mobileNumber.length !== 10) {
+      alert("Please enter a valid 10-digit mobile number.");
+      return;
+    }
+
+    // Pin code validation (6 digits)
+    if (pinCode.length !== 6) {
+      alert("Please enter a valid 6-digit pin code.");
+      return;
+    }
+
     try {
-      await axios.post(
-        "https://aradhya-infra-e57v.vercel.app/api/contact",
-        formData
-      );
-      alert("Message sent successfully");
+      await axios.post(API_ENDPOINTS.CONTACT, formData);
+      alert("Contact saved successfully");
       setFormData({
-        firstName: "",
-        lastName: "",
+        fullName: "",
+        dateOfBirth: "",
+        address: "",
+        status: "",
+        mobileNumber: "",
+        gender: "",
+        pinCode: "",
+        city: "",
         email: "",
-        topic: "",
-        message: "",
+        preferredCommunication: "",
       });
     } catch (error) {
       alert("Error sending message");
@@ -82,7 +131,7 @@ function ContactUs() {
 
       <div className="bg-[#F3ECDC] px-6 md:px-10 lg:px-30 pt-10 md:pt-30 pb-10 md:pb-14">
         <div className="flex flex-col lg:flex-row gap-14 lg:gap-10 mx-auto ">
-          <div className="w-full md:w-[600px] lg:w-1/2 md:h-[747px] p-6 md:p-[50px] mx-auto bg-[#F9F9F9] rounded-[30px] shadow-xl ">
+          <div className="w-full md:w-[700px] lg:w-2/3 p-6 md:p-[50px] mx-auto bg-[#F9F9F9] rounded-[30px] shadow-xl ">
             <p className="text-[20px] md:text-[35px] font-[abril] font-bold">
               Contact Us
             </p>
@@ -90,54 +139,155 @@ function ContactUs() {
               Connect with us anytime—we’re here to make your home-buying
               journey seamless and stress-free.
             </p>
-            <div className="flex flex-wrap gap-4">
-              <div className="text-sm md:text-[17px] font-semibold w-full sm:w-[48%] ">
-                First Name <br />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {/* Full Name */}
+              <div className="text-sm md:text-[17px] font-semibold">
+                Full Name <span className="text-red-500">*</span>
+                <br />
                 <input
-                  name="firstName"
-                  placeholder="first name"
-                  className="w-full md:w-[230px] h-[30px] md:h-[60px] pl-4 md:pl-5 mt-2 md:mt-3 md:text-[15px] bg-[#F1F1F1] rounded-[30px] "
-                  value={formData.firstName}
+                  name="fullName"
+                  placeholder="Enter your full name"
+                  className="w-full h-[30px] md:h-[60px] pl-4 md:pl-5 mt-2 md:mt-3 md:text-[15px] bg-[#F1F1F1] rounded-[30px]"
+                  value={formData.fullName}
                   onChange={handleChange}
                 />
               </div>
-              <div className="text-sm md:text-[17px] font-semibold w-full sm:w-[48%]">
-                Last Name <br />
+
+              {/* Date of Birth */}
+              <div className="text-sm md:text-[17px] font-semibold">
+                Date of Birth <span className="text-red-500">*</span>
+                <br />
                 <input
-                  name="lastName"
-                  placeholder="last name"
-                  className="w-full md:w-[230px] h-[30px] md:h-[60px] pl-4 md:pl-5 mt-2 md:mt-3 md:text-[15px] bg-[#F1F1F1] rounded-[30px]"
-                  value={formData.lastName}
+                  name="dateOfBirth"
+                  type="date"
+                  className="w-full h-[30px] md:h-[60px] pl-4 md:pl-5 mt-2 md:mt-3 md:text-[15px] bg-[#F1F1F1] rounded-[30px]"
+                  value={formData.dateOfBirth}
                   onChange={handleChange}
                 />
               </div>
-              <div className="text-sm md:text-[17px] font-semibold w-full sm:w-[48%]">
-                Email Address <br />
+
+              {/* Gender */}
+              <div className="text-sm md:text-[17px] font-semibold">
+                Gender <span className="text-red-500">*</span>
+                <br />
+                <select
+                  name="gender"
+                  className="w-full h-[30px] md:h-[60px] pl-4 md:pl-5 mt-2 md:mt-3 md:text-[15px] bg-[#F1F1F1] rounded-[30px]"
+                  value={formData.gender}
+                  onChange={handleChange}
+                >
+                  <option value="">Select Gender</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+
+              {/* Status */}
+              <div className="text-sm md:text-[17px] font-semibold">
+                Marital Status <span className="text-red-500">*</span>
+                <br />
+                <select
+                  name="status"
+                  className="w-full h-[30px] md:h-[60px] pl-4 md:pl-5 mt-2 md:mt-3 md:text-[15px] bg-[#F1F1F1] rounded-[30px]"
+                  value={formData.status}
+                  onChange={handleChange}
+                >
+                  <option value="">Select Status</option>
+                  <option value="Single">Single</option>
+                  <option value="Married">Married</option>
+                </select>
+              </div>
+
+              {/* Mobile Number */}
+              <div className="text-sm md:text-[17px] font-semibold">
+                Mobile Number <span className="text-red-500">*</span>
+                <br />
+                <input
+                  name="mobileNumber"
+                  type="tel"
+                  placeholder="Enter 10-digit mobile number"
+                  className="w-full h-[30px] md:h-[60px] pl-4 md:pl-5 mt-2 md:mt-3 md:text-[15px] bg-[#F1F1F1] rounded-[30px]"
+                  value={formData.mobileNumber}
+                  onChange={handleChange}
+                  onInput={(e) => {
+                    e.target.value = e.target.value.replace(/[^0-9]/g, "");
+                  }}
+                  maxLength="10"
+                />
+              </div>
+
+              {/* Email */}
+              <div className="text-sm md:text-[17px] font-semibold">
+                Email Address <span className="text-red-500">*</span>
+                <br />
                 <input
                   name="email"
-                  placeholder="Hello@email"
-                  className="w-full md:w-[230px] h-[30px] md:h-[60px] pl-4 md:pl-5 mt-2 md:mt-3 md:text-[15px] bg-[#F1F1F1] rounded-[30px]"
+                  type="email"
+                  placeholder="hello@gmail.com"
+                  className="w-full h-[30px] md:h-[60px] pl-4 md:pl-5 mt-2 md:mt-3 md:text-[15px] bg-[#F1F1F1] rounded-[30px]"
                   value={formData.email}
                   onChange={handleChange}
                 />
               </div>
-              <div className="text-sm md:text-[17px] font-semibold w-full sm:w-[48%]">
-                Mobile Number <br />
+
+              {/* City */}
+              <div className="text-sm md:text-[17px] font-semibold">
+                City <span className="text-red-500">*</span>
+                <br />
                 <input
-                  name="topic"
-                  placeholder="Enter your number"
-                  className="w-full md:w-[230px] h-[30px] md:h-[60px] pl-4 md:pl-5 mt-2 md:mt-3 md:text-[15px] bg-[#F1F1F1] rounded-[30px]"
-                  value={formData.topic}
+                  name="city"
+                  placeholder="Enter your city"
+                  className="w-full h-[30px] md:h-[60px] pl-4 md:pl-5 mt-2 md:mt-3 md:text-[15px] bg-[#F1F1F1] rounded-[30px]"
+                  value={formData.city}
                   onChange={handleChange}
                 />
               </div>
-              <div className="text-sm md:text-[17px] font-semibold w-full sm:w-[48%]">
-                Message <br />
+
+              {/* Pin Code */}
+              <div className="text-sm md:text-[17px] font-semibold">
+                Pin Code <span className="text-red-500">*</span>
+                <br />
                 <input
-                  name="message"
-                  placeholder="message"
-                  className="w-full md:w-[490px] h-[90px] md:h-[115px] pl-4 md:pl-5 mt-2 md:mt-3 md:text-[15px] bg-[#F1F1F1] rounded-[30px] "
-                  value={formData.message}
+                  name="pinCode"
+                  type="tel"
+                  placeholder="Enter 6-digit pin code"
+                  className="w-full h-[30px] md:h-[60px] pl-4 md:pl-5 mt-2 md:mt-3 md:text-[15px] bg-[#F1F1F1] rounded-[30px]"
+                  value={formData.pinCode}
+                  onChange={handleChange}
+                  onInput={(e) => {
+                    e.target.value = e.target.value.replace(/[^0-9]/g, "");
+                  }}
+                  maxLength="6"
+                />
+              </div>
+
+              {/* Preferred Communication */}
+              <div className="text-sm md:text-[17px] font-semibold">
+                Preferred Communication <span className="text-red-500">*</span>
+                <br />
+                <select
+                  name="preferredCommunication"
+                  className="w-full h-[30px] md:h-[60px] pl-4 md:pl-5 mt-2 md:mt-3 md:text-[15px] bg-[#F1F1F1] rounded-[30px]"
+                  value={formData.preferredCommunication}
+                  onChange={handleChange}
+                >
+                  <option value="">Select Communication Mode</option>
+                  <option value="Phone Call">Phone Call</option>
+                  <option value="WhatsApp">WhatsApp</option>
+                  <option value="Email">Email</option>
+                </select>
+              </div>
+
+              {/* Address - Full Width */}
+              <div className="text-sm md:text-[17px] font-semibold md:col-span-2">
+                Address <span className="text-red-500">*</span>
+                <br />
+                <textarea
+                  name="address"
+                  placeholder="Enter your complete address"
+                  className="w-full h-[60px] md:h-[80px] pl-4 md:pl-5 pt-3 md:pt-4 mt-2 md:mt-3 md:text-[15px] bg-[#F1F1F1] rounded-[30px] resize-none"
+                  value={formData.address}
                   onChange={handleChange}
                 />
               </div>
@@ -149,7 +299,7 @@ function ContactUs() {
               SEND MESSAGE
             </button>
           </div>
-          <div className="w-full md:w-[500px] lg:w-1/2 md:ml-15 my-auto ">
+          <div className="w-full md:w-[500px] lg:w-1/3 md:ml-15 my-auto ">
             <p className="text-[12px] md:text-[13px] lg:text-[15px] text-[#A3B18A] ">
               GET IN TOUCH WITH ARADHYA INFRA
             </p>

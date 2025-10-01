@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { API_ENDPOINTS } from "../config/api";
 
 import HeroSection from "../components/HeroSection";
 import LatestProject from "../components/LatestProject";
@@ -36,9 +37,7 @@ function Home() {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const res = await fetch(
-          "https://aradhya-infra-e57v.vercel.app/api/projects"
-        );
+        const res = await fetch(API_ENDPOINTS.PROJECTS);
         const data = await res.json();
         setProjects(data);
       } catch (error) {

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import { API_ENDPOINTS } from "../config/api";
 import { facilityIcons, standardIcons } from "../utils/iconMap";
 
 import ProductCard from "../components/ProductCard";
@@ -28,9 +29,7 @@ const ProjectDetails = () => {
   useEffect(() => {
     const fetchProject = async () => {
       try {
-        const res = await axios.get(
-          `https://aradhya-infra-e57v.vercel.app/api/projects/${id}`
-        );
+        const res = await axios.get(`${API_ENDPOINTS.PROJECTS}/${id}`);
         setProject(res.data);
         if (res.data.images && res.data.images.length > 0) {
           setMainImage(res.data.images[0]);
@@ -42,9 +41,7 @@ const ProjectDetails = () => {
 
     const fetchAllProjects = async () => {
       try {
-        const res = await axios.get(
-          "https://aradhya-infra-e57v.vercel.app/api/projects"
-        );
+        const res = await axios.get(API_ENDPOINTS.PROJECTS);
         const others = res.data.filter((proj) => proj._id !== id); // Exclude current
         setOtherProjects(others.slice(0, 3)); // Only 3 other cards
       } catch (error) {

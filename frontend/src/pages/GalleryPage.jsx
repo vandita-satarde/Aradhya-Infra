@@ -1,6 +1,7 @@
 // frontend/src/pages/GalleryPage.jsx
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { API_ENDPOINTS } from "../config/api";
 
 function GalleryPage({ className = "", limit }) {
   const [galleryItems, setGalleryItems] = useState([]);
@@ -13,7 +14,7 @@ function GalleryPage({ className = "", limit }) {
   useEffect(() => {
     setLoading(true);
     axios
-      .get("https://aradhya-infra-e57v.vercel.app/api/gallery")
+      .get(API_ENDPOINTS.GALLERY)
       .then((res) => {
         setGalleryItems(res.data);
         setLoading(false);
