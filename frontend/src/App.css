@@ -1,5 +1,4 @@
-@import "tailwindcss" ;
-
+@import "tailwindcss";
 
 /* html, body {
   overflow-x: hidden;
@@ -17,4 +16,30 @@
 }
 ::-webkit-scrollbar-track {
   background: transparent;
+}
+
+/* Custom slider animations */
+@keyframes slide-in-right {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.8s ease-in-out forwards;
+}
+
+/* Progress bar animation for testimonials */
+@keyframes progress {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
 }

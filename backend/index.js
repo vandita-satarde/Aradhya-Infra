@@ -8,6 +8,7 @@ import contactRoutes from "./routes/contactRoutes.js";
 import enquiryRoutes from "./routes/enquiryRoutes.js";
 import projectRoutes from "./routes/projectRoutes.js";
 import galleryRoutes from "./routes/galleryRoutes.js";
+import testimonialRoutes from "./routes/testimonialRoutes.js";
 
 import path from "path";
 import { fileURLToPath } from "url";
@@ -34,6 +35,7 @@ app.use("/api/enquiry", enquiryRoutes);
 app.use("/api/projects", projectRoutes);
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use("/api/gallery", galleryRoutes);
+app.use("/api/testimonials", testimonialRoutes);
 
 app.get("/", (req, res) => res.send("API running"));
 
