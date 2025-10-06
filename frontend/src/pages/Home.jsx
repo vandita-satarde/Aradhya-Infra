@@ -27,32 +27,11 @@ function Home() {
   const [projects, setProjects] = useState([]);
   const [filter, setFilter] = useState("all");
   const [hoveredImageIndex, setHoveredImageIndex] = useState(null);
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
 
-  // Check if mobile screen
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
-
-  const locations = [
-    {
-      main: "GOTAL PANJRI",
-      sub: "Near Singapore City",
-      image: "./garden.jpeg",
-    },
-    { main: "PEWTHA", sub: "50ft Road Touch", image: "./streetLighting.jpg" },
-    { main: "SHIRUR", sub: "Wardha Road", image: "./lands.jpeg" },
-    { main: "KAMPTEE", sub: "Highway Touch", image: "./garden.jpeg" },
-    { main: "SAONER", sub: "Main Road", image: "./streetLighting.jpg" },
+  const addresses = [
+    { main: "GOTAL PANJRI", sub: "Near Singapore City" },
+    { main: "PEWTHA", sub: "50ft Road Touch" },
+    { main: "SHIRUR", sub: "Wardha Road" },
   ];
 
   useEffect(() => {
@@ -68,17 +47,6 @@ function Home() {
 
     fetchProjects();
   }, []);
-
-  // Circular slider effect - true infinite loop without reset
-  useEffect(() => {
-    if (!isPaused) {
-      const interval = setInterval(() => {
-        setCurrentSlide((prev) => prev + 1);
-      }, 3000); // Change every 3 seconds for slow transition
-
-      return () => clearInterval(interval);
-    }
-  }, [isPaused]);
 
   const filteredProjects =
     filter === "all"
@@ -146,7 +114,7 @@ function Home() {
 
       <div className="bg-[#F3ECDC] px-9 md:px-4 lg:px-25 pt-12 md:pt-14 lg:pt-25 md:pb-1 ">
         {/* Section 01 */}
-        <div className=" pb-10 md:pb-15 lg:pb-30">
+        <div className=" pb-130 md:pb-15 lg:pb-30">
           <p className="text-[13px] md:text-[13px] lg:text-[15px] font-semibold text-[#048886] mb-3 ">
             OUR LUXURIOUS PROJECTS
           </p>
@@ -164,18 +132,8 @@ function Home() {
           </div>
           <br />
           <br />
-          <div
-            className={`flex relative ${
-              isMobile ? "flex-col" : "flex-col lg:flex-row"
-            } items-center md:items-start -mt-5`}
-          >
-            <div
-              className={`${
-                isMobile
-                  ? "w-full mx-4 mb-6"
-                  : "w-[280px] md:w-[230px] lg:w-[417px]"
-              } h-[240px] md:h-[220px] lg:h-[305px] rounded-4xl py-4 md:py-4 lg:py-5 px-6 md:px-6 lg:px-12 pr-4 md:pr-14 lg:pr-30 bg-black text-[#FFFFFFBF] relative z-5`}
-            >
+          <div className=" flex relative flex-col lg:flex-row items-center md:items-start -mt-5 ">
+            <div className=" w-[280px] md:w-[230px] lg:w-[417px] h-[240px] md:h-[220px] lg:h-[305px] rounded-4xl py-4 md:py-4 lg:py-5 px-6 md:px-6 lg:px-12 pr-4 md:pr-14 lg:pr-30 bg-black text-[#FFFFFFBF] ">
               <FaQuoteLeft className="w-[30px] h-[20px] md:w-[35px] lg:w-[40px] md:h-[35px] lg:h-[45px] text-[#DADADA] mb-1 md:mb-2 lg:mb-4 " />
               <p className="italic text-[13px] md:text-[17px] lg:text-[18px] mb-0 md:mb-2 lg:mb-3">
                 “At Aradhya Infratech, we are committed to providing affordable
@@ -188,109 +146,179 @@ function Home() {
               </span>
             </div>
 
-            <div
-              className={`${
-                isMobile
-                  ? "relative w-full px-4 h-auto flex justify-center -mt-20 z-10"
-                  : "absolute md:left-[160px] lg:left-[320px] md:mx-3 top-[20px] md:top-[20px] lg:top-[40px] mt-6 lg:mt-0 w-[720px] md:w-[540px] lg:w-[930px] h-auto z-10"
-              } overflow-hidden`}
-              onMouseEnter={() => !isMobile && setIsPaused(true)}
-              onMouseLeave={() => !isMobile && setIsPaused(false)}
-            >
-              {/* Circular slider container */}
+            <div className="absolute md:left-[170px] lg:left-[320px]  md:mx-3 top-38 md:top-3 lg:top-9 flex flex-col sm:flex-row gap-3 md:gap-2 lg:gap-3 mt-6 lg:mt-0 ">
               <div
-                className={`flex ${
-                  isMobile
-                    ? "flex-col"
-                    : "flex-row transition-transform duration-1000 ease-in-out"
-                }`}
-                style={{
-                  transform: isMobile
-                    ? "translateY(0px)"
-                    : `translateX(-${currentSlide * (240 + 12)}px)`,
-                }}
+                className="bg-[#F3ECDC] w-[240px] md:w-[180px] lg:w-[310px] h-full p-1.5 lg:p-3 rounded-[30px] shadow-xs shadow-[#00000012] relative overflow-hidden group cursor-pointer transform hover:scale-105 transition-all duration-300"
+                onMouseEnter={() => setHoveredImageIndex(0)}
+                onMouseLeave={() => setHoveredImageIndex(null)}
               >
-                {/* Mobile: Show only first 3 cards, Desktop: Show infinite loop */}
-                {(isMobile
-                  ? locations.slice(0, 3)
-                  : Array.from({ length: locations.length * 10 })
-                ).map((location, index) => {
-                  const locationIndex = isMobile
-                    ? index
-                    : index % locations.length;
-                  const currentLocation = isMobile
-                    ? location
-                    : locations[locationIndex];
+                <img
+                  src="./garden.jpeg"
+                  className={`rounded-[30px] md:h-[130px] lg:h-[210px] object-cover w-full transition-all duration-500 ${
+                    hoveredImageIndex === 0 ? "blur-md scale-110" : ""
+                  }`}
+                />
 
-                  return (
-                    <div
-                      key={`card-${index}`}
-                      className={`bg-[#F3ECDC] p-1.5 lg:p-3 rounded-[30px] shadow-xs shadow-[#00000012] relative overflow-hidden group cursor-pointer transform hover:scale-105 transition-all duration-300 flex-shrink-0 ${
-                        isMobile
-                          ? "mb-4 h-[140px] w-[300px] mx-auto"
-                          : "mr-3 md:mr-2 lg:mr-3 h-full w-[240px] md:w-[180px] lg:w-[310px]"
-                      }`}
-                      onMouseEnter={() => setHoveredImageIndex(`card-${index}`)}
-                      onMouseLeave={() => setHoveredImageIndex(null)}
-                    >
-                      <img
-                        src={currentLocation.image}
-                        className={`rounded-[30px] md:h-[130px] lg:h-[210px] object-cover w-full transition-all duration-500 ${
-                          hoveredImageIndex === `card-${index}`
-                            ? "blur-md scale-110"
-                            : ""
-                        }`}
-                      />
-
-                      {/* Address overlay */}
-                      <div
-                        className={`absolute inset-0 flex items-center justify-center transition-all duration-500 ease-out ${
-                          hoveredImageIndex === `card-${index}`
-                            ? "opacity-100"
-                            : "opacity-0"
-                        }`}
-                      >
-                        <div className="bg-black/80 backdrop-blur-sm px-6 py-4 rounded-2xl border border-white/20 shadow-2xl">
-                          <div className="flex items-center justify-center mb-3">
-                            <div className="bg-[#048886] rounded-full p-3 shadow-lg">
-                              <svg
-                                className="w-5 h-5 lg:w-6 lg:h-6 text-white"
-                                fill="currentColor"
-                                viewBox="0 0 20 20"
-                              >
-                                <path
-                                  fillRule="evenodd"
-                                  d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-                                  clipRule="evenodd"
-                                />
-                              </svg>
-                            </div>
-                          </div>
-
-                          <div className="text-center">
-                            <p className="text-white text-lg lg:text-xl font-bold tracking-wide drop-shadow-lg">
-                              {currentLocation.main}
-                            </p>
-                            {currentLocation.sub && (
-                              <p className="text-white/80 text-sm lg:text-base font-medium tracking-wide drop-shadow-lg mt-1">
-                                {currentLocation.sub}
-                              </p>
-                            )}
-                            <div className="h-1 w-16 bg-gradient-to-r from-transparent via-[#048886] to-transparent mx-auto mt-2"></div>
-                          </div>
-                        </div>
+                {/* Address overlay - centered on entire image */}
+                <div
+                  className={`absolute inset-0 flex items-center justify-center transition-all duration-500 ease-out ${
+                    hoveredImageIndex === 0 ? "opacity-100" : "opacity-0"
+                  }`}
+                >
+                  <div className="bg-black/80 backdrop-blur-sm px-6 py-4 rounded-2xl border border-white/20 shadow-2xl">
+                    <div className="flex items-center justify-center mb-3">
+                      <div className="bg-[#048886] rounded-full p-3 shadow-lg">
+                        <svg
+                          className="w-5 h-5 lg:w-6 lg:h-6 text-white"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                            clipRule="evenodd"
+                          />
+                        </svg>
                       </div>
-
-                      <div
-                        className={`absolute inset-0 rounded-[30px] border-2 transition-all duration-300 ${
-                          hoveredImageIndex === `card-${index}`
-                            ? "border-[#048886] shadow-lg shadow-[#048886]/25"
-                            : "border-transparent"
-                        }`}
-                      ></div>
                     </div>
-                  );
-                })}
+
+                    <div className="text-center">
+                      <p className="text-white text-lg lg:text-xl font-bold tracking-wide drop-shadow-lg">
+                        {addresses[0].main}
+                      </p>
+                      {addresses[0].sub && (
+                        <p className="text-white/80 text-sm lg:text-base font-medium tracking-wide drop-shadow-lg mt-1">
+                          {addresses[0].sub}
+                        </p>
+                      )}
+                      <div className="h-1 w-16 bg-gradient-to-r from-transparent via-[#048886] to-transparent mx-auto mt-2"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  className={`absolute inset-0 rounded-[30px] border-2 transition-all duration-300 ${
+                    hoveredImageIndex === 0
+                      ? "border-[#048886] shadow-lg shadow-[#048886]/25"
+                      : "border-transparent"
+                  }`}
+                ></div>
+              </div>
+
+              <div
+                className="bg-[#F3ECDC] w-[240px] md:w-[180px] lg:w-[310px] h-full p-1.5 lg:p-3 rounded-[30px] shadow-xs shadow-[#00000012] relative overflow-hidden group cursor-pointer transform hover:scale-105 transition-all duration-300"
+                onMouseEnter={() => setHoveredImageIndex(1)}
+                onMouseLeave={() => setHoveredImageIndex(null)}
+              >
+                <img
+                  src="./streetLighting.jpg"
+                  className={`rounded-[30px] md:h-[130px] lg:h-[210px] object-cover w-full transition-all duration-500 ${
+                    hoveredImageIndex === 1 ? "blur-md scale-110" : ""
+                  }`}
+                />
+
+                {/* Address overlay - centered on entire image */}
+                <div
+                  className={`absolute inset-0 flex items-center justify-center transition-all duration-500 ease-out ${
+                    hoveredImageIndex === 1 ? "opacity-100" : "opacity-0"
+                  }`}
+                >
+                  <div className="bg-black/80 backdrop-blur-sm px-6 py-4 rounded-2xl border border-white/20 shadow-2xl">
+                    <div className="flex items-center justify-center mb-3">
+                      <div className="bg-[#048886] rounded-full p-3 shadow-lg">
+                        <svg
+                          className="w-5 h-5 lg:w-6 lg:h-6 text-white"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                            clipRule="evenodd"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+
+                    <div className="text-center">
+                      <p className="text-white text-lg lg:text-xl font-bold tracking-wide drop-shadow-lg">
+                        {addresses[1].main}
+                      </p>
+                      {addresses[1].sub && (
+                        <p className="text-white/80 text-sm lg:text-base font-medium tracking-wide drop-shadow-lg mt-1">
+                          {addresses[1].sub}
+                        </p>
+                      )}
+                      <div className="h-1 w-16 bg-gradient-to-r from-transparent via-[#048886] to-transparent mx-auto mt-2"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  className={`absolute inset-0 rounded-[30px] border-2 transition-all duration-300 ${
+                    hoveredImageIndex === 1
+                      ? "border-[#048886] shadow-lg shadow-[#048886]/25"
+                      : "border-transparent"
+                  }`}
+                ></div>
+              </div>
+
+              <div
+                className="bg-[#F3ECDC] w-[240px] md:w-[180px] lg:w-[310px] h-full p-1.5 lg:p-3 rounded-[30px] shadow-xs shadow-[#00000012] relative overflow-hidden group cursor-pointer transform hover:scale-105 transition-all duration-300"
+                onMouseEnter={() => setHoveredImageIndex(2)}
+                onMouseLeave={() => setHoveredImageIndex(null)}
+              >
+                <img
+                  src="./lands.jpeg"
+                  className={`rounded-[30px] md:h-[130px] lg:h-[210px] object-cover w-full transition-all duration-500 ${
+                    hoveredImageIndex === 2 ? "blur-md scale-110" : ""
+                  }`}
+                />
+
+                {/* Address overlay - centered on entire image */}
+                <div
+                  className={`absolute inset-0 flex items-center justify-center transition-all duration-500 ease-out ${
+                    hoveredImageIndex === 2 ? "opacity-100" : "opacity-0"
+                  }`}
+                >
+                  <div className="bg-black/80 backdrop-blur-sm px-6 py-4 rounded-2xl border border-white/20 shadow-2xl">
+                    <div className="flex items-center justify-center mb-3">
+                      <div className="bg-[#048886] rounded-full p-3 shadow-lg">
+                        <svg
+                          className="w-5 h-5 lg:w-6 lg:h-6 text-white"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                            clipRule="evenodd"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+
+                    <div className="text-center">
+                      <p className="text-white text-lg lg:text-xl font-bold tracking-wide drop-shadow-lg">
+                        {addresses[2].main}
+                      </p>
+                      {addresses[2].sub && (
+                        <p className="text-white/80 text-sm lg:text-base font-medium tracking-wide drop-shadow-lg mt-1">
+                          {addresses[2].sub}
+                        </p>
+                      )}
+                      <div className="h-1 w-16 bg-gradient-to-r from-transparent via-[#048886] to-transparent mx-auto mt-2"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  className={`absolute inset-0 rounded-[30px] border-2 transition-all duration-300 ${
+                    hoveredImageIndex === 2
+                      ? "border-[#048886] shadow-lg shadow-[#048886]/25"
+                      : "border-transparent"
+                  }`}
+                ></div>
               </div>
             </div>
           </div>

@@ -123,7 +123,7 @@ function Footer() {
                   href="mailto:Hello@Email.com"
                   className="hover:text-white transition-colors duration-200"
                 >
-                  Info@aradhyaintech.com
+                  aradhyainfratech07@gmail.com
                 </a>
               </div>
               <div className="flex items-center gap-2 lg:gap-4">
@@ -136,7 +136,7 @@ function Footer() {
                   href="tel:+91123456789"
                   className="hover:text-white transition-colors duration-200"
                 >
-                  ( +91 ) 9049965981
+                  ( +91 ) 7666044916
                 </a>
               </div>
             </div>

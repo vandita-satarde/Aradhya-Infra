@@ -339,7 +339,7 @@ function ContactUs() {
                     Email Address
                   </p>
                   <p className="text-[13px] md:text-[18px] text-[#6E6E6E]">
-                    Info@aradhyaintech.com
+                    aradhyainfratech07@gmail.com
                   </p>
                 </div>
               </div>
@@ -353,7 +353,7 @@ function ContactUs() {
                     Telephone
                   </p>
                   <p className="text-[12px] md:text-[18px] text-[#6E6E6E]">
-                    ( +91 ) 9049965981
+                    ( +91 ) 7666044916
                   </p>
                 </div>
               </div>

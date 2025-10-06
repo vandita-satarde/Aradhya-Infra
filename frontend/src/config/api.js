@@ -7,7 +7,6 @@ export const API_ENDPOINTS = {
   PROJECTS: `${API_BASE_URL}/projects`,
   CONTACT: `${API_BASE_URL}/contact`,
   ENQUIRY: `${API_BASE_URL}/enquiry`,
-  TESTIMONIALS: `${API_BASE_URL}/testimonials`,
 };
 
 export default API_BASE_URL;
