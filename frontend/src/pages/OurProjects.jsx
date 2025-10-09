@@ -115,6 +115,7 @@ function OurProjects() {
               <ProductCard key={project._id || idx} project={project} />
             ))}
           </div>
+          {/* added new changes */}
 
           {/* Toggle Button */}
           {filteredProjects.length > 6 && (
