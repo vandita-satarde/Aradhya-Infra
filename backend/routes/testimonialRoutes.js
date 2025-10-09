@@ -7,7 +7,9 @@ const router = express.Router();
 // Get all testimonials
 router.get("/", async (req, res) => {
   try {
-    const testimonials = await Testimonial.find({ isActive: true }).sort({ createdAt: -1 });
+    const testimonials = await Testimonial.find({ isActive: true }).sort({
+      createdAt: -1,
+    });
     res.json(testimonials);
   } catch (error) {
     res.status(500).json({ message: error.message });
