@@ -51,8 +51,8 @@ function Home() {
     },
     { main: "PEWTHA", sub: "50ft Road Touch", image: "./streetLighting.jpg" },
     { main: "SHIRUR", sub: "Wardha Road", image: "./lands.jpeg" },
-    { main: "KAMPTEE", sub: "Highway Touch", image: "./garden.jpeg" },
-    { main: "SAONER", sub: "Main Road", image: "./streetLighting.jpg" },
+    { main: "BAHADURA SQ.", sub: "Near D-Mart Umrer Road", image: "../assets/images/anandam-3.jpeg" },
+    { main: "HINGNA", sub: "Near Hingna Tahsil", image: "./mainimg2.jpg" },
   ];
 
   useEffect(() => {
